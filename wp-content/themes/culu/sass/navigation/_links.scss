@@ -5,15 +5,19 @@ a {
 		color: $color__link-visited;
 	}
 	&:hover,
-	&:focus,
 	&:active {
 		color: $color__link-hover;
 	}
-	&:focus {
-		outline: thin dotted;
-	}
+
 	&:hover,
 	&:active {
 		outline: 0;
+	}
+
+	&:focus {
+		color: $color__link-focus;
+		background-color: $color__background-link-focus;
+		padding: 5px;
+		outline: none;
 	}
 }

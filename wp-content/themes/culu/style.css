@@ -41,6 +41,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/*
+Based on Web Content Accessiblity Guidelines (WCAG 2.0) [https://www.w3.org/TR/WCAG20/], the criteria for level AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text, greater than 24px or 19px and bold. The chart below provides approved brand color combinations that meet WCAG 2.0 level AA standards.
+*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/

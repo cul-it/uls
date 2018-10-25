@@ -4,6 +4,11 @@
 	font-size: $sizeValue * 1rem;
 }
 
+// Em output
+@mixin font-size-em ($sizeValuePX: 16) {
+	font-size: ($sizeValuePX/ 16) * 1em;
+}
+
 // Center block
 @mixin center-block {
 	display: block;

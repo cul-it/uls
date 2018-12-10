@@ -8,6 +8,16 @@
  * https://pantheon.io/docs
  */
 
+ /**
+  * CUL custom upstream settings
+  * example wp-config-cul-uls.php
+  *   <?php
+  *   define('ULS_SITE_DOMAIN_NAME', 'library.cornell.edu');
+  */
+if (file_exists(dirname(__FILE__) . '/wp-config-cul-uls.php') && !isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+  require_once(dirname(__FILE__) . '/wp-config-cul-uls.php');
+}
+
 /**
  * Local configuration information.
  *

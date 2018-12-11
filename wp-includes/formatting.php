@@ -3308,7 +3308,10 @@ function wp_trim_excerpt( $text = '' ) {
 		$text = get_the_content('');
 
 		$text = strip_shortcodes( $text );
+<<<<<<< HEAD
 		$text = excerpt_remove_blocks( $text );
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		/** This filter is documented in wp-includes/post-template.php */
 		$text = apply_filters( 'the_content', $text );

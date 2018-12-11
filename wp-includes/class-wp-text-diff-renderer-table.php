@@ -56,6 +56,7 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	protected $compat_fields = array( '_show_split_view', 'inline_diff_renderer', '_diff_threshold' );
 
 	/**
+<<<<<<< HEAD
 	 * Caches the output of count_chars() in compute_string_distance()
 	 *
 	 * @var array
@@ -72,6 +73,8 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	protected $difference_cache = array();
 
 	/**
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	 * Constructor - Call parent constructor with params array.
 	 *
 	 * This will set class properties based on the key value pairs in the array.
@@ -407,11 +410,21 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 			if ( false === $final_pos ) { // This orig is paired with a blank final.
 				array_splice( $final_rows, $orig_pos, 0, -1 );
 			} elseif ( $final_pos < $orig_pos ) { // This orig's match is up a ways. Pad final with blank rows.
+<<<<<<< HEAD
 				$diff_array = range( -1, $final_pos - $orig_pos );
 				array_splice( $final_rows, $orig_pos, 0, $diff_array );
 			} elseif ( $final_pos > $orig_pos ) { // This orig's match is down a ways. Pad orig with blank rows.
 				$diff_array = range( -1, $orig_pos - $final_pos );
 				array_splice( $orig_rows, $orig_pos, 0, $diff_array );
+=======
+				$diff_pos = $final_pos - $orig_pos;
+				while ( $diff_pos < 0 )
+					array_splice( $final_rows, $orig_pos, 0, $diff_pos++ );
+			} elseif ( $final_pos > $orig_pos ) { // This orig's match is down a ways. Pad orig with blank rows.
+				$diff_pos = $orig_pos - $final_pos;
+				while ( $diff_pos < 0 )
+					array_splice( $orig_rows, $orig_pos, 0, $diff_pos++ );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			}
 		}
 
@@ -439,6 +452,7 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	 * @return int
 	 */
 	public function compute_string_distance( $string1, $string2 ) {
+<<<<<<< HEAD
 		// Use an md5 hash of the strings for a count cache, as it's fast to generate, and collisions aren't a concern.
 		$count_key1 = md5( $string1 );
 		$count_key2 = md5( $string2 );
@@ -461,6 +475,14 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 		}
 
 		$difference = $this->difference_cache[ $difference_key ];
+=======
+		// Vectors containing character frequency for all chars in each string
+		$chars1 = count_chars($string1);
+		$chars2 = count_chars($string2);
+
+		// L1-norm of difference vector.
+		$difference = array_sum( array_map( array($this, 'difference'), $chars1, $chars2 ) );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		// $string1 has zero length? Odd. Give huge penalty by not dividing.
 		if ( !$string1 )

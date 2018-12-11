@@ -242,6 +242,7 @@ function get_taxonomy( $taxonomy ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the taxonomy name exists.
  *
  * Formerly is_taxonomy(), introduced in 2.3.0.
@@ -249,6 +250,11 @@ function get_taxonomy( $taxonomy ) {
  * For more information on this and similar theme functions, check out
  * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
  * Conditional Tags} article in the Theme Developer Handbook.
+=======
+ * Checks that the taxonomy name exists.
+ *
+ * Formerly is_taxonomy(), introduced in 2.3.0.
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 3.0.0
  *
@@ -264,16 +270,23 @@ function taxonomy_exists( $taxonomy ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the taxonomy object is hierarchical.
+=======
+ * Whether the taxonomy object is hierarchical.
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * Checks to make sure that the taxonomy is an object first. Then Gets the
  * object, and finally returns the hierarchical value in the object.
  *
  * A false return value might also mean that the taxonomy does not exist.
+<<<<<<< HEAD
  * 
  * For more information on this and similar theme functions, check out
  * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
  * Conditional Tags} article in the Theme Developer Handbook.
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 2.3.0
  *
@@ -1143,11 +1156,30 @@ function get_terms( $args = array(), $deprecated = '' ) {
  *                           False on failure.
  */
 function add_term_meta( $term_id, $meta_key, $meta_value, $unique = false ) {
+<<<<<<< HEAD
+=======
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+	}
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	if ( wp_term_is_shared( $term_id ) ) {
 		return new WP_Error( 'ambiguous_term_id', __( 'Term meta cannot be added to terms that are shared between taxonomies.'), $term_id );
 	}
 
+<<<<<<< HEAD
 	return add_metadata( 'term', $term_id, $meta_key, $meta_value, $unique );
+=======
+	$added = add_metadata( 'term', $term_id, $meta_key, $meta_value, $unique );
+
+	// Bust term query cache.
+	if ( $added ) {
+		wp_cache_set( 'last_changed', microtime(), 'terms' );
+	}
+
+	return $added;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 }
 
 /**
@@ -1161,7 +1193,23 @@ function add_term_meta( $term_id, $meta_key, $meta_value, $unique = false ) {
  * @return bool True on success, false on failure.
  */
 function delete_term_meta( $term_id, $meta_key, $meta_value = '' ) {
+<<<<<<< HEAD
 	return delete_metadata( 'term', $term_id, $meta_key, $meta_value );
+=======
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+	}
+
+	$deleted = delete_metadata( 'term', $term_id, $meta_key, $meta_value );
+
+	// Bust term query cache.
+	if ( $deleted ) {
+		wp_cache_set( 'last_changed', microtime(), 'terms' );
+	}
+
+	return $deleted;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 }
 
 /**
@@ -1176,6 +1224,14 @@ function delete_term_meta( $term_id, $meta_key, $meta_value = '' ) {
  * @return mixed If `$single` is false, an array of metadata values. If `$single` is true, a single metadata value.
  */
 function get_term_meta( $term_id, $key = '', $single = false ) {
+<<<<<<< HEAD
+=======
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+	}
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	return get_metadata( 'term', $term_id, $key, $single );
 }
 
@@ -1196,11 +1252,30 @@ function get_term_meta( $term_id, $key = '', $single = false ) {
  *                           WP_Error when term_id is ambiguous between taxonomies. False on failure.
  */
 function update_term_meta( $term_id, $meta_key, $meta_value, $prev_value = '' ) {
+<<<<<<< HEAD
+=======
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+	}
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	if ( wp_term_is_shared( $term_id ) ) {
 		return new WP_Error( 'ambiguous_term_id', __( 'Term meta cannot be added to terms that are shared between taxonomies.'), $term_id );
 	}
 
+<<<<<<< HEAD
 	return update_metadata( 'term', $term_id, $meta_key, $meta_value, $prev_value );
+=======
+	$updated = update_metadata( 'term', $term_id, $meta_key, $meta_value, $prev_value );
+
+	// Bust term query cache.
+	if ( $updated ) {
+		wp_cache_set( 'last_changed', microtime(), 'terms' );
+	}
+
+	return $updated;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 }
 
 /**
@@ -1215,6 +1290,14 @@ function update_term_meta( $term_id, $meta_key, $meta_value, $prev_value = '' ) 
  * @return array|false Returns false if there is nothing to update. Returns an array of metadata on success.
  */
 function update_termmeta_cache( $term_ids ) {
+<<<<<<< HEAD
+=======
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return;
+	}
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	return update_meta_cache( 'term', $term_ids );
 }
 
@@ -1229,9 +1312,15 @@ function update_termmeta_cache( $term_ids ) {
  * @return array|false Array with meta data, or false when the meta table is not installed.
  */
 function has_term_meta( $term_id ) {
+<<<<<<< HEAD
 	$check = wp_check_term_meta_support_prefilter( null );
 	if ( null !== $check ) {
 		return $check;
+=======
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	}
 
 	global $wpdb;
@@ -1273,6 +1362,7 @@ function unregister_term_meta( $taxonomy, $meta_key ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether a term exists.
  *
  * Formerly is_term(), introduced in 2.3.0.
@@ -1280,6 +1370,11 @@ function unregister_term_meta( $taxonomy, $meta_key ) {
  * For more information on this and similar theme functions, check out
  * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
  * Conditional Tags} article in the Theme Developer Handbook.
+=======
+ * Check if Term exists.
+ *
+ * Formerly is_term(), introduced in 2.3.0.
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 3.0.0
  *
@@ -4307,6 +4402,7 @@ function wp_check_term_hierarchy_for_loops( $parent, $term_id, $taxonomy ) {
 
 	return $parent;
 }
+<<<<<<< HEAD
 
 /**
  * Sets the last changed time for the 'terms' cache group.
@@ -4332,3 +4428,5 @@ function wp_check_term_meta_support_prefilter( $check ) {
 
 	return $check;
 }
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

@@ -4,14 +4,22 @@
  *
  * @global string $wp_version
  */
+<<<<<<< HEAD
 $wp_version = '5.0';
+=======
+$wp_version = '4.9.8';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 /**
  * Holds the WordPress DB revision, increments when changes are made to the WordPress DB schema.
  *
  * @global int $wp_db_version
  */
+<<<<<<< HEAD
 $wp_db_version = 43764;
+=======
+$wp_db_version = 38590;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 /**
  * Holds the TinyMCE version

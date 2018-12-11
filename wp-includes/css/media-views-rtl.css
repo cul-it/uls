@@ -911,15 +911,28 @@
 	top: 0;
 	right: 0;
 	width: 100%;
+<<<<<<< HEAD
 	height: 100%; /* Fails with spaces?? Weird! */
+=======
+	height: 100%;
+	-webkit-transform: translate( -50%, 50% ); /* Fails with spaces?? Weird! */
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translate( -50%, 50% );
 }
 
 .wp-core-ui .attachment .thumbnail .centered img {
+<<<<<<< HEAD
+=======
+	-webkit-transform: translate( 50%, -50% );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translate( 50%, -50% );
 }
 
 .wp-core-ui .attachments-browser .attachment .thumbnail .centered img.icon {
+<<<<<<< HEAD
+=======
+	-webkit-transform: translate( 50%, -70% );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translate( 50%, -70% );
 }
 
@@ -1289,6 +1302,10 @@
 	top: 50%;
 	right: 0;
 	left: 0;
+<<<<<<< HEAD
+=======
+	-webkit-transform: translateY( -50% );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translateY( -50% );
 	font-size: 40px;
 	color: #fff;
@@ -2125,6 +2142,10 @@
 	top: 50%;
 	right: 0;
 	left: 0;
+<<<<<<< HEAD
+=======
+	-webkit-transform: translateY( -50% );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translateY( -50% );
 	font-size: 3em;
 	line-height: 1.3;

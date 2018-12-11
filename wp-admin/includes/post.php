@@ -639,7 +639,11 @@ function get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) 
 	 * @param string  $post_content Default post content.
 	 * @param WP_Post $post         Post object.
 	 */
+<<<<<<< HEAD
 	$post->post_content = (string) apply_filters( 'default_content', $post_content, $post );
+=======
+	$post->post_content = apply_filters( 'default_content', $post_content, $post );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	/**
 	 * Filters the default post title initially used in the "Write Post" form.
@@ -649,7 +653,11 @@ function get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) 
 	 * @param string  $post_title Default post title.
 	 * @param WP_Post $post       Post object.
 	 */
+<<<<<<< HEAD
 	$post->post_title = (string) apply_filters( 'default_title', $post_title, $post );
+=======
+	$post->post_title = apply_filters( 'default_title', $post_title, $post );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	/**
 	 * Filters the default post excerpt initially used in the "Write Post" form.
@@ -659,7 +667,11 @@ function get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) 
 	 * @param string  $post_excerpt Default post excerpt.
 	 * @param WP_Post $post         Post object.
 	 */
+<<<<<<< HEAD
 	$post->post_excerpt = (string) apply_filters( 'default_excerpt', $post_excerpt, $post );
+=======
+	$post->post_excerpt = apply_filters( 'default_excerpt', $post_excerpt, $post );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	return $post;
 }
@@ -814,7 +826,11 @@ function add_meta( $post_ID ) {
 	if ( is_string( $metavalue ) )
 		$metavalue = trim( $metavalue );
 
+<<<<<<< HEAD
 	if ( ( ( '#NONE#' != $metakeyselect ) && ! empty( $metakeyselect ) ) || ! empty( $metakeyinput ) ) {
+=======
+	if ( ('0' === $metavalue || ! empty ( $metavalue ) ) && ( ( ( '#NONE#' != $metakeyselect ) && !empty ( $metakeyselect) ) || !empty ( $metakeyinput ) ) ) {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		/*
 		 * We have a key/value pair. If both the select and the input
 		 * for the key have data, the input takes precedence.
@@ -1874,6 +1890,7 @@ function redirect_post($post_id = '') {
 	wp_redirect( apply_filters( 'redirect_post_location', $location, $post_id ) );
 	exit;
 }
+<<<<<<< HEAD
 
 /**
  * Return whether the post can be edited in the block editor.
@@ -2252,3 +2269,5 @@ function the_block_editor_meta_box_post_form_hidden_fields( $post ) {
 	 */
 	do_action( 'block_editor_meta_box_hidden_fields', $post );
 }
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

@@ -197,6 +197,7 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 			return $parent;
 		}
 
+<<<<<<< HEAD
 		// Ensure a search string is set in case the orderby is set to 'relevance'.
 		if ( ! empty( $request['orderby'] ) && 'relevance' === $request['orderby'] && empty( $request['search'] ) ) {
 			return new WP_Error( 'rest_no_search_term_defined', __( 'You need to define a search term to order by relevance.' ), array( 'status' => 400 ) );
@@ -280,12 +281,16 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 			$max_pages       = 0;
 			$page            = (int) $request['page'];
 		}
+=======
+		$revisions = wp_get_post_revisions( $request['parent'] );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		$response = array();
 		foreach ( $revisions as $revision ) {
 			$data = $this->prepare_item_for_response( $revision, $request );
 			$response[] = $this->prepare_response_for_collection( $data );
 		}
+<<<<<<< HEAD
 
 		$response = rest_ensure_response( $response );
 
@@ -313,6 +318,9 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 		}
 
 		return $response;
+=======
+		return rest_ensure_response( $response );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	}
 
 	/**
@@ -426,6 +434,7 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Determines the allowed query_vars for a get_items() response and prepares
 	 * them for WP_Query.
 	 *
@@ -461,6 +470,8 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 	}
 
 	/**
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	 * Prepares the revision for the REST response.
 	 *
 	 * @since 4.7.0
@@ -680,6 +691,7 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 	 * @return array Collection parameters.
 	 */
 	public function get_collection_params() {
+<<<<<<< HEAD
 		$query_params = parent::get_collection_params();
 
 		$query_params['context']['default'] = 'view';
@@ -732,6 +744,11 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 		);
 
 		return $query_params;
+=======
+		return array(
+			'context' => $this->get_context_param( array( 'default' => 'view' ) ),
+		);
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	}
 
 	/**

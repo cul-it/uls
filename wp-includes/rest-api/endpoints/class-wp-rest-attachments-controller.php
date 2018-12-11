@@ -122,9 +122,12 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		$type    = $file['type'];
 		$file    = $file['file'];
 
+<<<<<<< HEAD
 		// Include image functions to get access to wp_read_image_metadata().
 		require_once ABSPATH . 'wp-admin/includes/image.php';
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		// use image exif/iptc data for title and caption defaults if possible
 		$image_meta = wp_read_image_metadata( $file );
 
@@ -172,9 +175,14 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		 */
 		do_action( 'rest_insert_attachment', $attachment, $request, true );
 
+<<<<<<< HEAD
 		// Include admin function to get access to wp_generate_attachment_metadata().
 		require_once ABSPATH . 'wp-admin/includes/media.php';
 		require_once ABSPATH . 'wp-admin/includes/image.php';
+=======
+		// Include admin functions to get access to wp_generate_attachment_metadata().
+		require_once ABSPATH . 'wp-admin/includes/admin.php';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $file ) );
 
@@ -189,6 +197,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		}
 
 		$request->set_param( 'context', 'edit' );
+<<<<<<< HEAD
 
 		/**
 		 * Fires after a single attachment is completely created or updated via the REST API.
@@ -201,6 +210,8 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		 */
 		do_action( 'rest_after_insert_attachment', $attachment, $request, true );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$response = $this->prepare_item_for_response( $attachment, $request );
 		$response = rest_ensure_response( $response );
 		$response->set_status( 201 );
@@ -237,6 +248,12 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 
 		$attachment = get_post( $request['id'] );
 
+<<<<<<< HEAD
+=======
+		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php */
+		do_action( 'rest_insert_attachment', $data, $request, false );
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$fields_update = $this->update_additional_fields_for_object( $attachment, $request );
 
 		if ( is_wp_error( $fields_update ) ) {
@@ -244,10 +261,13 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		}
 
 		$request->set_param( 'context', 'edit' );
+<<<<<<< HEAD
 
 		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php */
 		do_action( 'rest_after_insert_attachment', $attachment, $request, false );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$response = $this->prepare_item_for_response( $attachment, $request );
 		$response = rest_ensure_response( $response );
 
@@ -389,12 +409,16 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
+<<<<<<< HEAD
 
 		foreach ( $links as $rel => $rel_links ) {
 			foreach ( $rel_links as $link ) {
 				$response->add_link( $rel, $link['href'], $link['attributes'] );
 			}
 		}
+=======
+		$response->add_links( $links );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		/**
 		 * Filters an attachment returned from the REST API.
@@ -558,8 +582,13 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		// Get the content-type.
 		$type = array_shift( $headers['content_type'] );
 
+<<<<<<< HEAD
 		/** Include admin functions to get access to wp_tempnam() and wp_handle_sideload(). */
 		require_once ABSPATH . 'wp-admin/includes/file.php';
+=======
+		/** Include admin functions to get access to wp_tempnam() and wp_handle_sideload() */
+		require_once ABSPATH . 'wp-admin/includes/admin.php';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		// Save the file.
 		$tmpfname = wp_tempnam( $filename );
@@ -758,8 +787,13 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 			return $size_check;
 		}
 
+<<<<<<< HEAD
 		/** Include admin function to get access to wp_handle_upload(). */
 		require_once ABSPATH . 'wp-admin/includes/file.php';
+=======
+		/** Include admin functions to get access to wp_handle_upload() */
+		require_once ABSPATH . 'wp-admin/includes/admin.php';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		$file = wp_handle_upload( $files['file'], $overrides );
 
@@ -827,9 +861,12 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 			return new WP_Error( 'rest_upload_file_too_big', sprintf( __( 'This file is too big. Files must be less than %s KB in size.' ), get_site_option( 'fileupload_maxk', 1500 ) ), array( 'status' => 400 ) );
 		}
 
+<<<<<<< HEAD
 		// Include admin function to get access to upload_is_user_over_quota().
 		require_once ABSPATH . 'wp-admin/includes/ms.php';
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if ( upload_is_user_over_quota( false ) ) {
 			return new WP_Error( 'rest_upload_user_quota_exceeded', __( 'You have used your space quota. Please delete files before uploading.' ), array( 'status' => 400 ) );
 		}

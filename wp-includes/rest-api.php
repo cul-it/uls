@@ -193,12 +193,15 @@ function create_initial_rest_routes() {
 			$revisions_controller = new WP_REST_Revisions_Controller( $post_type->name );
 			$revisions_controller->register_routes();
 		}
+<<<<<<< HEAD
 
 		if ( 'attachment' !== $post_type->name ) {
 			$autosaves_controller = new WP_REST_Autosaves_Controller( $post_type->name );
 			$autosaves_controller->register_routes();
 		}
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	}
 
 	// Post types.
@@ -236,6 +239,7 @@ function create_initial_rest_routes() {
 	$controller = new WP_REST_Comments_Controller;
 	$controller->register_routes();
 
+<<<<<<< HEAD
 	/**
 	 * Filters the search handlers to use in the REST search controller.
 	 *
@@ -262,6 +266,11 @@ function create_initial_rest_routes() {
 	$controller = new WP_REST_Themes_Controller;
 	$controller->register_routes();
 
+=======
+	// Settings.
+	$controller = new WP_REST_Settings_Controller;
+	$controller->register_routes();
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 }
 
 /**
@@ -336,8 +345,11 @@ function get_rest_url( $blog_id = null, $path = '/', $scheme = 'rest' ) {
 		$path = '/';
 	}
 
+<<<<<<< HEAD
 	$path = '/' . ltrim( $path, '/' );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	if ( is_multisite() && get_blog_option( $blog_id, 'permalink_structure' ) || get_option( 'permalink_structure' ) ) {
 		global $wp_rewrite;
 
@@ -347,7 +359,11 @@ function get_rest_url( $blog_id = null, $path = '/', $scheme = 'rest' ) {
 			$url = get_home_url( $blog_id, rest_get_url_prefix(), $scheme );
 		}
 
+<<<<<<< HEAD
 		$url .= $path;
+=======
+		$url .= '/' . ltrim( $path, '/' );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	} else {
 		$url = trailingslashit( get_home_url( $blog_id, '', $scheme ) );
 		// nginx only allows HTTP/1.0 methods when redirecting from / to /index.php
@@ -356,6 +372,11 @@ function get_rest_url( $blog_id = null, $path = '/', $scheme = 'rest' ) {
 			$url .= 'index.php';
 		}
 
+<<<<<<< HEAD
+=======
+		$path = '/' . ltrim( $path, '/' );
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$url = add_query_arg( 'rest_route', $path, $url );
 	}
 
@@ -1322,6 +1343,7 @@ function rest_sanitize_value_from_schema( $value, $args ) {
 
 	return $value;
 }
+<<<<<<< HEAD
 
 /**
  * Append result of internal request to REST API for purpose of preloading data to be attached to a page.
@@ -1390,3 +1412,5 @@ function rest_preload_api_request( $memo, $path ) {
 
 	return $memo;
 }
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

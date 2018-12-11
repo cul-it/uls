@@ -406,10 +406,15 @@ abstract class WP_Image_Editor {
 
 			$fp = fopen( $filename, 'w' );
 
+<<<<<<< HEAD
 			if ( ! $fp ) {
 				ob_end_clean();
 				return false;
 			}
+=======
+			if ( ! $fp )
+				return false;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 			fwrite( $fp, $contents );
 			fclose( $fp );

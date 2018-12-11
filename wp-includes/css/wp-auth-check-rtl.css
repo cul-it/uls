@@ -64,6 +64,10 @@
 	margin: -10px -10px 0 0;
 	background: url(../images/spinner.gif) no-repeat center;
 	background-size: 20px 20px;
+<<<<<<< HEAD
+=======
+	-webkit-transform: translateZ(0);
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translateZ(0);
 }
 

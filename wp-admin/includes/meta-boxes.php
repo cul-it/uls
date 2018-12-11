@@ -1282,6 +1282,7 @@ function attachment_id3_data_meta_box( $post ) {
 	<?php
 	endforeach;
 }
+<<<<<<< HEAD
 
 /**
  * Registers the default post meta boxes, and runs the `do_meta_boxes` actions.
@@ -1443,3 +1444,5 @@ function register_and_do_post_meta_boxes( $post ) {
 	/** This action is documented in wp-admin/includes/meta-boxes.php */
 	do_action( 'do_meta_boxes', $post_type, 'side', $post );
 }
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

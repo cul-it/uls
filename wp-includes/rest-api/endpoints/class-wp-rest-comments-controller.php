@@ -622,6 +622,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 		}
 
 		$context = current_user_can( 'moderate_comments' ) ? 'edit' : 'view';
+<<<<<<< HEAD
 		$request->set_param( 'context', $context );
 
 		/**
@@ -635,6 +636,10 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 		 *                                  when updating.
 		 */
 		do_action( 'rest_after_insert_comment', $comment, $request, true );
+=======
+
+		$request->set_param( 'context', $context );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		$response = $this->prepare_item_for_response( $comment, $request );
 		$response = rest_ensure_response( $response );
@@ -758,9 +763,12 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 
 		$request->set_param( 'context', 'edit' );
 
+<<<<<<< HEAD
 		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php */
 		do_action( 'rest_after_insert_comment', $comment, $request, false );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$response = $this->prepare_item_for_response( $comment, $request );
 
 		return rest_ensure_response( $response );

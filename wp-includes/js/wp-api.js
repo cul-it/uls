@@ -141,7 +141,11 @@
 	wp.api.utils.getRootUrl = function() {
 		return window.location.origin ?
 			window.location.origin + '/' :
+<<<<<<< HEAD
 			window.location.protocol + '//' + window.location.host + '/';
+=======
+			window.location.protocol + '/' + window.location.host + '/';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	};
 
 	/**

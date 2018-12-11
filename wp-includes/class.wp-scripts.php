@@ -266,12 +266,15 @@ class WP_Scripts extends WP_Dependencies {
 			$after_handle = sprintf( "<script type='text/javascript'>\n%s\n</script>\n", $after_handle );
 		}
 
+<<<<<<< HEAD
 		if ( $before_handle || $after_handle ) {
 			$inline_script_tag = "{$cond_before}{$before_handle}{$after_handle}{$cond_after}";
 		} else {
 			$inline_script_tag = '';
 		}
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if ( $this->do_concat ) {
 			/**
 			 * Filters the script loader source.
@@ -313,6 +316,7 @@ class WP_Scripts extends WP_Dependencies {
 		}
 
 		// A single item may alias a set of items, by having dependencies, but no source.
+<<<<<<< HEAD
 		if ( ! $src ) {
 			if ( $inline_script_tag ) {
 				if ( $this->do_concat ) {
@@ -330,6 +334,12 @@ class WP_Scripts extends WP_Dependencies {
 			$translations = sprintf( "<script type='text/javascript'>\n%s\n</script>\n", $translations );
 		}
 
+=======
+		if ( ! $obj->src ) {
+			return true;
+		}
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if ( ! preg_match( '|^(https?:)?//|', $src ) && ! ( $this->content_url && 0 === strpos( $src, $this->content_url ) ) ) {
 			$src = $this->base_url . $src;
 		}
@@ -343,7 +353,11 @@ class WP_Scripts extends WP_Dependencies {
 		if ( ! $src )
 			return true;
 
+<<<<<<< HEAD
 		$tag = "{$translations}{$cond_before}{$before_handle}<script type='text/javascript' src='$src'></script>\n{$after_handle}{$cond_after}";
+=======
+		$tag = "{$cond_before}{$before_handle}<script type='text/javascript' src='$src'></script>\n{$after_handle}{$cond_after}";
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		/**
 		 * Filters the HTML script tag of an enqueued script.
@@ -483,6 +497,7 @@ class WP_Scripts extends WP_Dependencies {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Sets a translation textdomain.
 	 *
 	 * @since 5.0.0
@@ -545,6 +560,8 @@ class WP_Scripts extends WP_Dependencies {
 	}
 
 	/**
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	 * Determines script dependencies.
      *
 	 * @since 2.1.0

@@ -207,7 +207,11 @@ class Plural_Forms {
 						$span = strspn( $str, self::NUM_CHARS, $pos );
 						$output[] = array( 'value', intval( substr( $str, $pos, $span ) ) );
 						$pos += $span;
+<<<<<<< HEAD
 						break;
+=======
+						continue;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 					}
 
 					throw new Exception( sprintf( 'Unknown symbol "%s"', $next ) );

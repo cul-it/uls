@@ -28,6 +28,11 @@ $load = array_unique( explode( ',', $load ) );
 if ( empty($load) )
 	exit;
 
+<<<<<<< HEAD
+=======
+$compress = ( isset($_GET['c']) && $_GET['c'] );
+$force_gzip = ( $compress && 'gzip' == $_GET['c'] );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 $rtl = ( isset($_GET['dir']) && 'rtl' == $_GET['dir'] );
 $expires_offset = 31536000; // 1 year
 $out = '';
@@ -78,5 +83,19 @@ header('Content-Type: text/css; charset=UTF-8');
 header('Expires: ' . gmdate( "D, d M Y H:i:s", time() + $expires_offset ) . ' GMT');
 header("Cache-Control: public, max-age=$expires_offset");
 
+<<<<<<< HEAD
+=======
+if ( $compress && ! ini_get('zlib.output_compression') && 'ob_gzhandler' != ini_get('output_handler') && isset($_SERVER['HTTP_ACCEPT_ENCODING']) ) {
+	header('Vary: Accept-Encoding'); // Handle proxies
+	if ( false !== stripos($_SERVER['HTTP_ACCEPT_ENCODING'], 'deflate') && function_exists('gzdeflate') && ! $force_gzip ) {
+		header('Content-Encoding: deflate');
+		$out = gzdeflate( $out, 3 );
+	} elseif ( false !== stripos($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') && function_exists('gzencode') ) {
+		header('Content-Encoding: gzip');
+		$out = gzencode( $out, 3 );
+	}
+}
+
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 echo $out;
 exit;

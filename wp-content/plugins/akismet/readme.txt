@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 === Akismet Anti-Spam ===
 Contributors: matt, ryan, andy, mdawaffe, tellyworth, josephscott, lessbloat, eoigal, cfinke, automattic, jgs, procifer, stephdau
 Tags: akismet, comments, spam, antispam, anti-spam, anti spam, comment moderation, comment spam, contact form spam, spam comments
@@ -11,6 +12,21 @@ Akismet checks your comments and contact form submissions against our global dat
 == Description ==
 
 Akismet checks your comments and contact form submissions against our global database of spam to prevent your site from publishing malicious content. You can review the comment spam it catches on your blog's "Comments" admin screen.
+=======
+=== Akismet ===
+Contributors: matt, ryan, andy, mdawaffe, tellyworth, josephscott, lessbloat, eoigal, cfinke, automattic, jgs
+Tags: akismet, comments, spam, antispam, anti-spam, anti spam, comment moderation, comment spam, contact form spam, spam comments
+Requires at least: 3.2
+Tested up to: 4.3.1
+Stable tag: 3.1.5
+License: GPLv2 or later
+
+Akismet checks your comments against the Akismet Web service to see if they look like spam or not.
+
+== Description ==
+
+Akismet checks your comments against the Akismet Web service to see if they look like spam or not and lets you review the spam it catches under your blog's "Comments" admin screen.
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 Major features in Akismet include:
 
@@ -20,16 +36,25 @@ Major features in Akismet include:
 * Moderators can see the number of approved comments for each user.
 * A discard feature that outright blocks the worst spam, saving you disk space and speeding up your site.
 
+<<<<<<< HEAD
 PS: You'll need an [Akismet.com API key](https://akismet.com/get/) to use it.  Keys are free for personal blogs; paid subscriptions are available for businesses and commercial sites.
 
 == Installation ==
 
 Upload the Akismet plugin to your blog, Activate it, then enter your [Akismet.com API key](https://akismet.com/get/).
+=======
+PS: You'll need an [Akismet.com API key](http://akismet.com/get/) to use it.  Keys are free for personal blogs; paid subscriptions are available for businesses and commercial sites.
+
+== Installation ==
+
+Upload the Akismet plugin to your blog, Activate it, then enter your [Akismet.com API key](http://akismet.com/get/).
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 1, 2, 3: You're done!
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 4.1 =
 *Release Date - 12 November 2018*
 
@@ -186,6 +211,8 @@ Upload the Akismet plugin to your blog, Activate it, then enter your [Akismet.co
 * Improve the notices shown after activating Akismet.
 * Update some strings to allow for the proper plural forms in all languages.
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 = 3.1.5 =
 *Release Date - 13 October 2015*
 

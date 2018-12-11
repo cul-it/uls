@@ -230,6 +230,7 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 	 * @param object $theme {
 	 *     An object that contains theme data returned by the WordPress.org API.
 	 *
+<<<<<<< HEAD
 	 *     @type string $name           Theme name, e.g. 'Twenty Nineteen'.
 	 *     @type string $slug           Theme slug, e.g. 'twentynineteen'.
 	 *     @type string $version        Theme version, e.g. '1.1'.
@@ -239,6 +240,17 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 	 *     @type float  $rating         Rating score.
 	 *     @type int    $num_ratings    The number of ratings.
 	 *     @type string $homepage       Theme homepage, e.g. 'https://wordpress.org/themes/twentynineteen/'.
+=======
+	 *     @type string $name           Theme name, e.g. 'Twenty Seventeen'.
+	 *     @type string $slug           Theme slug, e.g. 'twentyseventeen'.
+	 *     @type string $version        Theme version, e.g. '1.1'.
+	 *     @type string $author         Theme author username, e.g. 'melchoyce'.
+	 *     @type string $preview_url    Preview URL, e.g. 'http://2017.wordpress.net/'.
+	 *     @type string $screenshot_url Screenshot URL, e.g. 'https://wordpress.org/themes/twentyseventeen/'.
+	 *     @type float  $rating         Rating score.
+	 *     @type int    $num_ratings    The number of ratings.
+	 *     @type string $homepage       Theme homepage, e.g. 'https://wordpress.org/themes/twentyseventeen/'.
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	 *     @type string $description    Theme description.
 	 *     @type string $download_link  Theme ZIP download URL.
 	 * }

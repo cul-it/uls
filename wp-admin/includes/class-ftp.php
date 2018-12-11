@@ -524,7 +524,11 @@ class ftp_base {
 		return $exists;
 	}
 
+<<<<<<< HEAD
 	function fget($fp, $remotefile, $rest=0) {
+=======
+	function fget($fp, $remotefile,$rest=0) {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if($this->_can_restore and $rest!=0) fseek($fp, $rest);
 		$pi=pathinfo($remotefile);
 		if($this->_type==FTP_ASCII or ($this->_type==FTP_AUTOASCII and in_array(strtoupper($pi["extension"]), $this->AutoAsciiExt))) $mode=FTP_ASCII;
@@ -583,7 +587,11 @@ class ftp_base {
 		return $out;
 	}
 
+<<<<<<< HEAD
 	function fput($remotefile, $fp, $rest=0) {
+=======
+	function fput($remotefile, $fp) {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if($this->_can_restore and $rest!=0) fseek($fp, $rest);
 		$pi=pathinfo($remotefile);
 		if($this->_type==FTP_ASCII or ($this->_type==FTP_AUTOASCII and in_array(strtoupper($pi["extension"]), $this->AutoAsciiExt))) $mode=FTP_ASCII;
@@ -775,7 +783,11 @@ class ftp_base {
 			$pattern=substr($pattern,$lastpos);
 		} else $path=getcwd();
 		if(is_array($handle) and !empty($handle)) {
+<<<<<<< HEAD
 			foreach($handle as $dir) {
+=======
+			while($dir=each($handle)) {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				if($this->glob_pattern_match($pattern,$dir))
 				$output[]=$dir;
 			}

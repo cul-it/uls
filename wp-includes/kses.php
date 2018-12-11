@@ -66,9 +66,12 @@ if ( ! CUSTOM_TAGS ) {
 			'rev' => true,
 			'name' => true,
 			'target' => true,
+<<<<<<< HEAD
 			'download' => array(
 				'valueless' => 'y',
 			),
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		),
 		'abbr' => array(),
 		'acronym' => array(),
@@ -857,7 +860,10 @@ function wp_kses_attr($element, $attr, $allowed_html, $allowed_protocols) {
  * Determine whether an attribute is allowed.
  *
  * @since 4.2.3
+<<<<<<< HEAD
  * @since 5.0.0 Add support for `data-*` wildcard attributes.
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @param string $name The attribute name. Returns empty string when not allowed.
  * @param string $value The attribute value. Returns a filtered value.
@@ -868,6 +874,7 @@ function wp_kses_attr($element, $attr, $allowed_html, $allowed_protocols) {
  * @return bool Is the attribute allowed?
  */
 function wp_kses_attr_check( &$name, &$value, &$whole, $vless, $element, $allowed_html ) {
+<<<<<<< HEAD
 	$allowed_attr = $allowed_html[ strtolower( $element ) ];
 
 	$name_low = strtolower( $name );
@@ -893,6 +900,14 @@ function wp_kses_attr_check( &$name, &$value, &$whole, $vless, $element, $allowe
 			$name = $value = $whole = '';
 			return false;
 		}
+=======
+	$allowed_attr = $allowed_html[strtolower( $element )];
+
+	$name_low = strtolower( $name );
+	if ( ! isset( $allowed_attr[$name_low] ) || '' == $allowed_attr[$name_low] ) {
+		$name = $value = $whole = '';
+		return false;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	}
 
 	if ( 'style' == $name_low ) {
@@ -907,7 +922,11 @@ function wp_kses_attr_check( &$name, &$value, &$whole, $vless, $element, $allowe
 		$value = $new_value;
 	}
 
+<<<<<<< HEAD
 	if ( is_array( $allowed_attr[ $name_low ] ) ) {
+=======
+	if ( is_array( $allowed_attr[$name_low] ) ) {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		// there are some checks
 		foreach ( $allowed_attr[$name_low] as $currkey => $currval ) {
 			if ( ! wp_kses_check_attr_val( $value, $vless, $currkey, $currval ) ) {
@@ -1710,6 +1729,7 @@ function kses_init() {
  * @return string            Filtered string of CSS rules.
  */
 function safecss_filter_attr( $css, $deprecated = '' ) {
+<<<<<<< HEAD
 	if ( ! empty( $deprecated ) ) {
 		_deprecated_argument( __FUNCTION__, '2.8.1' ); // Never implemented
 	}
@@ -1718,6 +1738,16 @@ function safecss_filter_attr( $css, $deprecated = '' ) {
 	$css = str_replace( array( "\n", "\r", "\t" ), '', $css );
 
 	$allowed_protocols = wp_allowed_protocols();
+=======
+	if ( !empty( $deprecated ) )
+		_deprecated_argument( __FUNCTION__, '2.8.1' ); // Never implemented
+
+	$css = wp_kses_no_null($css);
+	$css = str_replace(array("\n","\r","\t"), '', $css);
+
+	if ( preg_match( '%[\\\\(&=}]|/\*%', $css ) ) // remove any inline css containing \ ( & } = or comments
+		return '';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	$css_array = explode( ';', trim( $css ) );
 
@@ -1727,14 +1757,20 @@ function safecss_filter_attr( $css, $deprecated = '' ) {
 	 * @since 2.8.1
 	 * @since 4.4.0 Added support for `min-height`, `max-height`, `min-width`, and `max-width`.
 	 * @since 4.6.0 Added support for `list-style-type`.
+<<<<<<< HEAD
 	 * @since 5.0.0 Added support for `background-image`.
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	 *
 	 * @param array $attr List of allowed CSS attributes.
 	 */
 	$allowed_attr = apply_filters( 'safe_style_css', array(
 		'background',
 		'background-color',
+<<<<<<< HEAD
 		'background-image',
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		'border',
 		'border-width',
@@ -1803,6 +1839,7 @@ function safecss_filter_attr( $css, $deprecated = '' ) {
 		'list-style-type',
 	) );
 
+<<<<<<< HEAD
 
 	/*
 	 * CSS attributes that accept URL data types.
@@ -1880,6 +1917,27 @@ function safecss_filter_attr( $css, $deprecated = '' ) {
 				$css .= ';';
 			}
 
+=======
+	if ( empty($allowed_attr) )
+		return $css;
+
+	$css = '';
+	foreach ( $css_array as $css_item ) {
+		if ( $css_item == '' )
+			continue;
+		$css_item = trim( $css_item );
+		$found = false;
+		if ( strpos( $css_item, ':' ) === false ) {
+			$found = true;
+		} else {
+			$parts = explode( ':', $css_item );
+			if ( in_array( trim( $parts[0] ), $allowed_attr ) )
+				$found = true;
+		}
+		if ( $found ) {
+			if( $css != '' )
+				$css .= ';';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			$css .= $css_item;
 		}
 	}
@@ -1891,7 +1949,10 @@ function safecss_filter_attr( $css, $deprecated = '' ) {
  * Helper function to add global attributes to a tag in the allowed html list.
  *
  * @since 3.5.0
+<<<<<<< HEAD
  * @since 5.0.0 Add support for `data-*` wildcard attributes.
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * @access private
  *
  * @param array $value An array of attributes.
@@ -1899,17 +1960,23 @@ function safecss_filter_attr( $css, $deprecated = '' ) {
  */
 function _wp_add_global_attributes( $value ) {
 	$global_attributes = array(
+<<<<<<< HEAD
 		'aria-describedby' => true,
 		'aria-details' => true,
 		'aria-label' => true,
 		'aria-labelledby' => true,
 		'aria-hidden' => true,
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		'class' => true,
 		'id' => true,
 		'style' => true,
 		'title' => true,
 		'role' => true,
+<<<<<<< HEAD
 		'data-*' => true,
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	);
 
 	if ( true === $value )

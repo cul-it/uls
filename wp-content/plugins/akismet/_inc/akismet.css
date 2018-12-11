@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .wp-admin.jetpack_page_akismet-key-config, .wp-admin.settings_page_akismet-key-config {
 	background-color:#f3f6f8;
 }
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 #submitted-on {
     position: relative;
@@ -16,12 +19,20 @@
 	text-decoration: inherit;
 	color: inherit;
 }
+<<<<<<< HEAD
 #the-comment-list .akismet_remove_url {
+=======
+#the-comment-list .remove_url {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
     margin-left: 3px;
     color: #999;
     padding: 2px 3px 2px 0;
 }
+<<<<<<< HEAD
 #the-comment-list .akismet_remove_url:hover {
+=======
+#the-comment-list .remove_url:hover {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
     color: #A7301F;
     font-weight: bold;
     padding: 2px 2px 2px 0;
@@ -76,6 +87,7 @@ table.comments td.comment p a:after {
     height: 338px;
     width: 450px;
 }
+<<<<<<< HEAD
 .checkforspam {
     display: inline-block !important;
 }
@@ -87,11 +99,25 @@ table.comments td.comment p a:after {
 	display: inline;
 }
 
+=======
+h2.ak-header {
+    padding: 30px;
+    background: #649316 url('img/logo-full-2x.png') no-repeat 20px center;
+    background-size: 185px 33px;
+    height: 33px;
+    text-indent: -9999em;
+    margin-right: 10px;
+}
+.checkforspam {
+    display: inline-block !important;
+}
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 .checkforspam-spinner {
     display: inline-block;
     margin-top: 7px;
 }
 
+<<<<<<< HEAD
 .akismet-right {
 	float: right;
 }
@@ -107,6 +133,122 @@ table.comments td.comment p a:after {
 	margin-top: .5rem;
 }
 .akismet-alert {
+=======
+.config-wrap {
+	margin-top: 2em;
+    max-width: 700px;
+}
+
+.activate-option {
+    background: #e3e3e3;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 20px;
+}
+.activate-option.clicked {
+	background: #649316;
+	color: #fff;
+}
+.activate-option.clicked:hover {
+	background: #68802E;
+	color: #fff;
+}
+
+.activate-option .button.button-secondary {
+	margin: 15px 0;
+}
+
+.activate-option p {
+	margin: 10px 0 10px;
+}
+
+.activate-highlight {
+	background: #fff;
+	padding: 30px;
+	margin-right: 10px;
+}
+
+.activate-highlight.secondary {
+	background: #ddd;
+	padding: 20px 30px;
+}
+
+.activate-highlight h3 {
+	margin: 0 0 0.3em;
+}
+.activate-highlight p {
+	color: #777;
+}
+.activate-highlight .button-primary {
+	margin-top: 15px;
+}
+
+#akismet-enter-api-key .regular-text {
+	width: 18em;
+	margin-top: 15px;
+}
+
+.right {
+	float: right;
+}
+
+.alert-text {
+	color: #dd3d36;
+}
+.success {
+	color: #649316;
+}
+.option-description {
+    float: left;
+    font-size: 16px;
+}
+.option-description span {
+    color: #666;
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.option-action {
+    float: right;
+}
+.key-config-link {
+    font-size: 14px;
+    margin-left: 20px;
+}
+.jetpack-account {
+    float: left;
+    font-size: 18px;
+    margin-right: 40px;
+}
+.small-heading {
+    color: #777;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.inline-label {
+    background: #ddd;
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 3px 8px;
+    text-transform: uppercase;
+}
+.inline-label.alert {
+    background: #e54747;
+    color: #fff;
+}
+.jetpack-account .inline-label {
+    margin-left: 5px;
+}
+.option-action .manual-key {
+    margin-top: 7px;
+}
+
+.alert {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	border: 1px solid #e5e5e5;
 	padding: 0.4em 1em 1.4em 1em;
     border-radius: 3px;
@@ -115,11 +257,16 @@ table.comments td.comment p a:after {
     border-style: solid;
 }
 
+<<<<<<< HEAD
 .akismet-alert h3.akismet-key-status {
+=======
+.alert h3.key-status {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	color: #fff;
 	margin: 1em 0 0.5em 0;
 }
 
+<<<<<<< HEAD
 .akismet-alert.akismet-critical {
 	background-color: #993300;
 }
@@ -133,12 +280,28 @@ table.comments td.comment p a:after {
 }
 
 .akismet-alert p.akismet-description {
+=======
+.alert.critical {
+	background-color: #993300;
+}
+
+.alert.active {
+	background-color: #649316;
+}
+
+.alert p.key-status {
+	font-size: 24px;
+}
+
+.alert p.description {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	color:#fff;
 	font-size: 14px;
     margin: 0 0;
 	font-style: normal;
 }
 
+<<<<<<< HEAD
 .akismet-alert p.akismet-description a,
 .akismet-alert p.akismet-description a,
 .akismet-alert p.akismet-description a,
@@ -154,6 +317,27 @@ table.comments td.comment p a:after {
 }
 
 .akismet-new-snapshot h3 {
+=======
+.alert p.description a,
+.alert p.description a,
+.alert p.description a,
+.alert p.description a {
+	color: #fff;
+}
+
+.new-snapshot {
+	margin-top: 1em;
+	padding: 1em;
+	text-align: center;
+}
+
+.new-snapshot.stats {
+	background: #fff;
+	border: 1px solid #e5e5e5;
+}
+
+.new-snapshot h3 {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
     background: #f5f5f5;
 	color: #888;
 	font-size: 11px;
@@ -166,7 +350,11 @@ table.comments td.comment p a:after {
 	width: 100%;
 }
 
+<<<<<<< HEAD
 .akismet-new-snapshot ul li {
+=======
+.new-snapshot ul li {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
     color: #999;
 	float: left;
     font-size: 11px;
@@ -179,12 +367,25 @@ table.comments td.comment p a:after {
 	-ms-box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 .akismet-new-snapshot ul li:first-child,
 .akismet-new-snapshot ul li:nth-child(2) {
 	border-right:1px dotted #ccc;
 }
 
 .akismet-new-snapshot ul li span {
+=======
+.new-snapshot.stats ul li:first-child,
+.new-snapshot.stats ul li:nth-child(2) {
+	border-right:1px dotted #ccc;
+}
+
+.new-snapshot.account ul li:nth-child(2) {
+	border-right: none;
+}
+
+.new-snapshot ul li span {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
     color: #52accc;
 	display: block;
 	font-size: 32px;
@@ -192,6 +393,7 @@ table.comments td.comment p a:after {
 	line-height: 1.5em;
 }
 
+<<<<<<< HEAD
 .akismet-settings th:first-child {
 	vertical-align: top;
 	padding-top: 15px;
@@ -588,3 +790,83 @@ table.comments td.comment p a:after {
 .akismet-section-header__actions {
 	line-height: 1.75rem;
 }
+=======
+.new-snapshot.stats {
+}
+
+.new-snapshot.account,
+.new-snapshot.settings {
+	float: left;
+	padding: 0;
+	text-align: left;
+	width: 50%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+.account-container {
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	margin-right: 0.5em;
+}
+
+.settings-container {
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	margin-left: 0.5em;
+}
+
+.new-snapshot.account ul li {
+	width:100%
+}
+
+.new-snapshot.account ul li span {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+.new-snapshot.settings ul li {
+	border: none;
+	display: block;
+	width:100%
+}
+
+.new-snapshot.settings ul li span {
+	display: block;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.new-snapshot.settings p.submit {
+	margin: 0;
+	text-align: center;
+}
+
+.akismet-settings th:first-child {
+	vertical-align: top;
+	padding-top: 15px;
+}
+
+.akismet-settings th.akismet-api-key {
+	vertical-align: middle;
+	padding-top: 0;
+}
+
+.akismet-settings input[type=text] {
+	width: 75%;
+}
+
+.akismet-settings span.note{
+	float: left;
+	padding-left: 23px;
+	font-size: 75%;
+	margin-top: -10px;
+}
+
+.clearfix {
+	clear:both;
+}
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

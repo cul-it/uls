@@ -555,6 +555,7 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 
 		$request->set_param( 'context', 'edit' );
 
+<<<<<<< HEAD
 		/**
 		 * Fires after a user is completely created or updated via the REST API.
 		 *
@@ -566,6 +567,8 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		 */
 		do_action( 'rest_after_insert_user', $user, $request, true );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$response = $this->prepare_item_for_response( $user, $request );
 		$response = rest_ensure_response( $response );
 
@@ -689,9 +692,12 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 
 		$request->set_param( 'context', 'edit' );
 
+<<<<<<< HEAD
 		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php */
 		do_action( 'rest_after_insert_user', $user, $request, false );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$response = $this->prepare_item_for_response( $user, $request );
 		$response = rest_ensure_response( $response );
 

@@ -105,6 +105,7 @@ function get_user_locale( $user_id = 0 ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determine the current locale desired for the request.
  *
  * @since 5.0.0
@@ -153,6 +154,8 @@ function determine_locale() {
 }
 
 /**
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * Retrieve the translation of $text.
  *
  * If there is no translation, or the text domain isn't loaded, the original text is returned.
@@ -711,7 +714,11 @@ function unload_textdomain( $domain ) {
  */
 function load_default_textdomain( $locale = null ) {
 	if ( null === $locale ) {
+<<<<<<< HEAD
 		$locale = determine_locale();
+=======
+		$locale = is_admin() ? get_user_locale() : get_locale();
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	}
 
 	// Unload previously loaded strings so we can switch translations.
@@ -759,7 +766,11 @@ function load_plugin_textdomain( $domain, $deprecated = false, $plugin_rel_path 
 	 * @param string $locale The plugin's current locale.
 	 * @param string $domain Text domain. Unique identifier for retrieving translated strings.
 	 */
+<<<<<<< HEAD
 	$locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
+=======
+	$locale = apply_filters( 'plugin_locale', is_admin() ? get_user_locale() : get_locale(), $domain );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	$mofile = $domain . '-' . $locale . '.mo';
 
@@ -793,7 +804,11 @@ function load_plugin_textdomain( $domain, $deprecated = false, $plugin_rel_path 
  */
 function load_muplugin_textdomain( $domain, $mu_plugin_rel_path = '' ) {
 	/** This filter is documented in wp-includes/l10n.php */
+<<<<<<< HEAD
 	$locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
+=======
+	$locale = apply_filters( 'plugin_locale', is_admin() ? get_user_locale() : get_locale(), $domain );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	$mofile = $domain . '-' . $locale . '.mo';
 
@@ -832,7 +847,11 @@ function load_theme_textdomain( $domain, $path = false ) {
 	 * @param string $locale The theme's current locale.
 	 * @param string $domain Text domain. Unique identifier for retrieving translated strings.
 	 */
+<<<<<<< HEAD
 	$locale = apply_filters( 'theme_locale', determine_locale(), $domain );
+=======
+	$locale = apply_filters( 'theme_locale', is_admin() ? get_user_locale() : get_locale(), $domain );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	$mofile = $domain . '-' . $locale . '.mo';
 
@@ -870,6 +889,7 @@ function load_child_theme_textdomain( $domain, $path = false ) {
 }
 
 /**
+<<<<<<< HEAD
  * Load the script translated strings.
  *
  * @see WP_Scripts::set_translations()
@@ -955,6 +975,8 @@ function load_script_textdomain( $handle, $domain, $path = null ) {
 }
 
 /**
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * Loads plugin and theme textdomains just-in-time.
  *
  * When a textdomain is encountered for the first time, we try to load
@@ -1048,7 +1070,11 @@ function _get_path_to_translation_from_lang_dir( $domain ) {
 		}
 	}
 
+<<<<<<< HEAD
 	$locale = determine_locale();
+=======
+	$locale = is_admin() ? get_user_locale() : get_locale();
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	$mofile = "{$domain}-{$locale}.mo";
 
 	$path = WP_LANG_DIR . '/plugins/' . $mofile;
@@ -1343,7 +1369,11 @@ function wp_dropdown_languages( $args = array() ) {
 		selected( '', $parsed_args['selected'], false )
 	);
 
+<<<<<<< HEAD
 	// List installed languages.
+=======
+	// List installed languages. 
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	foreach ( $languages as $language ) {
 		$structure[] = sprintf(
 			'<option value="%s" lang="%s"%s data-installed="1">%s</option>',
@@ -1385,11 +1415,15 @@ function wp_dropdown_languages( $args = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the current locale is right-to-left (RTL).
  * 
  * For more information on this and similar theme functions, check out
  * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
  * Conditional Tags} article in the Theme Developer Handbook.
+=======
+ * Checks if current locale is RTL.
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 3.0.0
  *

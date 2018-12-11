@@ -35,6 +35,7 @@ require( ABSPATH . WPINC . '/class.wp-styles.php' );
 require( ABSPATH . WPINC . '/functions.wp-styles.php' );
 
 /**
+<<<<<<< HEAD
  * Registers TinyMCE scripts.
  *
  * @since 5.0.0
@@ -779,6 +780,8 @@ function wp_scripts_get_suffix( $type = '' ) {
 }
 
 /**
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * Register all WordPress scripts.
  *
  * Localizes some of them.
@@ -790,8 +793,18 @@ function wp_scripts_get_suffix( $type = '' ) {
  * @param WP_Scripts $scripts WP_Scripts object.
  */
 function wp_default_scripts( &$scripts ) {
+<<<<<<< HEAD
 	$suffix = wp_scripts_get_suffix();
 	$dev_suffix = wp_scripts_get_suffix( 'dev' );
+=======
+	include( ABSPATH . WPINC . '/version.php' ); // include an unmodified $wp_version
+
+	$develop_src = false !== strpos( $wp_version, '-src' );
+
+	if ( ! defined( 'SCRIPT_DEBUG' ) ) {
+		define( 'SCRIPT_DEBUG', $develop_src );
+	}
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	if ( ! $guessurl = site_url() ) {
 		$guessed_url = true;
@@ -803,6 +816,11 @@ function wp_default_scripts( &$scripts ) {
 	$scripts->default_version = get_bloginfo( 'version' );
 	$scripts->default_dirs = array('/wp-admin/js/', '/wp-includes/js/');
 
+<<<<<<< HEAD
+=======
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+	$dev_suffix = $develop_src ? '' : '.min';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	$scripts->add( 'utils', "/wp-includes/js/utils$suffix.js" );
 	did_action( 'init' ) && $scripts->localize( 'utils', 'userSettings', array(
@@ -885,7 +903,11 @@ function wp_default_scripts( &$scripts ) {
 
 	$scripts->add( 'autosave', "/wp-includes/js/autosave$suffix.js", array('heartbeat'), false, 1 );
 
+<<<<<<< HEAD
 	$scripts->add( 'heartbeat', "/wp-includes/js/heartbeat$suffix.js", array( 'jquery', 'wp-hooks' ), false, 1 );
+=======
+	$scripts->add( 'heartbeat', "/wp-includes/js/heartbeat$suffix.js", array('jquery'), false, 1 );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	did_action( 'init' ) && $scripts->localize( 'heartbeat', 'heartbeatSettings',
 		/**
 		 * Filters the Heartbeat settings.
@@ -1094,7 +1116,11 @@ function wp_default_scripts( &$scripts ) {
 	$scripts->add( 'mediaelement-migrate', "/wp-includes/js/mediaelement/mediaelement-migrate$suffix.js", array(), false, 1);
 
 	did_action( 'init' ) && $scripts->add_inline_script( 'mediaelement-core', sprintf( 'var mejsL10n = %s;', wp_json_encode( array(
+<<<<<<< HEAD
 		'language' => strtolower( strtok( determine_locale(), '_-' ) ),
+=======
+		'language' => strtolower( strtok( is_admin() ? get_user_locale() : get_locale(), '_-' ) ),
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		'strings'  => array(
 			'mejs.install-flash'       => __( 'You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https://get.adobe.com/flashplayer/' ),
 			'mejs.fullscreen-off'      => __( 'Turn off Fullscreen' ),
@@ -1783,6 +1809,7 @@ function wp_default_styles( &$styles ) {
 			$styles->add_data( $rtl_style, 'suffix', $suffix );
 		}
 	}
+<<<<<<< HEAD
 
 	// Packages styles
 	$fonts_url = '';
@@ -1830,6 +1857,8 @@ function wp_default_styles( &$styles ) {
 		$styles->add( $handle, $path, $dependencies );
 		$styles->add_data( $handle, 'rtl', 'replace' );
 	}
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 }
 
 /**
@@ -2370,6 +2399,7 @@ function script_concat_settings() {
 			$compress_css = false;
 	}
 }
+<<<<<<< HEAD
 
 /**
  * Handles the enqueueing of block scripts and styles that are common to both
@@ -2441,3 +2471,5 @@ function wp_enqueue_registered_block_scripts_and_styles() {
 		}
 	}
 }
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

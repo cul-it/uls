@@ -418,7 +418,11 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 			if ( $term_id = $term->get_error_data( 'term_exists' ) ) {
 				$existing_term = get_term( $term_id, $this->taxonomy );
 				$term->add_data( $existing_term->term_id, 'term_exists' );
+<<<<<<< HEAD
 				$term->add_data( array( 'status' => 400, 'term_id' => $term_id ) );
+=======
+				$term->add_data( array( 'status' => 409, 'term_id' => $term_id ) );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			}
 
 			return $term;
@@ -441,7 +445,11 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 
 		$schema = $this->get_item_schema();
 		if ( ! empty( $schema['properties']['meta'] ) && isset( $request['meta'] ) ) {
+<<<<<<< HEAD
 			$meta_update = $this->meta->update_value( $request['meta'], $term->term_id );
+=======
+			$meta_update = $this->meta->update_value( $request['meta'], (int) $request['id'] );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 			if ( is_wp_error( $meta_update ) ) {
 				return $meta_update;
@@ -456,6 +464,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 
 		$request->set_param( 'context', 'view' );
 
+<<<<<<< HEAD
 		/**
 		 * Fires after a single term is completely created or updated via the REST API.
 		 *
@@ -469,6 +478,8 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		 */
 		do_action( "rest_after_insert_{$this->taxonomy}", $term, $request, true );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$response = $this->prepare_item_for_response( $term, $request );
 		$response = rest_ensure_response( $response );
 
@@ -558,9 +569,12 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 
 		$request->set_param( 'context', 'view' );
 
+<<<<<<< HEAD
 		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
 		do_action( "rest_after_insert_{$this->taxonomy}", $term, $request, false );
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$response = $this->prepare_item_for_response( $term, $request );
 
 		return rest_ensure_response( $response );

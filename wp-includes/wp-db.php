@@ -2456,10 +2456,15 @@ class wpdb {
 
 		$new_array = array();
 		// Extract the column values
+<<<<<<< HEAD
 		if ( $this->last_result ) {
 			for ( $i = 0, $j = count( $this->last_result ); $i < $j; $i++ ) {
 				$new_array[ $i ] = $this->get_var( null, $x, $i );
 			}
+=======
+		for ( $i = 0, $j = count( $this->last_result ); $i < $j; $i++ ) {
+			$new_array[$i] = $this->get_var( null, $x, $i );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		}
 		return $new_array;
 	}
@@ -2499,6 +2504,7 @@ class wpdb {
 		} elseif ( $output == OBJECT_K ) {
 			// Return an array of row objects with keys from column 1
 			// (Duplicates are discarded)
+<<<<<<< HEAD
 			if ( $this->last_result ) {
 				foreach ( $this->last_result as $row ) {
 					$var_by_ref = get_object_vars( $row );
@@ -2507,6 +2513,13 @@ class wpdb {
 						$new_array[ $key ] = $row;
 					}
 				}
+=======
+			foreach ( $this->last_result as $row ) {
+				$var_by_ref = get_object_vars( $row );
+				$key = array_shift( $var_by_ref );
+				if ( ! isset( $new_array[ $key ] ) )
+					$new_array[ $key ] = $row;
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			}
 			return $new_array;
 		} elseif ( $output == ARRAY_A || $output == ARRAY_N ) {

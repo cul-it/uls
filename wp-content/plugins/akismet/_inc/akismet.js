@@ -3,8 +3,22 @@ jQuery( function ( $ ) {
 	var mshotSecondTryTimer = null
 	var mshotThirdTryTimer = null
 	
+<<<<<<< HEAD
 	var mshotEnabledLinkSelector = 'a[id^="author_comment_url"], tr.pingback td.column-author a:first-of-type, td.comment p a';
 	
+=======
+	$( 'a.activate-option' ).click( function(){
+		var link = $( this );
+		if ( link.hasClass( 'clicked' ) ) {
+			link.removeClass( 'clicked' );
+		}
+		else {
+			link.addClass( 'clicked' );
+		}
+		$( '.toggle-have-key' ).slideToggle( 'slow', function() {});
+		return false;
+	});
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	$('.akismet-status').each(function () {
 		var thisId = $(this).attr('commentid');
 		$(this).prependTo('#comment-' + thisId + ' .column-comment');
@@ -13,10 +27,30 @@ jQuery( function ( $ ) {
 		var thisId = $(this).attr('commentid');
 		$(this).insertAfter('#comment-' + thisId + ' .author strong:first').show();
 	});
+<<<<<<< HEAD
 
 	akismet_enable_comment_author_url_removal();
 	
 	$( '#the-comment-list' ).on( 'click', '.akismet_remove_url', function () {
+=======
+	$('#the-comment-list').find('tr.comment, tr[id ^= "comment-"]').find('.column-author a[title]').each(function () {
+		// Comment author URLs are the only URL with a title attribute in the author column.
+		var thisTitle = $(this).attr('title');
+
+		var thisCommentId = $(this).parents('tr:first').attr('id').split("-");
+
+		$(this).attr("id", "author_comment_url_"+ thisCommentId[1]);
+
+		if (thisTitle) {
+			$(this).after(
+				$( '<a href="#" class="remove_url">x</a>' )
+					.attr( 'commentid', thisCommentId[1] )
+					.attr( 'title', WPAkismet.strings['Remove this URL'] )
+			);
+		}
+	});
+	$('.remove_url').live('click', function () {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		var thisId = $(this).attr('commentid');
 		var data = {
 			action: 'comment_author_deurl',
@@ -53,7 +87,12 @@ jQuery( function ( $ ) {
 		});
 
 		return false;
+<<<<<<< HEAD
 	}).on( 'click', '.akismet_undo_link_removal', function () {
+=======
+	});
+	$('.akismet_undo_link_removal').live('click', function () {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		var thisId = $(this).attr('cid');
 		var thisUrl = $(this).attr('href');
 		var data = {
@@ -84,7 +123,11 @@ jQuery( function ( $ ) {
 	});
 
 	// Show a preview image of the hovered URL. Applies to author URLs and URLs inside the comments.
+<<<<<<< HEAD
 	$( '#the-comment-list' ).on( 'mouseover', mshotEnabledLinkSelector, function () {
+=======
+	$( 'a[id^="author_comment_url"], tr.pingback td.column-author a:first-of-type, table.comments td.comment p a' ).mouseover( function () {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		clearTimeout( mshotRemovalTimer );
 
 		if ( $( '.akismet-mshot' ).length > 0 ) {
@@ -101,9 +144,15 @@ jQuery( function ( $ ) {
 		clearTimeout( mshotSecondTryTimer );
 		clearTimeout( mshotThirdTryTimer );
 
+<<<<<<< HEAD
 		var thisHref = $( this ).attr( 'href' );
 
 		var mShot = $( '<div class="akismet-mshot mshot-container"><div class="mshot-arrow"></div><img src="' + akismet_mshot_url( thisHref ) + '" width="450" height="338" class="mshot-image" /></div>' );
+=======
+		var thisHref = $.URLEncode( $( this ).attr( 'href' ) );
+
+		var mShot = $( '<div class="akismet-mshot mshot-container"><div class="mshot-arrow"></div><img src="//s0.wordpress.com/mshots/v1/' + thisHref + '?w=450" width="450" height="338" class="mshot-image" /></div>' );
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		mShot.data( 'link', this );
 
 		var offset = $( this ).offset();
@@ -113,6 +162,7 @@ jQuery( function ( $ ) {
 			top: offset.top + ( $( this ).height() / 2 ) - 101 // 101 = top offset of the arrow plus the top border thickness
 		} );
 
+<<<<<<< HEAD
 		// These retries appear to be superfluous if .mshot-image has already loaded, but it's because mShots
 		// can return a "Generating thumbnail..." image if it doesn't have a thumbnail ready, so we need
 		// to retry to see if we can get the newly generated thumbnail.
@@ -126,12 +176,25 @@ jQuery( function ( $ ) {
 
 		$( 'body' ).append( mShot );
 	} ).on( 'mouseout', 'a[id^="author_comment_url"], tr.pingback td.column-author a:first-of-type, td.comment p a', function () {
+=======
+		mshotSecondTryTimer = setTimeout( function () {
+			mShot.find( '.mshot-image' ).attr( 'src', '//s0.wordpress.com/mshots/v1/'+thisHref+'?w=450&r=2' );
+		}, 6000 );
+
+		mshotThirdTryTimer = setTimeout( function () {
+			mShot.find( '.mshot-image' ).attr( 'src', '//s0.wordpress.com/mshots/v1/'+thisHref+'?w=450&r=3' );
+		}, 12000 );
+
+		$( 'body' ).append( mShot );
+	} ).mouseout( function () {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		mshotRemovalTimer = setTimeout( function () {
 			clearTimeout( mshotSecondTryTimer );
 			clearTimeout( mshotThirdTryTimer );
 
 			$( '.akismet-mshot' ).remove();
 		}, 200 );
+<<<<<<< HEAD
 	} ).on( 'mouseover', 'tr', function () {
 		// When the mouse hovers over a comment row, begin preloading mshots for any links in the comment or the comment author.
 		var linksToPreloadMshotsFor = $( this ).find( mshotEnabledLinkSelector );
@@ -171,6 +234,18 @@ jQuery( function ( $ ) {
 		// Update the progress counter on the "Check for Spam" button.
 		$( '.checkforspam-progress' ).text( check_for_spam_buttons.data( 'progress-label-format' ).replace( '%1$s', percentage_complete ) );
 
+=======
+	} );
+
+	$('.checkforspam:not(.button-disabled)').click( function(e) {
+		$('.checkforspam:not(.button-disabled)').addClass('button-disabled');
+		$('.checkforspam-spinner').addClass( 'spinner' );
+		akismet_check_for_spam(0, 100);
+		e.preventDefault();
+	});
+
+	function akismet_check_for_spam(offset, limit) {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$.post(
 			ajaxurl,
 			{
@@ -179,6 +254,7 @@ jQuery( function ( $ ) {
 				'limit': limit
 			},
 			function(result) {
+<<<<<<< HEAD
 				recheck_count += result.counts.processed;
 				spam_count += result.counts.spam;
 				
@@ -188,10 +264,18 @@ jQuery( function ( $ ) {
 				else {
 					// Account for comments that were caught as spam and moved out of the queue.
 					akismet_check_for_spam(offset + limit - result.counts.spam, limit);
+=======
+				if (result.processed < limit) {
+					window.location.reload();
+				}
+				else {
+					akismet_check_for_spam(offset + limit, limit);
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				}
 			}
 		);
 	}
+<<<<<<< HEAD
 	
 	if ( "start_recheck" in WPAkismet && WPAkismet.start_recheck ) {
 		$( '.checkforspam' ).click();
@@ -282,4 +366,13 @@ jQuery( function ( $ ) {
                         url: './options-general.php?page=akismet-key-config&akismet_comment_form_privacy_notice=hide',
 		});
 	});
+=======
+});
+// URL encode plugin
+jQuery.extend({URLEncode:function(c){var o='';var x=0;c=c.toString();var r=/(^[a-zA-Z0-9_.]*)/;
+  while(x<c.length){var m=r.exec(c.substr(x));
+    if(m!=null && m.length>1 && m[1]!=''){o+=m[1];x+=m[1].length;
+    }else{if(c[x]==' ')o+='+';else{var d=c.charCodeAt(x);var h=d.toString(16);
+    o+='%'+(h.length<2?'0':'')+h.toUpperCase();}x++;}}return o;}
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 });

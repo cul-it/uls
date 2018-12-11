@@ -998,6 +998,7 @@ function add_meta_box( $id, $title, $callback, $screen = null, $context = 'advan
 	$wp_meta_boxes[$page][$context][$priority][$id] = array('id' => $id, 'title' => $title, 'callback' => $callback, 'args' => $callback_args);
 }
 
+<<<<<<< HEAD
 
 /**
  * Function that renders a "fake" meta box with an information message,
@@ -1097,6 +1098,8 @@ function _get_plugin_from_callback( $callback ) {
 	return null;
 }
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 /**
  * Meta-Box template function
  *
@@ -1150,6 +1153,7 @@ function do_meta_boxes( $screen, $context, $object ) {
 				foreach ( (array) $wp_meta_boxes[ $page ][ $context ][ $priority ] as $box ) {
 					if ( false == $box || ! $box['title'] )
 						continue;
+<<<<<<< HEAD
 
 					$block_compatible = true;
 					if ( is_array( $box[ 'args' ] ) ) {
@@ -1178,6 +1182,10 @@ function do_meta_boxes( $screen, $context, $object ) {
 					$i++;
 					// get_hidden_meta_boxes() doesn't apply in the block editor.
 					$hidden_class = ( ! $screen->is_block_editor() && in_array( $box['id'], $hidden ) ) ? ' hide-if-js' : '';
+=======
+					$i++;
+					$hidden_class = in_array($box['id'], $hidden) ? ' hide-if-js' : '';
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 					echo '<div id="' . $box['id'] . '" class="postbox ' . postbox_classes($box['id'], $page) . $hidden_class . '" ' . '>' . "\n";
 					if ( 'dashboard_browser_nag' != $box['id'] ) {
 						$widget_title = $box[ 'title' ];
@@ -1195,6 +1203,7 @@ function do_meta_boxes( $screen, $context, $object ) {
 					}
 					echo "<h2 class='hndle'><span>{$box['title']}</span></h2>\n";
 					echo '<div class="inside">' . "\n";
+<<<<<<< HEAD
 
 					if ( WP_DEBUG && ! $block_compatible && 'edit' === $screen->parent_base && ! $screen->is_block_editor() && ! isset( $_GET['meta-box-loader'] ) ) {
 						$plugin = _get_plugin_from_callback( $box['callback'] );
@@ -1212,6 +1221,8 @@ function do_meta_boxes( $screen, $context, $object ) {
 						}
 					}
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 					call_user_func($box['callback'], $object, $box);
 					echo "</div>\n";
 					echo "</div>\n";

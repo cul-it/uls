@@ -175,7 +175,11 @@ function akismet_get_ip_address() {
 function akismet_cron_recheck() {
 	return Akismet::cron_recheck();
 }
+<<<<<<< HEAD
 function akismet_add_comment_nonce( $post_id ) {
+=======
+function akismet_add_comment_nonce() {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	return Akismet::add_comment_nonce( $post_id );
 }
 function akismet_fix_scheduled_recheck() {

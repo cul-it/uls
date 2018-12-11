@@ -28,11 +28,14 @@
 
 	window.wp.receiveEmbedMessage = function( e ) {
 		var data = e.data;
+<<<<<<< HEAD
 
 		if ( ! data ) {
 			return;
 		}
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if ( ! ( data.secret || data.message || data.value ) ) {
 			return;
 		}

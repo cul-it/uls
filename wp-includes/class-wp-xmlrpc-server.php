@@ -3517,10 +3517,13 @@ class wp_xmlrpc_server extends IXR_Server {
 
 		/** This action is documented in wp-includes/class-wp-xmlrpc-server.php */
 		do_action( 'xmlrpc_call', 'wp.editComment' );
+<<<<<<< HEAD
  		$comment = array(
  			'comment_ID' => $comment_ID,
  		);
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		if ( isset($content_struct['status']) ) {
 			$statuses = get_comment_statuses();
@@ -3528,12 +3531,17 @@ class wp_xmlrpc_server extends IXR_Server {
 
 			if ( ! in_array($content_struct['status'], $statuses) )
 				return new IXR_Error( 401, __( 'Invalid comment status.' ) );
+<<<<<<< HEAD
  			$comment['comment_approved'] = $content_struct['status'];
+=======
+			$comment_approved = $content_struct['status'];
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		}
 
 		// Do some timestamp voodoo
 		if ( !empty( $content_struct['date_created_gmt'] ) ) {
 			// We know this is supposed to be GMT, so we're going to slap that Z on there by force
+<<<<<<< HEAD
 
  			$dateCreated                 = rtrim( $content_struct['date_created_gmt']->getIso(), 'Z' ) . 'Z';
  			$comment['comment_date']     = get_date_from_gmt( iso8601_to_datetime( $dateCreated ) );
@@ -3555,6 +3563,27 @@ class wp_xmlrpc_server extends IXR_Server {
 		if ( isset($content_struct['author_email']) ) {
  			$comment['comment_author_email'] = $content_struct['author_email'];
 		}
+=======
+			$dateCreated = rtrim( $content_struct['date_created_gmt']->getIso(), 'Z' ) . 'Z';
+			$comment_date = get_date_from_gmt(iso8601_to_datetime($dateCreated));
+			$comment_date_gmt = iso8601_to_datetime($dateCreated, 'GMT');
+		}
+
+		if ( isset($content_struct['content']) )
+			$comment_content = $content_struct['content'];
+
+		if ( isset($content_struct['author']) )
+			$comment_author = $content_struct['author'];
+
+		if ( isset($content_struct['author_url']) )
+			$comment_author_url = $content_struct['author_url'];
+
+		if ( isset($content_struct['author_email']) )
+			$comment_author_email = $content_struct['author_email'];
+
+		// We've got all the data -- post it:
+		$comment = compact('comment_ID', 'comment_content', 'comment_approved', 'comment_date', 'comment_date_gmt', 'comment_author', 'comment_author_email', 'comment_author_url');
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		$result = wp_update_comment($comment);
 		if ( is_wp_error( $result ) )
@@ -4995,6 +5024,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			$post_name = $content_struct['wp_slug'];
 
 		// Only use a password if one was given.
+<<<<<<< HEAD
 		if ( isset($content_struct['wp_password']) ) {
 			$post_password = $content_struct['wp_password'];
 		} else {
@@ -5014,6 +5044,18 @@ class wp_xmlrpc_server extends IXR_Server {
  		} else {
  			$menu_order = 0;
   		}
+=======
+		if ( isset($content_struct['wp_password']) )
+			$post_password = $content_struct['wp_password'];
+
+		// Only set a post parent if one was provided.
+		if ( isset($content_struct['wp_page_parent_id']) )
+			$post_parent = $content_struct['wp_page_parent_id'];
+
+		// Only set the menu_order if it was provided.
+		if ( isset($content_struct['wp_page_order']) )
+			$menu_order = $content_struct['wp_page_order'];
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		$post_author = $user->ID;
 
@@ -5323,6 +5365,7 @@ class wp_xmlrpc_server extends IXR_Server {
 
 		$this->escape($postdata);
 
+<<<<<<< HEAD
  		$ID             = $postdata['ID'];
  		$post_content   = $postdata['post_content'];
  		$post_title     = $postdata['post_title'];
@@ -5333,6 +5376,16 @@ class wp_xmlrpc_server extends IXR_Server {
  		$menu_order     = $postdata['menu_order'];
  		$ping_status    = $postdata['ping_status'];
  		$comment_status = $postdata['comment_status'];
+=======
+		$ID = $postdata['ID'];
+		$post_content = $postdata['post_content'];
+		$post_title = $postdata['post_title'];
+		$post_excerpt = $postdata['post_excerpt'];
+		$post_password = $postdata['post_password'];
+		$post_parent = $postdata['post_parent'];
+		$post_type = $postdata['post_type'];
+		$menu_order = $postdata['menu_order'];
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		// Let WordPress manage slug if none was provided.
 		$post_name = $postdata['post_name'];

@@ -555,6 +555,7 @@ function map_meta_cap( $cap, $user_id ) {
 			return call_user_func_array( 'map_meta_cap', $args );
 		}
 
+<<<<<<< HEAD
 		// Block capabilities map to their post equivalent.
 		$block_caps = array(
 			'edit_blocks',
@@ -572,6 +573,8 @@ function map_meta_cap( $cap, $user_id ) {
 			$cap = str_replace( '_blocks', '_posts', $cap );
 		}
 
+=======
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		// If no meta caps match, return the original cap.
 		$caps[] = $cap;
 	}

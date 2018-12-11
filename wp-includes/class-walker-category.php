@@ -99,7 +99,11 @@ class Walker_Category extends Walker {
 		);
 
 		// Don't generate an element if the category name is empty.
+<<<<<<< HEAD
 		if ( '' === $cat_name ) {
+=======
+		if ( ! $cat_name ) {
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			return;
 		}
 

@@ -503,6 +503,7 @@ function wp_list_authors( $args = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether this site has more than one author.
  *
  * Checks to see if more than one author has published posts.
@@ -511,6 +512,12 @@ function wp_list_authors( $args = '' ) {
  * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
  * Conditional Tags} article in the Theme Developer Handbook.
  * 
+=======
+ * Does this site have more than one author
+ *
+ * Checks to see if more than one author has published posts.
+ *
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * @since 3.2.0
  *
  * @global wpdb $wpdb WordPress database abstraction object.

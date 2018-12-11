@@ -3111,7 +3111,11 @@
 		nav_menu_item: api.Menus.MenuItemControl,
 		nav_menu: api.Menus.MenuControl,
 		nav_menu_name: api.Menus.MenuNameControl,
+<<<<<<< HEAD
 		new_menu: api.Menus.NewMenuControl, // @todo Remove in a future release. See #42364.
+=======
+		new_menu: api.Menus.NewMenuControl, // @todo Remove in 5.0. See #42364.
+>>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		nav_menu_locations: api.Menus.MenuLocationsControl,
 		nav_menu_auto_add: api.Menus.MenuAutoAddControl
 	});

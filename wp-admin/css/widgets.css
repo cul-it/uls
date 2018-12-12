@@ -164,13 +164,9 @@
 }
 
 .media-widget-gallery-preview {
-<<<<<<< HEAD
-	display: flex;
-=======
 	display: -webkit-box;
 	display: flex;
 	-webkit-box-pack: start;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	margin: -1.79104477%;
@@ -225,16 +221,11 @@
 	bottom: 0;
 	width: 100%;
 	box-sizing: border-box;
-<<<<<<< HEAD
-	display: flex;
-	align-items: center;
-=======
 	display: -webkit-box;
 	display: flex;
 	-webkit-box-align: center;
 	align-items: center;
 	-webkit-box-pack: center;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	justify-content: center;
 	background-color: rgba( 0, 0, 0, .5 );
 }

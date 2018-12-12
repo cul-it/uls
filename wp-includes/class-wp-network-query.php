@@ -328,10 +328,6 @@ class WP_Network_Query {
 
 		$number = absint( $this->query_vars['number'] );
 		$offset = absint( $this->query_vars['offset'] );
-<<<<<<< HEAD
-		$limits = '';
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		if ( ! empty( $number ) ) {
 			if ( $offset ) {
@@ -397,11 +393,6 @@ class WP_Network_Query {
 
 		$where = implode( ' AND ', $this->sql_clauses['where'] );
 
-<<<<<<< HEAD
-		$groupby = '';
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
 
 		/**

@@ -156,14 +156,6 @@ case 'edit':
 		break;
 	}
 
-<<<<<<< HEAD
-	if ( use_block_editor_for_post( $post ) ) {
-		include( ABSPATH . 'wp-admin/edit-form-blocks.php' );
-		break;
-	}
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	if ( ! wp_check_post_lock( $post->ID ) ) {
 		$active_post_lock = wp_set_post_lock( $post->ID );
 
@@ -283,21 +275,6 @@ case 'preview':
 	wp_redirect($url);
 	exit();
 
-<<<<<<< HEAD
-case 'toggle-custom-fields':
-	check_admin_referer( 'toggle-custom-fields' );
-
-	$current_user_id = get_current_user_id();
-	if ( $current_user_id ) {
-		$enable_custom_fields = (bool) get_user_meta( $current_user_id, 'enable_custom_fields', true );
-		update_user_meta( $current_user_id, 'enable_custom_fields', ! $enable_custom_fields );
-	}
-
-	wp_safe_redirect( wp_get_referer() );
-	exit();
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 default:
 	/**
 	 * Fires for a given custom post action request.

@@ -1181,17 +1181,8 @@ function trackback_rdf( $deprecated = '' ) {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether the current post is open for comments.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
- * 
-=======
  * Whether the current post is open for comments.
  *
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * @since 1.5.0
  *
  * @param int|WP_Post $post_id Post ID or WP_Post object. Default current post.
@@ -1216,15 +1207,7 @@ function comments_open( $post_id = null ) {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether the current post is open for pings.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
-=======
  * Whether the current post is open for pings.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 1.5.0
  *

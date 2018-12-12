@@ -10,15 +10,7 @@
  */
 
 /**
-<<<<<<< HEAD
- * Determines whether a post has an image attached.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
-=======
  * Check if post has an image attached.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 2.9.0
  * @since 4.4.0 `$post` can be a post ID or WP_Post object.

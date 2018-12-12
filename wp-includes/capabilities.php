@@ -555,26 +555,6 @@ function map_meta_cap( $cap, $user_id ) {
 			return call_user_func_array( 'map_meta_cap', $args );
 		}
 
-<<<<<<< HEAD
-		// Block capabilities map to their post equivalent.
-		$block_caps = array(
-			'edit_blocks',
-			'edit_others_blocks',
-			'publish_blocks',
-			'read_private_blocks',
-			'delete_blocks',
-			'delete_private_blocks',
-			'delete_published_blocks',
-			'delete_others_blocks',
-			'edit_private_blocks',
-			'edit_published_blocks',
-		);
-		if ( in_array( $cap, $block_caps, true ) ) {
-			$cap = str_replace( '_blocks', '_posts', $cap );
-		}
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		// If no meta caps match, return the original cap.
 		$caps[] = $cap;
 	}

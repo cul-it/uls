@@ -1364,16 +1364,6 @@ ul.cat-checklist {
 
 .plugin-card .updating-message:before {
 	content: "\f463";
-<<<<<<< HEAD
-	animation: rotation 2s infinite linear;
-}
-
-@keyframes rotation {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-=======
 	-webkit-animation: rotation 2s infinite linear;
 	animation: rotation 2s infinite linear;
 }
@@ -1396,7 +1386,6 @@ ul.cat-checklist {
 	}
 	100% {
 		-webkit-transform: rotate(359deg);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: rotate(359deg);
 	}
 }

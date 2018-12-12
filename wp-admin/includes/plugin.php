@@ -430,25 +430,13 @@ function _get_dropins() {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether a plugin is active.
-=======
  * Check whether a plugin is active.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * Only plugins installed in the plugins/ folder can be active.
  *
  * Plugins in the mu-plugins/ folder can't be "activated," so this function will
  * return false for those plugins.
-<<<<<<< HEAD
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
- * 
-=======
  *
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * @since 2.5.0
  *
  * @param string $plugin Path to the main plugin file from plugins directory.
@@ -459,21 +447,10 @@ function is_plugin_active( $plugin ) {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether the plugin is inactive.
- *
- * Reverse of is_plugin_active(). Used as a callback.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
- * 
-=======
  * Check whether the plugin is inactive.
  *
  * Reverse of is_plugin_active(). Used as a callback.
  *
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * @since 3.1.0
  * @see is_plugin_active()
  *
@@ -485,33 +462,17 @@ function is_plugin_inactive( $plugin ) {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether the plugin is active for the entire network.
-=======
  * Check whether the plugin is active for the entire network.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * Only plugins installed in the plugins/ folder can be active.
  *
  * Plugins in the mu-plugins/ folder can't be "activated," so this function will
  * return false for those plugins.
-<<<<<<< HEAD
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
- * 
- * @since 3.0.0
- *
- * @param string $plugin Path to the main plugin file from plugins directory.
- * @return bool True if active for the network, otherwise false.
-=======
  *
  * @since 3.0.0
  *
  * @param string $plugin Path to the main plugin file from plugins directory.
  * @return bool True, if active for the network, otherwise false.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  */
 function is_plugin_active_for_network( $plugin ) {
 	if ( !is_multisite() )

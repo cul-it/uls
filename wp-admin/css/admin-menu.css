@@ -597,18 +597,12 @@ ul#adminmenu > li.current > a.current:after {
 /* rtl:ignore */
 .folded #collapse-button .collapse-button-icon:after,
 .rtl #collapse-button .collapse-button-icon:after {
-<<<<<<< HEAD
-=======
 	-webkit-transform: rotate(180deg);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: rotate(180deg);
 }
 
 .rtl.folded #collapse-button .collapse-button-icon:after {
-<<<<<<< HEAD
-=======
 	-webkit-transform: none;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: none;
 }
 
@@ -734,18 +728,12 @@ li#wp-admin-bar-menu-toggle {
 
 	/* rtl:ignore */
 	.auto-fold #collapse-button .collapse-button-icon:after {
-<<<<<<< HEAD
-=======
 		-webkit-transform: rotate(180deg);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: rotate(180deg);
 	}
 
 	.rtl.auto-fold #collapse-button .collapse-button-icon:after {
-<<<<<<< HEAD
-=======
 		-webkit-transform: none;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: none;
 	}
 

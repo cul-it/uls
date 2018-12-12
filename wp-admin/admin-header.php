@@ -175,18 +175,6 @@ if ( is_network_admin() )
 
 $admin_body_class .= ' no-customize-support no-svg';
 
-<<<<<<< HEAD
-if ( $current_screen->is_block_editor() ) {
-	// Default to is-fullscreen-mode to avoid jumps in the UI.
-	$admin_body_class .= ' block-editor-page is-fullscreen-mode wp-embed-responsive';
-
-	if ( current_theme_supports( 'editor-styles' ) && current_theme_supports( 'dark-editor-style' ) ) {
-		$admin_body_class .= ' is-dark-theme';
-	}
-}
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 ?>
 </head>
 <?php

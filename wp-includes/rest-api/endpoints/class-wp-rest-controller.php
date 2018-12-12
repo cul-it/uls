@@ -212,16 +212,12 @@ abstract class WP_REST_Controller {
 
 		$data   = (array) $response->get_data();
 		$server = rest_get_server();
-<<<<<<< HEAD
-		$links  = $server->get_compact_response_links( $response );
-=======
 
 		if ( method_exists( $server, 'get_compact_response_links' ) ) {
 			$links = call_user_func( array( $server, 'get_compact_response_links' ), $response );
 		} else {
 			$links = call_user_func( array( $server, 'get_response_links' ), $response );
 		}
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		if ( ! empty( $links ) ) {
 			$data['_links'] = $links;
@@ -389,24 +385,12 @@ abstract class WP_REST_Controller {
 
 		$additional_fields = $this->get_additional_fields();
 
-<<<<<<< HEAD
-		$requested_fields = $this->get_fields_for_response( $request );
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		foreach ( $additional_fields as $field_name => $field_options ) {
 
 			if ( ! $field_options['get_callback'] ) {
 				continue;
 			}
 
-<<<<<<< HEAD
-			if ( ! in_array( $field_name, $requested_fields, true ) ) {
-				continue;
-			}
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			$object[ $field_name ] = call_user_func( $field_options['get_callback'], $object, $field_name, $request, $this->get_object_type() );
 		}
 
@@ -534,19 +518,6 @@ abstract class WP_REST_Controller {
 	public function get_fields_for_response( $request ) {
 		$schema = $this->get_item_schema();
 		$fields = isset( $schema['properties'] ) ? array_keys( $schema['properties'] ) : array();
-<<<<<<< HEAD
-
-		$additional_fields = $this->get_additional_fields();
-		foreach ( $additional_fields as $field_name => $field_options ) {
-			// For back-compat, include any field with an empty schema
-			// because it won't be present in $this->get_item_schema().
-			if ( is_null( $field_options['schema'] ) ) {
-				$fields[] = $field_name;
-			}
-		}
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if ( ! isset( $request['_fields'] ) ) {
 			return $fields;
 		}

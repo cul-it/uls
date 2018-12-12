@@ -1341,11 +1341,8 @@ function wp_ajax_add_meta() {
 		$value = wp_unslash( $_POST['meta'][$mid]['value'] );
 		if ( '' == trim($key) )
 			wp_die( __( 'Please provide a custom field name.' ) );
-<<<<<<< HEAD
-=======
 		if ( '' == trim($value) )
 			wp_die( __( 'Please provide a custom field value.' ) );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if ( ! $meta = get_metadata_by_mid( 'post', $mid ) )
 			wp_die( 0 ); // if meta doesn't exist
 		if ( is_protected_meta( $meta->meta_key, 'post' ) || is_protected_meta( $key, 'post' ) ||
@@ -1488,8 +1485,6 @@ function wp_ajax_update_welcome_panel() {
 }
 
 /**
-<<<<<<< HEAD
-=======
  * Ajax handler for updating whether to display the Try Gutenberg panel.
  *
  * @since 4.9.8
@@ -1503,7 +1498,6 @@ function wp_ajax_update_try_gutenberg_panel() {
 }
 
 /**
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * Ajax handler for retrieving menu meta boxes.
  *
  * @since 3.1.0

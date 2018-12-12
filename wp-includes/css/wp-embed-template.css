@@ -130,10 +130,7 @@ p.wp-embed-heading {
 	position: absolute;
 	top: 50%;
 	left: 0;
-<<<<<<< HEAD
-=======
 	-webkit-transform: translateY(-50%);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translateY(-50%);
 	height: 25px;
 	width: 25px;
@@ -243,10 +240,7 @@ p.wp-embed-heading {
 
 .wp-embed-share-dialog-content {
 	height: 100%;
-<<<<<<< HEAD
-=======
 	-webkit-transform-style: preserve-3d;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform-style: preserve-3d;
 	overflow: hidden;
 }

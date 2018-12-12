@@ -312,10 +312,6 @@
 				if ( trigger && ! hasConnectionError() ) {
 					settings.connectionError = true;
 					$document.trigger( 'heartbeat-connection-lost', [error, status] );
-<<<<<<< HEAD
-					wp.hooks.doAction( 'heartbeat.connection-lost', error, status );
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				}
 			}
 		}
@@ -335,10 +331,6 @@
 				settings.errorcount = 0;
 				settings.connectionError = false;
 				$document.trigger( 'heartbeat-connection-restored' );
-<<<<<<< HEAD
-				wp.hooks.doAction( 'heartbeat.connection-restored' );
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			}
 		}
 
@@ -365,10 +357,6 @@
 			settings.queue = {};
 
 			$document.trigger( 'heartbeat-send', [ heartbeatData ] );
-<<<<<<< HEAD
-			wp.hooks.doAction( 'heartbeat.send', heartbeatData );
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 			ajaxData = {
 				data: heartbeatData,
@@ -405,10 +393,6 @@
 
 				if ( response.nonces_expired ) {
 					$document.trigger( 'heartbeat-nonces-expired' );
-<<<<<<< HEAD
-					wp.hooks.doAction( 'heartbeat.nonces-expired' );
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				}
 
 				// Change the interval from PHP
@@ -417,25 +401,7 @@
 					delete response.heartbeat_interval;
 				}
 
-<<<<<<< HEAD
-				// Update the heartbeat nonce if set.
-				if ( response.heartbeat_nonce && typeof window.heartbeatSettings === 'object' ) {
-					window.heartbeatSettings.nonce = response.heartbeat_nonce;
-					delete response.heartbeat_nonce;
-				}
-
-				// Update the Rest API nonce if set and wp-api loaded.
-				if ( response.rest_nonce && typeof window.wpApiSettings === 'object' ) {
-					window.wpApiSettings.nonce = response.rest_nonce;
-					// This nonce is required for api-fetch through heartbeat.tick.
-					// delete response.rest_nonce;
-				}
-
 				$document.trigger( 'heartbeat-tick', [response, textStatus, jqXHR] );
-				wp.hooks.doAction( 'heartbeat.tick', response, textStatus, jqXHR );
-=======
-				$document.trigger( 'heartbeat-tick', [response, textStatus, jqXHR] );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 				// Do this last, can trigger the next XHR if connection time > 5 sec. and newInterval == 'fast'
 				if ( newInterval ) {
@@ -444,10 +410,6 @@
 			}).fail( function( jqXHR, textStatus, error ) {
 				setErrorState( textStatus || 'unknown', jqXHR.status );
 				$document.trigger( 'heartbeat-error', [jqXHR, textStatus, error] );
-<<<<<<< HEAD
-				wp.hooks.doAction( 'heartbeat.error', jqXHR, textStatus, error );
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			});
 		}
 

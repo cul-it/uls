@@ -81,12 +81,7 @@ final class _WP_Editors {
 		$settings = apply_filters( 'wp_editor_settings', $settings, $editor_id );
 
 		$set = wp_parse_args( $settings, array(
-<<<<<<< HEAD
-			// Disable autop if the current post has blocks in it.
-			'wpautop'             => ! has_blocks(),
-=======
 			'wpautop'             => true,
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			'media_buttons'       => true,
 			'default_editor'      => '',
 			'drag_drop_upload'    => false,
@@ -314,17 +309,9 @@ final class _WP_Editors {
 		if ( empty(self::$first_init) ) {
 			if ( is_admin() ) {
 				add_action( 'admin_print_footer_scripts', array( __CLASS__, 'editor_js' ), 50 );
-<<<<<<< HEAD
-				add_action( 'admin_print_footer_scripts', array( __CLASS__, 'force_uncompressed_tinymce' ), 1 );
 				add_action( 'admin_print_footer_scripts', array( __CLASS__, 'enqueue_scripts' ), 1 );
 			} else {
 				add_action( 'wp_print_footer_scripts', array( __CLASS__, 'editor_js' ), 50 );
-				add_action( 'wp_print_footer_scripts', array( __CLASS__, 'force_uncompressed_tinymce' ), 1 );
-=======
-				add_action( 'admin_print_footer_scripts', array( __CLASS__, 'enqueue_scripts' ), 1 );
-			} else {
-				add_action( 'wp_print_footer_scripts', array( __CLASS__, 'editor_js' ), 50 );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				add_action( 'wp_print_footer_scripts', array( __CLASS__, 'enqueue_scripts' ), 1 );
 			}
 		}
@@ -756,11 +743,7 @@ final class _WP_Editors {
 	/**
 	 *
 	 * @static
-<<<<<<< HEAD
-	 *
-=======
 	 * 
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	 * @param bool $default_scripts Optional. Whether default scripts should be enqueued. Default false.
 	 */
 	public static function enqueue_scripts( $default_scripts = false ) {
@@ -822,15 +805,8 @@ final class _WP_Editors {
 		wp_enqueue_style( 'editor-buttons' );
 
 		if ( is_admin() ) {
-<<<<<<< HEAD
-			add_action( 'admin_print_footer_scripts', array( __CLASS__, 'force_uncompressed_tinymce' ), 1 );
 			add_action( 'admin_print_footer_scripts', array( __CLASS__, 'print_default_editor_scripts' ), 45 );
 		} else {
-			add_action( 'wp_print_footer_scripts', array( __CLASS__, 'force_uncompressed_tinymce' ), 1 );
-=======
-			add_action( 'admin_print_footer_scripts', array( __CLASS__, 'print_default_editor_scripts' ), 45 );
-		} else {
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			add_action( 'wp_print_footer_scripts', array( __CLASS__, 'print_default_editor_scripts' ), 45 );
 		}
 	}
@@ -1287,10 +1263,6 @@ final class _WP_Editors {
 
 			// Shortcuts help modal
 			'Keyboard Shortcuts' => array( __( 'Keyboard Shortcuts' ), 'accessH' ),
-<<<<<<< HEAD
-			'Classic Block Keyboard Shortcuts' => __( 'Classic Block Keyboard Shortcuts' ),
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			'Default shortcuts,' => __( 'Default shortcuts,' ),
 			'Additional shortcuts,' => __( 'Additional shortcuts,' ),
 			'Focus shortcuts:' => __( 'Focus shortcuts:' ),
@@ -1401,35 +1373,6 @@ final class _WP_Editors {
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Force uncompressed TinyMCE when a custom theme has been defined.
-	 *
-	 * The compressed TinyMCE file cannot deal with custom themes, so this makes
-	 * sure that we use the uncompressed TinyMCE file if a theme is defined.
-	 * Even if we are on a production environment.
-	 */
-	public static function force_uncompressed_tinymce() {
-		$has_custom_theme = false;
-		foreach ( self::$mce_settings as $init ) {
-			if ( ! empty( $init['theme_url'] ) ) {
-				$has_custom_theme = true;
-				break;
-			}
-		}
-
-		if ( ! $has_custom_theme ) {
-			return;
-		}
-
-		$wp_scripts = wp_scripts();
-
-		$wp_scripts->remove( 'wp-tinymce' );
-		wp_register_tinymce_scripts( $wp_scripts, true );
-	}
-
-	/**
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	 * Print (output) the main TinyMCE scripts.
 	 *
 	 * @since 4.8.0
@@ -1440,11 +1383,7 @@ final class _WP_Editors {
 	 * @global bool   $compress_scripts
 	 */
 	public static function print_tinymce_scripts() {
-<<<<<<< HEAD
-		global $concatenate_scripts;
-=======
 		global $tinymce_version, $concatenate_scripts, $compress_scripts;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		if ( self::$tinymce_scripts_printed ) {
 			return;
@@ -1456,9 +1395,6 @@ final class _WP_Editors {
 			script_concat_settings();
 		}
 
-<<<<<<< HEAD
-		wp_print_scripts( array( 'wp-tinymce' ) );
-=======
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 		$version = 'ver=' . $tinymce_version;
 		$baseurl = self::get_baseurl();
@@ -1483,7 +1419,6 @@ final class _WP_Editors {
 			echo "<script type='text/javascript' src='{$baseurl}/tinymce{$mce_suffix}.js?$version'></script>\n";
 			echo "<script type='text/javascript' src='{$baseurl}/plugins/compat3x/plugin{$suffix}.js?$version'></script>\n";
 		}
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 		echo "<script type='text/javascript'>\n" . self::wp_mce_translation() . "</script>\n";
 	}

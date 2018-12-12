@@ -72,17 +72,8 @@ $post_ID = $post->ID;
 
 /** This filter is documented in wp-admin/post.php */
 if ( apply_filters( 'replace_editor', false, $post ) !== true ) {
-<<<<<<< HEAD
-	if ( use_block_editor_for_post( $post ) ) {
-		include( ABSPATH . 'wp-admin/edit-form-blocks.php' );
-	} else {
-		wp_enqueue_script( 'autosave' );
-		include( ABSPATH . 'wp-admin/edit-form-advanced.php' );
-	}
-=======
 	wp_enqueue_script( 'autosave' );
 	include( ABSPATH . 'wp-admin/edit-form-advanced.php' );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 }
 
 include( ABSPATH . 'wp-admin/admin-footer.php' );

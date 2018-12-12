@@ -52,13 +52,9 @@
 	cursor: pointer;
 	box-sizing: border-box;
 	padding: 3px;
-<<<<<<< HEAD
-	animation-fill-mode: both;
-=======
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 	-webkit-animation-duration: .4s;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	animation-duration: .4s;
 	opacity: 0;
 	pointer-events: none;
@@ -89,18 +85,12 @@
 }
 
 body.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut button {
-<<<<<<< HEAD
-=======
 	-webkit-animation-name: customize-partial-edit-shortcut-bounce-appear;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	animation-name: customize-partial-edit-shortcut-bounce-appear;
 	pointer-events: auto;
 }
 body.customize-partial-edit-shortcuts-hidden .customize-partial-edit-shortcut button {
-<<<<<<< HEAD
-=======
 	-webkit-animation-name: customize-partial-edit-shortcut-bounce-disappear;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	animation-name: customize-partial-edit-shortcut-bounce-disappear;
 	pointer-events: none;
 }
@@ -110,10 +100,6 @@ body.customize-partial-edit-shortcuts-hidden .customize-partial-edit-shortcut bu
 	visibility: hidden;
 }
 
-<<<<<<< HEAD
-@keyframes customize-partial-edit-shortcut-bounce-appear {
-	from, 20%, 40%, 60%, 80%, to {
-=======
 @-webkit-keyframes customize-partial-edit-shortcut-bounce-appear {
 	from, 20%, 40%, 60%, 80%, to {
 		-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -151,19 +137,10 @@ body.customize-partial-edit-shortcuts-hidden .customize-partial-edit-shortcut bu
 @keyframes customize-partial-edit-shortcut-bounce-appear {
 	from, 20%, 40%, 60%, 80%, to {
 		-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 	}
 	0% {
 		opacity: 0;
-<<<<<<< HEAD
-		transform: scale3d(.3, .3, .3);
-	}
-	20% {
-		transform: scale3d(1.1, 1.1, 1.1);
-	}
-	40% {
-=======
 		-webkit-transform: scale3d(.3, .3, .3);
 		transform: scale3d(.3, .3, .3);
 	}
@@ -173,38 +150,24 @@ body.customize-partial-edit-shortcuts-hidden .customize-partial-edit-shortcut bu
 	}
 	40% {
 		-webkit-transform: scale3d(.9, .9, .9);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: scale3d(.9, .9, .9);
 	}
 	60% {
 		opacity: 1;
-<<<<<<< HEAD
-		transform: scale3d(1.03, 1.03, 1.03);
-	}
-	80% {
-=======
 		-webkit-transform: scale3d(1.03, 1.03, 1.03);
 		transform: scale3d(1.03, 1.03, 1.03);
 	}
 	80% {
 		-webkit-transform: scale3d(.97, .97, .97);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: scale3d(.97, .97, .97);
 	}
 	to {
 		opacity: 1;
-<<<<<<< HEAD
-=======
 		-webkit-transform: scale3d(1, 1, 1);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: scale3d(1, 1, 1);
 	}
 }
 
-<<<<<<< HEAD
-@keyframes customize-partial-edit-shortcut-bounce-disappear {
-	from, 20%, 40%, 60%, 80%, to {
-=======
 @-webkit-keyframes customize-partial-edit-shortcut-bounce-disappear {
 	from, 20%, 40%, 60%, 80%, to {
 		-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -242,34 +205,19 @@ body.customize-partial-edit-shortcuts-hidden .customize-partial-edit-shortcut bu
 @keyframes customize-partial-edit-shortcut-bounce-disappear {
 	from, 20%, 40%, 60%, 80%, to {
 		-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 	}
 	0% {
 		opacity: 1;
-<<<<<<< HEAD
-		transform: scale3d(1, 1, 1);
-	}
-	20% {
-=======
 		-webkit-transform: scale3d(1, 1, 1);
 		transform: scale3d(1, 1, 1);
 	}
 	20% {
 		-webkit-transform: scale3d(.97, .97, .97);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: scale3d(.97, .97, .97);
 	}
 	40% {
 		opacity: 1;
-<<<<<<< HEAD
-		transform: scale3d(1.03, 1.03, 1.03);
-	}
-	60% {
-		transform: scale3d(.9, .9, .9);
-	}
-	80% {
-=======
 		-webkit-transform: scale3d(1.03, 1.03, 1.03);
 		transform: scale3d(1.03, 1.03, 1.03);
 	}
@@ -279,15 +227,11 @@ body.customize-partial-edit-shortcuts-hidden .customize-partial-edit-shortcut bu
 	}
 	80% {
 		-webkit-transform: scale3d(1.1, 1.1, 1.1);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: scale3d(1.1, 1.1, 1.1);
 	}
 	to {
 		opacity: 0;
-<<<<<<< HEAD
-=======
 		-webkit-transform: scale3d(.3, .3, .3);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		transform: scale3d(.3, .3, .3);
 	}
 }

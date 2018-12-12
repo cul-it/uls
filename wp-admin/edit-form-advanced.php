@@ -225,9 +225,6 @@ $post_type_object = get_post_type_object($post_type);
 // All meta boxes should be defined and added before the first do_meta_boxes() call (or potentially during the do_meta_boxes action).
 require_once( ABSPATH . 'wp-admin/includes/meta-boxes.php' );
 
-<<<<<<< HEAD
-register_and_do_post_meta_boxes( $post );
-=======
 
 $publish_callback_args = null;
 if ( post_type_supports($post_type, 'revisions') && 'auto-draft' != $post->post_status ) {
@@ -363,7 +360,6 @@ do_action( 'do_meta_boxes', $post_type, 'normal', $post );
 do_action( 'do_meta_boxes', $post_type, 'advanced', $post );
 /** This action is documented in wp-admin/edit-form-advanced.php */
 do_action( 'do_meta_boxes', $post_type, 'side', $post );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 add_screen_option('layout_columns', array('max' => 2, 'default' => 2) );
 

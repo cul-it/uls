@@ -212,11 +212,7 @@ function get_the_category_list( $separator = '', $parents = '', $post_id = false
 }
 
 /**
-<<<<<<< HEAD
- * Checks if the current post is within any of the given categories.
-=======
  * Check if the current post is within any of the given categories.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * The given categories are checked against the post's categories' term_ids, names and slugs.
  * Categories given as integers will only be checked against the post's categories' term_ids.
@@ -226,13 +222,6 @@ function get_the_category_list( $separator = '', $parents = '', $post_id = false
  * Prior to v2.7, only one category could be compared: in_category( $single_category ).
  * Prior to v2.7, this function could only be used in the WordPress Loop.
  * As of 2.7, the function can be used anywhere if it is provided a post ID or post object.
-<<<<<<< HEAD
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 1.2.0
  *
@@ -1378,11 +1367,7 @@ function has_category( $category = '', $post = null ) {
 }
 
 /**
-<<<<<<< HEAD
- * Checks if the current post has any of given tags.
-=======
  * Check if the current post has any of given tags.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * The given tags are checked against the post's tags' term_ids, names and slugs.
  * Tags given as integers will only be checked against the post's tags' term_ids.
@@ -1391,13 +1376,6 @@ function has_category( $category = '', $post = null ) {
  * Prior to v2.7 of WordPress, tags given as integers would also be checked against the post's tags' names and slugs (in addition to term_ids)
  * Prior to v2.7, this function could only be used in the WordPress Loop.
  * As of 2.7, the function can be used anywhere if it is provided a post ID or post object.
-<<<<<<< HEAD
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 2.6.0
  *

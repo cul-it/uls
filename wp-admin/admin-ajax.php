@@ -67,10 +67,7 @@ $core_actions_post = array(
 	'get-post-thumbnail-html', 'get-community-events', 'edit-theme-plugin-file',
 	'wp-privacy-export-personal-data',
 	'wp-privacy-erase-personal-data',
-<<<<<<< HEAD
-=======
 	'update-try-gutenberg-panel',
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 );
 
 // Deprecated

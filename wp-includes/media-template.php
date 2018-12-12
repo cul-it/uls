@@ -69,11 +69,7 @@ function wp_underscore_video_template() {
 		h = Math.ceil( ( data.model.height * w ) / data.model.width );
 	} else {
 		h = data.model.height;
-<<<<<<< HEAD
-	}
-=======
  	}
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	if ( w ) {
 		w_rule = 'width: ' + w + 'px; ';
@@ -107,13 +103,8 @@ function wp_underscore_video_template() {
 	endforeach;
 	?><#
 	<?php foreach ( array( 'autoplay', 'loop' ) as $attr ):
-<<<<<<< HEAD
-	?> if ( ! _.isUndefined( data.model.<?php echo $attr; ?> ) && data.model.<?php echo $attr; ?> ) {
-		#> <?php echo $attr; ?><#
-=======
 	?> if ( ! _.isUndefined( data.model.<?php echo $attr ?> ) && data.model.<?php echo $attr ?> ) {
 		#> <?php echo $attr ?><#
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	}
 	<?php endforeach ?>#>
 >
@@ -417,32 +408,19 @@ function wp_print_media_templates() {
 					<span class="name"><?php _e('Description'); ?></span>
 					<textarea {{ maybeReadOnly }}>{{ data.description }}</textarea>
 				</label>
-<<<<<<< HEAD
-				<div class="setting">
-					<span class="name"><?php _e( 'Uploaded By' ); ?></span>
-					<span class="value">{{ data.authorName }}</span>
-				</div>
-				<# if ( data.uploadedToTitle ) { #>
-					<div class="setting">
-=======
 				<label class="setting">
 					<span class="name"><?php _e( 'Uploaded By' ); ?></span>
 					<span class="value">{{ data.authorName }}</span>
 				</label>
 				<# if ( data.uploadedToTitle ) { #>
 					<label class="setting">
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 						<span class="name"><?php _e( 'Uploaded To' ); ?></span>
 						<# if ( data.uploadedToLink ) { #>
 							<span class="value"><a href="{{ data.uploadedToLink }}">{{ data.uploadedToTitle }}</a></span>
 						<# } else { #>
 							<span class="value">{{ data.uploadedToTitle }}</span>
 						<# } #>
-<<<<<<< HEAD
-					</div>
-=======
 					</label>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				<# } #>
 				<div class="attachment-compat"></div>
 			</div>
@@ -450,11 +428,7 @@ function wp_print_media_templates() {
 			<div class="actions">
 				<a class="view-attachment" href="{{ data.link }}"><?php _e( 'View attachment page' ); ?></a>
 				<# if ( data.can.save ) { #> |
-<<<<<<< HEAD
-					<a href="{{ data.editLink }}"><?php _e( 'Edit more details' ); ?></a>
-=======
 					<a href="post.php?post={{ data.id }}&action=edit"><?php _e( 'Edit more details' ); ?></a>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				<# } #>
 				<# if ( ! data.uploading && data.can.remove ) { #> |
 					<?php if ( MEDIA_TRASH ): ?>
@@ -1071,19 +1045,11 @@ function wp_print_media_templates() {
 						delete html5types[ ext ];
 					}
 				#>
-<<<<<<< HEAD
-				<div class="setting">
-					<label for="audio-source"><?php _e( 'URL' ); ?></label>
-					<input type="text" id="audio-source" readonly data-setting="src" value="{{ data.model.src }}" />
-					<button type="button" class="button-link remove-setting"><?php _e( 'Remove audio source' ); ?></button>
-				</div>
-=======
 				<label class="setting">
 					<span>SRC</span>
 					<input type="text" disabled="disabled" data-setting="src" value="{{ data.model.src }}" />
 					<button type="button" class="button-link remove-setting"><?php _e( 'Remove audio source' ); ?></button>
 				</label>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				<# } #>
 				<?php
 
@@ -1093,19 +1059,11 @@ function wp_print_media_templates() {
 						delete html5types.<?php echo $type ?>;
 					}
 				#>
-<<<<<<< HEAD
-				<div class="setting">
-					<label for="<?php echo $type . '-source'; ?>"><?php echo strtoupper( $type ); ?></span>
-					<input type="text" id="<?php echo $type . '-source'; ?>" readonly data-setting="<?php echo $type; ?>" value="{{ data.model.<?php echo $type; ?> }}" />
-					<button type="button" class="button-link remove-setting"><?php _e( 'Remove audio source' ); ?></button>
-				</div>
-=======
 				<label class="setting">
 					<span><?php echo strtoupper( $type ) ?></span>
 					<input type="text" disabled="disabled" data-setting="<?php echo $type ?>" value="{{ data.model.<?php echo $type ?> }}" />
 					<button type="button" class="button-link remove-setting"><?php _e( 'Remove audio source' ); ?></button>
 				</label>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				<# } #>
 				<?php endforeach ?>
 
@@ -1170,19 +1128,11 @@ function wp_print_media_templates() {
 						delete html5types[ ext ];
 					}
 				#>
-<<<<<<< HEAD
-				<div class="setting">
-					<label for="video-source"><?php _e( 'URL' ); ?></label>
-					<input type="text" id="video-source" readonly data-setting="src" value="{{ data.model.src }}" />
-					<button type="button" class="button-link remove-setting"><?php _e( 'Remove video source' ); ?></button>
-				</div>
-=======
 				<label class="setting">
 					<span>SRC</span>
 					<input type="text" disabled="disabled" data-setting="src" value="{{ data.model.src }}" />
 					<button type="button" class="button-link remove-setting"><?php _e( 'Remove video source' ); ?></button>
 				</label>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				<# } #>
 				<?php foreach ( $video_types as $type ):
 				?><# if ( ! _.isEmpty( data.model.<?php echo $type ?> ) ) {
@@ -1190,19 +1140,11 @@ function wp_print_media_templates() {
 						delete html5types.<?php echo $type ?>;
 					}
 				#>
-<<<<<<< HEAD
-				<div class="setting">
-					<label for="<?php echo $type . '-source'; ?>"><?php echo strtoupper( $type ); ?></label>
-					<input type="text" id="<?php echo $type . '-source'; ?>" readonly data-setting="<?php echo $type; ?>" value="{{ data.model.<?php echo $type; ?> }}" />
-					<button type="button" class="button-link remove-setting"><?php _e( 'Remove video source' ); ?></button>
-				</div>
-=======
 				<label class="setting">
 					<span><?php echo strtoupper( $type ) ?></span>
 					<input type="text" disabled="disabled" data-setting="<?php echo $type ?>" value="{{ data.model.<?php echo $type ?> }}" />
 					<button type="button" class="button-link remove-setting"><?php _e( 'Remove video source' ); ?></button>
 				</label>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				<# } #>
 				<?php endforeach ?>
 				</div>
@@ -1219,19 +1161,11 @@ function wp_print_media_templates() {
 				<# } #>
 
 				<# if ( ! _.isEmpty( data.model.poster ) ) { #>
-<<<<<<< HEAD
-				<div class="setting">
-					<label for="poster-image"><?php _e( 'Poster Image' ); ?></label>
-					<input type="text" id="poster-image" readonly data-setting="poster" value="{{ data.model.poster }}" />
-					<button type="button" class="button-link remove-setting"><?php _e( 'Remove poster image' ); ?></button>
-				</div>
-=======
 				<label class="setting">
 					<span><?php _e( 'Poster Image' ); ?></span>
 					<input type="text" disabled="disabled" data-setting="poster" value="{{ data.model.poster }}" />
 					<button type="button" class="button-link remove-setting"><?php _e( 'Remove poster image' ); ?></button>
 				</label>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 				<# } #>
 				<div class="setting preload">
 					<span><?php _e( 'Preload' ); ?></span>
@@ -1252,30 +1186,14 @@ function wp_print_media_templates() {
 					<span><?php _e( 'Loop' ); ?></span>
 				</label>
 
-<<<<<<< HEAD
-				<div class="setting" data-setting="content">
-=======
 				<label class="setting" data-setting="content">
 					<span><?php _e( 'Tracks (subtitles, captions, descriptions, chapters, or metadata)' ); ?></span>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 					<#
 					var content = '';
 					if ( ! _.isEmpty( data.model.content ) ) {
 						var tracks = jQuery( data.model.content ).filter( 'track' );
 						_.each( tracks.toArray(), function (track) {
 							content += track.outerHTML; #>
-<<<<<<< HEAD
-						<label for="video-track"><?php _e( 'Tracks (subtitles, captions, descriptions, chapters, or metadata)' ); ?></span>
-						<input class="content-track" type="text" id="video-track" readonly value="{{ track.outerHTML }}" />
-						<button type="button" class="button-link remove-setting remove-track"><?php _ex( 'Remove video track', 'media' ); ?></button>
-						<# } ); #>
-					<# } else { #>
-					<span><?php _e( 'Tracks (subtitles, captions, descriptions, chapters, or metadata)' ); ?></span>
-					<em><?php _e( 'There are no associated subtitles.' ); ?></em>
-					<# } #>
-					<textarea class="hidden content-setting">{{ content }}</textarea>
-				</div>
-=======
 						<p>
 							<input class="content-track" type="text" value="{{ track.outerHTML }}" />
 							<button type="button" class="button-link remove-setting remove-track"><?php _ex( 'Remove video track', 'media' ); ?></button>
@@ -1286,7 +1204,6 @@ function wp_print_media_templates() {
 					<# } #>
 					<textarea class="hidden content-setting">{{ content }}</textarea>
 				</label>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			</div>
 		</div>
 	</script>

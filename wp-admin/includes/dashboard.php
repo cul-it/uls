@@ -24,8 +24,6 @@ function wp_dashboard_setup() {
 
 	/* Register Widgets and Controls */
 
-<<<<<<< HEAD
-=======
 	// Try Gutenberg
 
 	// If Gutenberg isn't activated, only show the panel to users who can install and activate it.
@@ -38,7 +36,6 @@ function wp_dashboard_setup() {
 		remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
 	}
 
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	$response = wp_check_browser_version();
 
 	if ( $response && $response['upgrade'] ) {
@@ -137,17 +134,10 @@ function wp_dashboard_setup() {
 		exit;
 	}
 
-<<<<<<< HEAD
-	/** This action is documented in wp-admin/includes/meta-boxes.php */
-	do_action( 'do_meta_boxes', $screen->id, 'normal', '' );
-
-	/** This action is documented in wp-admin/includes/meta-boxes.php */
-=======
 	/** This action is documented in wp-admin/edit-form-advanced.php */
 	do_action( 'do_meta_boxes', $screen->id, 'normal', '' );
 
 	/** This action is documented in wp-admin/edit-form-advanced.php */
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	do_action( 'do_meta_boxes', $screen->id, 'side', '' );
 }
 
@@ -1641,8 +1631,6 @@ function wp_welcome_panel() {
 	</div>
 	<?php
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Displays a Try Gutenberg Panel, to introduce people to Gutenberg
@@ -1780,4 +1768,3 @@ function wp_try_gutenberg_panel() {
 	</div>
 	<?php
 }
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

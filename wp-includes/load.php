@@ -333,11 +333,7 @@ function wp_debug_mode() {
 		error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
 	}
 
-<<<<<<< HEAD
-	if ( defined( 'XMLRPC_REQUEST' ) || defined( 'REST_REQUEST' ) || ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) || wp_doing_ajax() || wp_is_json_request() ) {
-=======
 	if ( defined( 'XMLRPC_REQUEST' ) || defined( 'REST_REQUEST' ) || ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) || wp_doing_ajax() ) {
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		@ini_set( 'display_errors', 0 );
 	}
 }
@@ -405,16 +401,7 @@ function require_wp_db() {
 		return;
 	}
 
-<<<<<<< HEAD
-	$dbuser     = defined( 'DB_USER' ) ? DB_USER : '';
-	$dbpassword = defined( 'DB_PASSWORD' ) ? DB_PASSWORD : '';
-	$dbname     = defined( 'DB_NAME' ) ? DB_NAME : '';
-	$dbhost     = defined( 'DB_HOST' ) ? DB_HOST : '';
-
-	$wpdb = new wpdb( $dbuser, $dbpassword, $dbname, $dbhost );
-=======
 	$wpdb = new wpdb( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 }
 
 /**
@@ -709,22 +696,11 @@ function wp_clone( $object ) {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether the current request is for an administrative interface page.
-=======
  * Whether the current request is for an administrative interface page.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * Does not check if the user is an administrator; current_user_can()
  * for checking roles and capabilities.
  *
-<<<<<<< HEAD
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook. 
- *
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * @since 1.5.1
  *
  * @global WP_Screen $current_screen
@@ -1181,27 +1157,3 @@ function wp_finalize_scraping_edited_file_errors( $scrape_key ) {
 	}
 	echo "\n###### wp_scraping_result_end:$scrape_key ######\n";
 }
-<<<<<<< HEAD
-
-/**
- * Checks whether current request is a JSON request, or is expecting a JSON response.
- *
- * @since 5.0.0
- *
- * @return bool True if Accepts or Content-Type headers contain application/json, false otherwise.
- */
-function wp_is_json_request() {
-
-	if ( isset( $_SERVER['HTTP_ACCEPT'] ) && false !== strpos( $_SERVER['HTTP_ACCEPT'], 'application/json' ) ) {
-		return true;
-	}
-
-	if ( isset( $_SERVER['CONTENT_TYPE'] ) && 'application/json' === $_SERVER['CONTENT_TYPE'] ) {
-		return true;
-	}
-
-	return false;
-
-}
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366

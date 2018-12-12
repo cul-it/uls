@@ -751,13 +751,6 @@ border color while dragging a file over the uploader drop area */
 	background-size: 20px 20px;
 }
 
-<<<<<<< HEAD
-.edit-attachment-frame .attachment-media-view .details-image.icon {
-	background: none;
-}
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 .edit-attachment-frame .attachment-media-view .attachment-actions {
 	text-align: center;
 }
@@ -895,10 +888,7 @@ border color while dragging a file over the uploader drop area */
 	margin: -10px 0 0 -10px;
 	background: transparent url(../images/spinner.gif) no-repeat center;
 	background-size: 20px 20px;
-<<<<<<< HEAD
-=======
 	-webkit-transform: translateZ(0);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translateZ(0);
 }
 

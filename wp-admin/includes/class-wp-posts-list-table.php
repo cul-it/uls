@@ -1237,24 +1237,12 @@ class WP_Posts_List_Table extends WP_List_Table {
 				esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;' ), $title ) ),
 				__( 'Edit' )
 			);
-<<<<<<< HEAD
-
-			if ( 'wp_block' !== $post->post_type ) {
-				$actions['inline hide-if-no-js'] = sprintf(
-					'<a href="#" class="editinline" aria-label="%s">%s</a>',
-					/* translators: %s: post title */
-					esc_attr( sprintf( __( 'Quick edit &#8220;%s&#8221; inline' ), $title ) ),
-					__( 'Quick&nbsp;Edit' )
-				);
-			}
-=======
 			$actions['inline hide-if-no-js'] = sprintf(
 				'<a href="#" class="editinline" aria-label="%s">%s</a>',
 				/* translators: %s: post title */
 				esc_attr( sprintf( __( 'Quick edit &#8220;%s&#8221; inline' ), $title ) ),
 				__( 'Quick&nbsp;Edit' )
 			);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		}
 
 		if ( current_user_can( 'delete_post', $post->ID ) ) {
@@ -1309,19 +1297,6 @@ class WP_Posts_List_Table extends WP_List_Table {
 			}
 		}
 
-<<<<<<< HEAD
-		if ( 'wp_block' === $post->post_type ) {
-			$actions['export'] = sprintf(
-				'<button type="button" class="wp-list-reusable-blocks__export button-link" data-id="%s" aria-label="%s">%s</button>',
-				$post->ID,
-				/* translators: %s: post title */
-				esc_attr( sprintf( __( 'Export &#8220;%s&#8221; as JSON' ), $title ) ),
-				__( 'Export as JSON' )
-			);
-		}
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 		if ( is_post_type_hierarchical( $post->post_type ) ) {
 
 			/**
@@ -1438,26 +1413,13 @@ class WP_Posts_List_Table extends WP_List_Table {
 				<span class="input-text-wrap"><input type="text" name="post_title" class="ptitle" value="" /></span>
 			</label>
 
-<<<<<<< HEAD
-		<?php if ( is_post_type_viewable( $screen->post_type ) ) : // is_post_type_viewable check ?>
-
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 			<label>
 				<span class="title"><?php _e( 'Slug' ); ?></span>
 				<span class="input-text-wrap"><input type="text" name="post_name" value="" /></span>
 			</label>
 
-<<<<<<< HEAD
-			<?php
-	endif; // is_post_type_viewable check
-	endif; // $bulk
-	endif; // post_type_supports title
-			?>
-=======
 	<?php endif; // $bulk
 	endif; // post_type_supports title ?>
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 
 	<?php if ( !$bulk ) : ?>
 			<fieldset class="inline-edit-date">

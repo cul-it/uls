@@ -230,10 +230,7 @@ body.js .theme-browser.search-loading {
 .theme-browser .theme .theme-actions {
 	position: absolute;
 	top: 50%;
-<<<<<<< HEAD
-=======
 	-webkit-transform: translateY(-50%);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translateY(-50%);
 	left: 0;
 	padding: 10px 15px;
@@ -1242,10 +1239,7 @@ div#custom-background-image img {
 }
 
 .background-position-control .button-group:first-child > label:first-child .dashicons {
-<<<<<<< HEAD
-=======
 	-webkit-transform: rotate( -45deg );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: rotate( -45deg );
 }
 
@@ -1254,10 +1248,7 @@ div#custom-background-image img {
 }
 
 .background-position-control .button-group:first-child > label:last-child .dashicons {
-<<<<<<< HEAD
-=======
 	-webkit-transform: rotate( 45deg );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: rotate( 45deg );
 }
 
@@ -1266,10 +1257,7 @@ div#custom-background-image img {
 }
 
 .background-position-control .button-group:last-child > label:first-child .dashicons {
-<<<<<<< HEAD
-=======
 	-webkit-transform: rotate( 45deg );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: rotate( 45deg );
 }
 
@@ -1278,10 +1266,7 @@ div#custom-background-image img {
 }
 
 .background-position-control .button-group:last-child > label:last-child .dashicons {
-<<<<<<< HEAD
-=======
 	-webkit-transform: rotate( -45deg );
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: rotate( -45deg );
 }
 
@@ -1578,18 +1563,12 @@ body.full-overlay-active {
 /* rtl:ignore */
 .wp-full-overlay.collapsed .collapse-sidebar-arrow:before,
 .rtl .wp-full-overlay .collapse-sidebar-arrow:before {
-<<<<<<< HEAD
-=======
 	-webkit-transform: rotate(180.001deg);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: rotate(180.001deg); /* Firefox: promoting to its own layer to trigger anti-aliasing  */
 }
 
 .rtl .wp-full-overlay.collapsed .collapse-sidebar-arrow:before {
-<<<<<<< HEAD
-=======
 	-webkit-transform: none;
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: none;
 }
 
@@ -1875,10 +1854,7 @@ body.full-overlay-active {
 	top: 50%;
 	z-index: -1;
 	margin: -10px -10px 0 0;
-<<<<<<< HEAD
-=======
 	-webkit-transform: translateZ(0);
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
 	transform: translateZ(0);
 	background: transparent url(../images/spinner.gif) no-repeat center center;
 	background-size: 20px 20px;

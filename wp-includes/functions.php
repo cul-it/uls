@@ -654,19 +654,9 @@ function wp_get_http_headers( $url, $deprecated = false ) {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether the publish date of the current post in the loop is different
- * from the publish date of the previous post in the loop.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
- * 
-=======
  * Whether the publish date of the current post in the loop is different from the
  * publish date of the previous post in the loop.
  *
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  * @since 0.71
  *
  * @global string $currentday  The day of the current post in the loop.
@@ -1350,24 +1340,13 @@ function do_robots() {
 }
 
 /**
-<<<<<<< HEAD
- * Determines whether WordPress is already installed.
-=======
  * Test whether WordPress is already installed.
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * The cache will be checked first. If you have a cache plugin, which saves
  * the cache values, then this will work. If you use the default WordPress
  * cache, and the database goes away, then you might have problems.
  *
  * Checks for the 'siteurl' option for whether WordPress is installed.
-<<<<<<< HEAD
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
-=======
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @since 2.1.0
  *
@@ -5265,11 +5244,7 @@ function wp_is_stream( $path ) {
  *
  * @since 3.5.0
  *
-<<<<<<< HEAD
- * @link https://secure.php.net/manual/en/function.checkdate.php
-=======
  * @see checkdate()
->>>>>>> 29277210ad8cdfc6c533bb63e35927d86f20c366
  *
  * @param  int    $month       Month number.
  * @param  int    $day         Day number.

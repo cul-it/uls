@@ -1,4 +1,4 @@
-/*! elementor - v2.2.7 - 24-10-2018 */
+/*! elementor - v2.4.3 - 21-01-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,12 +82,12 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 163);
+/******/ 	return __webpack_require__(__webpack_require__.s = 176);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 163:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -152,17 +152,28 @@
 			var self = this;
 
 			self.cache.$switchModeButton.on('click', function () {
-				self.isElementorMode = !self.isElementorMode;
-
-				self.toggleStatus();
-
 				if (self.isElementorMode) {
-					self.cache.$editorPanelButton.trigger('click');
-				} else {
-					var wpEditor = wp.data.dispatch('core/editor');
+					elementorCommon.dialogsManager.createWidget('confirm', {
+						message: elementorAdmin.translate('back_to_wordpress_editor_message'),
+						headerMessage: elementorAdmin.translate('back_to_wordpress_editor_header'),
+						strings: {
+							confirm: elementorAdmin.translate('yes'),
+							cancel: elementorAdmin.translate('cancel')
+						},
+						defaultOption: 'confirm',
+						onConfirm: function onConfirm() {
+							var wpEditor = wp.data.dispatch('core/editor');
 
-					wpEditor.editPost({ gutenberg_elementor_mode: false });
-					wpEditor.savePost();
+							wpEditor.editPost({ gutenberg_elementor_mode: false });
+							wpEditor.savePost();
+							self.isElementorMode = !self.isElementorMode;
+							self.toggleStatus();
+						}
+					}).show();
+				} else {
+					self.isElementorMode = !self.isElementorMode;
+					self.toggleStatus();
+					self.cache.$editorPanelButton.trigger('click');
 				}
 			});
 		},

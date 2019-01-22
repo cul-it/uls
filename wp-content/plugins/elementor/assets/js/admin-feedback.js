@@ -1,4 +1,4 @@
-/*! elementor - v2.2.7 - 24-10-2018 */
+/*! elementor - v2.4.3 - 21-01-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,18 +82,18 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 162);
+/******/ 	return __webpack_require__(__webpack_require__.s = 164);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 162:
+/***/ 164:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-/* global jQuery, ElementorAdminFeedbackArgs */
+/* global jQuery */
 (function ($) {
 	'use strict';
 
@@ -127,7 +127,7 @@
 
 			self.getModal = function () {
 				if (!modal) {
-					modal = elementorAdmin.getDialogsManager().createWidget('lightbox', {
+					modal = elementorCommon.dialogsManager.createWidget('lightbox', {
 						id: 'elementor-deactivate-feedback-modal',
 						headerMessage: self.cache.$dialogHeader,
 						message: self.cache.$dialogForm,
@@ -143,14 +143,14 @@
 
 							this.addButton({
 								name: 'submit',
-								text: ElementorAdminFeedbackArgs.i18n.submit_n_deactivate,
+								text: elementorAdmin.translate('submit_n_deactivate'),
 								callback: self.sendFeedback.bind(self)
 							});
 
-							if (!ElementorAdminFeedbackArgs.is_tracker_opted_in) {
+							if (!elementorAdmin.config.feedback.is_tracker_opted_in) {
 								this.addButton({
 									name: 'skip',
-									text: ElementorAdminFeedbackArgs.i18n.skip_n_deactivate,
+									text: elementorAdmin.translate('skip_n_deactivate'),
 									callback: function callback() {
 										self.deactivate();
 									}

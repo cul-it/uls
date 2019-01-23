@@ -1,0 +1,60 @@
+header {
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  grid-template-columns: 65% 35%;
+
+  @media only screen and (min-width: 480px) {
+    grid-template-columns: 45% 55%;
+  }
+  @media only screen and (min-width: 640px) {
+    grid-template-columns: 33% 67%;
+  }
+  @media only screen and (min-width:1200px) {
+    width: 1000px;
+  }
+  @media only screen and (min-width: 1440px) {
+    width: 1360px;
+    grid-template-columns: 33% 67%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  @media only screen and (min-width: 1600px) {
+    width: 1529px;
+  }
+
+  a.logo-cul {
+    grid-column: 1/2;
+    padding-top: 20px;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+
+  nav.user-tools {
+    text-align: right;
+    margin-top: 0;
+    grid-column: 2/3;
+    padding-top: 15px;
+
+    li {
+      padding-right: 0;
+      display: inline-block;
+      @media only screen and (min-width: 768px) {
+        &:nth-last-child(1) a {
+          border-right: none;
+        }
+      }
+
+      a {
+        font-size: 14px;
+        @media only screen and (min-width: 768px) {
+          font-size: 16px;
+          border-right: 1px solid grey;
+          padding-left: 6px;
+          padding-right: 6px;
+        }
+      }
+    }
+  }
+}

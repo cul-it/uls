@@ -24,61 +24,22 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+
+<!--<div id="page" class="site">-->
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
 	<!-- header -->
-	<header role="banner" style="border: 1px solid red;" >
+	<header>
 		<!-- logo -->
-    <h1><a href="https://www.library.cornell.edu/"><img src="<?php echo get_template_directory_uri(); ?>/img/cul-logo.svg" alt="Cornell University Library logo" class="logo-img"></a></h1>
+    <a class="logo-cul" href="https://www.library.cornell.edu/"><img src="<?php echo get_template_directory_uri(); ?>/images/branding/cul-logo.svg" alt="Cornell University Library logo"></a>
 		<!-- /logo -->
 		<!-- nav -->
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'culu' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'header-menu',
-				'menu_id'        => 'header-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-		<!-- /nav -->
 
+		<nav class="user-tools" aria-labelledby="user-tools">
+			<ul id="user-tools" >
+				<li><a href="#">My Account</a></li>
+				<li><a href="#">Search</a></li>
+			</ul>
+		</nav>
   </header>
 	<!-- header -->
-
-
-
-
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$culu_description = get_bloginfo( 'description', 'display' );
-			if ( $culu_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $culu_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'culu' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">

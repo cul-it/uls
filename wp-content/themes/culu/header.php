@@ -35,8 +35,8 @@
 		<!-- /logo -->
 		<!-- nav -->
 
-		<nav class="user-tools" aria-labelledby="user-tools">
-			<ul id="user-tools" >
+		<nav class="user-tools">
+			<ul>
 				<li><a href="#">My Account</a></li>
 				<li><a href="#">Search</a></li>
 			</ul>

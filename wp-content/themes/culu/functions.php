@@ -27,6 +27,10 @@ if ( ! function_exists( 'culu_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
+
+		// Add Menu Support
+		add_theme_support('menus');
+
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -42,9 +46,10 @@ if ( ! function_exists( 'culu_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// Register Navigation
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'culu' ),
+			'header-menu' => esc_html__('Header Menu', 'culu' ), // Main Navigation
+			'main-menu' => esc_html__( 'Primary', 'culu' ),
 		) );
 
 		/*
@@ -158,4 +163,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

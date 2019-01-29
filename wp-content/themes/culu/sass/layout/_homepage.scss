@@ -58,3 +58,203 @@ header {
     }
   }
 }
+
+.hero__content {
+
+  //border: 1px solid red;
+  background-color: #425F72 !important;
+  border-radius: 5px;
+  height: 345px;
+  display: grid;
+  margin: 0 auto;
+  width: calc(100vw - 20px);
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 50px 50px auto;
+
+  @media only screen and (min-width: 768px) {
+
+    display: grid;
+    margin: 0 auto;
+    width: calc(100vw - 20px);
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: auto;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 1000px;
+  }
+  @media only screen and (min-width: 1440px) {
+    height: 425px;
+    width: 1360px;
+  }
+  @media only screen and (min-width: 1600px) {
+    height: 530px;
+    width: 1529px;
+  }
+
+  .all-libraries {
+    grid-column: 1/4;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    padding: 20px 0 0 20px;
+    height: 50px;
+
+    @media only screen and (min-width: 768px) {
+      grid-column: 1/2;
+    }
+    @media only screen and (min-width: 1440px) {
+      font-size: 24px;
+    }
+    @media only screen and (min-width: 1600px) {
+      padding: 30px 0 0 20px;
+    }
+
+    a {
+      display: inline-block;
+      color: #fff;
+    }
+  }
+
+  .college {
+
+    grid-column: 1/4;
+    display: block;
+    text-align: left;
+    //padding: 20px 0 0 20px;
+    padding: 0 0 0 20px;
+    display: none;
+
+    @media only screen and (min-width: 768px) {
+
+      grid-column: 3/4;
+      padding: 20px 20px 0;
+      text-align: right;
+      display: block;
+    }
+    @media only screen and (min-width: 1440px) {
+      font-size: 24px;
+    }
+
+    @media only screen and (min-width: 1600px) {
+      padding: 30px 20px 0;
+    }
+
+    a {
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 0;
+
+      @media only screen and (min-width: 768px) {
+        line-height: 1.3em;
+        @media only screen and (min-width: 1440px) {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .subheader {
+    grid-column: 1/4;
+    padding-left: 15px;
+    padding-top: 195px;
+
+    @media only screen and (min-width: 768px) {
+      align-self: end;
+      padding-top: 100px;
+      padding-left: 40px;
+      padding-bottom: 30px;
+    }
+
+    h1 {
+
+      font-size: 19px;
+      margin: 0;
+      padding-bottom: 8px;
+
+      a {
+        color: #fff;
+      }
+
+      @media only screen and (min-width: 768px) {
+        font-size: 30px;
+      }
+      @media only screen and (min-width: 1440px) {
+        font-size: 38px;
+      }
+    }
+
+    time {
+      font-size: 14px;
+      color: #fff;
+
+      a.full-hours {
+        margin-left: 5px;
+        color: #fff;
+        font-weight: bold;
+        padding: 3px 10px;
+        margin-left: 0;
+        padding-left: 0;
+
+        &:hover {
+          //color: rgba(255,255,255,.5);
+          background-color: none;
+          text-decoration: underline;
+        }
+      }
+      @media only screen and (min-width: 1440px) {
+        font-size: 30px;
+      }
+
+      i {
+        color: #F8E71C;
+        font-size: 26px;
+        vertical-align: middle;
+        padding-right: 4px;
+        //display: inline-block;
+        @media only screen and (min-width: 1440px) {
+          font-size: 30px;
+          margin-top: -5px;
+        }
+      }
+    }
+
+    ul {
+      margin-left: 16px;
+      display: inline-block;
+      color: #fff;
+      padding-left: 15px;
+      @media only screen and (min-width: 445px) {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      @media only screen and (min-width: 1440px) {
+        font-size: 30px;
+      }
+
+      li {
+        display: inline-block;
+        font-size: 20px;
+        padding-right: 10px;
+        @media only screen and (min-width: 448px) {}
+        @media only screen and (min-width: 1440px) {
+          font-size: 30px;
+        }
+
+        a {
+          color: #fff;
+
+          span {
+            display: inline-block;
+            border-bottom: none;
+          }
+
+          span:hover {
+            display: inline-block;
+            border-bottom: 3px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}

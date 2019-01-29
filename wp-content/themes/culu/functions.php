@@ -46,10 +46,9 @@ if ( ! function_exists( 'culu_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// Register Navigation
+		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'header-menu' => esc_html__('Header Menu', 'culu' ), // Main Navigation
-			'main-menu' => esc_html__( 'Primary', 'culu' ),
+			'primary' => esc_html__( 'Main Menu', 'culu' )
 		) );
 
 		/*
@@ -163,3 +162,164 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+// Theme customization via Kirki
+// Setup
+
+Kirki::add_config( 'theme_config_id', array(
+	'capability'    => 'edit_theme_options',
+	'option_type'   => 'theme_mod',
+) );
+
+/*
+ *  Customize hero image
+ *  Add panel
+ */
+
+Kirki::add_panel( 'panel_id', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'Upload hero images', 'textdomain' ),
+    'description' => esc_attr__( 'Upload hero images for mobile, tablet, and desktop', 'textdomain' ),
+) );
+
+// Add section
+Kirki::add_section( 'section_id_hero_large', array(
+    'title'          => esc_attr__( 'Hero image desktop size', 'textdomain' ),
+    'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id',
+    'priority'       => 160,
+) );
+
+// Add image control
+// Default behaviour (saves data as a URL).
+Kirki::add_field( 'theme_config_id_hero_large', array(
+ 'type'        => 'image',
+ 'settings'    => 'image_setting_url_hero_large',
+ 'label'       => esc_attr__( 'Image Control (URL)', 'textdomain' ),
+ 'description' => esc_attr__( 'Upload image.', 'textdomain' ),
+ 'section'     => 'section_id_hero_large',
+ 'default'     => '',
+) );
+
+
+// Add section
+Kirki::add_section( 'section_id_hero_medium', array(
+    'title'          => esc_attr__( 'Hero image tablet size', 'textdomain' ),
+    'description'    => esc_attr__( 'Upload hero image for tablet devices.', 'textdomain' ),
+    'panel'          => 'panel_id',
+    'priority'       => 160,
+) );
+
+// Add image control
+// Default behaviour (saves data as a URL).
+Kirki::add_field( 'theme_config_id_hero_medium', array(
+ 'type'        => 'image',
+ 'settings'    => 'image_setting_url_hero_medium',
+ 'label'       => esc_attr__( 'Image Control (URL)', 'textdomain' ),
+ 'description' => esc_attr__( 'Upload image.', 'textdomain' ),
+ 'section'     => 'section_id_hero_medium',
+ 'default'     => '',
+) );
+
+// Add section
+Kirki::add_section( 'section_id_hero_small', array(
+    'title'          => esc_attr__( 'Hero image phone size', 'textdomain' ),
+    'description'    => esc_attr__( 'Upload hero image for phone devices.', 'textdomain' ),
+    'panel'          => 'panel_id',
+    'priority'       => 160,
+) );
+
+// Add image control
+// Default behaviour (saves data as a URL).
+Kirki::add_field( 'theme_config_id_hero_small', array(
+ 'type'        => 'image',
+ 'settings'    => 'image_setting_url_hero_small',
+ 'label'       => esc_attr__( 'Image Control (URL)', 'textdomain' ),
+ 'description' => esc_attr__( 'Upload image.', 'textdomain' ),
+ 'section'     => 'section_id_hero_small',
+ 'default'     => '',
+) );
+
+/*
+ *  Customize College Unit
+ *  Add panel
+ */
+
+Kirki::add_panel( 'panel_id_college', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'Add College Unit', 'textdomain' ),
+    //description' => esc_attr__( 'Upload hero images for mobile, tablet, and desktop', 'textdomain' ),
+) );
+
+// Add section college label
+Kirki::add_section( 'section_id_college_label', array(
+    'title'          => esc_attr__( 'Add College name', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_college',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_college_label', array(
+	'type'     => 'text',
+	'settings' => 'college_label',
+	'label'    => __( 'Add label', 'textdomain' ),
+	'section'  => 'section_id_college_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+// Add section college link
+Kirki::add_section( 'section_id_college_link', array(
+    'title'          => esc_attr__( 'Add College url', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_college',
+    'priority'       => 160,
+) );
+
+// Add link control
+Kirki::add_field( 'theme_config_id_college_link', array(
+	'type'     => 'link',
+	'settings' => 'college_link',
+	'label'    => __( 'Add link', 'textdomain' ),
+	'section'  => 'section_id_college_link',
+	'default'  => esc_attr__( 'http://', 'textdomain' ),
+	'priority' => 10,
+) );
+
+// Add section college logo
+Kirki::add_section( 'section_id_college_logo', array(
+    'title'          => esc_attr__( 'Add College logo', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for phone devices.', 'textdomain' ),
+    'panel'          => 'panel_id_college',
+    'priority'       => 160,
+) );
+
+
+/**
+ * Default behaviour (saves data as a URL).
+ */
+Kirki::add_field( 'theme_config_id_college_logo', array(
+	'type'        => 'image',
+	'settings'    => 'college_logo',
+	'label'       => esc_attr__( 'Image Control (URL)', 'textdomain' ),
+	'description' => esc_attr__( 'Description Here.', 'textdomain' ),
+	'section'     => 'section_id_college_logo',
+	'default'     => '',
+) );
+
+/**
+ * Strip out domain path.
+ */
+
+  function get_domain_path($url) {
+    $domain = parse_url($url);
+    // parse_url return and array containing [scheme], [host], [path], and [query].
+    return $domain["path"];
+  }
+
+
+	//if( !defined(THEME_IMG_PATH)){
+     define( 'THEME_IMG_PATH', get_stylesheet_directory_uri() . '/images' );
+    //}

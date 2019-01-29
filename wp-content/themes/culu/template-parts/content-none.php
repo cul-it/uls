@@ -16,7 +16,7 @@
 
 	<div class="page-content">
 		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+		//if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
 			printf(
 				'<p>' . wp_kses(

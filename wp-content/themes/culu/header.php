@@ -134,7 +134,7 @@
 					<?php echo do_shortcode('[libcal_status_now]') ?>
 					<?php echo do_shortcode('[libcal_hours_today]') ?>
 
-				/ <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a></time>
+				- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> / </time>
 
 				<ul>
 					<li><a href="https://www.library.cornell.edu/ask/email"><span class="fa fa-envelope-o"></span></a></li>

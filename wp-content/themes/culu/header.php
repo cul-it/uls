@@ -116,21 +116,14 @@
 				<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a>
 			</div>
 
-			<?php if (get_theme_mod('unitlibrary_college_handle')) {
-								?>
-
 			<div class="college">
 
-				<?php $college_label = get_theme_mod( 'college_label', '' ); ?>
-				<?php $college_link = get_theme_mod( 'college_link', '' ); ?>
+	      <?php $college_label = get_theme_mod( 'college_label', '' ); ?>
+	      <?php $college_link = get_theme_mod( 'college_link', '' );?>
 
-				<!-- Remove original get_theme_mod('unitlibrary_college_handle')-->
-				<a href="<?php echo $college_link ?>" title="<?php echo $college_label ?>"><?php echo $college_label ?></a>
-
+	      <a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
 
 			</div>
-					<?php
-						} ?>
 
 			<div class="subheader">
 				<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>

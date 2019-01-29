@@ -11,24 +11,76 @@
 
 ?>
 
-	</div><!-- #content -->
+<footer>
 
-	<footer style="border: 1px solid red;" id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'culu' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'culu' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'culu' ), 'culu', '<a href="http://underscores.me/">mb863</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+    <div class="footer__nav">
+
+      <a class="all-libraries" href="https://www.library.cornell.edu/"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a>
+
+            <p class="unit-library">NESTLE LIBRARY</p>
+                <?php
+                if (has_nav_menu('footer')) {
+                wp_nav_menu(array(
+                  'theme_location' => 'footer',
+                  'container' => false,
+                  'fallback_cb' => false,
+                  'depth' => 4
+                ));
+              }
+              ?>
+    </div>
+
+    <figure>
+
+      <?php $college_label = get_theme_mod( 'college_label', '' ); ?>
+      <?php $college_link = get_theme_mod( 'college_link', '' );?>
+    	<?php $college_logo = get_theme_mod( 'college_logo', '' ); ?>
+
+      <a href="<?php echo $college_link ?>">
+        <img class="college" src="<?php echo get_domain_path( $college_logo );?>" alt="<?php echo $college_label ?> logo"/>
+      </a>
+      <figcaption></figcaption>
+
+    </figure>
+
+    <address class="library">
+
+        <div class="container">
+
+          <div class="c-1">
+          <p><strong>CONTACT</strong></p>
+          <p><strong>Nestlé Hotel Library</strong><br>
+            G80 Statler Hall,<br>
+            Cornell University<br>
+            Ithaca, NY 14853
+          <i class="fa fa-map-marker-alt"></i></p>
+          </div>
+
+        <div class="c-2">
+         <p><strong>Phone: </strong><a href="tel:1-607-255-3673">(607) 255-3673</a></p>
+
+         <p><strong>E-mail: </strong><a href="mailto:hotellibrary@cornell.edu">hotellibrary@cornell.edu</a></p>
+         <p><strong>Reference Help: </strong><a href="mailto:hotellibrary@cornell.edu">hotellibrary@cornell.edu</a></p>
+        </div>
+
+      </div>
+
+    </address>
+
+    <address class="cornell">
+
+      <p><?php echo date('Y'); ?> Cornell University Library, Ithaca, NY 14853 | <a href="tel:1-607-255-4144">(607) 255-4144</a>  |  <a href="https://www.library.cornell.edu/privacy">Privacy</a> |  <a href="https://www.library.cornell.edu/web-accessibility">Web Accessibility Assistance</a></p>
+
+    </address>
+
+    <p class="feedback">
+
+      <a class="btn-graphic" href="https://www.library.cornell.edu/feedback?destination=web-accessibility">FEEDBACK</a>
+      <a class="btn-graphic" href="https://alumni.library.cornell.edu/content/give-library">GIVE TO THE LIBRARY <i class="fa fa-arrow-right"></i></a>
+
+    </p>
+
+  </footer>
 
 <?php wp_footer(); ?>
 

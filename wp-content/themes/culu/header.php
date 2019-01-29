@@ -112,35 +112,34 @@
 
 	<section class="hero__content">
 
-			<div class="all-libraries">
-				<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a>
-			</div>
+	<div class="all-libraries">
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a>
+	</div>
 
-			<div class="college">
+	<div class="college">
 
-	      <?php $college_label = get_theme_mod( 'college_label', '' ); ?>
-	      <?php $college_link = get_theme_mod( 'college_link', '' );?>
+    <?php $college_label = get_theme_mod( 'college_label', '' ); ?>
+    <?php $college_link = get_theme_mod( 'college_link', '' );?>
 
-	      <a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
+    <a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
 
-			</div>
+	</div>
 
-			<div class="subheader">
+	<div class="subheader">
 
-				<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+		<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 
-				<time><i class="fa fa-clock-o" aria-hidden="true"></i>
+		<time><i class="fa fa-clock-o" aria-hidden="true"></i>
 
-					<?php echo do_shortcode('[libcal_status_now]') ?>
-					<?php echo do_shortcode('[libcal_hours_today]') ?>
+			<?php echo do_shortcode('[libcal_status_now]') ?>
+			<?php echo do_shortcode('[libcal_hours_today]') ?>
 
-				- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> / </time>
+		- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> / </time>
 
-				<ul>
-					<li><a href="https://www.library.cornell.edu/ask/email"><span class="fa fa-envelope-o"></span></a></li>
-					<li><a href="tel:607-253-3510"><i class="fa fa-phone" aria-hidden title="Call Vet Library"></i></a></li>
-					<li><a href="https://www.google.com/maps/dir/''/vet+library+cornell+location/@42.4447442,-76.4658848,338a,35y,39.29t/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x89d081f877bfffff:0xe67944fb1a4aff17!2m2!1d-76.4658424!2d42.4474921"><span class="fa fa-map-marker" aria-hidden title="Vet Library Location"></span></a></li>
-				</ul>
-			</div>
-
-		</section>
+		<ul>
+			<li><a href="https://www.library.cornell.edu/ask/email"><span class="fa fa-envelope-o"></span></a></li>
+			<li><a href="tel:607-253-3510"><i class="fa fa-phone" aria-hidden title="Call Vet Library"></i></a></li>
+			<li><a href="https://www.google.com/maps/dir/''/vet+library+cornell+location/@42.4447442,-76.4658848,338a,35y,39.29t/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x89d081f877bfffff:0xe67944fb1a4aff17!2m2!1d-76.4658424!2d42.4474921"><span class="fa fa-map-marker" aria-hidden title="Vet Library Location"></span></a></li>
+		</ul>
+	</div>
+</section>

@@ -15,10 +15,6 @@
 get_header();
 ?>
 
-	<section>
-		<p>Here goes hero content</p>
-	</section>
-
 	<nav id="site-navigation" class="main-navigation">
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'culu' ); ?></button>
 		<?php
@@ -29,50 +25,14 @@ get_header();
 		?>
 	</nav><!-- #site-navigation -->
 
-<?php
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
-?>
-	<?php
-			if (has_nav_menu('primary')) {
-					wp_nav_menu(array(
-							 'theme_location' => 'primary',
-							 'container' => false,
-							 'fallback_cb' =>  false,
-							 'depth' => 4
-					 ));
-			}
-	?><!-- /nav -->
-
-
-	<main id="content" class="site-main">
+	<main id="content" class="page-home">
 
 	<?php
 	if ( have_posts() ) :
 
 		//if ( is_home() && ! is_front_page() ) :
 			?>
-			<header>
-				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-			</header>
+
 			<?php
 		//endif;
 
@@ -157,6 +117,6 @@ get_header();
 
 
 <?php
-//get_sidebar();
-//get_footer();
+
+get_footer();
 ?>

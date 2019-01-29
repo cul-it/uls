@@ -124,6 +124,9 @@ add_action( 'widgets_init', 'culu_widgets_init' );
  * Enqueue scripts and styles.
  */
 function culu_scripts() {
+
+	wp_enqueue_style( 'culu_google_fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i' );
+
 	wp_enqueue_style( 'culu-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'culu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

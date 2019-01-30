@@ -563,6 +563,7 @@ a:-webkit-any-link {
   grid-template-columns: 100%; }
   @media only screen and (min-width: 1200px) {
     .main-navigation {
+      position: relative;
       width: 1000px; } }
   @media only screen and (min-width: 1440px) {
     .main-navigation {
@@ -603,9 +604,23 @@ a:-webkit-any-link {
     text-decoration: none; }
 
 /* Small menu. */
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+
 .menu-toggle,
 .main-navigation.toggled ul {
-  display: block; }
+  display: block;
+  margin-top: 20px; }
+
+.menu-toggle {
+  position: absolute;
+  top: 0;
+  left: calc(100vw - 100px);
+  font-size: 18px;
+  padding: 0;
+  padding-top: 13px; }
 
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
@@ -1032,162 +1047,46 @@ header {
             display: inline-block;
             border-bottom: 3px solid #fff; }
 
-.hero__content-interior {
+.hero__content.interior-pages {
   background: #463F2C;
   border-radius: 5px;
-  height: 200px;
+  height: 245px;
   display: grid;
   margin: 0 auto;
-  width: calc(100vw - 20px);
+  width: calc(100vw - 40px);
   grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 40px 50px auto;
-  background: #463F2E url("img/hero-home-top.svg") no-repeat center -20px; }
+  grid-template-rows: 40px auto;
+  background: #463F2E url("images/hero/hero-home-top.svg") no-repeat center -120px; }
   @media only screen and (min-width: 640px) {
-    .hero__content-interior {
-      background: #463F2E url("img/hero-home-top.svg") no-repeat center 0; } }
+    .hero__content.interior-pages {
+      background: #463F2E url("images/hero/hero-home-top.svg") no-repeat center 0; } }
   @media only screen and (min-width: 768px) {
-    .hero__content-interior {
+    .hero__content.interior-pages {
+      background: #463F2E url("images/hero/hero-home-top.svg") no-repeat center -20px;
       display: grid;
       margin: 0 auto;
-      width: calc(100vw - 20px);
+      width: calc(100vw - 40px);
       grid-template-columns: 30% 30% 40%;
       grid-template-rows: auto; } }
-  @media only screen and (min-width: 1200px) {
-    .hero__content-interior {
-      width: 1000px; } }
   @media only screen and (min-width: 1440px) {
-    .hero__content-interior {
-      height: 260px;
+    .hero__content.interior-pages {
+      background: #463F2E url("images/hero/hero-home-top.svg") no-repeat center -120px;
+      height: 425px;
       width: 1360px; } }
   @media only screen and (min-width: 1600px) {
-    .hero__content-interior {
+    .hero__content.interior-pages {
+      background: #463F2E url("images/hero/hero-home-top.svg") no-repeat center 0;
+      height: 530px;
       width: 1529px; } }
-  .hero__content-interior .all-libraries {
+  .hero__content.interior-pages .subheader {
     grid-column: 1/4;
-    display: block;
-    font-size: 16px;
-    font-weight: 700;
-    text-align: left;
-    padding: 20px 0 0 20px; }
+    padding-left: 15px;
+    padding-top: 95px; }
     @media only screen and (min-width: 768px) {
-      .hero__content-interior .all-libraries {
-        grid-column: 1/2; } }
-    @media only screen and (min-width: 1440px) {
-      .hero__content-interior .all-libraries {
-        font-size: 24px;
-        grid-column: 1/2; } }
-    .hero__content-interior .all-libraries a {
-      display: inline-block;
-      color: #fff; }
-  .hero__content-interior .college {
-    grid-column: 1/4;
-    display: block;
-    text-align: left;
-    padding: 0 0 0 20px;
-    display: none; }
-    @media only screen and (min-width: 768px) {
-      .hero__content-interior .college {
-        display: block; } }
-    @media only screen and (min-width: 768px) {
-      .hero__content-interior .college {
-        grid-column: 3/4;
-        padding: 10px 20px 0 20px;
-        text-align: right; } }
-    @media only screen and (min-width: 1440px) {
-      .hero__content-interior .college {
-        font-size: 24px;
-        grid-column: 3/4;
-        text-align: right;
-        padding: 20px 20px 0 0; } }
-    .hero__content-interior .college a {
-      font-size: 18px;
-      color: #FFFFFF;
-      letter-spacing: 0;
-      line-height: 48px; }
-      @media only screen and (min-width: 1440px) {
-        .hero__content-interior .college a {
-          font-size: 24px; } }
-  .hero__content-interior .subheader {
-    grid-column: 1/4;
-    padding-top: 60px;
-    padding-left: 15px; }
-    @media only screen and (min-width: 768px) {
-      .hero__content-interior .subheader {
-        padding-top: 20px; } }
-    @media only screen and (min-width: 768px) {
-      .hero__content-interior .subheader {
+      .hero__content.interior-pages .subheader {
         align-self: end;
-        padding-top: 55px;
-        padding-left: 40px;
-        padding-bottom: 30px; } }
-    @media only screen and (min-width: 1440px) {
-      .hero__content-interior .subheader {
+        padding-top: 250px;
         padding-left: 40px; } }
-    .hero__content-interior .subheader h2 {
-      font-size: 19px;
-      color: #fff;
-      margin: 0;
-      padding-bottom: 8px; }
-      .hero__content-interior .subheader h2 a {
-        color: #fff; }
-      @media only screen and (min-width: 768px) {
-        .hero__content-interior .subheader h2 {
-          font-size: 30px; } }
-      @media only screen and (min-width: 1440px) {
-        .hero__content-interior .subheader h2 {
-          font-size: 48px; } }
-    .hero__content-interior .subheader .header-hours {
-      font-size: 14px;
-      color: #fff; }
-      .hero__content-interior .subheader .header-hours a.full-hours {
-        margin-left: 5px;
-        color: #fff;
-        font-weight: bold;
-        padding: 3px 10px;
-        margin-left: 0;
-        padding-left: 0; }
-        .hero__content-interior .subheader .header-hours a.full-hours:hover {
-          background-color: none;
-          text-decoration: underline; }
-      @media only screen and (min-width: 1440px) {
-        .hero__content-interior .subheader .header-hours {
-          font-size: 30px; } }
-      .hero__content-interior .subheader .header-hours i {
-        color: #F8E71C;
-        font-size: 26px;
-        vertical-align: middle;
-        padding-right: 4px; }
-        @media only screen and (min-width: 1440px) {
-          .hero__content-interior .subheader .header-hours i {
-            font-size: 30px;
-            margin-top: -5px; } }
-    .hero__content-interior .subheader ul {
-      margin-left: 16px;
-      display: inline-block;
-      color: #fff;
-      padding-left: 15px; }
-      @media only screen and (min-width: 445px) {
-        .hero__content-interior .subheader ul {
-          margin-left: 0;
-          padding-left: 0; } }
-      @media only screen and (min-width: 1440px) {
-        .hero__content-interior .subheader ul {
-          font-size: 30px; } }
-      .hero__content-interior .subheader ul li {
-        display: inline-block;
-        font-size: 20px;
-        padding-right: 10px; }
-        @media only screen and (min-width: 1440px) {
-          .hero__content-interior .subheader ul li {
-            font-size: 30px; } }
-        .hero__content-interior .subheader ul li a {
-          color: #fff; }
-          .hero__content-interior .subheader ul li a span {
-            display: inline-block;
-            border-bottom: none; }
-          .hero__content-interior .subheader ul li a span:hover {
-            display: inline-block;
-            border-bottom: 3px solid #fff; }
 
 .page-home {
   display: grid;

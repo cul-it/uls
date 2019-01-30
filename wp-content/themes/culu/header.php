@@ -41,7 +41,7 @@
 
 		<nav class="user-tools">
 			<ul>
-				<li><a href="#"><i class="fas fa-bars"></i></a></li>
+				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
 				<li><a href="#"><i class="fas fa-user"></i></a></li>
 				<li><a href="#"><i class="fas fa-search"></i></a></li>
 			</ul>
@@ -108,6 +108,7 @@
 		}
 	}
 
+
 	</style>
 
 	<?php //echo file_get_contents("wp-content/themes/unitlibrary/img/hero-home-top.svg"); ?>
@@ -121,7 +122,7 @@
 		if ( is_front_page()  ) {
 			echo "hero__content";
 		} else {
-			echo "hero__content-interior";
+			echo "hero__content interior-pages";
 		}
 		 ?>
 ">
@@ -158,7 +159,7 @@
 </section>
 
 <nav id="site-navigation" class="main-navigation">
-	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'culu' ); ?></button>
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Menu', 'culu' ); ?><i class="fas fa-bars"></i></button>
 	<?php
 	wp_nav_menu( array(
 		'theme_location' => 'primary',

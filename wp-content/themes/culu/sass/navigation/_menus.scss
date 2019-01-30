@@ -6,8 +6,13 @@
   width: 100%;
   grid-template-columns: 100%;
 
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+
   @media only screen and (min-width:1200px) {
 
+    position: relative;
     width: 1000px;
 
   }
@@ -33,6 +38,7 @@
 		margin: 0;
 		padding-left: 0;
 
+
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -40,6 +46,7 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
+
 
 			ul {
 				left: -999em;
@@ -98,14 +105,26 @@
 //<li><a href="#"><i class="fas fa-bars"></i></a></li>
 
 .menu-toggle {
-  //background-color: transparent;
-  //border: none;
+  background-color: transparent;
+  border: none;
+  cursor:pointer;
 }
 
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+  margin-top: 20px;
 }
+
+.menu-toggle {
+  position: absolute;
+  top: 0;
+  left: calc(100vw - 100px);
+  font-size: 18px;
+  padding: 0;
+  padding-top: 13px;
+}
+
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {

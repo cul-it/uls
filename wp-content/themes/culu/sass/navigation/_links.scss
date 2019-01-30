@@ -10,10 +10,18 @@ a {
 		color: $color__link-hover;
 	}
 	&:focus {
-		outline: thin dotted;
+		//outline: thin dotted;
+		outline: 1px dashed black;
 	}
 	&:hover,
 	&:active {
 		outline: 0;
 	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
 }

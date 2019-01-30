@@ -1,11 +1,6 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The main template file for homepage
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -14,16 +9,6 @@
 
 get_header();
 ?>
-
-	<nav id="site-navigation" class="main-navigation">
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'culu' ); ?></button>
-		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'primary',
-			'menu_id'        => 'primary-menu',
-		) );
-		?>
-	</nav><!-- #site-navigation -->
 
 	<main id="content" class="page-home">
 

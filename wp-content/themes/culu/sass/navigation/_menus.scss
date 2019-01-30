@@ -94,6 +94,14 @@
 }
 
 /* Small menu. */
+
+//<li><a href="#"><i class="fas fa-bars"></i></a></li>
+
+.menu-toggle {
+  //background-color: transparent;
+  //border: none;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;

@@ -19,6 +19,8 @@
 
 	<?php wp_head(); ?>
 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 	<!-- Emergency Banner -->
 	<script src="//embanner.univcomm.cornell.edu/OWC-emergency-banner.js" type="text/javascript"></script>
 </head>
@@ -30,7 +32,7 @@
 	<!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>-->
 
 	<!-- header -->
-	
+
 	<header>
 		<!-- logo -->
     <a class="logo-cul" href="https://www.library.cornell.edu/"><img src="<?php echo get_template_directory_uri(); ?>/images/branding/cul-logo.svg" alt="Cornell University Library logo"></a>
@@ -39,8 +41,9 @@
 
 		<nav class="user-tools">
 			<ul>
-				<li><a href="#">My Account</a></li>
-				<li><a href="#">Search</a></li>
+				<li><a href="#"><i class="fas fa-bars"></i></a></li>
+				<li><a href="#"><i class="fas fa-user"></i></a></li>
+				<li><a href="#"><i class="fas fa-search"></i></a></li>
 			</ul>
 		</nav>
   </header>
@@ -62,8 +65,8 @@
 	.hero__content {
 
 		background:
-			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -20px,
-			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat center 200px,
+			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
+			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -100px 200px,
 			url('<?php echo get_domain_path( $image_hero_small );?>') no-repeat center -50px;
 
 		}
@@ -111,10 +114,19 @@
 
 	<?php //echo file_get_contents("hero-home-top.svg"); ?>
 
-	<section class="hero__content">
+	<section class="
 
+
+		<?php
+		if ( is_front_page()  ) {
+			echo "hero__content";
+		} else {
+			echo "hero__content-interior";
+		}
+		 ?>
+">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a>
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <a href="#">CORNELL LIBRARY HOURS</a> | <a href="#">ASK A LIBRARIAN</a>
 	</div>
 
 	<div class="college">
@@ -135,12 +147,22 @@
 			<?php echo do_shortcode('[libcal_status_now]') ?>
 			<?php echo do_shortcode('[libcal_hours_today]') ?>
 
-		- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> / </time>
+		- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> /</time>
 
 		<ul>
-			<li><a href="https://www.library.cornell.edu/ask/email"><span class="fa fa-envelope-o"></span></a></li>
-			<li><a href="tel:607-253-3510"><i class="fa fa-phone" aria-hidden title="Call Vet Library"></i></a></li>
-			<li><a href="https://www.google.com/maps/dir/''/vet+library+cornell+location/@42.4447442,-76.4658848,338a,35y,39.29t/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x89d081f877bfffff:0xe67944fb1a4aff17!2m2!1d-76.4658424!2d42.4474921"><span class="fa fa-map-marker" aria-hidden title="Vet Library Location"></span></a></li>
+			<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope"></span></a></li>
+			<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
+			<li><a href=""><span class="fas fa-map-marker-alt" aria-hidden title="Vet Library Location"></span></a></li>
 		</ul>
 	</div>
 </section>
+
+<nav id="site-navigation" class="main-navigation">
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'culu' ); ?></button>
+	<?php
+	wp_nav_menu( array(
+		'theme_location' => 'primary',
+		'menu_id'        => 'primary-menu',
+	) );
+	?>
+</nav><!-- #site-navigation -->

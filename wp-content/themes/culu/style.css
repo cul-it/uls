@@ -538,15 +538,20 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #0179AD; }
   a:visited {
-    color: purple; }
+    color: #3B3B3B; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #3B3B3B; }
   a:focus {
-    outline: thin dotted; }
+    outline: 1px dashed black; }
   a:hover, a:active {
     outline: 0; }
+  a:hover {
+    text-decoration: underline; }
+
+a:-webkit-any-link {
+  text-decoration: none; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -608,15 +613,19 @@ a {
 
   .main-navigation ul {
     display: block; } }
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
-.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
   float: left;
   width: 50%; }
-.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
@@ -837,22 +846,15 @@ object {
 --------------------------------------------------------------*/
 header {
   display: grid;
-  margin: 0 auto;
-  width: 100%;
-  grid-template-columns: 65% 35%; }
-  @media only screen and (min-width: 480px) {
-    header {
-      grid-template-columns: 45% 55%; } }
-  @media only screen and (min-width: 640px) {
-    header {
-      grid-template-columns: 33% 67%; } }
+  margin: 10px auto;
+  width: calc(100vw - 40px);
+  grid-template-columns: 67% 33%; }
   @media only screen and (min-width: 1200px) {
     header {
-      width: 1000px; } }
+      width: 90%; } }
   @media only screen and (min-width: 1440px) {
     header {
       width: 1360px;
-      grid-template-columns: 33% 67%;
       padding-top: 20px;
       padding-bottom: 10px; } }
   @media only screen and (min-width: 1600px) {
@@ -861,48 +863,43 @@ header {
   header a.logo-cul {
     grid-column: 1/2;
     padding-top: 20px;
-    margin-top: 5px;
-    padding-top: 5px;
-    padding-left: 10px; }
+    display: inline-block; }
   header nav.user-tools {
     text-align: right;
     margin-top: 0;
     grid-column: 2/3;
     padding-top: 15px; }
+    header nav.user-tools ul {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      padding-top: 3px; }
     header nav.user-tools li {
       padding-right: 0;
       display: inline-block; }
       @media only screen and (min-width: 768px) {
         header nav.user-tools li:nth-last-child(1) a {
-          border-right: none; } }
+          padding-right: none; } }
       header nav.user-tools li a {
-        font-size: 14px; }
-        @media only screen and (min-width: 768px) {
-          header nav.user-tools li a {
-            font-size: 16px;
-            border-right: 1px solid grey;
-            padding-left: 6px;
-            padding-right: 6px; } }
+        font-size: 18px;
+        padding-right: 7px; }
 
 .hero__content {
   background-color: #425F72 !important;
-  border-radius: 5px;
+  border-radius: 3px;
   height: 345px;
   display: grid;
   margin: 0 auto;
-  width: calc(100vw - 20px);
+  width: calc(100vw - 40px);
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 50px 50px auto; }
   @media only screen and (min-width: 768px) {
     .hero__content {
       display: grid;
       margin: 0 auto;
-      width: calc(100vw - 20px);
+      width: calc(100vw - 40px);
       grid-template-columns: 30% 30% 40%;
       grid-template-rows: auto; } }
-  @media only screen and (min-width: 1200px) {
-    .hero__content {
-      width: 1000px; } }
   @media only screen and (min-width: 1440px) {
     .hero__content {
       height: 425px;
@@ -911,14 +908,16 @@ header {
     .hero__content {
       height: 530px;
       width: 1529px; } }
+  .hero__content a:hover {
+    text-decoration: underline; }
   .hero__content .all-libraries {
     grid-column: 1/4;
     display: block;
     font-size: 16px;
-    font-weight: 700;
     text-align: left;
     padding: 20px 0 0 20px;
-    height: 50px; }
+    height: 50px;
+    color: #fff; }
     @media only screen and (min-width: 768px) {
       .hero__content .all-libraries {
         grid-column: 1/2; } }
@@ -982,12 +981,11 @@ header {
         .hero__content .subheader h1 {
           font-size: 38px; } }
     .hero__content .subheader time {
-      font-size: 14px;
+      font-size: 16px;
       color: #fff; }
       .hero__content .subheader time a.full-hours {
         margin-left: 5px;
         color: #fff;
-        font-weight: bold;
         padding: 3px 10px;
         margin-left: 0;
         padding-left: 0; }
@@ -1034,14 +1032,168 @@ header {
             display: inline-block;
             border-bottom: 3px solid #fff; }
 
+.hero__content-interior {
+  background: #463F2C;
+  border-radius: 5px;
+  height: 200px;
+  display: grid;
+  margin: 0 auto;
+  width: calc(100vw - 20px);
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 40px 50px auto;
+  background: #463F2E url("img/hero-home-top.svg") no-repeat center -20px; }
+  @media only screen and (min-width: 640px) {
+    .hero__content-interior {
+      background: #463F2E url("img/hero-home-top.svg") no-repeat center 0; } }
+  @media only screen and (min-width: 768px) {
+    .hero__content-interior {
+      display: grid;
+      margin: 0 auto;
+      width: calc(100vw - 20px);
+      grid-template-columns: 30% 30% 40%;
+      grid-template-rows: auto; } }
+  @media only screen and (min-width: 1200px) {
+    .hero__content-interior {
+      width: 1000px; } }
+  @media only screen and (min-width: 1440px) {
+    .hero__content-interior {
+      height: 260px;
+      width: 1360px; } }
+  @media only screen and (min-width: 1600px) {
+    .hero__content-interior {
+      width: 1529px; } }
+  .hero__content-interior .all-libraries {
+    grid-column: 1/4;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    padding: 20px 0 0 20px; }
+    @media only screen and (min-width: 768px) {
+      .hero__content-interior .all-libraries {
+        grid-column: 1/2; } }
+    @media only screen and (min-width: 1440px) {
+      .hero__content-interior .all-libraries {
+        font-size: 24px;
+        grid-column: 1/2; } }
+    .hero__content-interior .all-libraries a {
+      display: inline-block;
+      color: #fff; }
+  .hero__content-interior .college {
+    grid-column: 1/4;
+    display: block;
+    text-align: left;
+    padding: 0 0 0 20px;
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .hero__content-interior .college {
+        display: block; } }
+    @media only screen and (min-width: 768px) {
+      .hero__content-interior .college {
+        grid-column: 3/4;
+        padding: 10px 20px 0 20px;
+        text-align: right; } }
+    @media only screen and (min-width: 1440px) {
+      .hero__content-interior .college {
+        font-size: 24px;
+        grid-column: 3/4;
+        text-align: right;
+        padding: 20px 20px 0 0; } }
+    .hero__content-interior .college a {
+      font-size: 18px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+      line-height: 48px; }
+      @media only screen and (min-width: 1440px) {
+        .hero__content-interior .college a {
+          font-size: 24px; } }
+  .hero__content-interior .subheader {
+    grid-column: 1/4;
+    padding-top: 60px;
+    padding-left: 15px; }
+    @media only screen and (min-width: 768px) {
+      .hero__content-interior .subheader {
+        padding-top: 20px; } }
+    @media only screen and (min-width: 768px) {
+      .hero__content-interior .subheader {
+        align-self: end;
+        padding-top: 55px;
+        padding-left: 40px;
+        padding-bottom: 30px; } }
+    @media only screen and (min-width: 1440px) {
+      .hero__content-interior .subheader {
+        padding-left: 40px; } }
+    .hero__content-interior .subheader h2 {
+      font-size: 19px;
+      color: #fff;
+      margin: 0;
+      padding-bottom: 8px; }
+      .hero__content-interior .subheader h2 a {
+        color: #fff; }
+      @media only screen and (min-width: 768px) {
+        .hero__content-interior .subheader h2 {
+          font-size: 30px; } }
+      @media only screen and (min-width: 1440px) {
+        .hero__content-interior .subheader h2 {
+          font-size: 48px; } }
+    .hero__content-interior .subheader .header-hours {
+      font-size: 14px;
+      color: #fff; }
+      .hero__content-interior .subheader .header-hours a.full-hours {
+        margin-left: 5px;
+        color: #fff;
+        font-weight: bold;
+        padding: 3px 10px;
+        margin-left: 0;
+        padding-left: 0; }
+        .hero__content-interior .subheader .header-hours a.full-hours:hover {
+          background-color: none;
+          text-decoration: underline; }
+      @media only screen and (min-width: 1440px) {
+        .hero__content-interior .subheader .header-hours {
+          font-size: 30px; } }
+      .hero__content-interior .subheader .header-hours i {
+        color: #F8E71C;
+        font-size: 26px;
+        vertical-align: middle;
+        padding-right: 4px; }
+        @media only screen and (min-width: 1440px) {
+          .hero__content-interior .subheader .header-hours i {
+            font-size: 30px;
+            margin-top: -5px; } }
+    .hero__content-interior .subheader ul {
+      margin-left: 16px;
+      display: inline-block;
+      color: #fff;
+      padding-left: 15px; }
+      @media only screen and (min-width: 445px) {
+        .hero__content-interior .subheader ul {
+          margin-left: 0;
+          padding-left: 0; } }
+      @media only screen and (min-width: 1440px) {
+        .hero__content-interior .subheader ul {
+          font-size: 30px; } }
+      .hero__content-interior .subheader ul li {
+        display: inline-block;
+        font-size: 20px;
+        padding-right: 10px; }
+        @media only screen and (min-width: 1440px) {
+          .hero__content-interior .subheader ul li {
+            font-size: 30px; } }
+        .hero__content-interior .subheader ul li a {
+          color: #fff; }
+          .hero__content-interior .subheader ul li a span {
+            display: inline-block;
+            border-bottom: none; }
+          .hero__content-interior .subheader ul li a span:hover {
+            display: inline-block;
+            border-bottom: 3px solid #fff; }
+
 .page-home {
   display: grid;
   margin: 0 auto;
-  width: 100%;
+  width: calc(100vw - 40px);
   grid-template-columns: 100%; }
-  @media only screen and (min-width: 1200px) {
-    .page-home {
-      width: 1000px; } }
   @media only screen and (min-width: 1440px) {
     .page-home {
       width: 1360px;
@@ -1051,18 +1203,21 @@ header {
   @media only screen and (min-width: 1600px) {
     .page-home {
       width: 1529px; } }
+  .page-home article header {
+    display: block; }
+  .page-home article .entry-content {
+    margin-top: 0; }
 
 footer {
   border-top: 1px solid #E0E0E0;
   display: grid;
   margin: 0 auto;
-  width: 100%;
-  padding: 30px;
+  width: calc(100vw - 40px);
   grid-template-columns: 100%; }
   @media only screen and (min-width: 1200px) {
     footer {
       grid-template-columns: 33% 33% 34%;
-      width: 1000px; } }
+      width: calc(100vw - 40px); } }
   footer .footer__nav {
     grid-column: 1;
     padding-left: 0; }
@@ -1174,5 +1329,20 @@ footer {
   padding: 11px 56px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300; }
+
+.page-interior {
+  display: grid;
+  margin: 0 auto;
+  width: calc(100vw - 40px);
+  grid-template-columns: 100%; }
+  @media only screen and (min-width: 1440px) {
+    .page-interior {
+      width: 1360px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      padding-left: 40px; } }
+  @media only screen and (min-width: 1600px) {
+    .page-interior {
+      width: 1529px; } }
 
 /*# sourceMappingURL=style.css.map */

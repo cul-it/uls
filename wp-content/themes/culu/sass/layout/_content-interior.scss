@@ -1,0 +1,22 @@
+.page-interior {
+
+  display: grid;
+  margin: 0 auto;
+  width: calc(100vw - 40px);
+  grid-template-columns: 100%;
+
+  @media only screen and (min-width: 1440px) {
+
+    width: 1360px;
+    padding-top: 20px;
+		padding-bottom: 10px;
+    padding-left: 40px;
+
+  }
+
+  @media only screen and (min-width: 1600px) {
+
+    width: 1529px;
+
+  }
+}

@@ -1,32 +1,32 @@
 header {
 
   display: grid;
-  margin: 0 auto;
-  width: 100%;
-  grid-template-columns: 65% 35%;
+  margin: 10px auto;
+  width: calc(100vw - 40px);
+  grid-template-columns: 67% 33%;
 
   @media only screen and (min-width: 480px) {
 
-    grid-template-columns: 45% 55%;
+    //grid-template-columns: 45% 55%;
 
   }
 
   @media only screen and (min-width: 640px) {
 
-    grid-template-columns: 33% 67%;
+    //grid-template-columns: 33% 67%;
 
   }
 
   @media only screen and (min-width:1200px) {
 
-    width: 1000px;
+    width: 90%;
 
   }
 
   @media only screen and (min-width: 1440px) {
 
     width: 1360px;
-    grid-template-columns: 33% 67%;
+    //grid-template-columns: 33% 67%;
     padding-top: 20px;
     padding-bottom: 10px;
 
@@ -42,9 +42,7 @@ header {
 
     grid-column: 1/2;
     padding-top: 20px;
-    margin-top: 5px;
-    padding-top: 5px;
-    padding-left: 10px;
+    display: inline-block;
 
   }
 
@@ -55,6 +53,13 @@ header {
     grid-column: 2/3;
     padding-top: 15px;
 
+    ul {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      padding-top: 3px;
+    }
+
     li {
 
       padding-right: 0;
@@ -62,7 +67,7 @@ header {
       @media only screen and (min-width: 768px) {
 
         &:nth-last-child(1) a {
-          border-right: none;
+          padding-right: none;
 
         }
 
@@ -70,14 +75,11 @@ header {
 
       a {
 
-        font-size: 14px;
+        font-size: 18px;
+        padding-right: 7px;
 
         @media only screen and (min-width: 768px) {
 
-          font-size: 16px;
-          border-right: 1px solid grey;
-          padding-left: 6px;
-          padding-right: 6px;
 
         }
 
@@ -92,11 +94,13 @@ header {
 .hero__content {
 
   background-color: #425F72 !important;
-  border-radius: 5px;
+  border-radius: 3px;
   height: 345px;
+
   display: grid;
   margin: 0 auto;
-  width: calc(100vw - 20px);
+  width: calc(100vw - 40px);
+
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 50px 50px auto;
 
@@ -104,16 +108,12 @@ header {
 
     display: grid;
     margin: 0 auto;
-    width: calc(100vw - 20px);
+    width: calc(100vw - 40px);
     grid-template-columns: 30% 30% 40%;
     grid-template-rows: auto;
 
   }
-  @media only screen and (min-width: 1200px) {
 
-    width: 1000px;
-
-  }
   @media only screen and (min-width: 1440px) {
 
     height: 425px;
@@ -127,15 +127,20 @@ header {
 
   }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
+
   .all-libraries {
 
     grid-column: 1/4;
     display: block;
     font-size: 16px;
-    font-weight: 700;
     text-align: left;
     padding: 20px 0 0 20px;
     height: 50px;
+    color: #fff;
 
     @media only screen and (min-width: 768px) {
 
@@ -253,14 +258,14 @@ header {
 
     time {
 
-      font-size: 14px;
+      font-size: 16px;
       color: #fff;
 
       a.full-hours {
 
         margin-left: 5px;
         color: #fff;
-        font-weight: bold;
+        //font-weight: bold;
         padding: 3px 10px;
         margin-left: 0;
         padding-left: 0;
@@ -360,20 +365,236 @@ header {
 
 
 
+.hero__content-interior {
+  background: #463F2C;
+  border-radius: 5px;
+  height: 200px;
+  display: grid;
+  margin: 0 auto;
+  width: calc(100vw - 20px);
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 40px 50px auto;
+
+  background: #463F2E   url('img/hero-home-top.svg')no-repeat center -20px;
+  //grid-template-columns: 33% 33% 33%;
+  //grid-template-rows: 100px auto;
+
+  @media only screen and (min-width: 640px) {
+
+    background: #463F2E   url('img/hero-home-top.svg')no-repeat center 0;
+  }
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    margin: 0 auto;
+    width: calc(100vw - 20px);
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: auto;
+  }
+
+  @media only screen and (min-width:1200px) {
+    width: 1000px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    height: 260px;
+    width: 1360px;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    width: 1529px;
+  }
+
+  .all-libraries {
+    grid-column: 1/4;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    padding: 20px 0 0 20px;
+
+    @media only screen and (min-width: 768px) {
+      grid-column: 1/2;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      font-size: 24px;
+      grid-column: 1/2;
+
+    }
+
+    a {
+      display: inline-block;
+      color: #fff;
+    }
+  }
+
+  .college {
+    grid-column: 1/4;
+    display: block;
+    text-align: left;
+    padding: 0 0 0 20px;
+    display: none;
+
+    @media only screen and (min-width: 768px) {
+      display: block;
+    }
+
+    @media only screen and (min-width: 768px) {
+      grid-column: 3/4;
+      padding: 10px 20px 0 20px;
+      text-align: right;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      font-size: 24px;
+      grid-column: 3/4;
+      text-align: right;
+      padding: 20px 20px 0 0;
+    }
+
+    a {
+      font-size: 18px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+      line-height: 48px;
+
+      @media only screen and (min-width: 1440px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .subheader {
+    grid-column: 1/4;
+    padding-top: 60px;
+    padding-left: 15px;
+
+    @media only screen and (min-width: 768px) {
+      padding-top: 20px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      align-self: end;
+      padding-top: 55px;
+      padding-left: 40px;
+      padding-bottom: 30px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      padding-left: 40px;
+    }
+
+    h2 {
+      //font-size: 48px;
+      font-size: 19px;
+      color: #fff;
+      margin: 0;
+      padding-bottom: 8px;;
+
+      a {
+        color: #fff;
+      }
+
+      @media only screen and (min-width: 768px) {
+        font-size: 30px;
+      }
+
+      @media only screen and (min-width: 1440px) {
+        font-size: 48px;
+      }
+    }
+
+    .header-hours {
+      font-size: 14px;
+      color: #fff;
+
+      a.full-hours {
+        margin-left: 5px;
+        color: #fff;
+        font-weight: bold;
+        padding: 3px 10px;
+        margin-left: 0;
+        padding-left: 0;
+
+        &:hover {
+          //color: rgba(255,255,255,.5);
+          background-color: none;
+          text-decoration: underline;
+        }
+      }
+
+      @media only screen and (min-width: 1440px) {
+        font-size: 30px;
+      }
+
+      i {
+        color: #F8E71C;
+        font-size: 26px;
+        vertical-align: middle;
+        padding-right: 4px;
+        //display: inline-block;
+
+        @media only screen and (min-width: 1440px) {
+          font-size: 30px;
+          margin-top: -5px;
+        }
+      }
+    }
+
+    ul {
+      margin-left: 16px;
+      display: inline-block;
+      color: #fff;
+      padding-left: 15px;
+
+      @media only screen and (min-width: 445px) {
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      @media only screen and (min-width: 1440px) {
+        font-size: 30px;
+      }
+
+      li {
+        display: inline-block;
+        font-size: 20px;
+        padding-right: 10px;
+
+        @media only screen and (min-width: 448px) {
+
+        }
+
+        @media only screen and (min-width: 1440px) {
+          font-size: 30px;
+        }
+
+        a {
+          color: #fff;
+
+          span {
+          	display: inline-block;
+          	border-bottom: none;
+          }
+
+          span:hover {
+          	display: inline-block;
+          	border-bottom: 3px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
 .page-home {
 
   display: grid;
   margin: 0 auto;
-  width: 100%;
+  width: calc(100vw - 40px);
   grid-template-columns: 100%;
 
-
-
-  @media only screen and (min-width:1200px) {
-
-    width: 1000px;
-
-  }
 
   @media only screen and (min-width: 1440px) {
 
@@ -389,6 +610,14 @@ header {
     width: 1529px;
 
   }
+
+  article header {
+    display: block;
+  }
+
+  article .entry-content {
+    margin-top: 0;
+  }
 }
 
 
@@ -398,14 +627,12 @@ footer {
   border-top: 1px solid #E0E0E0;
   display: grid;
   margin: 0 auto;
-  width: 100%;
-  padding: 30px;
-  //margin-top: 50px;
-  //grid-template-columns: 33% 33% 34%;
+  width: calc(100vw - 40px);
   grid-template-columns: 100%;
+
   @media only screen and (min-width: 1200px) {
     grid-template-columns: 33% 33% 34%;
-    width: 1000px;
+    width: calc(100vw - 40px);
   }
 
   .footer__nav {

@@ -557,103 +557,59 @@ a:-webkit-any-link {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  display: grid;
-  margin: 0 auto;
+  margin: 10px auto;
   width: 100%;
-  grid-template-columns: 100%; }
+  position: relative;
+  position: absolute;
+  top: 60px;
+  left: 0; }
   .main-navigation ul {
     display: none;
     list-style: none;
     margin: 0;
     padding-left: 0;
-    background-color: #fff;
-    position: absolute;
-    top: 50px;
-    left: 0; }
+    background-color: #fff; }
     .main-navigation ul li {
-      width: 100%;
-      padding-right: 10px;
-      border-bottom: 1px solid grey; }
+      padding: 7px 10px;
+      border-bottom: 1px solid #D8D8D8; }
+      .main-navigation ul li:first-child {
+        border-top: 1px solid #D8D8D8; }
     .main-navigation ul a {
-      display: inline-block;
-      text-decoration: none;
-      padding: 15px 20px; }
+      display: block;
+      text-decoration: none; }
     .main-navigation ul ul {
-      z-index: 99999;
-      border: 1px solid blue;
-      /*
-			ul {
-				left: -999em;
-				top: 0;
-        border: 1px solid black;
-
-			}
-      */ }
-      .main-navigation ul ul a {
-        width: 100%; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      left: auto; }
-  @media only screen and (min-width: 1200px) {
-    .main-navigation {
       position: relative;
-      width: 1000px; } }
-  @media only screen and (min-width: 1440px) {
-    .main-navigation {
-      width: 1360px;
-      padding-top: 20px;
-      padding-bottom: 10px;
-      padding-left: 40px; } }
-  @media only screen and (min-width: 1600px) {
-    .main-navigation {
-      width: 1529px; } }
-  .main-navigation ul {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding-left: 0; }
-    .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999; }
+      z-index: 99999;
+      padding-left: 10px; }
       .main-navigation ul ul ul {
         left: -999em;
         top: 0; }
-      .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-        left: 100%; }
+      .main-navigation ul ul li {
+        border-top: none;
+        border-bottom: none; }
+        .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+          left: 100%; }
       .main-navigation ul ul a {
         width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
-  .main-navigation li {
-    float: left;
-    position: relative; }
-  .main-navigation a {
-    display: block;
-    text-decoration: none; }
 
 /* Small menu. */
 .menu-toggle {
   background-color: transparent;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-top: 20px;
+  position: absolute;
+  top: -58px;
+  left: calc(100vw - 106px);
+  font-size: 18px;
+  padding: 0; }
 
 .menu-toggle,
 .main-navigation.toggled ul {
-  display: block;
-  margin-top: 20px; }
-
-.menu-toggle {
-  position: absolute;
-  top: 0;
-  left: calc(100vw - 106px);
-  font-size: 18px;
-  padding: 0;
-  padding-top: 13px; }
+  display: block; }
 
 @media screen and (min-width: 37.5em) {
   .menu-toggle {

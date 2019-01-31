@@ -559,7 +559,6 @@ a:-webkit-any-link {
 .main-navigation {
   margin: 10px auto;
   width: 100%;
-  position: relative;
   position: absolute;
   top: 60px;
   left: 0; }

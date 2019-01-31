@@ -537,17 +537,17 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
+a, button {
   color: #0179AD; }
-  a:visited {
+  a:visited, button:visited {
     color: #3B3B3B; }
-  a:hover, a:focus, a:active {
+  a:hover, a:focus, a:active, button:hover, button:focus, button:active {
     color: #3B3B3B; }
-  a:focus {
+  a:focus, button:focus {
     outline: 1px dashed black; }
-  a:hover, a:active {
+  a:hover, a:active, button:hover, button:active {
     outline: 0; }
-  a:hover {
+  a:hover, button:hover {
     text-decoration: underline; }
 
 a:-webkit-any-link {
@@ -561,6 +561,39 @@ a:-webkit-any-link {
   margin: 0 auto;
   width: 100%;
   grid-template-columns: 100%; }
+  .main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    left: 0; }
+    .main-navigation ul li {
+      width: 100%;
+      padding-right: 10px;
+      border-bottom: 1px solid grey; }
+    .main-navigation ul a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 15px 20px; }
+    .main-navigation ul ul {
+      z-index: 99999;
+      border: 1px solid blue;
+      /*
+			ul {
+				left: -999em;
+				top: 0;
+        border: 1px solid black;
+
+			}
+      */ }
+      .main-navigation ul ul a {
+        width: 100%; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto; }
   @media only screen and (min-width: 1200px) {
     .main-navigation {
       position: relative;
@@ -617,7 +650,7 @@ a:-webkit-any-link {
 .menu-toggle {
   position: absolute;
   top: 0;
-  left: calc(100vw - 100px);
+  left: calc(100vw - 106px);
   font-size: 18px;
   padding: 0;
   padding-top: 13px; }
@@ -628,19 +661,15 @@ a:-webkit-any-link {
 
   .main-navigation ul {
     display: block; } }
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
   width: 50%; }
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }

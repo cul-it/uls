@@ -354,7 +354,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: Raleway, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -571,8 +571,6 @@ a:-webkit-any-link {
     .main-navigation ul li {
       padding: 7px 10px;
       border-bottom: 1px solid #D8D8D8; }
-      .main-navigation ul li:first-child {
-        border-top: 1px solid #D8D8D8; }
     .main-navigation ul a {
       display: block;
       text-decoration: none; }
@@ -610,20 +608,24 @@ a:-webkit-any-link {
 .main-navigation.toggled ul {
   display: block; }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 640px) {
   .menu-toggle {
     display: none; }
 
   .main-navigation {
     position: relative;
     margin: 10px auto;
-    width: 90%;
-    display: block; }
+    width: calc(100vw - 40px);
+    display: block;
+    margin-bottom: 100px;
+    margin-top: -40px; }
     .main-navigation ul {
       display: block;
       list-style: none;
       margin: 0;
       padding-left: 0; }
+      .main-navigation ul li {
+        border-bottom: none; }
       .main-navigation ul ul {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
         float: left;
@@ -660,6 +662,15 @@ a:-webkit-any-link {
   text-align: right;
   width: 50%; }
 
+@media only screen and (min-width: 1200px) {
+  .main-navigation {
+    width: 90%; } }
+@media only screen and (min-width: 1440px) {
+  .main-navigation {
+    width: 1360px; } }
+@media only screen and (min-width: 1600px) {
+  .main-navigation {
+    width: 1529px; } }
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1107,18 +1118,16 @@ header {
   display: grid;
   margin: 0 auto;
   width: calc(100vw - 40px);
-  grid-template-columns: 100%; }
+  grid-template-columns: 100%;
+  padding: 10px; }
   @media only screen and (min-width: 1440px) {
     .page-home {
-      width: 1360px;
-      padding-top: 20px;
-      padding-bottom: 10px;
-      padding-left: 40px; } }
+      width: 1360px; } }
   @media only screen and (min-width: 1600px) {
     .page-home {
       width: 1529px; } }
   .page-home article header {
-    display: block; }
+    display: none; }
   .page-home article .entry-content {
     margin-top: 0; }
 

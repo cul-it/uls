@@ -127,7 +127,7 @@ function culu_scripts() {
 
 	//wp_enqueue_style( 'culu_fontawesome', 'https://use.fontawesome.com/releases/v5.7.0/css/all.css' );
 
-	wp_enqueue_style( 'culu_google_fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i' );
+	wp_enqueue_style( 'culu_google_fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i' );
 
 	wp_enqueue_style( 'culu-style', get_stylesheet_uri() );
 

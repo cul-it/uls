@@ -428,6 +428,15 @@ header {
 
 
 
+
+
+
+
+
+
+
+
+
 .page-home {
 
   display: grid;
@@ -435,13 +444,11 @@ header {
   width: calc(100vw - 40px);
   grid-template-columns: 100%;
 
+  padding: 10px;
 
   @media only screen and (min-width: 1440px) {
 
-    width: 1360px;
-    padding-top: 20px;
-		padding-bottom: 10px;
-    padding-left: 40px;
+  width: 1360px;
 
   }
 
@@ -449,10 +456,13 @@ header {
 
     width: 1529px;
 
+
   }
 
+
+
   article header {
-    display: block;
+    display: none;
   }
 
   article .entry-content {

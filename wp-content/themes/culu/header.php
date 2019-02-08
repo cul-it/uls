@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all of the <head> section and header content
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -66,34 +66,37 @@
 
 		background:
 			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
-			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -100px 200px,
+			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -150px 220px,
 			url('<?php echo get_domain_path( $image_hero_small );?>') no-repeat center -50px;
 
 		}
 
 	@media only screen and (min-width: 640px) {
 		.hero__content {
+
 			background:
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center 0,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat center 210px,
+				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
+				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -140px 210px,
 				url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat -600px -100px;
 			}
 	}
 
 	@media only screen and (min-width: 768px) {
 	.hero__content {
+
 			background:
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -20px,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat center 200px,
+				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
+				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 200px,
 				url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat center center;
 		}
 	}
 
 	@media only screen and (min-width: 1440px) {
 		.hero__content {
+
 			background:
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat center 290px,
+				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 220px,
 				url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
 		}
 
@@ -102,8 +105,8 @@
 	@media only screen and (min-width: 1600px) {
 		.hero__content {
 			background:
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center 0,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat center 340px,
+				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -100px,
+				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 300px,
 				url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
 		}
 	}
@@ -117,7 +120,6 @@
 
 	<section class="
 
-
 		<?php
 		if ( is_front_page()  ) {
 			echo "hero__content";
@@ -127,7 +129,7 @@
 		 ?>
 ">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <a href="#">CORNELL LIBRARY HOURS</a> | <a href="#">ASK A LIBRARIAN</a>
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <span><a href="#">Cornell Library Hours</a></span> | <span><a href="#">Ask a Librarian</a></span>
 	</div>
 
 	<div class="college">
@@ -150,7 +152,7 @@
 
 		- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> /</time>
 
-		<ul>
+		<ul class="header-contact">
 			<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope"></span></a></li>
 			<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
 			<li><a href=""><span class="fas fa-map-marker-alt" aria-hidden title="Vet Library Location"></span></a></li>

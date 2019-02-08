@@ -1,4 +1,4 @@
-/*! elementor - v2.4.3 - 21-01-2019 */
+/*! elementor - v2.4.5 - 30-01-2019 */
 @charset "UTF-8";
 .elementor-panel-box {
   margin-top: 10px;
@@ -227,13 +227,6 @@
   .elementor-control .select2-container {
     width: 100% !important;
     outline: none; }
-    .elementor-control .select2-container:not(.select2-container--open):not(.select2-container--focus) .select2-selection--single,
-    .elementor-control .select2-container:not(.select2-container--open):not(.select2-container--focus) .select2-selection--multiple {
-      border-color: #d5dadf; }
-    .elementor-control .select2-container.select2-container--open .select2-selection--single,
-    .elementor-control .select2-container.select2-container--open .select2-selection--multiple, .elementor-control .select2-container.select2-container--focus .select2-selection--single,
-    .elementor-control .select2-container.select2-container--focus .select2-selection--multiple {
-      border-color: #a4afb7; }
     .elementor-control .select2-container.select2-container--default .select2-selection--multiple .select2-selection__clear {
       display: none; }
     .elementor-control .select2-container.select2-container--default .select2-selection--multiple .select2-selection__choice {
@@ -1797,7 +1790,8 @@ html.elementor-html {
   transition: all .1s; }
 
 .elementor-editor-active .elementor-widget.elementor-element-editable, .elementor-editor-active .elementor-widget.elementor-element-edit-mode:hover {
-  outline: 1px solid #71d7f7; }
+  -webkit-box-shadow: 0 0 0 1px #71d7f7;
+          box-shadow: 0 0 0 1px #71d7f7; }
 
 .elementor-editor-active .elementor-widget:not(:hover) .elementor-editor-element-settings {
   display: none; }

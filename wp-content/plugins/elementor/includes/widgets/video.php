@@ -132,7 +132,7 @@ class Widget_Video extends Widget_Base {
 					],
 				],
 				'placeholder' => __( 'Enter your URL', 'elementor' ) . ' (YouTube)',
-				'default' => 'https://www.youtube.com/watch?v=9uOETcuFjbE',
+				'default' => 'https://www.youtube.com/watch?v=XHOmBV4js_E',
 				'label_block' => true,
 				'condition' => [
 					'video_type' => 'youtube',
@@ -577,6 +577,7 @@ class Widget_Video extends Widget_Base {
 					'219' => '21:9',
 					'43' => '4:3',
 					'32' => '3:2',
+					'11' => '1:1',
 				],
 				'default' => '169',
 				'prefix_class' => 'elementor-aspect-ratio-',

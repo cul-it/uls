@@ -1,4 +1,4 @@
-/*! elementor - v2.4.3 - 21-01-2019 */
+/*! elementor - v2.4.5 - 30-01-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -140,7 +140,13 @@ var _class = function (_elementorModules$Mod) {
 		value: function get(key, options) {
 			options = options || {};
 
-			var storage = options.session ? sessionStorage : localStorage;
+			var storage = void 0;
+
+			try {
+				storage = options.session ? sessionStorage : localStorage;
+			} catch (e) {
+				return key ? undefined : {};
+			}
 
 			var elementorStorage = storage.getItem('elementor');
 
@@ -210,7 +216,13 @@ var _class = function (_elementorModules$Mod) {
 	}, {
 		key: 'save',
 		value: function save(object, session) {
-			var storage = session ? sessionStorage : localStorage;
+			var storage = void 0;
+
+			try {
+				storage = session ? sessionStorage : localStorage;
+			} catch (e) {
+				return;
+			}
 
 			storage.setItem('elementor', JSON.stringify(object));
 		}

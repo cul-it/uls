@@ -1,4 +1,4 @@
-/*! elementor - v2.4.3 - 21-01-2019 */
+/*! elementor - v2.4.5 - 30-01-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -349,11 +349,13 @@
 		},
 
 		goToSettingsTab: function goToSettingsTab(tabName) {
-			var $activePage = this.elements.$settingsFormPages.filter('#' + tabName);
+			var $pages = this.elements.$settingsFormPages;
 
-			if (!$activePage.length) {
+			if (!$pages.length) {
 				return;
 			}
+
+			var $activePage = $pages.filter('#' + tabName);
 
 			this.elements.$activeSettingsPage.removeClass('elementor-active');
 

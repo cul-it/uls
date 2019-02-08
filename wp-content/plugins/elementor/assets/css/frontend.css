@@ -1,4 +1,4 @@
-/*! elementor - v2.4.3 - 21-01-2019 */
+/*! elementor - v2.4.5 - 30-01-2019 */
 .dialog-widget-content {
   background-color: #fff;
   position: absolute;
@@ -476,25 +476,6 @@
 #wpadminbar #wp-admin-bar-elementor_inspector > .ab-item::before {
   content: "\f348";
   top: 2px; }
-
-.elementor:after {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0; }
-  @media (min-width: 1025px) {
-    .elementor:after {
-      content: 'desktop'; } }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .elementor:after {
-      content: 'tablet'; } }
-  @media (max-width: 767px) {
-    .elementor:after {
-      content: 'mobile'; } }
 
 .elementor-section {
   position: relative; }
@@ -1345,6 +1326,18 @@ ul.elementor-icon-list-items.elementor-inline-items {
   .elementor-grid-mobile-12 .elementor-grid {
     grid-template-columns: repeat(12, 1fr);
     display: grid; } }
+
+@media (min-width: 1025px) {
+  head:after {
+    content: 'desktop'; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  head:after {
+    content: 'tablet'; } }
+
+@media (max-width: 767px) {
+  head:after {
+    content: 'mobile'; } }
 
 .elementor-form-fields-wrapper {
   display: -webkit-box;

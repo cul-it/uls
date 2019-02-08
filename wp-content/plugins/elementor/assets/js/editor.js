@@ -1,4 +1,4 @@
-/*! elementor - v2.4.3 - 21-01-2019 */
+/*! elementor - v2.4.5 - 30-01-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1166,7 +1166,7 @@ BaseElementView = BaseContainer.extend({
 		var self = this;
 
 		_.defer(function () {
-			elementorFrontend.elementsHandler.runReadyTrigger(self.$el);
+			elementorFrontend.elementsHandler.runReadyTrigger(self.el);
 
 			if (!elementorFrontend.isEditMode()) {
 				return;
@@ -1174,7 +1174,7 @@ BaseElementView = BaseContainer.extend({
 
 			// In edit mode - handle an external elements that loaded by another elements like shortcode etc.
 			self.$el.find('.elementor-element.elementor-' + self.model.get('elType') + ':not(.elementor-element-edit-mode)').each(function () {
-				elementorFrontend.elementsHandler.runReadyTrigger(jQuery(this));
+				elementorFrontend.elementsHandler.runReadyTrigger(this);
 			});
 		});
 	},
@@ -3626,8 +3626,9 @@ var AddSectionBase = function (_Marionette$ItemView) {
 
 			var selectedStructure = event.currentTarget.dataset.structure,
 			    parsedStructure = elementor.presetsFactory.getParsedStructure(selectedStructure),
-			    elements = [],
-			    loopIndex;
+			    elements = [];
+
+			var loopIndex = void 0;
 
 			for (loopIndex = 0; loopIndex < parsedStructure.columnsCount; loopIndex++) {
 				elements.push({
@@ -3642,9 +3643,11 @@ var AddSectionBase = function (_Marionette$ItemView) {
 				elType: 'section'
 			});
 
-			var newSection = this.addSection({ elements: elements });
+			var newSection = this.addSection({ elements: elements }, { edit: false });
 
 			newSection.setStructure(selectedStructure);
+
+			newSection.getEditModel().trigger('request:edit');
 
 			elementor.channels.data.trigger('element:after:add');
 		}
@@ -9849,6 +9852,10 @@ module.exports = Marionette.LayoutView.extend({
 		var viewDetails = this.regionViews[viewName],
 		    options = viewDetails.options || {},
 		    View = viewDetails.view();
+
+		if (this.currentTab && this.currentTab.constructor === View) {
+			return;
+		}
 
 		this.currentTab = new View(options);
 

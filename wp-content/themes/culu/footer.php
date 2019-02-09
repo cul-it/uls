@@ -20,27 +20,25 @@
       </div>
 
 
-      <p class="unit-library"><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></p>
+      <!--<p class="unit-library"><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></p>-->
 
-
-      	<?php
+    	<?php
       	wp_nav_menu( array(
-      		'theme_location' => 'primary',
-      		'menu_id'        => 'primary-menu'
+      		'theme_location' => 'footer',
+      		'menu_id'        => 'footer-menu'
       	) );
-      	?>
-
+    	?>
 
     </div>
 
-    <figure>
+    <figure class="college">
 
       <?php $college_label = get_theme_mod( 'college_label', '' ); ?>
       <?php $college_link = get_theme_mod( 'college_link', '' );?>
     	<?php $college_logo = get_theme_mod( 'college_logo', '' ); ?>
 
       <a href="<?php echo $college_link ?>">
-        <img class="college" src="<?php echo get_domain_path( $college_logo );?>" alt="<?php echo $college_label ?> logo"/>
+        <img src="<?php echo get_domain_path( $college_logo );?>" alt="<?php echo $college_label ?> logo"/>
       </a>
       <figcaption></figcaption>
 
@@ -72,7 +70,7 @@
 
     <address class="cornell">
 
-      <p><?php echo date('Y'); ?> Cornell University Library, Ithaca, NY 14853 | <a href="tel:1-607-255-4144">(607) 255-4144</a>  |  <a href="https://www.library.cornell.edu/privacy">Privacy</a> |  <a href="https://www.library.cornell.edu/web-accessibility">Web Accessibility Assistance</a></p>
+      <p><?php echo date('Y'); ?> Cornell University Library, Ithaca, NY 14853 | <a href="tel:1-607-255-4144">(607) 255-4144</a> | <a href="https://www.library.cornell.edu/privacy">Privacy</a> | <a href="https://www.library.cornell.edu/web-accessibility">Web Accessibility Assistance</a> | <a href="/admin">Staff Login</a></p>
 
     </address>
 

@@ -46,9 +46,14 @@ if ( ! function_exists( 'culu_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in one location for main nav.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Main Menu', 'culu' )
+		) );
+
+		// This theme uses wp_nav_menu() in one location for footer nav.
+		register_nav_menus( array(
+			'footer' => esc_html__( 'Footer Menu', 'culu' )
 		) );
 
 		/*

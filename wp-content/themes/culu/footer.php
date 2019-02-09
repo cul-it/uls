@@ -15,19 +15,22 @@
 
     <div class="footer__nav">
 
-      <a class="all-libraries" href="https://www.library.cornell.edu/"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a>
+      <div class="all-libraries">
+        <a href="https://www.library.cornell.edu/"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="#">Ask a Librarian</a>
+      </div>
 
-            <p class="unit-library">NESTLE LIBRARY</p>
-                <?php
-                if (has_nav_menu('footer')) {
-                wp_nav_menu(array(
-                  'theme_location' => 'footer',
-                  'container' => false,
-                  'fallback_cb' => false,
-                  'depth' => 4
-                ));
-              }
-              ?>
+
+      <p class="unit-library"><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></p>
+
+
+      	<?php
+      	wp_nav_menu( array(
+      		'theme_location' => 'primary',
+      		'menu_id'        => 'primary-menu'
+      	) );
+      	?>
+
+
     </div>
 
     <figure>

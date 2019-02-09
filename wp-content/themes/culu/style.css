@@ -1036,17 +1036,29 @@ header {
       font-size: 19px;
       margin: 0;
       padding-bottom: 8px; }
-      .hero__content .subheader h1 a {
-        color: #fff; }
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 375px) {
         .hero__content .subheader h1 {
-          font-size: 30px; } }
+          font-size: 18px; } }
+      @media only screen and (min-width: 600px) {
+        .hero__content .subheader h1 {
+          font-size: 26px; } }
       @media only screen and (min-width: 1440px) {
         .hero__content .subheader h1 {
           font-size: 38px; } }
+      .hero__content .subheader h1 a {
+        color: #fff; }
     .hero__content .subheader time {
-      font-size: 16px;
+      font-size: 14px;
       color: #fff; }
+      @media only screen and (min-width: 375px) {
+        .hero__content .subheader time {
+          font-size: 16px; } }
+      @media only screen and (min-width: 640px) {
+        .hero__content .subheader time {
+          font-size: 18px; } }
+      @media only screen and (min-width: 1440px) {
+        .hero__content .subheader time {
+          font-size: 30px; } }
       .hero__content .subheader time a.full-hours {
         margin-left: 5px;
         color: #fff;
@@ -1056,9 +1068,6 @@ header {
         .hero__content .subheader time a.full-hours:hover {
           background-color: none;
           text-decoration: underline; }
-      @media only screen and (min-width: 1440px) {
-        .hero__content .subheader time {
-          font-size: 30px; } }
       .hero__content .subheader time i {
         color: #F8E71C;
         font-size: 26px;
@@ -1156,6 +1165,21 @@ header {
   .page-home article .entry-content {
     margin-top: 0; }
 
+.page-interior {
+  display: grid;
+  margin: 0 auto;
+  width: calc(100vw - 40px);
+  grid-template-columns: 100%; }
+  @media only screen and (min-width: 1440px) {
+    .page-interior {
+      width: 1360px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      padding-left: 40px; } }
+  @media only screen and (min-width: 1600px) {
+    .page-interior {
+      width: 1529px; } }
+
 footer {
   border-top: 1px solid #E0E0E0;
   display: grid;
@@ -1167,12 +1191,13 @@ footer {
       grid-template-columns: 33% 33% 34%;
       width: calc(100vw - 40px); } }
   footer .footer__nav {
+    padding-top: 30px;
     grid-column: 1;
     padding-left: 0; }
     @media only screen and (min-width: 1200px) {
       footer .footer__nav {
         grid-column: 1/3; } }
-    footer .footer__nav .all-libraries {
+    footer .footer__nav .all-libraries a {
       font-size: 14px;
       color: #303C42;
       letter-spacing: 0;
@@ -1182,7 +1207,6 @@ footer {
       color: #303C42;
       letter-spacing: 0;
       text-decoration: none;
-      display: block;
       padding-bottom: 20px; }
     footer .footer__nav strong {
       color: #3B3B3B;
@@ -1277,20 +1301,5 @@ footer {
   padding: 11px 56px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300; }
-
-.page-interior {
-  display: grid;
-  margin: 0 auto;
-  width: calc(100vw - 40px);
-  grid-template-columns: 100%; }
-  @media only screen and (min-width: 1440px) {
-    .page-interior {
-      width: 1360px;
-      padding-top: 20px;
-      padding-bottom: 10px;
-      padding-left: 40px; } }
-  @media only screen and (min-width: 1600px) {
-    .page-interior {
-      width: 1529px; } }
 
 /*# sourceMappingURL=style.css.map */

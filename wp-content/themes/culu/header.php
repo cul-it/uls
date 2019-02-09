@@ -129,7 +129,7 @@
 		 ?>
 ">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <span><a href="#">Cornell Library Hours</a></span> | <span><a href="#">Ask a Librarian</a></span>
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <span><a href="#">Cornell Library Hours</a></span> | <span><a href="#">Ask a Librarian</span></a>
 	</div>
 
 	<div class="college">
@@ -165,7 +165,7 @@
 	<?php
 	wp_nav_menu( array(
 		'theme_location' => 'primary',
-		'menu_id'        => 'primary-menu',
+		'menu_id'        => 'primary-menu'
 	) );
 	?>
 </nav><!-- #site-navigation -->

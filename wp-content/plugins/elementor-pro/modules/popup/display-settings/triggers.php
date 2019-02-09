@@ -61,7 +61,7 @@ class Triggers extends Base {
 			'offset',
 			[
 				'type' => Controls_Manager::NUMBER,
-				'label' => __( 'Within (%)', 'elementor-pro' ),
+				'label' => __( 'Within', 'elementor-pro' ) . ' (%)',
 				'default' => 50,
 				'min' => 1,
 				'max' => 100,

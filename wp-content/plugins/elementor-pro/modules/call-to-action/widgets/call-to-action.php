@@ -553,7 +553,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_control(
 			'graphic_image_width',
 			[
-				'label' => __( 'Size (%)', 'elementor-pro' ),
+				'label' => __( 'Size', 'elementor-pro' ) . ' (%)',
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'default' => [
@@ -747,11 +747,6 @@ class Call_To_Action extends Base_Widget {
 						],
 						[
 							'name' => 'description',
-							'operator' => '!==',
-							'value' => '',
-						],
-						[
-							'name' => 'button',
 							'operator' => '!==',
 							'value' => '',
 						],

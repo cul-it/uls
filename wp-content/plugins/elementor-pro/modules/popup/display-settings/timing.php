@@ -118,7 +118,7 @@ class Timing extends Base {
 			'users',
 			[
 				'type' => Controls_Manager::SELECT,
-				'default' => __( 'all', 'elementor-pro' ),
+				'default' => 'all',
 				'options' => [
 					'all' => __( 'All Users', 'elementor-pro' ),
 					'custom' => __( 'Custom', 'elementor-pro' ),
@@ -137,6 +137,7 @@ class Timing extends Base {
 			[
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
+				'default' => [],
 				'options' => $roles,
 				'select2options' => [
 					'placeholder' => __( 'Select Roles', 'elementor-pro' ),

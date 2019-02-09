@@ -131,9 +131,9 @@ class Discord extends Action_Base {
 		// Build discord  webhook data
 		$embeds = [
 			'title' => isset( $settings['discord_title'] ) ? $settings['discord_title'] : __( 'A new Submission', 'elementor-pro' ),
-			'description' => isset( $settings['discord_content'] ) ? $settings['discord_content'] : __( 'A new Elementor Pro Form Submission has been received', 'elementor-pro' ),
+			'description' => isset( $settings['discord_content'] ) ? $settings['discord_content'] : __( 'A new Form Submission has been received', 'elementor-pro' ),
 			'author' => [
-				'name'     => isset( $settings['discord_username'] ) ? $settings['discord_username'] : __( 'Elementor Pro Forms', 'elementor-pro' ),
+				'name'     => isset( $settings['discord_username'] ) ? $settings['discord_username'] : __( 'Elementor Forms', 'elementor-pro' ),
 				'url'      => $page_url,
 				'icon_url' => isset( $settings['discord_avatar_url'] ) ? $settings['discord_avatar_url'] : null,
 			],
@@ -159,7 +159,7 @@ class Discord extends Action_Base {
 		if ( ! empty( $settings['discord_ts'] ) && 'yes' === $settings['discord_ts'] ) {
 			$embeds['timestamp'] = date( \DateTime::ISO8601 );
 			$embeds['footer'] = [
-				'text' => __( 'Powered by Elementor', 'elementor-pro' ),
+				'text' => sprintf( __( 'Powered by %s', 'elementor-pro' ), 'Elementor' ),
 				'icon_url' => is_ssl() ? ELEMENTOR_ASSETS_URL . 'images/logo-icon.png' : null,
 			];
 		}

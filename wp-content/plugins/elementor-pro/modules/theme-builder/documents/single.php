@@ -69,15 +69,15 @@ class Single extends Theme_Page_Document {
 		parent::after_get_content();
 	}
 
-	public function get_container_classes() {
-		$classes = parent::get_container_classes();
+	public function get_container_attributes() {
+		$attributes = parent::get_container_attributes();
 
-		if ( is_singular() /* !404*/ ) {
+		if ( is_singular() /* Not 404 */ ) {
 			$post_classes = get_post_class( '', get_the_ID() );
-			$classes .= ' ' . implode( ' ', $post_classes );
+			$attributes['class'] .= ' ' . implode( ' ', $post_classes );
 		}
 
-		return $classes;
+		return $attributes;
 	}
 
 	public function print_content() {

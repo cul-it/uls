@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 	<div id="elementor-global-widget-loading" class="elementor-hidden">
 		<i class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i>
-		<span class="elementor-screen-only"><?php _e( 'Loading...', 'elementor-pro' ); ?></span>
+		<span class="elementor-screen-only"><?php _e( 'Loading', 'elementor-pro' ); ?></span>
 	</div>
 </script>
 

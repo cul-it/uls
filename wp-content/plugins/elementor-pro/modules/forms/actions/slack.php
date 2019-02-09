@@ -181,7 +181,7 @@ class Slack extends Action_Base {
 
 		if ( ! empty( $settings['slack_add_ts'] ) && 'yes' === $settings['slack_add_ts'] ) {
 			$attachment = array_merge( $attachment, [
-				'footer' => __( 'Powered by Elementor', 'elementor-pro' ),
+				'footer' => sprintf( __( 'Powered by %s', 'elementor-pro' ), 'Elementor' ),
 				'footer_icon' => is_ssl() ? ELEMENTOR_ASSETS_URL . 'images/logo-icon.png' : null,
 				'ts' => time(),
 			] );

@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Rest_Client {
 
 	private $api_base_url = '';
-	private $user_agent = 'Elementor Pro Forms (elementor.com)';
+	private $user_agent = 'Elementor Forms (elementor.com)';
 	public $request_cache = [];
 	private $headers = [];
 	private $request_args = [];

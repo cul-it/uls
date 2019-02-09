@@ -682,7 +682,9 @@ class Post_Info extends Base {
 				$item_data['itemprop'] = 'author';
 
 				if ( 'yes' === $repeater_item['link'] ) {
-					$item_data['url'] = get_author_posts_url( get_the_author_meta( 'ID' ) );
+					$item_data['url'] = [
+						'url' => get_author_posts_url( get_the_author_meta( 'ID' ) ),
+					];
 				}
 
 				if ( 'yes' === $repeater_item['show_avatar'] ) {
@@ -708,7 +710,9 @@ class Post_Info extends Base {
 				$item_data['itemprop'] = 'datePublished';
 
 				if ( 'yes' === $repeater_item['link'] ) {
-					$item_data['url'] = get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) );
+					$item_data['url'] = [
+						'url' => get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ),
+					];
 				}
 				break;
 
@@ -757,7 +761,9 @@ class Post_Info extends Base {
 					}
 
 					if ( 'yes' === $repeater_item['link'] ) {
-						$item_data['url'] = get_comments_link();
+						$item_data['url'] = [
+							'url' => get_comments_link(),
+						];
 					}
 					$item_data['icon'] = 'fa fa-commenting-o'; // Default icon
 					$item_data['itemprop'] = 'commentCount';
@@ -823,19 +829,21 @@ class Post_Info extends Base {
 			$this->add_render_attribute( $item_key, 'class', 'elementor-inline-item' );
 		}
 
-		if ( ! empty( $item_data['url'] ) && ! empty( $item_data['url']['url'] ) ) {
+		if ( ! empty( $item_data['url']['url'] ) ) {
 			$has_link = true;
+
 			$url = $item_data['url'];
 			$this->add_render_attribute( $link_key, 'href', $url['url'] );
 
-			if ( $url['is_external'] ) {
+			if ( ! empty( $url['is_external'] ) ) {
 				$this->add_render_attribute( $link_key, 'target', '_blank' );
 			}
 
-			if ( $url['nofollow'] ) {
+			if ( ! empty( $url['nofollow'] ) ) {
 				$this->add_render_attribute( $link_key, 'rel', 'nofollow' );
 			}
 		}
+
 		if ( ! empty( $item_data['itemprop'] ) ) {
 			$this->add_render_attribute( $item_key, 'itemprop', $item_data['itemprop'] );
 		}

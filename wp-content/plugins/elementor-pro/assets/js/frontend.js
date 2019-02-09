@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.4.0 - 21-01-2019 */
+/*! elementor-pro - v2.4.3 - 30-01-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1132,7 +1132,7 @@ var _class = function (_elementorModules$Mod) {
 			document.getModal().hide();
 
 			if (settings.do_not_show_again) {
-				document.setStorage('disable', true);
+				document.disable();
 			}
 		}
 	}]);
@@ -1284,9 +1284,15 @@ var _class = function (_elementorModules$fro) {
 				if (!modal) {
 					var settings = _this2.getDocumentSettings();
 
+					var classes = 'elementor-popup-modal';
+
+					if (settings.classes) {
+						classes += ' ' + settings.classes;
+					}
+
 					modal = elementorFrontend.getDialogsManager().createWidget('lightbox', {
 						id: 'elementor-popup-modal-' + _this2.getSettings('id'),
-						className: 'elementor-popup-modal',
+						className: classes,
 						closeButton: true,
 						closeButtonClass: 'eicon-close',
 						preventScroll: settings.prevent_scroll,
@@ -1316,7 +1322,7 @@ var _class = function (_elementorModules$fro) {
 							}
 						},
 						onHide: function onHide() {
-							return _this2.$element.remove();
+							_this2.$element.remove();
 						}
 					});
 
@@ -1344,6 +1350,11 @@ var _class = function (_elementorModules$fro) {
 			    $closeButton = modal.getElements('closeButton');
 
 			$closeButton.appendTo(modal.getElements('outside' === closeButtonPosition ? 'widget' : 'widgetContent'));
+		}
+	}, {
+		key: 'disable',
+		value: function disable() {
+			this.setStorage('disable', true);
 		}
 	}, {
 		key: 'setStorage',
@@ -3569,11 +3580,17 @@ var MenuHandler = elementorFrontend.Module.extend({
 	},
 
 	followMenuAnchor: function followMenuAnchor($element) {
-		var anchorSelector = $element[0].hash,
+		var anchorSelector = $element[0].hash;
 
-		// `decodeURIComponent` for UTF8 characters in the hash.
-		$anchor = jQuery(decodeURIComponent(anchorSelector)),
-		    offset = -300;
+		var offset = -300,
+		    $anchor = void 0;
+
+		try {
+			// `decodeURIComponent` for UTF8 characters in the hash.
+			$anchor = jQuery(decodeURIComponent(anchorSelector));
+		} catch (e) {
+			return;
+		}
 
 		if (!$anchor.length) {
 			return;

@@ -8,7 +8,6 @@
  *
  * @package culu
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -35,8 +34,11 @@
 
 	<header>
 		<!-- logo -->
-    <a class="logo-cul" href="https://www.library.cornell.edu/"><img src="<?php echo get_template_directory_uri(); ?>/images/branding/cul-logo.svg" alt="Cornell University Library logo"></a>
-		<!-- /logo -->
+		<div class="banding">
+			<a class="logo-cul" href="https://www.library.cornell.edu/"><img src="<?php echo get_template_directory_uri(); ?>/images/branding/cul-logo.svg" alt="Cornell University Library logo"></a>
+			<!-- /logo -->
+		</div>
+
 		<!-- nav -->
 
 		<nav class="user-tools">

@@ -1,6 +1,8 @@
 <?php
 namespace ElementorPro\Modules\Woocommerce\Classes;
 
+use ElementorPro\Modules\QueryControl\Module as QueryControl;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -96,6 +98,9 @@ class Products_Renderer extends \WC_Shortcode_Products {
 			// Tags.
 			$this->set_tags_query_args( $query_args );
 
+			//Exclude.
+			$this->set_exclude_query_args( $query_args );
+
 			$query_args = apply_filters( 'woocommerce_shortcode_products_query', $query_args, $this->attributes, $this->type );
 
 			if ( 'yes' === $settings['paginate'] && 'yes' === $settings['allow_order'] ) {
@@ -134,6 +139,26 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		$query_args['fields'] = 'ids';
 
 		return $query_args;
+	}
+
+	protected function set_exclude_query_args( &$query_args ) {
+		if ( empty( $this->settings['exclude'] ) ) {
+			return;
+		}
+
+		$exclude_ids = in_array( 'manual_selection', $this->settings['exclude'], true ) && ! empty( $this->settings['exclude_ids'] ) ? $this->settings['exclude_ids'] : [];
+
+		if ( in_array( 'current_post', $this->settings['exclude'], true ) && is_single() ) {
+			$exclude_ids[] = get_queried_object_id();
+		}
+
+		if ( ! empty( $this->settings['avoid_duplicates'] ) ) {
+			$exclude_ids = array_merge( $exclude_ids, QueryControl::get_avoid_list_ids() );
+		}
+
+		if ( ! empty( $exclude_ids ) ) {
+			$query_args['post__not_in'] = empty( $query_args['post__not_in'] ) ? $exclude_ids : array_merge( $query_args['post__not_in'], $exclude_ids );
+		}
 	}
 
 	protected function set_ids_query_args( &$query_args ) {

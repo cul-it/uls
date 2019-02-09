@@ -484,12 +484,16 @@ class Document extends Theme_Section_Document {
 			[
 				'label' => __( 'Vertical Position', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ '%' ],
+				'size_units' => [ '%', 'px' ],
 				'range' => [
 					'%' => [
 						'max' => 100,
 						'min' => 0,
 						'step' => 0.1,
+					],
+					'px' => [
+						'max' => 500,
+						'min' => -500,
 					],
 				],
 				'default' => [
@@ -512,12 +516,16 @@ class Document extends Theme_Section_Document {
 			[
 				'label' => __( 'Horizontal Position', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ '%' ],
+				'size_units' => [ '%', 'px' ],
 				'range' => [
 					'%' => [
 						'max' => 100,
 						'min' => 0,
 						'step' => 0.1,
+					],
+					'px' => [
+						'max' => 500,
+						'min' => -500,
 					],
 				],
 				'default' => [
@@ -711,6 +719,16 @@ class Document extends Theme_Section_Document {
 				'selectors' => [
 					'{{WRAPPER}} .dialog-message' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+
+		$this->add_control(
+			'classes',
+			[
+				'label' => __( 'CSS Classes', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'elementor-pro' ),
+				'frontend_available' => true,
 			]
 		);
 

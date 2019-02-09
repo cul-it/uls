@@ -118,7 +118,7 @@ class Module extends Module_Base {
 		</div>
 		<div class="elementor-menu-cart__footer-buttons">
 			<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="elementor-button elementor-button--view-cart elementor-size-md">
-				<span class="elementor-button-text"><?php echo translate( 'View Cart', 'woocommerce' ); ?></span>
+				<span class="elementor-button-text"><?php echo translate( 'View cart', 'woocommerce' ); ?></span>
 			</a>
 			<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="elementor-button elementor-button--checkout elementor-size-md">
 				<span class="elementor-button-text"><?php echo translate( 'Checkout', 'woocommerce' ); ?></span>

@@ -228,7 +228,7 @@ class Sitemap extends Base {
 				'type' => Controls_Manager::SELECT,
 				'default' => 'name',
 				'options' => [
-					'id' => __( 'Id', 'elementor-pro' ),
+					'id' => __( 'ID', 'elementor-pro' ),
 					'name' => __( 'Name', 'elementor-pro' ),
 				],
 				'condition' => [

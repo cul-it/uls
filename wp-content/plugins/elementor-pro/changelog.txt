@@ -1,5 +1,25 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.4.3 - 2019-01-30
+* Fix: Custom Add to Cart widget responsive alignment settings
+* Fix: Links in Post Info widget
+* Fix: WooCommerce `View Cart` string translate
+* Fix: Wrapper classes for header/footer templates ([#6884](https://github.com/pojome/elementor/issues/6884))
+
+#### 2.4.2 - 2019-01-25
+* Tweak: Added pixel units to Close Button position control in Popups
+* Fix: Exclude error in WC Products widget
+
+#### 2.4.1 - 2019-01-24
+* Tweak: Added CSS classes control to Popup ([#6826](https://github.com/pojome/elementor/issues/6826))
+* Tweak: Added responsive image size to Testimonial Carousel widget
+* Fix: PHP warning when Toolset Date dynamic is empty ([#6842](https://github.com/pojome/elementor/issues/6842))
+* Fix: Support of exclude-ids in WC Products widget
+* Fix: Popup close button not clickable
+* Fix: Alignment justify issue of Add to Cart widget ([#6749](https://github.com/pojome/elementor/issues/6749))
+* Fix: Bad anchors breaks the page JS
+* Fix: Popup overlay shown when turned off
+
 #### 2.4.0 - 2019-01-21
 * New: Introducing Popup Builder ([#628](https://github.com/pojome/elementor/issues/628))
 * New: Added `Popup` Dynamic Tag

@@ -149,8 +149,8 @@
 
 		<time><i class="fa fa-clock-o" aria-hidden="true"></i>
 
-			<?php echo do_shortcode('[libcal_status_now]') ?>
-			<?php echo do_shortcode('[libcal_hours_today]') ?>
+			<span class="libcal-status-now">[libcal_status_now]</span>
+			<span class="libcal-hours-today"> [libcal_hours_today] </span>
 
 		- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> /</time>
 

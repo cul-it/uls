@@ -123,13 +123,13 @@
 	<section class="
 
 		<?php
-		if ( is_front_page()  ) {
-			echo "hero__content";
-		} else {
-			echo "hero__content interior-pages";
-		}
+			if ( is_front_page()  ) {
+				echo "hero__content";
+			} else {
+				echo "hero__content interior-pages";
+			}
 		 ?>
-">
+	">
 	<div class="all-libraries">
 		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <span><a href="#">Cornell Library Hours</a></span> | <span><a href="#">Ask a Librarian</span></a>
 	</div>
@@ -149,10 +149,10 @@
 
 		<time><i class="fa fa-clock-o" aria-hidden="true"></i>
 
-			<span class="libcal-status-now">[libcal_status_now]</span>
-			<span class="libcal-hours-today"> [libcal_hours_today] </span>
+			<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
+			<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
 
-		- <a class="full-hours" href="https://www.library.cornell.edu/libraries/vet">Full Hours</a> /</time>
+		- <a class="full-hours" href="#">Full Hours</a> /</time>
 
 		<ul class="header-contact">
 			<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope"></span></a></li>

@@ -131,7 +131,7 @@
 		 ?>
 	">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <span><a href="#">Cornell Library Hours</a></span> | <span><a href="#">Ask a Librarian</span></a>
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <span><a href="#">Hours</a></span> | <span><a href="#">Ask a Librarian</span></a>
 	</div>
 
 	<div class="college">

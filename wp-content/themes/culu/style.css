@@ -366,7 +366,8 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px; }
 
 p {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  font-size: 1.15em; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -630,15 +631,27 @@ a:-webkit-any-link {
     margin: 10px auto;
     width: 90%;
     display: block;
-    margin-bottom: 80px;
-    margin-top: -40px; }
+    margin-bottom: 0;
+    padding: 0;
+    position: relative !important;
+    top: auto;
+    left: auto; }
     .main-navigation ul {
       display: block;
       list-style: none;
       margin: 0;
-      padding-left: 0; }
+      padding-left: 0;
+      height: 80px;
+      border-bottom: 1px solid #E2EAEF; }
       .main-navigation ul li {
-        border-bottom: none; }
+        border-bottom: none;
+        border-right: 1px solid #C1BEBE;
+        font-size: 20px;
+        padding: 0 20px;
+        margin-top: 20px;
+        margin-bottom: 20px; }
+        .main-navigation ul li:first-child {
+          padding-left: 10px; }
       .main-navigation ul ul {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
         float: left;

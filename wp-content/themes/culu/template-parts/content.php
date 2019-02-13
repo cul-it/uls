@@ -22,8 +22,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				culu_posted_on();
-				culu_posted_by();
+				//culu_posted_on();
+				//culu_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

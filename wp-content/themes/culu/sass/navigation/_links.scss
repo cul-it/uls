@@ -25,3 +25,20 @@ a, button {
 a:-webkit-any-link {
     text-decoration: none;
 }
+
+.entry-footer{
+	border-top: none;
+	width: 100%;
+
+		a {
+			padding: 10px;
+			color: #fff;
+			background-color: green;
+
+
+		}
+
+		&:hover {
+		opacity: .8;
+		}
+}

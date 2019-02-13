@@ -10,51 +10,27 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<main id="main" class="page-interior">
+	<section class="four04">
+		<figure class="four04_photo">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/" alt="ALT TEXT">
+			<figcaption>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'culu' ); ?></h1>
-				</header><!-- .page-header -->
+			</figcaption>
+		</figure>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'culu' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'culu' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$culu_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'culu' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$culu_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<div class="four04_message">
+			<h1>Lost your bearings?</h1>
+			<p>Here are some helpful links to lead
+			you in the right direction:</p>
+			<ul>
+				<li><a href="<?php echo home_url(); ?>"><?php _e( 'Home', 'html5blank' ); ?></a></li>
+				<li><a href="https://newcatalog.library.cornell.edu/search?q="><?php _e( 'Search Catalog', 'html5blank' ); ?></a></li>
+				<li><a href="https://www.library.cornell.edu/ask/email"><?php _e( 'Contact Us', 'html5blank' ); ?></a></li>
+			</ul>
+		</div>
+	</section>
+</main>
 
 <?php
 get_footer();

@@ -6,7 +6,7 @@
 
 ---*/
 
-header {
+header.branding {
 
   display: grid;
   margin: 10px auto;
@@ -414,45 +414,41 @@ header {
 
 .hero__content.interior-pages {
 
-  background: #463F2C;
+  background-color: rgba(179,27,27, .8) !important;
   border-radius: 5px;
-  height: 245px;
+  height: 230px;
   display: grid;
   margin: 0 auto;
   width: calc(100vw - 40px);
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 40px auto;
 
-  background: #463F2E url('images/hero/hero-home-top.svg')no-repeat center -120px;
+  background: url('images/hero/hero-home-top.svg')no-repeat center -120px;
 
-  @media only screen and (min-width: 640px) {
-    background: #463F2E url('images/hero/hero-home-top.svg')no-repeat center 0;
+  @media only screen and (min-width: 600px) {
+    background: url('images/hero/hero-home-top.svg')no-repeat center -120px;
+    width: 90%
 
   }
 
   @media only screen and (min-width: 768px) {
-    background: #463F2E url('images/hero/hero-home-top.svg')no-repeat center -20px;
-
-
+    background: url('images/hero/hero-home-top.svg')no-repeat center -120px;
     display: grid;
     margin: 0 auto;
-    width: calc(100vw - 40px);
     grid-template-columns: 30% 30% 40%;
     grid-template-rows: auto;
-
   }
 
   @media only screen and (min-width: 1440px) {
     background: #463F2E url('images/hero/hero-home-top.svg')no-repeat center -120px;
-
-    height: 425px;
+    height: 280px;
     width: 1360px;
 
   }
   @media only screen and (min-width: 1600px) {
-    background: #463F2E url('images/hero/hero-home-top.svg')no-repeat center 0;
+    background: #463F2E url('images/hero/hero-home-top.svg')no-repeat center -75px;
 
-    height: 530px;
+    height: 350px;
     width: 1529px;
   }
 
@@ -465,8 +461,8 @@ header {
     @media only screen and (min-width: 768px) {
 
       align-self: end;
-      padding-top: 250px;
-      padding-left: 40px;
+      padding-top: 80px;
+      padding-left: 20px;
 
     }
   }
@@ -506,8 +502,6 @@ header {
 
 
   }
-
-
 
   article header {
     display: none;

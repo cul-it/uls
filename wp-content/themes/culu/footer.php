@@ -50,7 +50,7 @@
 
           <div class="c-1">
           <p><strong>CONTACT</strong></p>
-          <p><strong>Nestlé Hotel Library</strong><br>
+          <p><strong>Unit Library</strong><br>
             G80 Statler Hall,<br>
             Cornell University<br>
             Ithaca, NY 14853
@@ -58,10 +58,10 @@
           </div>
 
         <div class="c-2">
-         <p><strong>Phone: </strong><a href="tel:1-607-255-3673">(607) 255-3673</a></p>
+         <p><strong>Phone: </strong><a href="tel:#">(607) 255-0000</a></p>
 
-         <p><strong>E-mail: </strong><a href="mailto:hotellibrary@cornell.edu">hotellibrary@cornell.edu</a></p>
-         <p><strong>Reference Help: </strong><a href="mailto:hotellibrary@cornell.edu">hotellibrary@cornell.edu</a></p>
+         <p><strong>E-mail: </strong><a href="mailto:#">unit@cornell.edu</a></p>
+         <p><strong>Reference Help: </strong><a href="mailto:#">unit@cornell.edu</a></p>
         </div>
 
       </div>
@@ -70,7 +70,7 @@
 
     <address class="cornell">
 
-      <p><?php echo date('Y'); ?> Cornell University Library, Ithaca, NY 14853 | <a href="tel:1-607-255-4144">(607) 255-4144</a> | <a href="https://www.library.cornell.edu/privacy">Privacy</a> | <a href="https://www.library.cornell.edu/web-accessibility">Web Accessibility Assistance</a> | <a href="/admin">Staff Login</a></p>
+      <p><?php echo date('Y'); ?> Cornell University Library, Ithaca, NY 14853 | <a href="tel:">(607) 255-0000</a> | <a href="https://www.library.cornell.edu/privacy">Privacy</a> | <a href="https://www.library.cornell.edu/web-accessibility">Web Accessibility Assistance</a> | <a href="/admin">Staff Login</a></p>
 
     </address>
 

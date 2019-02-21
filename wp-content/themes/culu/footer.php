@@ -16,7 +16,7 @@
     <div class="footer__nav">
 
       <div class="all-libraries">
-        <a href="https://www.library.cornell.edu/"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="#">Ask a Librarian</a>
+        <a href="https://www.library.cornell.edu/"><span class="fas fa-arrow-left"></span> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</a>
       </div>
 
 
@@ -54,7 +54,7 @@
             G80 Statler Hall,<br>
             Cornell University<br>
             Ithaca, NY 14853
-          <i class="fa fa-map-marker-alt"></i></p>
+          <span class="fas fa-map-marker-alt"></span></p>
           </div>
 
         <div class="c-2">
@@ -77,7 +77,7 @@
     <p class="feedback">
 
       <a class="btn-graphic" href="https://www.library.cornell.edu/feedback?destination=web-accessibility">FEEDBACK</a>
-      <a class="btn-graphic" href="https://alumni.library.cornell.edu/content/give-library">GIVE TO THE LIBRARY <i class="fa fa-arrow-right"></i></a>
+      <a class="btn-graphic" href="https://alumni.library.cornell.edu/content/give-library">GIVE TO THE LIBRARY <span class="fas fa-arrow-right"></span></a>
 
     </p>
 

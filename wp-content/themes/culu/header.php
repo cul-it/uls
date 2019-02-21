@@ -36,7 +36,7 @@
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 
 	<!-- Emergency Banner -->
 	<script src="//embanner.univcomm.cornell.edu/OWC-emergency-banner.js" type="text/javascript"></script>
@@ -62,14 +62,11 @@
 		<nav class="user-tools">
 			<ul>
 				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
-				<li><a href="#"><i class="fas fa-user"></i></a></li>
-				<li><a href="#"><i class="fas fa-search"></i></a></li>
+				<li><a href="#" aria-label="Access your Cornell Library account"><span class="fas fa-user" aria-hidden="true"></span></a></li>
+				<li><a href="#" aria-label="Search the catalog or content on this site"><span class="fas fa-search" aria-hidden="true"></span></a></li>
 			</ul>
 		</nav>
   </header>
-	<!-- header -->
-
-
 	<!-- header -->
 
 	<!-- Declare variables for hero images -->
@@ -149,7 +146,7 @@
 		 ?>
 	">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><i class="fa fa-arrow-left"></i> ALL LIBRARIES</a> | <span><a href="#">Hours</a></span> | <span><a href="#">Ask a Librarian</span></a>
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
 	</div>
 
 	<div class="college">
@@ -165,18 +162,18 @@
 
 		<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 
-		<time><i class="fa fa-clock-o" aria-hidden="true"></i>
+		<time><span class="fas fa-clock icon-time" aria-hidden="true"></span>
 
 			<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
 			<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
 
-		- <a class="full-hours" href="#">Full Hours</a> /</time>
+			- <a class="full-hours" href="#">Full Hours</a> /</time>
 
-		<ul class="header-contact">
-			<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope"></span></a></li>
-			<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
-			<li><a href=""><span class="fas fa-map-marker-alt" aria-hidden title="Vet Library Location"></span></a></li>
-		</ul>
+			<ul class="header-contact">
+				<li><a href="https://www.library.cornell.edu/ask/email" aria-label="Contact US"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
+				<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
+				<li><a href="###############################" aria-label="Library Location"><span class="fas fa-map-marker-alt" aria-hidden="true"></span></a></li>
+			</ul>
 	</div>
 </section>
 

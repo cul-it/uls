@@ -675,15 +675,19 @@ a:-webkit-any-link {
     .main-navigation a {
       display: block;
       text-decoration: none; } }
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
-.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
   float: left;
   width: 50%; }
-.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
@@ -1093,13 +1097,13 @@ header.branding {
         .hero__content .subheader time a.full-hours:hover {
           background-color: none;
           text-decoration: underline; }
-      .hero__content .subheader time i {
+      .hero__content .subheader time .icon-time {
         color: #F8E71C;
         font-size: 26px;
         vertical-align: middle;
         padding-right: 4px; }
         @media only screen and (min-width: 1440px) {
-          .hero__content .subheader time i {
+          .hero__content .subheader time .icon-time {
             font-size: 30px; } }
     .hero__content .subheader .header-contact {
       margin-left: 0;

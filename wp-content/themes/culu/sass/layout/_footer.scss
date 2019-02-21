@@ -14,7 +14,7 @@ footer {
 
   @media only screen and (min-width: 1200px) {
     grid-template-columns: 33% 33% 34%;
-  
+
   }
 
   .footer__nav {
@@ -174,7 +174,8 @@ footer {
 
       &:hover {
         color: #fff;
-        text-decoration: underline;
+        //text-decoration: underline;
+        background-color: #000;
       }
     }
   }
@@ -187,7 +188,7 @@ footer {
 }
 
 .btn-graphic {
-  background: #4B4534;
+  background: #017DB2;
   border-radius: 1.5px;
   font-size: 13px;
   color: #fff;
@@ -196,4 +197,8 @@ footer {
   text-decoration: none;
   padding: 11px 56px;
   font-weight: 300;
+
+  &:visited {
+    color: #fff;
+  }
 }

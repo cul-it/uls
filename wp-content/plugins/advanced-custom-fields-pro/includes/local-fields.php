@@ -1,8 +1,8 @@
 <?php 
 
 // Register notices stores.
-acf_register_store( 'local-fields' );
-acf_register_store( 'local-groups' );
+acf_register_store( 'local-fields' )->prop( 'multisite', true );
+acf_register_store( 'local-groups' )->prop( 'multisite', true );
 acf_register_store( 'local-empty' );
 
 // Register filter.
@@ -472,7 +472,7 @@ function _acf_apply_get_local_field_groups( $groups = array() ) {
 		}
 		
 		// Sort list via menu_order and title.
-		$groups = wp_list_sort( $groups, array('menu_order', 'title'), 'ASC' );
+		$groups = wp_list_sort( $groups, array('menu_order' => 'ASC', 'title' => 'ASC') );
 	}
 	
 	// Return groups.

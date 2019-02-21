@@ -26,6 +26,14 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
+li.current-menu-item {
+
+	a {
+		color: $color__link-active !important;
+	}
+
+}
+
 .entry-footer{
 	border-top: none;
 	width: 100%;

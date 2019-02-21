@@ -83,7 +83,7 @@ function acf_get_meta( $post_id = 0 ) {
 	
 	// Use get_$type_meta() function when possible.
 	if( function_exists("get_{$type}_meta") ) {
-		$allmeta = call_user_func("get_{$type}_meta", $id, '', true);
+		$allmeta = call_user_func("get_{$type}_meta", $id, '');
 	
 	// Default to wp_options.
 	} else {
@@ -100,6 +100,9 @@ function acf_get_meta( $post_id = 0 ) {
 			$meta[ "_$key" ] = $allmeta[ "_$key" ][0];
 		}
 	}
+	
+	// Unserialized results (get_metadata does not unserialize if $key is empty).
+	$meta = array_map('maybe_unserialize', $meta);
 	
 	/**
 	 * Filters the $meta array after it has been loaded.
@@ -155,8 +158,8 @@ function acf_get_option_meta( $prefix = '' ) {
 		$meta[ substr($row['option_name'], $len) ][] = $row['option_value'];
 	}
 	
-	// Return unserialized results.
-	return array_map('maybe_unserialize', $meta);
+	// Return results.
+	return $meta;
 }
 
 /**

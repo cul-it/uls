@@ -542,11 +542,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a, button {
-  color: #0179AD; }
+  color: #017DB2; }
   a:visited, button:visited {
-    color: #3B3B3B; }
+    color: #017DB2; }
   a:hover, a:focus, a:active, button:hover, button:focus, button:active {
-    color: #3B3B3B; }
+    color: #000; }
   a:focus, button:focus {
     outline: 1px dashed black; }
   a:hover, a:active, button:hover, button:active {
@@ -556,6 +556,9 @@ a, button {
 
 a:-webkit-any-link {
   text-decoration: none; }
+
+li.current-menu-item a {
+  color: #000 !important; }
 
 .entry-footer {
   border-top: none;
@@ -653,7 +656,6 @@ a:-webkit-any-link {
         .main-navigation ul li:first-child {
           padding-left: 10px; }
       .main-navigation ul ul {
-        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
         float: left;
         position: absolute;
         top: 100%;
@@ -1093,7 +1095,8 @@ header.branding {
         color: #fff;
         padding: 3px 10px;
         margin-left: 0;
-        padding-left: 0; }
+        padding-left: 0;
+        font-weight: bold; }
         .hero__content .subheader time a.full-hours:hover {
           background-color: none;
           text-decoration: underline; }
@@ -1349,7 +1352,7 @@ footer {
       padding: 11px 16px; }
       footer .feedback .btn-graphic:hover {
         color: #fff;
-        text-decoration: underline; }
+        background-color: #000; }
   @media only screen and (min-width: 1440px) {
     footer {
       width: 1380px; } }
@@ -1358,7 +1361,7 @@ footer {
       width: 1529px; } }
 
 .btn-graphic {
-  background: #4B4534;
+  background: #017DB2;
   border-radius: 1.5px;
   font-size: 13px;
   color: #fff;
@@ -1367,6 +1370,8 @@ footer {
   text-decoration: none;
   padding: 11px 56px;
   font-weight: 300; }
+  .btn-graphic:visited {
+    color: #fff; }
 
 .four04 {
   display: grid;

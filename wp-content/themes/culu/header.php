@@ -62,8 +62,8 @@
 		<nav class="user-tools">
 			<ul>
 				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
-				<li><a href="#" aria-label="Access your Cornell Library account"><span class="fas fa-user" aria-hidden="true"></span></a></li>
-				<li><a href="#" aria-label="Search the catalog or content on this site"><span class="fas fa-search" aria-hidden="true"></span></a></li>
+				<li><a href="#"><span class="fas fa-user" aria-hidden="true" aria-label="My account"></span></a></li>
+				<li><a href="#"><span class="fas fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
 			</ul>
 		</nav>
   </header>
@@ -146,7 +146,7 @@
 		 ?>
 	">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><span class="fas fa-arrow-left" aria-hidden="true" role="presentation"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
 	</div>
 
 	<div class="college">
@@ -162,7 +162,7 @@
 
 		<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 
-		<time><span class="fas fa-clock icon-time" aria-hidden="true"></span>
+		<time><span class="fas fa-clock icon-time" aria-hidden="true" role="presentation"></span>
 
 			<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
 			<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
@@ -170,15 +170,15 @@
 			- <a class="full-hours" href="#">Full Hours</a> /</time>
 
 			<ul class="header-contact">
-				<li><a href="https://www.library.cornell.edu/ask/email" aria-label="Contact US"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
+				<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope" aria-hidden="true" aria-label="Contact US"></span></a></li>
 				<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
-				<li><a href="###############################" aria-label="Library Location"><span class="fas fa-map-marker-alt" aria-hidden="true"></span></a></li>
+				<li><a href="" aria-label="Library Location"><span class="fas fa-map-marker-alt" aria-hidden="true" role="presentation"></span></a></li>
 			</ul>
 	</div>
 </section>
 
 <nav id="site-navigation" class="main-navigation">
-	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Menu', 'culu' ); ?><i class="fas fa-bars"></i></button>
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Menu', 'culu' ); ?><span class="fas fa-bars" aria="hidden" role="presentation" aria-label="Menu"></span></button>
 	<?php
 	wp_nav_menu( array(
 		'theme_location' => 'primary',

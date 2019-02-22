@@ -1,14 +1,20 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.4.5 - 2019-02-18
+* Fix: Image size issue in Testimonial Carousel ([#7058](https://github.com/pojome/elementor/issues/7058))
+* Fix: MailChimp groups not saved in a form integration ([#7083](https://github.com/pojome/elementor/issues/7083))
+* Fix: Show popup preview only on it's own preview
+* Fix: Elementor dashboard templates URL corrupted links in edge cases
+
 #### 2.4.4 - 2019-02-11
-Tweak: Added ACF Date Time Picker field support ([#6690](https://github.com/pojome/elementor/issues/6690))
-Tweak: Changed the term of `All Posts` condition to `Posts`
-Fix: Added `<IfModule>` to avoid 500 error when `mod-headers` is missing ([#7034](https://github.com/pojome/elementor/issues/7034))
-Fix: Include post CSS deletion in Global Widget update ([#6856](https://github.com/pojome/elementor/issues/6856))
-Fix: `Textarea` default value in Forms Widget ([#6934](https://github.com/pojome/elementor/issues/6934))
-Fix: MailPoet latest version caused fatal error ([#6996](https://github.com/pojome/elementor/issues/6996))
-Fix: Fatal Error caused by calling MailPoet deleted method
-Notice: MailPoet `Auto Confirm` option will now default to "On"
+* Tweak: Added ACF Date Time Picker field support ([#6690](https://github.com/pojome/elementor/issues/6690))
+* Tweak: Changed the term of `All Posts` condition to `Posts`
+* Fix: Added `<IfModule>` to avoid 500 error when `mod-headers` is missing ([#7034](https://github.com/pojome/elementor/issues/7034))
+* Fix: Include post CSS deletion in Global Widget update ([#6856](https://github.com/pojome/elementor/issues/6856))
+* Fix: `Textarea` default value in Forms Widget ([#6934](https://github.com/pojome/elementor/issues/6934))
+* Fix: MailPoet latest version caused fatal error ([#6996](https://github.com/pojome/elementor/issues/6996))
+* Fix: Fatal Error caused by calling MailPoet deleted method
+* Notice: MailPoet `Auto Confirm` option will now default to "On"
 
 #### 2.4.3 - 2019-01-30
 * Fix: Custom Add to Cart widget responsive alignment settings

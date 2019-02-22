@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.4.4 - 11-02-2019 */
+/*! elementor-pro - v2.4.5 - 18-02-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1222,7 +1222,7 @@ module.exports = BaseIntegrationModule.extend({
 
 		self.getMailchimpCache('lists', 'lists', GlobalApiKeycontrolView.getControlValue()).done(function (data) {
 			self.updateOptions('mailchimp_list', data.lists);
-			self.onMailchimpListUpdate();
+			self.updatMailchimpList();
 		});
 	},
 

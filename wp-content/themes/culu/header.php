@@ -63,10 +63,31 @@
 			<ul>
 				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
 				<li><a href="#"><span class="fas fa-user" aria-hidden="true" aria-label="My account"></span></a></li>
-				<li><a href="#"><span class="fas fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
+				<li><a href="#" class="icon-search"><span class="fas fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
 			</ul>
 		</nav>
   </header>
+
+	<!-- search -->
+
+
+		<form class="search" role="search" method="get" action="/">
+			<div class="">
+				<label for="search">Search</label>
+				<input type="search" value="" name="s">
+				<input type="radio" name="search-type" id="catalog" value="" checked />
+				<label for="catalog">Catalog</label>
+				<input type="radio" name="search-type" id="site" value="" />
+				<label for="site">This site</label>
+			</div>
+
+			<!--<input type="submit" value="Search">-->
+			<div class="">
+				<button class="btn-submit" type="submit">Search</button>
+				<button class="btn-close-search">Close</button>
+			</div>
+		</form>
+
 	<!-- header -->
 
 	<!-- Declare variables for hero images -->

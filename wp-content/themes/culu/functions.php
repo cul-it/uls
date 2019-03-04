@@ -138,6 +138,7 @@ function culu_scripts() {
 	wp_enqueue_style( 'culu-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'culu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'culu-search', get_template_directory_uri() . '/js/search.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'culu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

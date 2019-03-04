@@ -1,4 +1,4 @@
-/*! elementor - v2.4.7 - 18-02-2019 */
+/*! elementor - v2.5.1 - 04-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,12 +82,12 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 202);
+/******/ 	return __webpack_require__(__webpack_require__.s = 203);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 13:
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -168,25 +168,25 @@ module.exports = InnerTabsBehavior;
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _module = __webpack_require__(203);
+var _module = __webpack_require__(204);
 
 var _module2 = _interopRequireDefault(_module);
 
-var _introduction = __webpack_require__(204);
+var _introduction = __webpack_require__(205);
 
 var _introduction2 = _interopRequireDefault(_introduction);
 
-var _controlsStack = __webpack_require__(205);
+var _controlsStack = __webpack_require__(206);
 
 var _controlsStack2 = _interopRequireDefault(_controlsStack);
 
-var _baseSettings = __webpack_require__(206);
+var _baseSettings = __webpack_require__(207);
 
 var _baseSettings2 = _interopRequireDefault(_baseSettings);
 
@@ -209,7 +209,7 @@ elementorModules.editor = {
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -250,7 +250,7 @@ module.exports = EditorModule;
 
 /***/ }),
 
-/***/ 204:
+/***/ 205:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -352,7 +352,7 @@ exports.default = _class;
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -405,7 +405,7 @@ ControlsStack = Marionette.CompositeView.extend({
 
 	behaviors: {
 		HandleInnerTabs: {
-			behaviorClass: __webpack_require__(13)
+			behaviorClass: __webpack_require__(12)
 		}
 	},
 
@@ -528,11 +528,7 @@ ControlsStack = Marionette.CompositeView.extend({
 	},
 
 	getNamespaceArray: function getNamespaceArray() {
-		var eventNamespace = [];
-
-		eventNamespace.push(elementor.getPanelView().getCurrentPageName());
-
-		return eventNamespace;
+		return [elementor.getPanelView().getCurrentPageName()];
 	},
 
 	openActiveSection: function openActiveSection() {
@@ -546,8 +542,7 @@ ControlsStack = Marionette.CompositeView.extend({
 
 			var eventNamespace = this.getNamespaceArray();
 
-			eventNamespace.push(activeSection);
-			eventNamespace.push('activated');
+			eventNamespace.push(activeSection, 'activated');
 
 			elementor.channels.editor.trigger(eventNamespace.join(':'), this);
 		}
@@ -611,7 +606,7 @@ module.exports = ControlsStack;
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

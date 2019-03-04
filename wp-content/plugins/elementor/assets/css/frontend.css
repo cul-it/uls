@@ -1,4 +1,4 @@
-/*! elementor - v2.4.7 - 18-02-2019 */
+/*! elementor - v2.5.1 - 04-03-2019 */
 .dialog-widget-content {
   background-color: #fff;
   position: absolute;
@@ -113,7 +113,8 @@
     left: 0;
     height: 100%;
     width: 100%;
-    border: 0; }
+    border: 0;
+    background-color: #000; }
   .elementor-fit-aspect-ratio video {
     width: 100%; }
 
@@ -329,14 +330,17 @@
     border: none; }
   .elementor .elementor-custom-embed {
     line-height: 0; }
-  .elementor .elementor-background-video-container {
+  .elementor .elementor-background-video-container,
+  .elementor .elementor-background-holder,
+  .elementor .elementor-background {
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     position: absolute;
     overflow: hidden;
-    z-index: 0;
+    z-index: 0; }
+  .elementor .elementor-background-video-container {
     -webkit-transition: opacity 1s;
     -o-transition: opacity 1s;
     transition: opacity 1s;
@@ -369,6 +373,30 @@
     top: 0;
     left: 0;
     position: absolute; }
+
+.elementor-widget-wrap > .elementor-element.elementor-absolute {
+  width: auto;
+  position: absolute; }
+
+.elementor-widget-wrap > .elementor-element.elementor-fixed {
+  width: auto;
+  position: fixed; }
+
+.elementor-widget-wrap .elementor-element.elementor-widget__width-auto, .elementor-widget-wrap .elementor-element.elementor-widget__width-initial {
+  max-width: 100%; }
+
+@media (max-width: 1024px) {
+  .elementor-widget-wrap .elementor-element.elementor-widget-tablet__width-auto, .elementor-widget-wrap .elementor-element.elementor-widget-tablet__width-initial {
+    max-width: 100%; } }
+
+@media (max-width: 767px) {
+  .elementor-widget-wrap .elementor-element.elementor-widget-mobile__width-auto, .elementor-widget-wrap .elementor-element.elementor-widget-mobile__width-initial {
+    max-width: 100%; } }
+
+.elementor-element.elementor-absolute, .elementor-element.elementor-fixed {
+  z-index: 1; }
+  .elementor-element.elementor-absolute .elementor-image img, .elementor-element.elementor-fixed .elementor-image img {
+    width: auto; }
 
 .elementor-invisible {
   visibility: hidden; }
@@ -554,11 +582,23 @@
 
 .elementor-widget-wrap {
   position: relative;
-  width: 100%; }
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start; }
+  .elementor-widget-wrap > .elementor-element {
+    width: 100%; }
 
 .elementor-widget {
   position: relative; }
-  .elementor-widget:not(:last-child) {
+  .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute) {
     margin-bottom: 20px; }
 
 .elementor-column {
@@ -1395,6 +1435,10 @@ ul.elementor-icon-list-items.elementor-inline-items {
       color: inherit;
       font-family: inherit;
       opacity: 0.6; }
+    .elementor-field-group .elementor-field-textual:-moz-placeholder {
+      color: inherit;
+      font-family: inherit;
+      opacity: 0.6; }
     .elementor-field-group .elementor-field-textual::-ms-input-placeholder {
       color: inherit;
       font-family: inherit;
@@ -1942,6 +1986,10 @@ ul.elementor-icon-list-items.elementor-inline-items {
     display: -ms-flexbox;
     display: flex; }
   .elementor-widget-icon-box.elementor-position-left .elementor-icon-box-icon, .elementor-widget-icon-box.elementor-position-right .elementor-icon-box-icon {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
@@ -1989,6 +2037,12 @@ ul.elementor-icon-list-items.elementor-inline-items {
 
 .elementor-widget-icon-box .elementor-icon-box-title a {
   color: inherit; }
+
+.elementor-widget-icon-box .elementor-icon-box-content {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
 
 .elementor-widget-icon-box .elementor-icon-box-description {
   margin: 0; }
@@ -3601,7 +3655,6 @@ button.swiper-pagination-bullet {
             transform: rotate(180deg); }
   .elementor-shape svg {
     display: block;
-    width: -webkit-calc(100% + 1.3px);
     width: calc(100% + 1.3px);
     position: relative;
     left: 50%;

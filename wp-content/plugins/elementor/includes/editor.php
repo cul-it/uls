@@ -1,6 +1,7 @@
 <?php
 namespace Elementor;
 
+use Elementor\Core\Common\Modules\Ajax\Module as Ajax;
 use Elementor\Core\Responsive\Responsive;
 use Elementor\Core\Settings\Manager as SettingsManager;
 use Elementor\TemplateLibrary\Source_Local;
@@ -434,6 +435,14 @@ class Editor {
 		);
 
 		wp_register_script(
+			'nouislider',
+			ELEMENTOR_ASSETS_URL . 'lib/nouislider/nouislider' . $suffix . '.js',
+			[],
+			'13.0.0',
+			true
+		);
+
+		wp_register_script(
 			'elementor-editor',
 			ELEMENTOR_ASSETS_URL . 'js/editor' . $suffix . '.js',
 			[
@@ -452,6 +461,7 @@ class Editor {
 				'ace',
 				'ace-language-tools',
 				'jquery-hover-intent',
+				'nouislider',
 			],
 			ELEMENTOR_VERSION,
 			true
@@ -517,6 +527,7 @@ class Editor {
 			'help_the_content_url' => 'https://go.elementor.com/the-content-missing/',
 			'help_preview_error_url' => 'https://go.elementor.com/preview-not-loaded/',
 			'help_right_click_url' => 'https://go.elementor.com/meet-right-click/',
+			'additional_shapes' => Shapes::get_additional_shapes_for_config(),
 			'locked_user' => $locked_user,
 			'user' => [
 				'restrictions' => $plugin->role_manager->get_user_restrictions_array(),

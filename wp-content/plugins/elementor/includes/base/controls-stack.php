@@ -1843,7 +1843,6 @@ abstract class Controls_Stack extends Base_Object {
 	protected function _get_initial_config() {
 		return [
 			'controls' => $this->get_controls(),
-			'tabs_controls' => $this->get_tabs_controls(),
 		];
 	}
 

@@ -71,7 +71,7 @@
 	<!-- search -->
 
 
-		<form class="search" role="search" method="get" action="/">
+		<form class="user-tool-search" role="search" method="get" action="/">
 			<div class="">
 				<label for="search">Search</label>
 				<input type="search" value="" name="s">
@@ -159,7 +159,7 @@
 	<section class="
 
 		<?php
-			if ( is_front_page()  ) {
+			if ( is_front_page() ) {
 				echo "hero__content";
 			} else {
 				echo "hero__content interior-pages";

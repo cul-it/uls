@@ -922,7 +922,7 @@ object {
   Search
 
 ---*/
-.search {
+.user-tool-search {
   display: grid;
   margin: 10px auto;
   width: calc(100vw - 40px);
@@ -930,30 +930,30 @@ object {
   background-color: #B41B1D;
   padding: 20px;
   color: #fff; }
-  .search [type="search"] {
+  .user-tool-search [type="search"] {
     display: block;
     width: 100%;
     height: 30px;
     padding: 20px;
     margin-bottom: 10px; }
-  .search button {
+  .user-tool-search button {
     margin-left: 20px;
     width: 100px;
     height: 43px;
     margin-top: 24px; }
-  .search button.close-search {
+  .user-tool-search button.close-search {
     align-items: start;
     justify-items: end; }
   @media only screen and (min-width: 600px) {
-    .search {
+    .user-tool-search {
       width: 90%; } }
   @media only screen and (min-width: 1440px) {
-    .search {
+    .user-tool-search {
       width: 1360px;
       padding-top: 20px;
       padding-bottom: 10px; } }
   @media only screen and (min-width: 1600px) {
-    .search {
+    .user-tool-search {
       width: 1529px; } }
 
 /*---

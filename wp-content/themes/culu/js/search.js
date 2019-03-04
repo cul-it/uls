@@ -6,20 +6,20 @@
 	$(function () {
 
 		//'use strict';
-    $(' form.search ').hide();
+    $(' form.user-tool-search ').hide();
 
 		// DOM ready, take it away
 		$('.icon-search').click(function(e){
 			//console.log('click');
 			e.preventDefault();
-			$(' form.search ').slideToggle();
+			$(' form.user-tool-search ').slideToggle();
 
 		});
 
 		$(' .btn-close-search  ').click(function(e){
 
 			e.preventDefault();
-      $(' form.search ').slideToggle();
+      $(' form.user-tool-search ').slideToggle();
 
 		});
 

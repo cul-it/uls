@@ -5,21 +5,19 @@
 
 	$(function () {
 
-		//'use strict';
-    $(' form.user-tool-search ').hide();
-
 		// DOM ready, take it away
 		$('.icon-search').click(function(e){
+      $(' form.user-tool-search ').css( 'display', 'grid' );
 			//console.log('click');
 			e.preventDefault();
-			$(' form.user-tool-search ').slideToggle();
+			$(' form.user-tool-search ').slideDown();
 
 		});
 
 		$(' .btn-close-search  ').click(function(e){
 
 			e.preventDefault();
-      $(' form.user-tool-search ').slideToggle();
+      $(' form.user-tool-search ').slideUp();
 
 		});
 

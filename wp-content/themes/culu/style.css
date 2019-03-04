@@ -923,7 +923,7 @@ object {
 
 ---*/
 .user-tool-search {
-  display: grid;
+  display: none;
   margin: 10px auto;
   width: calc(100vw - 40px);
   grid-template-columns: 40% 60%;

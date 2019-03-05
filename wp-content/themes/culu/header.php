@@ -75,9 +75,9 @@
 			<div class="">
 				<label for="search">Search</label>
 				<input type="search" value="" name="s">
-				<input type="radio" name="search-type" id="catalog" value="" checked />
+				<input type="radio" name="search-type" id="catalog" value="catalog" checked />
 				<label for="catalog">Catalog</label>
-				<input type="radio" name="search-type" id="site" value="" />
+				<input type="radio" name="search-type" id="site" value="site" />
 				<label for="site">This site</label>
 			</div>
 

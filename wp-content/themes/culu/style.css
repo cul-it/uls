@@ -656,14 +656,17 @@ li.current-menu-item a {
         .main-navigation ul li:first-child {
           padding-left: 10px; }
       .main-navigation ul ul {
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2) !important;
         float: left;
         position: absolute;
         top: 100%;
+        height: auto;
         left: -999em;
-        z-index: 99999; }
-        .main-navigation ul ul ul {
-          left: -999em;
-          top: 0; }
+        z-index: 99999;
+        /* ul {
+        	left: -999em;
+        	top: 0;
+        }*/ }
         .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
           left: 100%; }
         .main-navigation ul ul a {

@@ -663,20 +663,34 @@ li.current-menu-item a {
         height: auto;
         left: -999em;
         z-index: 99999;
+        padding-left: 0;
         /* ul {
         	left: -999em;
         	top: 0;
         }*/ }
-        .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-          left: 100%; }
+        .main-navigation ul ul li {
+          border: 1px solid red;
+          padding: 0 !important;
+          border: none;
+          border-bottom: 1px solid #C1BEBE;
+          margin: 0 !important;
+          padding-top: 20px !important;
+          padding-bottom: 20px !important; }
+          .main-navigation ul ul li:last-child {
+            border: none; }
+          .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+            left: 100%; }
         .main-navigation ul ul a {
-          width: 200px; }
+          width: 200px;
+          border: none;
+          padding-left: 20px; }
       .main-navigation ul li:hover > ul,
       .main-navigation ul li.focus > ul {
         left: auto; }
     .main-navigation li {
       float: left;
-      position: relative; }
+      position: relative;
+      padding-left: 20px; }
     .main-navigation a {
       display: block;
       text-decoration: none; } }

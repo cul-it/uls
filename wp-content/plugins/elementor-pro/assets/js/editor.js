@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.4.5 - 18-02-2019 */
+/*! elementor-pro - v2.4.6 - 04-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -3622,13 +3622,6 @@ module.exports = SaverBehavior.extend({
 		this.ui.menuConditions.toggle(!!elementorPro.config.theme_builder.settings.location);
 	},
 
-	openPublishScreenOnConditions: function openPublishScreenOnConditions() {
-		elementorPro.modules.themeBuilder.showPublishModal();
-
-		elementorPro.modules.themeBuilder.getPublishLayout().modalContent.currentView.showScreenByName('conditions');
-	},
-
-
 	onRender: function onRender() {
 		SaverBehavior.prototype.onRender.apply(this, arguments);
 
@@ -3637,7 +3630,9 @@ module.exports = SaverBehavior.extend({
 			name: 'conditions',
 			icon: 'fa fa-paper-plane',
 			title: elementorPro.translate('display_conditions'),
-			callback: this.openPublishScreenOnConditions
+			callback: function callback() {
+				return elementorPro.modules.themeBuilder.showPublishModal();
+			}
 		});
 
 		this.toggleMenuConditions();
@@ -3660,7 +3655,7 @@ module.exports = SaverBehavior.extend({
 		if (hasConditions && !isDraft || !hasLocation) {
 			SaverBehavior.prototype.onClickButtonPublish.apply(this, arguments);
 		} else {
-			this.openPublishScreenOnConditions();
+			elementorPro.modules.themeBuilder.showPublishModal();
 		}
 	},
 

@@ -316,11 +316,9 @@
     position: absolute; }
 
 .elementor-widget-wrap > .elementor-element.elementor-absolute {
-  width: auto;
   position: absolute; }
 
 .elementor-widget-wrap > .elementor-element.elementor-fixed {
-  width: auto;
   position: fixed; }
 
 .elementor-widget-wrap .elementor-element.elementor-widget__width-auto, .elementor-widget-wrap .elementor-element.elementor-widget__width-initial {
@@ -336,8 +334,6 @@
 
 .elementor-element.elementor-absolute, .elementor-element.elementor-fixed {
   z-index: 1; }
-  .elementor-element.elementor-absolute .elementor-image img, .elementor-element.elementor-fixed .elementor-image img {
-    width: auto; }
 
 .elementor-invisible {
   visibility: hidden; }
@@ -490,8 +486,10 @@
 
 .elementor-widget {
   position: relative; }
-  .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute) {
+  .elementor-widget:not(:last-child) {
     margin-bottom: 20px; }
+    .elementor-widget:not(:last-child).elementor-widget__width-auto, .elementor-widget:not(:last-child).elementor-widget__width-initial, .elementor-widget:not(:last-child).elementor-absolute {
+      margin-bottom: 0; }
 
 .elementor-column {
   position: relative;

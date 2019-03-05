@@ -4,7 +4,7 @@ Tags: page builder, editor, landing page, drag-and-drop, elementor, visual edito
 Requires at least: 4.7
 Tested up to: 5.1
 Requires PHP: 5.4
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -220,6 +220,11 @@ No. Elementor supports WordPress 4.7 or greater, and is compatible with PHP 5.4 
 7. **Shape Divider.** Choose from a wide array of shape dividers and separate your sections in endless ways, that until now were simply not possible.
 
 == Changelog ==
+
+= 2.5.2 - 2019-03-05 =
+* Fix: Custom space between widgets override ([#7309](https://github.com/elementor/elementor/issues/7309))
+* Fix: Changed the default width of Absolute & Fixed position widget ([#7311](https://github.com/elementor/elementor/issues/7311))
+* **Note: This fix might affect previous custom positioning settings, if you have previously used position absolute or position fixed, please review your site.**
 
 = 2.5.1 - 2019-03-04 =
 * Fix: Inline Width (auto) not working ([#7293](https://github.com/elementor/elementor/issues/7293))

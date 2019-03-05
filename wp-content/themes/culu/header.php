@@ -72,20 +72,19 @@
 
 
 		<form class="user-tool-search" role="search" method="get" action="/">
-			<div class="">
+			<div>
 				<label for="search">Search</label>
 				<input type="search" value="" name="s">
 				<input type="radio" name="search-type" id="catalog" value="catalog" checked />
 				<label for="catalog">Catalog</label>
-				<input type="radio" name="search-type" id="site" value="site" />
+				<input class="site-search" type="radio" name="search-type" id="site" value="site" />
 				<label for="site">This site</label>
 			</div>
 
 			<!--<input type="submit" value="Search">-->
-			<div class="">
-				<button class="btn-submit" type="submit">Search</button>
-				<button class="btn-close-search">Close</button>
-			</div>
+			<button class="btn-submit" type="submit">Search</button>
+			<button class="btn-close-search">Close</button>
+
 		</form>
 
 	<!-- header -->

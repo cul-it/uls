@@ -940,11 +940,11 @@ object {
 
 ---*/
 .user-tool-search {
-  display: grid;
+  display: none;
   margin: 10px auto;
   width: calc(100vw - 40px);
   grid-template-columns: 40% auto auto;
-  background-color: #B41B1D;
+  background-color: #222;
   padding: 20px;
   color: #fff; }
   .user-tool-search label[for="search"] {

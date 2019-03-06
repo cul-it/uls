@@ -321,6 +321,181 @@ Kirki::add_field( 'theme_config_id_college_logo', array(
 	'default'     => '',
 ) );
 
+
+
+
+
+
+
+
+
+
+/*
+ *  Customize footer info
+ *  Add panel
+ */
+
+Kirki::add_panel( 'panel_id_contact', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'Add Contact Info', 'textdomain' ),
+    //description' => esc_attr__( 'Upload hero images for mobile, tablet, and desktop', 'textdomain' ),
+) );
+
+// Add section Address Label
+Kirki::add_section( 'section_id_address_label', array(
+    'title'          => esc_attr__( 'Address', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_address_label', array(
+	'type'     => 'text',
+	'settings' => 'address_label',
+	'label'    => __( 'Add address', 'textdomain' ),
+	'section'  => 'section_id_address_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+// Add section City Label
+Kirki::add_section( 'section_id_city_label', array(
+    'title'          => esc_attr__( 'City', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_city_label', array(
+	'type'     => 'text',
+	'settings' => 'city_label',
+	'label'    => __( 'Add city', 'textdomain' ),
+	'section'  => 'section_id_city_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+// Add section State Label
+Kirki::add_section( 'section_id_state_label', array(
+    'title'          => esc_attr__( 'State', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_state_label', array(
+	'type'     => 'text',
+	'settings' => 'state_label',
+	'label'    => __( 'Add state', 'textdomain' ),
+	'section'  => 'section_id_state_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+// Add section Zip Label
+Kirki::add_section( 'section_id_zip_label', array(
+    'title'          => esc_attr__( 'Zip', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_zip_label', array(
+	'type'     => 'text',
+	'settings' => 'zip_label',
+	'label'    => __( 'Add zip', 'textdomain' ),
+	'section'  => 'section_id_zip_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+
+// Add section Reference Number Label
+Kirki::add_section( 'section_id_reference_number_label', array(
+    'title'          => esc_attr__( 'Reference Number', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_reference_number_label', array(
+	'type'     => 'text',
+	'settings' => 'reference_number_label',
+	'label'    => __( 'Add reference number', 'textdomain' ),
+	'section'  => 'section_id_reference_number_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+// Add section Circulation Number Label
+Kirki::add_section( 'section_id_circulation_number_label', array(
+    'title'          => esc_attr__( 'Circulation Number', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_circulation_number_label', array(
+	'type'     => 'text',
+	'settings' => 'circulation_number_label',
+	'label'    => __( 'Add circulation number', 'textdomain' ),
+	'section'  => 'section_id_circulation_number_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+
+// Add section Email Label
+Kirki::add_section( 'section_id_email_label', array(
+    'title'          => esc_attr__( 'Email', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_email_label', array(
+	'type'     => 'text',
+	'settings' => 'email_label',
+	'label'    => __( 'Add email', 'textdomain' ),
+	'section'  => 'section_id_email_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+// Add section Google Map Link Label
+Kirki::add_section( 'section_id_google_map_label', array(
+    'title'          => esc_attr__( 'Google Map Link', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_contact',
+    'priority'       => 160,
+) );
+
+// Add input text control
+Kirki::add_field( 'theme_config_id_google_map_label', array(
+	'type'     => 'text',
+	'settings' => 'google_map_label',
+	'label'    => __( 'Add google map link', 'textdomain' ),
+	'section'  => 'section_id_google_map_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
+
+
+
+
+
+
+
+
+
+
 /**
  * Strip out domain path.
  */

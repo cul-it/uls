@@ -655,6 +655,18 @@ li.current-menu-item a {
         margin-bottom: 20px; }
         .main-navigation ul li:first-child {
           padding-left: 10px; }
+        .main-navigation ul li:last-child {
+          border-right: none; }
+        .main-navigation ul li.menu-item-has-children a:after {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          content: "\f078";
+          padding-right: 10px;
+          margin-left: 5px;
+          border-right: none; }
       .main-navigation ul ul {
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2) !important;
         float: left;
@@ -664,12 +676,13 @@ li.current-menu-item a {
         left: -999em;
         z-index: 99999;
         padding-left: 0;
-        /* ul {
-        	left: -999em;
-        	top: 0;
-        }*/ }
+      			/* ul {
+    
+      				left: -999em;
+      				top: 0;
+    
+      			}*/ }
         .main-navigation ul ul li {
-          border: 1px solid red;
           padding: 0 !important;
           border: none;
           border-bottom: 1px solid #C1BEBE;
@@ -680,6 +693,8 @@ li.current-menu-item a {
             border: none; }
           .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
             left: 100%; }
+          .main-navigation ul ul li a:after {
+            content: "" !important; }
         .main-navigation ul ul a {
           width: 200px;
           border: none;

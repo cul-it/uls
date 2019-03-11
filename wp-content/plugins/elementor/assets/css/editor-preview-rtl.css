@@ -1,4 +1,4 @@
-/*! elementor - v2.5.2 - 05-03-2019 */
+/*! elementor - v2.5.4 - 10-03-2019 */
 @charset "UTF-8";
 .ui-resizable-n {
   top: -5px; }
@@ -951,7 +951,7 @@
   width: 70%; }
 
 .elementor-slider {
-  margin-top: 10px;
+  margin: 10px 0;
   height: 4px;
   background-color: #d5dadf;
   -webkit-border-radius: 5px;
@@ -970,9 +970,9 @@
     width: 16px;
     background-color: #fff;
     left: 0;
-    -webkit-transform: translateY(calc(50% - 14px)) translateX(8px);
-        -ms-transform: translateY(calc(50% - 14px)) translateX(8px);
-            transform: translateY(calc(50% - 14px)) translateX(8px);
+    -webkit-transform: translateY(calc(50% - 14px)) translateX(-8px);
+        -ms-transform: translateY(calc(50% - 14px)) translateX(-8px);
+            transform: translateY(calc(50% - 14px)) translateX(-8px);
     position: absolute;
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1);
             box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1);

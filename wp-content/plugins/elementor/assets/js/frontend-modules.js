@@ -1,4 +1,4 @@
-/*! elementor - v2.5.2 - 05-03-2019 */
+/*! elementor - v2.5.4 - 10-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -476,11 +476,12 @@ module.exports = elementorModules.ViewModule.extend({
 		}];
 
 		if (self.onElementChange) {
-			var elementName = self.getElementName(),
-			    eventName = 'change';
+			var elementType = self.getWidgetType() || self.getElementType();
 
-			if ('global' !== elementName) {
-				eventName += ':' + elementName;
+			var eventName = 'change';
+
+			if ('global' !== elementType) {
+				eventName += ':' + elementType;
 			}
 
 			self.editorListeners.push({
@@ -551,8 +552,18 @@ module.exports = elementorModules.ViewModule.extend({
 		});
 	},
 
-	getElementName: function getElementName() {
-		return this.$element.data('element_type').split('.')[0];
+	getElementType: function getElementType() {
+		return this.$element.data('element_type');
+	},
+
+	getWidgetType: function getWidgetType() {
+		var widgetType = this.$element.data('widget_type');
+
+		if (!widgetType) {
+			return;
+		}
+
+		return widgetType.split('.')[0];
 	},
 
 	getID: function getID() {

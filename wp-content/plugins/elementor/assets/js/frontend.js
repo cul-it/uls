@@ -1,4 +1,4 @@
-/*! elementor - v2.5.2 - 05-03-2019 */
+/*! elementor - v2.5.4 - 10-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1421,13 +1421,11 @@ module.exports = function ($) {
 
 		elementorFrontend.hooks.doAction('frontend/element_ready/global', $scope, $);
 
-		var isWidgetType = -1 === ['section', 'column'].indexOf(elementType);
-
-		if (isWidgetType) {
-			elementorFrontend.hooks.doAction('frontend/element_ready/widget', $scope, $);
-		}
-
 		elementorFrontend.hooks.doAction('frontend/element_ready/' + elementType, $scope, $);
+
+		if ('widget' === elementType) {
+			elementorFrontend.hooks.doAction('frontend/element_ready/' + $scope.attr('data-widget_type'), $scope, $);
+		}
 	};
 
 	init();
@@ -2143,10 +2141,6 @@ var TextEditor = elementorModules.frontend.handlers.Base.extend({
 		};
 	},
 
-	getElementName: function getElementName() {
-		return 'text-editor';
-	},
-
 	wrapDropCap: function wrapDropCap() {
 		var isDropCapEnabled = this.getElementSettings('drop_cap');
 
@@ -2221,13 +2215,19 @@ module.exports = function ($scope) {
 
 
 var GlobalHandler = elementorModules.frontend.handlers.Base.extend({
-	getElementName: function getElementName() {
+	getWidgetType: function getWidgetType() {
 		return 'global';
 	},
 	animate: function animate() {
 		var $element = this.$element,
-		    animation = this.getAnimation(),
-		    elementSettings = this.getElementSettings(),
+		    animation = this.getAnimation();
+
+		if ('none' === animation) {
+			$element.removeClass('elementor-invisible');
+			return;
+		}
+
+		var elementSettings = this.getElementSettings(),
 		    animationDelay = elementSettings._animation_delay || elementSettings.animation_delay || 0;
 
 		$element.removeClass(animation);

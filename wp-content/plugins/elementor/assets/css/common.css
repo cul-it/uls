@@ -1,4 +1,4 @@
-/*! elementor - v2.5.2 - 05-03-2019 */
+/*! elementor - v2.5.4 - 10-03-2019 */
 .dialog-widget-content {
   background-color: #fff;
   position: absolute;
@@ -32,10 +32,10 @@
   .dialog-type-lightbox .dialog-header {
     font-size: 15px;
     color: #495157;
-    padding: 20px 0;
+    padding: 30px 0 10px;
     font-weight: 500; }
   .dialog-type-lightbox .dialog-message {
-    padding: 0 20px 20px;
+    padding: 0 30px 30px;
     min-height: 50px; }
   .dialog-type-lightbox:not(.elementor-popup-modal) .dialog-header,
   .dialog-type-lightbox:not(.elementor-popup-modal) .dialog-message {
@@ -44,6 +44,7 @@
     border-top: 1px solid #e6e9ec;
     text-align: center; }
     .dialog-type-lightbox .dialog-buttons-wrapper > .dialog-button {
+      font-family: Roboto;
       width: 50%;
       border: none;
       background: none;
@@ -159,7 +160,7 @@
   height: 750px;
   max-height: 85vh;
   overflow: auto;
-  padding: 25px 30px 30px; }
+  padding-top: 25px; }
 
 .elementor-templates-modal .dialog-content {
   height: 100%; }

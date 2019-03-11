@@ -1,9 +1,12 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.4.7 - 2019-03-06
+* Fix: Compatibility Global Widget with Elementor v2.5.0+
+
 #### 2.4.6 - 2019-03-04
 * Fix: Pods gallery dynamic when empty ([#7127](https://github.com/elementor/elementor/issues/7127))
 * Fix: Duplicate call for conditions screen issue
-* Fix: Compatibility with Elementor 2.5.0
+* Fix: Compatibility with Elementor v2.5.0
 
 #### 2.4.5 - 2019-02-18
 * Fix: Image size issue in Testimonial Carousel ([#7058](https://github.com/elementor/elementor/issues/7058))

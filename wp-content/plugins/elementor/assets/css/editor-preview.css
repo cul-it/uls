@@ -1,4 +1,4 @@
-/*! elementor - v2.5.2 - 05-03-2019 */
+/*! elementor - v2.5.4 - 10-03-2019 */
 @charset "UTF-8";
 .ui-resizable-n {
   top: -5px; }
@@ -946,7 +946,7 @@
   width: 70%; }
 
 .elementor-slider {
-  margin-top: 10px;
+  margin: 10px 0;
   height: 4px;
   background-color: #d5dadf;
   -webkit-border-radius: 5px;

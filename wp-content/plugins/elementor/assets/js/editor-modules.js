@@ -1,4 +1,4 @@
-/*! elementor - v2.5.2 - 05-03-2019 */
+/*! elementor - v2.5.4 - 10-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -287,6 +287,22 @@ var _class = function (_elementorModules$Mod) {
 	}
 
 	_createClass(_class, [{
+		key: 'getDefaultSettings',
+		value: function getDefaultSettings() {
+			return {
+				dialogType: 'buttons',
+				dialogOptions: {
+					effects: {
+						hide: 'hide',
+						show: 'show'
+					},
+					hide: {
+						onBackgroundClick: false
+					}
+				}
+			};
+		}
+	}, {
 		key: 'initDialog',
 		value: function initDialog() {
 			var _this2 = this;
@@ -295,22 +311,12 @@ var _class = function (_elementorModules$Mod) {
 
 			this.getDialog = function () {
 				if (!dialog) {
-					var options = jQuery.extend({
-						effects: {
-							hide: 'hide',
-							show: 'show'
-						},
-						hide: {
-							onBackgroundClick: false
-						}
-					}, _this2.getSettings('dialogOptions'));
+					var settings = _this2.getSettings();
 
-					dialog = elementorCommon.dialogsManager.createWidget('buttons', options);
+					dialog = elementorCommon.dialogsManager.createWidget(settings.dialogType, settings.dialogOptions);
 
-					var onInitCallback = _this2.getSettings('onDialogInitCallback');
-
-					if (onInitCallback) {
-						onInitCallback.call(_this2, dialog);
+					if (settings.onDialogInitCallback) {
+						settings.onDialogInitCallback.call(_this2, dialog);
 					}
 				}
 
@@ -326,9 +332,11 @@ var _class = function (_elementorModules$Mod) {
 
 			var dialog = this.getDialog();
 
-			dialog.setSettings('position', {
-				of: target
-			});
+			if (target) {
+				dialog.setSettings('position', {
+					of: target
+				});
+			}
 
 			dialog.show();
 		}

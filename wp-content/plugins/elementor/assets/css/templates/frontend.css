@@ -1013,15 +1013,15 @@ ul.elementor-icon-list-items.elementor-inline-items {
     display: grid; } }
 
 @media (min-width: ELEMENTOR_SCREEN_LG_MIN) {
-  head {
+  #elementor-device-mode:after {
     content: 'desktop'; } }
 
 @media (min-width: ELEMENTOR_SCREEN_MD_MIN) and (max-width: ELEMENTOR_SCREEN_MD_MAX) {
-  head {
+  #elementor-device-mode:after {
     content: 'tablet'; } }
 
 @media (max-width: ELEMENTOR_SCREEN_SM_MAX) {
-  head {
+  #elementor-device-mode:after {
     content: 'mobile'; } }
 
 .elementor-form-fields-wrapper {

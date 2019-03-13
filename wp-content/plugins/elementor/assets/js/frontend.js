@@ -1,4 +1,4 @@
-/*! elementor - v2.5.4 - 10-03-2019 */
+/*! elementor - v2.5.5 - 11-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -904,7 +904,8 @@ var Frontend = function (_elementorModules$Vie) {
 				$window: jQuery(window),
 				$document: jQuery(document),
 				$head: jQuery(document.head),
-				$body: jQuery(document.body)
+				$body: jQuery(document.body),
+				$deviceMode: jQuery('#elementor-device-mode')
 			};
 		}
 	}, {
@@ -948,7 +949,7 @@ var Frontend = function (_elementorModules$Vie) {
 	}, {
 		key: 'getCurrentDeviceMode',
 		value: function getCurrentDeviceMode() {
-			return getComputedStyle(this.elements.$head[0]).content.replace(/"/g, '');
+			return getComputedStyle(this.elements.$deviceMode[0], ':after').content.replace(/"/g, '');
 		}
 	}, {
 		key: 'getCurrentDeviceSetting',

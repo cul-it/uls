@@ -1,4 +1,4 @@
-/*! elementor - v2.5.4 - 10-03-2019 */
+/*! elementor - v2.5.5 - 11-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -5844,8 +5844,13 @@ var App = Marionette.Application.extend({
 					confirm: this.translate('learn_more'),
 					cancel: this.translate('got_it')
 				},
+				hide: {
+					onButtonClick: false
+				},
 				onCancel: function onCancel() {
-					return introduction.setViewed();
+					introduction.setViewed();
+
+					introduction.getDialog().hide();
 				},
 				onConfirm: function onConfirm() {
 					return open(_this2.config.help_flexbox_bc_url, '_blank');
@@ -6230,10 +6235,12 @@ var App = Marionette.Application.extend({
 });
 
 window.elementor = new App();
+
 if (-1 === location.href.search('ELEMENTOR_TESTS=1')) {
-	window.elementor.start();
+	elementor.start();
 }
-module.exports = window.elementor;
+
+module.exports = elementor;
 
 /***/ }),
 /* 47 */
@@ -14955,7 +14962,7 @@ WidgetView = BaseElementView.extend({
 		// TODO: Find better way to detect if all images are loaded
 		self.$el.imagesLoaded().always(function () {
 			setTimeout(function () {
-				if (1 > self.$el.height()) {
+				if (1 > self.$el.children('.elementor-widget-container').outerHeight()) {
 					self.handleEmptyWidget();
 				}
 			}, 200);

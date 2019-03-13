@@ -1,4 +1,4 @@
-/*! elementor - v2.5.4 - 10-03-2019 */
+/*! elementor - v2.5.5 - 11-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -554,7 +554,8 @@ var _class = function (_elementorModules$Mod) {
 				ajaxParams: {
 					type: 'POST',
 					url: elementorCommon.config.ajax.url,
-					data: {}
+					data: {},
+					dataType: 'json'
 				},
 				actionPrefix: 'elementor_'
 			};

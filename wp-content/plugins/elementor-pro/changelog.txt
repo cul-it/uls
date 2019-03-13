@@ -1,5 +1,9 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.4.8 - 2019-03-11
+* Fix: Missing query section in Products widget
+* Fix: Missing Taxonomy controls in Products widget in edge cases
+
 #### 2.4.7 - 2019-03-06
 * Fix: Compatibility Global Widget with Elementor v2.5.0+
 

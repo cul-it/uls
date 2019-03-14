@@ -1,4 +1,4 @@
-/*! elementor - v2.5.5 - 11-03-2019 */
+/*! elementor - v2.5.6 - 14-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -14261,7 +14261,7 @@ ControlSliderItemView = ControlBaseUnitsItemView.extend({
 
 	onReady: function onReady() {
 		if (this.isMultiple()) {
-			this.$el.addClass('elementor-control-type-slider--multiple');
+			this.$el.addClass('elementor-control-type-slider--multiple elementor-control-type-slider--handles-' + this.model.get('handles'));
 		}
 
 		this.initSlider();

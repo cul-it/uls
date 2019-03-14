@@ -16,7 +16,7 @@
     <div class="footer__nav">
 
       <div class="all-libraries">
-        <a href="https://www.library.cornell.edu/"><span class="fas fa-arrow-left" role="presentation"></span> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</a>
+        <a href="https://www.library.cornell.edu/"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</a>
       </div>
 
     	<?php
@@ -47,7 +47,8 @@
       ?>
 
       <a href="<?php echo $college_link ?>">
-        <img src="<?php echo get_domain_path( $college_logo );?>" alt="<?php echo $college_label ?> logo"/>
+        <img src="<?php echo get_domain_path( $college_logo );?>" alt=""/>
+        <span class="screen-reader-text"><?php echo $college_label ?> website</span>
       </a>
       <figcaption></figcaption>
 
@@ -62,7 +63,7 @@
             <p><strong><?php echo get_bloginfo( 'name' ); ?></strong><br>
               <?php echo $address_label ?><br>
               <?php echo $city_label ?>, <?php echo $state_label ?> <?php echo $zip_label ?>
-            <a href="<?php echo $google_map_label ?>"> <span class="fas fa-map-marker-alt" role="presentation" labelledby="Location"></span></a></p>
+            <a href="<?php echo $google_map_label ?>"> <span class="fas fa-map-marker-alt" aria-hidden="true" aria-label="Library location"></span></a></p>
           </div>
 
         <div class="c-2">

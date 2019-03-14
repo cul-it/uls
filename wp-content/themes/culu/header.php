@@ -53,7 +53,7 @@
 	<header class="branding">
 		<!-- logo -->
 		<div class="banding">
-			<a class="logo-cul" href="https://www.library.cornell.edu/"><img src="<?php echo get_template_directory_uri(); ?>/images/branding/cul-logo.svg" alt="Cornell University Library logo"></a>
+			<a class="logo-cul" href="https://www.library.cornell.edu/" title="Cornell University Library website"><img src="<?php echo get_template_directory_uri(); ?>/images/branding/cul-logo.svg" alt="Cornell University Library logo"></a>
 			<!-- /logo -->
 		</div>
 
@@ -168,7 +168,7 @@
 		 ?>
 	">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
+		<a href="https://www.library.cornell.edu/"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
 	</div>
 
 	<div class="college">
@@ -192,9 +192,9 @@
 			- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /</time>
 
 			<ul class="header-contact">
-				<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope" aria-label="Contact US"></span></a></li>
+				<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope" aria-hidden="true" aria-label="Contact US"></span></a></li>
 				<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
-				<li><a href="<?php echo $google_map_label ?>"><span class="fas fa-map-marker-alt" aria-label="Library Location"></span></a></li>
+				<li><a href="<?php echo $google_map_label ?>"><span class="fas fa-map-marker-alt" aria-hidden="true" aria-label="Library Location"></span></a></li>
 			</ul>
 	</div>
 </section>

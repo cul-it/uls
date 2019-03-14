@@ -16,7 +16,7 @@
     <div class="footer__nav">
 
       <div class="all-libraries">
-        <a href="https://www.library.cornell.edu/"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</a>
+        <a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</a>
       </div>
 
     	<?php
@@ -63,7 +63,7 @@
             <p><strong><?php echo get_bloginfo( 'name' ); ?></strong><br>
               <?php echo $address_label ?><br>
               <?php echo $city_label ?>, <?php echo $state_label ?> <?php echo $zip_label ?>
-            <a href="<?php echo $google_map_label ?>"> <span class="fas fa-map-marker-alt" aria-hidden="true" aria-label="Library location"></span></a></p>
+            <a href="<?php echo $google_map_label ?>"> <span class="fa fa-map-marker" aria-hidden="true" aria-label="Library location"></span></a></p>
           </div>
 
         <div class="c-2">
@@ -87,7 +87,7 @@
     <p class="feedback">
 
       <a class="btn-graphic" href="https://www.library.cornell.edu/feedback?destination=web-accessibility">FEEDBACK</a>
-      <a class="btn-graphic" href="https://alumni.library.cornell.edu/content/give-library">GIVE TO THE LIBRARY <span class="fas fa-arrow-right" role="presentation"></span></a>
+      <a class="btn-graphic" href="https://alumni.library.cornell.edu/content/give-library">GIVE TO THE LIBRARY <span class="fa fa-arrow-right" aria-hidden="true"></span></a>
 
     </p>
 

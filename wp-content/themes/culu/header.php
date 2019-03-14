@@ -36,8 +36,6 @@
 
 	<?php wp_head(); ?>
 
-	<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
-
 	<!-- Emergency Banner -->
 	<script src="//embanner.univcomm.cornell.edu/OWC-emergency-banner.js" type="text/javascript"></script>
 </head>
@@ -62,8 +60,8 @@
 		<nav class="user-tools">
 			<ul>
 				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
-				<li><a href="#"><span class="fas fa-user" aria-hidden="true" aria-label="My account"></span></a></li>
-				<li><a href="#" class="icon-search"><span class="fas fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
+				<li><a href="https://www.library.cornell.edu/myacct" title="My account"><span class="fa fa-user-o" aria-hidden="true" aria-label="My account"></span></a></li>
+				<li><a href="#" class="icon-search" title="Search"><span class="fa fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
 			</ul>
 		</nav>
   </header>
@@ -168,7 +166,7 @@
 		 ?>
 	">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
+		<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
 	</div>
 
 	<div class="college">
@@ -184,7 +182,7 @@
 
 		<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 
-		<time><span class="fas fa-clock icon-time" aria-hidden="true"></span>
+		<time><span class="fa fa-clock-o icon-time" aria-hidden="true"></span>
 
 			<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
 			<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
@@ -192,15 +190,15 @@
 			- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /</time>
 
 			<ul class="header-contact">
-				<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope" aria-hidden="true" aria-label="Contact US"></span></a></li>
+				<li><a href="https://www.library.cornell.edu/ask/email" title="Contact us"><span class="fa fa-envelope" aria-hidden="true" aria-label="Contact US"></span></a></li>
 				<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
-				<li><a href="<?php echo $google_map_label ?>"><span class="fas fa-map-marker-alt" aria-hidden="true" aria-label="Library Location"></span></a></li>
+				<li><a href="<?php echo $google_map_label ?> title="Library location"><span class="fa fa-map-marker" aria-hidden="true" aria-label="Library Location"></span></a></li>
 			</ul>
 	</div>
 </section>
 
 <nav id="site-navigation" class="main-navigation">
-	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Menu', 'culu' ); ?><span class="fas fa-bars" aria-hidden="true"><span class="screen-reader-text">Main Navigation</span></span></button>
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="Main Navigation" <?php //esc_html_e( 'Menu', 'culu' ); ?>><span class="fa fa-bars" aria-hidden="true"><span class="screen-reader-text">Main Navigation</span></span></button>
 	<?php
 	wp_nav_menu( array(
 		'theme_location' => 'primary',

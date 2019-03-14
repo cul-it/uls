@@ -47,8 +47,7 @@
       ?>
 
       <a href="<?php echo $college_link ?>">
-        <img src="<?php echo get_domain_path( $college_logo );?>" alt=""/>
-        <span class="screen-reader-text"><?php echo $college_label ?> website</span>
+        <img src="<?php echo get_domain_path( $college_logo );?>" alt="<?php echo $college_label ?> logo"/>
       </a>
       <figcaption></figcaption>
 

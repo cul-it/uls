@@ -89,14 +89,16 @@
 
 	<!-- header -->
 
-	<!-- Declare variables for hero images -->
+	<!-- Declare variables for theme options-->
 	<!-- Use Kirki to handle customizer -->
+	<?php
+		$image_hero_large = get_theme_mod( 'image_setting_url_hero_large', '' );
+		$image_hero_medium = get_theme_mod( 'image_setting_url_hero_medium', '' );
+		$image_hero_small = get_theme_mod( 'image_setting_url_hero_small', '' );
+		$full_hours_label = get_theme_mod( 'full_hours_label', '' );
+		$google_map_label = get_theme_mod( 'google_map_label', '' );
+	 ?>
 
-	<?php $image_hero_large = get_theme_mod( 'image_setting_url_hero_large', '' ); ?>
-	<?php $image_hero_medium = get_theme_mod( 'image_setting_url_hero_medium', '' ); ?>
-	<?php $image_hero_small = get_theme_mod( 'image_setting_url_hero_small', '' ); ?>
-
-	<!-- Not ideal below - REFACTOR -->
 	<style>
 
 	.hero__content {
@@ -166,7 +168,7 @@
 		 ?>
 	">
 	<div class="all-libraries">
-		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><span class="fas fa-arrow-left" aria-hidden="true" role="presentation"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
+		<a href="https://www.library.cornell.edu/" title="Cornell University Library"><span class="fas fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
 	</div>
 
 	<div class="college">
@@ -182,23 +184,23 @@
 
 		<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 
-		<time><span class="fas fa-clock icon-time" aria-hidden="true" role="presentation"></span>
+		<time><span class="fas fa-clock icon-time" aria-hidden="true"></span>
 
 			<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
 			<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
 
-			- <a class="full-hours" href="#">Full Hours</a> /</time>
+			- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /</time>
 
 			<ul class="header-contact">
-				<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope" aria-hidden="true" aria-label="Contact US"></span></a></li>
+				<li><a href="https://www.library.cornell.edu/ask/email"><span class="fas fa-envelope" aria-label="Contact US"></span></a></li>
 				<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
-				<li><a href="" aria-label="Library Location"><span class="fas fa-map-marker-alt" aria-hidden="true" role="presentation"></span></a></li>
+				<li><a href="<?php echo $google_map_label ?>"><span class="fas fa-map-marker-alt" aria-label="Library Location"></span></a></li>
 			</ul>
 	</div>
 </section>
 
 <nav id="site-navigation" class="main-navigation">
-	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Menu', 'culu' ); ?><span class="fas fa-bars" aria="hidden" role="presentation" aria-label="Menu"></span></button>
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Menu', 'culu' ); ?><span class="fas fa-bars" aria-hidden="true"><span class="screen-reader-text">Main Navigation</span></span></button>
 	<?php
 	wp_nav_menu( array(
 		'theme_location' => 'primary',

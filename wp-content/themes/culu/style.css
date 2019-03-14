@@ -709,19 +709,15 @@ li.current-menu-item a {
     .main-navigation a {
       display: block;
       text-decoration: none; } }
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
   width: 50%; }
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
@@ -949,63 +945,6 @@ object {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-/*---
-
-  Search
-
----*/
-.user-tool-search {
-  display: none;
-  margin: 10px auto;
-  width: calc(100vw - 40px);
-  grid-template-columns: 40% auto auto;
-  background-color: #222;
-  padding: 20px;
-  color: #fff; }
-  .user-tool-search label[for="search"] {
-    font-size: 20px; }
-  .user-tool-search [type="search"] {
-    display: block;
-    width: 100%;
-    height: 30px;
-    padding: 20px;
-    margin-bottom: 10px; }
-  .user-tool-search .site-search {
-    margin-left: 20px !important; }
-  .user-tool-search button.btn-submit {
-    margin-left: 20px;
-    width: 100px;
-    height: 43px;
-    margin-top: 30px;
-    font-size: 16px;
-    border: none;
-    background-color: #fff; }
-    .user-tool-search button.btn-submit:hover {
-      background-color: #017DB2;
-      color: #fff; }
-  .user-tool-search button.btn-close-search {
-    background-color: transparent;
-    left: 0;
-    color: #fff;
-    border: none;
-    width: 60px;
-    height: 43px;
-    justify-self: end;
-    align-self: start;
-    margin-top: -20px;
-    margin-right: -20px; }
-  @media only screen and (min-width: 600px) {
-    .user-tool-search {
-      width: 90%; } }
-  @media only screen and (min-width: 1440px) {
-    .user-tool-search {
-      width: 1360px;
-      padding-top: 20px;
-      padding-bottom: 10px; } }
-  @media only screen and (min-width: 1600px) {
-    .user-tool-search {
-      width: 1529px; } }
-
 /*---
 
   Header sectioon including:
@@ -1415,8 +1354,9 @@ footer {
         grid-column: 2/3;
         padding-top: 45px; }
         footer address.library .container .c-2 p {
-          padding-bottom: 10px;
           margin: 0; }
+          footer address.library .container .c-2 p:first-child {
+            padding-top: 20px; }
   footer address.cornell {
     grid-column: 1;
     font-size: 14px;
@@ -1522,5 +1462,71 @@ footer {
       color: #534D57;
       letter-spacing: 0;
       margin-left: 40px; }
+
+/*---
+
+  Search
+
+---*/
+.user-tool-search {
+  display: none;
+  margin: 10px auto;
+  width: calc(100vw - 40px);
+  grid-template-columns: 62% auto;
+  background-color: #222;
+  padding: 20px;
+  color: #fff; }
+  .user-tool-search label[for="search"] {
+    font-size: 20px; }
+  .user-tool-search [type="search"] {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 20px;
+    margin-bottom: 10px; }
+  .user-tool-search .site-search {
+    margin-left: 20px !important; }
+  .user-tool-search button.btn-submit {
+    margin-left: 20px;
+    width: 100px;
+    height: 43px;
+    margin-top: 30px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff; }
+    .user-tool-search button.btn-submit:hover {
+      background-color: #017DB2;
+      color: #fff; }
+  .user-tool-search button.btn-close-search {
+    position: absolute;
+    top: 90px;
+    right: 30px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    width: 60px;
+    height: 43px;
+    justify-self: end;
+    align-self: start;
+    margin-top: -20px;
+    margin-right: -20px; }
+    @media only screen and (min-width: 600px) {
+      .user-tool-search button.btn-close-search {
+        position: relative;
+        top: 0;
+        right: 0; } }
+  @media only screen and (min-width: 600px) {
+    .user-tool-search {
+      grid-template-columns: 60% auto auto;
+      width: 90%; } }
+  @media only screen and (min-width: 1440px) {
+    .user-tool-search {
+      width: 1360px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      grid-template-columns: 500px auto auto; } }
+  @media only screen and (min-width: 1600px) {
+    .user-tool-search {
+      width: 1529px; } }
 
 /*# sourceMappingURL=style.css.map */

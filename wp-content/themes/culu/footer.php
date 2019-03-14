@@ -19,9 +19,6 @@
         <a href="https://www.library.cornell.edu/"><span class="fas fa-arrow-left" role="presentation"></span> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</a>
       </div>
 
-
-      <!--<p class="unit-library"><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></p>-->
-
     	<?php
       	wp_nav_menu( array(
       		'theme_location' => 'footer',
@@ -33,9 +30,21 @@
 
     <figure class="college">
 
-      <?php $college_label = get_theme_mod( 'college_label', '' ); ?>
-      <?php $college_link = get_theme_mod( 'college_link', '' );?>
-    	<?php $college_logo = get_theme_mod( 'college_logo', '' ); ?>
+      <!-- Declare variables for theme options-->
+      <!-- Use Kirki to handle customizer -->
+      <?php
+        $college_label = get_theme_mod( 'college_label', '' );
+        $college_link = get_theme_mod( 'college_link', '' );
+      	$college_logo = get_theme_mod( 'college_logo', '' );
+        $address_label = get_theme_mod( 'address_label', '' );
+        $city_label = get_theme_mod( 'city_label', '' );
+        $state_label = get_theme_mod( 'state_label', '' );
+        $zip_label = get_theme_mod( 'zip_label', '' );
+        $google_map_label = get_theme_mod( 'google_map_label', '' );
+        $circulation_number_label = get_theme_mod( 'circulation_number_label', '' );
+        $reference_number_label = get_theme_mod( 'reference_number_label', '' );
+        $email_label = get_theme_mod( 'email_label', '' );
+      ?>
 
       <a href="<?php echo $college_link ?>">
         <img src="<?php echo get_domain_path( $college_logo );?>" alt="<?php echo $college_label ?> logo"/>
@@ -49,19 +58,19 @@
         <div class="container">
 
           <div class="c-1">
-          <p><strong>CONTACT</strong></p>
-          <p><strong>Unit Library</strong><br>
-            G80 Statler Hall,<br>
-            Cornell University<br>
-            Ithaca, NY 14853
-          <span class="fas fa-map-marker-alt" role="presentation" labelledby="Location"></span></p>
+            <p><strong>CONTACT</strong></p>
+            <p><strong><?php echo get_bloginfo( 'name' ); ?></strong><br>
+              <?php echo $address_label ?><br>
+              <?php echo $city_label ?>, <?php echo $state_label ?> <?php echo $zip_label ?>
+            <a href="<?php echo $google_map_label ?>"> <span class="fas fa-map-marker-alt" role="presentation" labelledby="Location"></span></a></p>
           </div>
 
         <div class="c-2">
-         <p><strong>Phone: </strong><a href="tel:#">(607) 255-0000</a></p>
+          <p><strong>Circulation: </strong><?php echo $circulation_number_label ?></p>
+         <p><strong>Reference: </strong><?php echo $reference_number_label ?></p>
 
-         <p><strong>E-mail: </strong><a href="mailto:#">unit@cornell.edu</a></p>
-         <p><strong>Reference Help: </strong><a href="mailto:#">unit@cornell.edu</a></p>
+         <p><strong></strong><a href="mailto:<?php echo $email_label ?>"><?php echo $email_label ?></a></p>
+
         </div>
 
       </div>

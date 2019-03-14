@@ -321,15 +321,6 @@ Kirki::add_field( 'theme_config_id_college_logo', array(
 	'default'     => '',
 ) );
 
-
-
-
-
-
-
-
-
-
 /*
  *  Customize footer info
  *  Add panel
@@ -487,14 +478,35 @@ Kirki::add_field( 'theme_config_id_google_map_label', array(
 	'priority' => 10,
 ) );
 
+/*
+ *  Customize Full Hours
+ *  Add panel
+ */
+
+Kirki::add_panel( 'panel_id_full_hours', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'Add Full Hours', 'textdomain' ),
+    //description' => esc_attr__( 'Upload hero images for mobile, tablet, and desktop', 'textdomain' ),
+) );
 
 
+// Add section Full Hours  Link Label
+Kirki::add_section( 'section_id_full_hours_label', array(
+    'title'          => esc_attr__( 'Full hours Link', 'textdomain' ),
+    //'description'    => esc_attr__( 'Upload hero image for desktop devices.', 'textdomain' ),
+    'panel'          => 'panel_id_full_hours',
+    'priority'       => 160,
+) );
 
-
-
-
-
-
+// Add input text control
+Kirki::add_field( 'theme_config_id_full_hours_label', array(
+	'type'     => 'text',
+	'settings' => 'full_hours_label',
+	'label'    => __( 'Add full hours link', 'textdomain' ),
+	'section'  => 'section_id_full_hours_label',
+	'default'  => esc_attr__( '', 'textdomain' ),
+	'priority' => 10,
+) );
 
 /**
  * Strip out domain path.

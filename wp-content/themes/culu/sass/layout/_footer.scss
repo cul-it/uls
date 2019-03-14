@@ -131,8 +131,11 @@ footer {
         padding-top: 45px;
 
         p {
-          padding-bottom: 10px;
+          //padding-bottom: 10px;
           margin: 0;
+          &:first-child {
+            padding-top: 20px;
+          }
         }
       }
     }

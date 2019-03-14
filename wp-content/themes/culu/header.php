@@ -57,7 +57,7 @@
 
 		<!-- nav -->
 
-		<nav class="user-tools">
+		<nav class="user-tools" aria-label="My account and Search navigation">
 			<ul>
 				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
 				<li><a href="https://www.library.cornell.edu/myacct" title="My account"><span class="fa fa-user-o" aria-hidden="true" aria-label="My account"></span></a></li>
@@ -164,7 +164,7 @@
 				echo "hero__content interior-pages";
 			}
 		 ?>
-	">
+	" aria-label="Hero header">
 	<div class="all-libraries">
 		<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
 	</div>

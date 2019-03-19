@@ -70,13 +70,15 @@
 
 
 		<form class="user-tool-search" role="search" method="get" action="/">
-			<div>
+			<div class="search-field">
 				<label for="search">Search</label>
-				<input type="search" value="" name="s">
-				<input type="radio" name="search-type" id="catalog" value="catalog" checked />
-				<label for="catalog">Catalog</label>
-				<input class="site-search" type="radio" name="search-type" id="site" value="site" />
-				<label for="site">This site</label>
+				<input type="search" id="search" value="" name="s">
+				<div class="search-filter" role="radiogroup" aria-label="search-filter">
+					<input type="radio" name="search-type" id="catalog" value="catalog" checked />
+					<label for="catalog">Catalog</label>
+					<input class="site-search" type="radio" name="search-type" id="site" value="site" />
+					<label for="site">This site</label>
+				</div>
 			</div>
 
 			<!--<input type="submit" value="Search">-->
@@ -197,7 +199,7 @@
 	</div>
 </section>
 
-<nav id="site-navigation" class="main-navigation">
+<nav id="site-navigation" class="main-navigation" aria-label="main navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="Main Navigation" <?php //esc_html_e( 'Menu', 'culu' ); ?>><span class="fa fa-bars" aria-hidden="true"><span class="screen-reader-text">Main Navigation</span></span></button>
 	<?php
 	wp_nav_menu( array(

@@ -19,13 +19,14 @@
         <a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <a href="#">Cornell Library Hours</a> | <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</a>
       </div>
 
-    	<?php
-      	wp_nav_menu( array(
-      		'theme_location' => 'footer',
-      		'menu_id'        => 'footer-menu'
-      	) );
-    	?>
-
+      <nav aria-label="footer navigation">
+        <?php
+        	wp_nav_menu( array(
+        		'theme_location' => 'footer',
+        		'menu_id'        => 'footer-menu'
+        	) );
+      	?>
+      </nav>
     </div>
 
     <figure class="college">

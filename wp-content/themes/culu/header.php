@@ -173,8 +173,10 @@
 
 	<div class="college">
 
-    <?php $college_label = get_theme_mod( 'college_label', '' ); ?>
-    <?php $college_link = get_theme_mod( 'college_link', '' );?>
+    <?php
+			$college_label = get_theme_mod( 'college_label', '' );
+	    $college_link = get_theme_mod( 'college_link', '' );
+		?>
 
     <a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
 

@@ -353,7 +353,7 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
+  color: #000;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -548,7 +548,7 @@ textarea {
 a, button {
   color: #017DB2; }
   a:visited, button:visited {
-    color: #017DB2; }
+    color: #21759b; }
   a:hover, a:focus, a:active, button:hover, button:focus, button:active {
     color: #000; }
   a:focus, button:focus {
@@ -756,7 +756,7 @@ li.current-menu-item a {
   word-wrap: normal !important;
   /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
   .screen-reader-text:focus {
-    background-color: #f1f1f1;
+    background-color: #fff;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;

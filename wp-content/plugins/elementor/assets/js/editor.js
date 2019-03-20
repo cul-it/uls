@@ -1,4 +1,4 @@
-/*! elementor - v2.5.7 - 14-03-2019 */
+/*! elementor - v2.5.9 - 18-03-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -6182,7 +6182,7 @@ var App = Marionette.Application.extend({
 	onPreviewLoadingError: function onPreviewLoadingError() {
 		this.showFatalErrorDialog({
 			headerMessage: this.translate('preview_not_loading_header'),
-			message: this.translate('preview_not_loading_message'),
+			message: this.translate('preview_not_loading_message') + '<br><a href="' + this.config.document.urls.preview + '" target="_blank">Preview Debug</a>',
 			onConfirm: function onConfirm() {
 				open(elementor.config.help_preview_error_url, '_blank');
 			}

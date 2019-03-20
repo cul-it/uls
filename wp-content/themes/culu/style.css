@@ -1476,6 +1476,12 @@ footer {
   Search
 
 ---*/
+button.icon-search {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 0; }
+
 .user-tool-search {
   display: none;
   margin: 10px auto;
@@ -1485,7 +1491,8 @@ footer {
   padding: 20px;
   color: #fff; }
   .user-tool-search label[for="search"] {
-    font-size: 20px; }
+    font-size: 16px;
+    padding: 20px; }
   .user-tool-search [type="search"] {
     display: block;
     width: 100%;

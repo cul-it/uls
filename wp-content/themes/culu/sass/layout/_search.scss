@@ -3,6 +3,12 @@
   Search
 
 ---*/
+button.icon-search {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 0;
+}
 
 .user-tool-search {
   display: none;
@@ -15,7 +21,8 @@
 
   label[for="search"] {
 
-    font-size: 20px;
+    font-size: 16px;
+    padding: 20px;
 
   }
 

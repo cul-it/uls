@@ -9,13 +9,18 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
+<section class="no-results not-found" aria-label="No results display">
+
+	<header class="page-header" aria-label="Title content">
+
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'culu' ); ?></h1>
-	</header><!-- .page-header -->
+
+	</header>
 
 	<div class="page-content">
+
 		<?php
+
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
 			printf(
@@ -47,5 +52,7 @@
 
 		endif;
 		?>
+
 	</div><!-- .page-content -->
+
 </section><!-- .no-results -->

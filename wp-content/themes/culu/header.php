@@ -42,46 +42,49 @@
 
 <body <?php body_class(); ?>>
 
-<!--<div id="page" class="site">-->
-
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
 
 	<!-- header -->
-
-	<header class="branding">
+	<header class="branding" aria-label="Branding header">
 		<!-- logo -->
 		<div class="banding">
+
 			<a class="logo-cul" href="https://www.library.cornell.edu/" title="Cornell University Library website"><img src="<?php echo get_template_directory_uri(); ?>/images/branding/cul-logo.svg" alt="Cornell University Library logo"></a>
+
 			<!-- /logo -->
 		</div>
 
 		<!-- nav -->
-
 		<nav class="user-tools" aria-label="My account and Search navigation">
+
 			<ul>
 				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
 				<li><a href="https://www.library.cornell.edu/myacct" title="My account"><span class="fa fa-user-o" aria-hidden="true" aria-label="My account"></span></a></li>
 				<li><a href="#" class="icon-search" title="Search"><span class="fa fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
 			</ul>
+
 		</nav>
+
   </header>
 
 	<!-- search -->
-
-
 		<form class="user-tool-search" role="search" method="get" action="/">
+
 			<div class="search-field">
+
 				<label for="search">Search</label>
 				<input type="search" id="search" value="" name="s">
+
 				<div class="search-filter" role="radiogroup" aria-label="search-filter">
+
 					<input type="radio" name="search-type" id="catalog" value="catalog" checked />
 					<label for="catalog">Catalog</label>
 					<input class="site-search" type="radio" name="search-type" id="site" value="site" />
 					<label for="site">This site</label>
+
 				</div>
 			</div>
 
-			<!--<input type="submit" value="Search">-->
 			<button class="btn-submit" type="submit">Search</button>
 			<button class="btn-close-search">Close</button>
 
@@ -107,10 +110,11 @@
 			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
 			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -150px 220px,
 			url('<?php echo get_domain_path( $image_hero_small );?>') no-repeat center -50px;
-
 		}
 
 	@media only screen and (min-width: 640px) {
+
+
 		.hero__content {
 
 			background:
@@ -118,9 +122,11 @@
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -140px 210px,
 				url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat -600px -100px;
 			}
+
 	}
 
 	@media only screen and (min-width: 768px) {
+
 	.hero__content {
 
 			background:
@@ -128,9 +134,11 @@
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 200px,
 				url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat center center;
 		}
+
 	}
 
 	@media only screen and (min-width: 1440px) {
+
 		.hero__content {
 
 			background:
@@ -142,20 +150,17 @@
 	}
 
 	@media only screen and (min-width: 1600px) {
+
 		.hero__content {
 			background:
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -100px,
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 300px,
 				url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
 		}
+
 	}
 
-
 	</style>
-
-	<?php //echo file_get_contents("wp-content/themes/unitlibrary/img/hero-home-top.svg"); ?>
-
-	<?php //echo file_get_contents("hero-home-top.svg"); ?>
 
 	<section class="
 
@@ -167,8 +172,11 @@
 			}
 		 ?>
 	" aria-label="Hero header">
+
 	<div class="all-libraries">
+
 		<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
+
 	</div>
 
 	<div class="college">
@@ -186,22 +194,30 @@
 
 		<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 
-		<time><span class="fa fa-clock-o icon-time" aria-hidden="true"></span>
+		<time>
 
+			<span class="fa fa-clock-o icon-time" aria-hidden="true"></span>
 			<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
 			<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
 
-			- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /</time>
+			- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /
+		</time>
 
 			<ul class="header-contact">
+
 				<li><a href="https://www.library.cornell.edu/ask/email" title="Contact us"><span class="fa fa-envelope" aria-hidden="true" aria-label="Contact us"></span></a></li>
 				<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
 				<li><a href="<?php echo $google_map_label ?>" title="Library location"><span class="fa fa-map-marker" aria-hidden="true" aria-label="Library Location"></span></a></li>
+
 			</ul>
+
 	</div>
+
 </section>
 
+<!-- #site-navigation -->
 <nav id="site-navigation" class="main-navigation" aria-label="main navigation">
+
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="Main Navigation" <?php //esc_html_e( 'Menu', 'culu' ); ?>><span class="fa fa-bars" aria-hidden="true"><span class="screen-reader-text">Main Navigation</span></span></button>
 	<?php
 	wp_nav_menu( array(
@@ -209,4 +225,5 @@
 		'menu_id'        => 'primary-menu'
 	) );
 	?>
+
 </nav><!-- #site-navigation -->

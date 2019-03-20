@@ -14,13 +14,16 @@ get_header();
 
 <?php if ( have_posts() ) : ?>
 
-	<header class="page-header">
+	<header class="page-header" aria-label="Title content">
+
 		<h1 class="page-title">
+
 			<?php
 			/* translators: %s: search query. */
 			printf( esc_html__( 'Search Results for: %s', 'culu' ), '<span>' . get_search_query() . '</span>' );
 			?>
 		</h1>
+
 	</header><!-- .page-header -->
 
 	<?php
@@ -49,5 +52,6 @@ endif;
 </main><!-- #main -->
 
 <?php
+
 //get_sidebar();
 get_footer();

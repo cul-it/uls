@@ -26,7 +26,9 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+
+		<h2 class="comments-title" aria-label="Comment title">
+			
 			<?php
 			$culu_comment_count = get_comments_number();
 			if ( '1' === $culu_comment_count ) {

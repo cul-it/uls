@@ -10,13 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+
+	<header class="entry-header" aria-label="Title content">
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+
+	</header>
 
 	<?php culu_post_thumbnail(); ?>
 
 	<div class="entry-content">
+
 		<?php
 		the_content();
 
@@ -25,10 +29,13 @@
 			'after'  => '</div>',
 		) );
 		?>
+
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+
+		<footer class="entry-footer" aria-label="footer content">
+
 			<?php
 			edit_post_link(
 				sprintf(
@@ -47,6 +54,8 @@
 				'</span>'
 			);
 			?>
+
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

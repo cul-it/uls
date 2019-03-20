@@ -11,7 +11,7 @@
 
 ?>
 
-<footer>
+<footer aria-label="footer navigation">
 
     <div class="footer__nav">
 

@@ -71,7 +71,7 @@
   </header>
 
 	<!-- search -->
-		<form id="search" class="user-tool-search" role="search" method="get" action="/">
+		<form class="user-tool-search" role="search" method="get" action="/">
 
 			<div class="search-field">
 

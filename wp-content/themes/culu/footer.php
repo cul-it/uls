@@ -80,7 +80,7 @@
 
     <address class="cornell">
 
-      <p><?php echo date('Y'); ?> Cornell University Library, Ithaca, NY 14853 | <a href="tel:">(607) 255-0000</a> | <a href="https://www.library.cornell.edu/privacy">Privacy</a> | <a href="https://www.library.cornell.edu/web-accessibility">Web Accessibility Assistance</a> | <a href="/admin">Staff Login</a></p>
+      <p><?php echo date('Y'); ?> Cornell University Library, Ithaca, NY 14853 | (607) 255-0000 | <a href="https://www.library.cornell.edu/privacy">Privacy</a> | <a href="https://www.library.cornell.edu/web-accessibility">Web Accessibility Assistance</a> | <a href="/admin">Staff Login</a></p>
 
     </address>
 

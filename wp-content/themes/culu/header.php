@@ -60,7 +60,7 @@
 			<ul>
 				<!--<li><a href="#"><i class="fas fa-bars"></i></a></li>-->
 				<li><a href="https://www.library.cornell.edu/myacct" title="My account"><span class="fa fa-user-o" aria-hidden="true" aria-label="My account"></span></a></li>
-				<li><a href="#" class="icon-search" title="Search"><span class="fa fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
+				<li><a href="#user-tool-search" class="icon-search" title="Search"><span class="fa fa-search" aria-hidden="true" aria-label="Search"></span></a></li>
 			</ul>
 
 		</nav>

@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main id="main" class="page-interior">
+<main id="main-content" class="page-interior">
 
 	<?php
 

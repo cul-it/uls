@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main id="main" class="page-interior">
+<main id="main-content" class="page-interior">
 
 	<section class="four04" aria-label="404 page contnet">
 
@@ -36,7 +36,7 @@ get_header();
 		</div>
 
 	</section>
-	
+
 </main>
 
 <?php

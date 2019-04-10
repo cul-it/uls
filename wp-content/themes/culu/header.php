@@ -147,7 +147,9 @@
 		.bg-header {
 
 			background: url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
-			
+
+			background-size: cover;
+
 		}
 
 	}

@@ -1,4 +1,4 @@
-/*! elementor - v2.5.12 - 08-04-2019 */
+/*! elementor - v2.5.13 - 10-04-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1569,7 +1569,7 @@ var BackgroundVideo = elementorModules.frontend.handlers.Base.extend({
 			this.elements.$backgroundVideoHosted.removeAttr('src');
 		}
 
-		elementorFrontend.elements.$window.off('resize', self.changeVideoSize);
+		elementorFrontend.elements.$window.off('resize', this.changeVideoSize);
 	},
 
 	run: function run() {
@@ -1701,6 +1701,7 @@ var Shapes = elementorModules.frontend.handlers.Base.extend({
 		$svgContainer.attr('data-shape', shapeType);
 
 		if (!shapeType) {
+			$svgContainer.empty(); // Shape-divider set to 'none'
 			return;
 		}
 

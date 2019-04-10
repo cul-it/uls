@@ -107,7 +107,7 @@
 
 	<style>
 
-	.hero__content {
+	.bg-header {
 
 		background:
 			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
@@ -118,7 +118,7 @@
 	@media only screen and (min-width: 640px) {
 
 
-		.hero__content {
+		.bg-header {
 
 			background:
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
@@ -130,7 +130,7 @@
 
 	@media only screen and (min-width: 768px) {
 
-	.hero__content {
+	.bg-header{
 
 			background:
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
@@ -142,7 +142,7 @@
 
 	@media only screen and (min-width: 1440px) {
 
-		.hero__content {
+		.bg-header {
 
 			background:
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
@@ -154,7 +154,7 @@
 
 	@media only screen and (min-width: 1600px) {
 
-		.hero__content {
+		.bg-header {
 			background:
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -100px,
 				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 300px,
@@ -165,7 +165,16 @@
 
 	</style>
 
-	<div class="external">
+	<section class="
+
+		<?php
+			if ( is_front_page() ) {
+				echo "hero__content";
+			} else {
+				echo "hero__content interior-pages";
+			}
+		 ?>
+	" aria-label="Hero header">
 
 		<div class="all-libraries">
 			<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> <span> | <a href="https://www.library.cornell.edu/libraries">Hours</a></span>  <span>| <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
@@ -180,7 +189,7 @@
 			<a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
 		</div>
 
-		<div class="new-sub-header">
+		<div class="home-header">
 
 
 			<div class="subheader">
@@ -208,7 +217,7 @@
 
 
 			<!-- search -->
-			<form class="new-search" role="search" method="get" action="/">
+			<form class="home-search" role="search" method="get" action="/">
 
 				<div class="search-field">
 
@@ -235,67 +244,12 @@
 
 
 
-	</div>
-
-
-	<section class="new-header">
-
 	</section>
 
-	<p style="padding-top: 100px;">
 
-	<section class="
+	<div class="bg-header"></div>
 
-		<?php
-			if ( is_front_page() ) {
-				echo "hero__content";
-			} else {
-				echo "hero__content interior-pages";
-			}
-		 ?>
-	" aria-label="Hero header">
-
-	<div class="all-libraries">
-
-		<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <span><a href="https://www.library.cornell.edu/libraries">Hours</a></span> | <span><a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
-
-	</div>
-
-	<div class="college">
-
-    <?php
-			$college_label = get_theme_mod( 'college_label', '' );
-	    $college_link = get_theme_mod( 'college_link', '' );
-		?>
-
-    <a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
-
-	</div>
-
-	<div class="subheader">
-
-		<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-
-		<time>
-
-			<span class="fa fa-clock-o icon-time" aria-hidden="true"></span>
-			<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
-			<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
-
-			- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /
-		</time>
-
-			<ul class="header-contact">
-
-				<li><a href="https://www.library.cornell.edu/ask/email" title="Contact us"><span class="fa fa-envelope" aria-hidden="true" aria-label="Contact us"></span></a></li>
-				<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
-				<li><a href="<?php echo $google_map_label ?>" title="Library location"><span class="fa fa-map-marker" aria-hidden="true" aria-label="Library Location"></span></a></li>
-
-			</ul>
-
-	</div>
-
-</section>
+	
 
 <!-- #site-navigation -->
 <nav id="site-navigation" class="main-navigation" aria-label="main navigation">

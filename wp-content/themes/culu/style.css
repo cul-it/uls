@@ -622,7 +622,7 @@ li.current-menu-item a {
   margin-top: 20px;
   position: absolute;
   top: -58px;
-  left: calc(100vw - 106px);
+  left: calc(100vw - 95px);
   font-size: 18px;
   padding: 0; }
 
@@ -714,19 +714,15 @@ li.current-menu-item a {
     .main-navigation a {
       display: block;
       text-decoration: none; } }
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
   width: 50%; }
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
@@ -956,9 +952,9 @@ object {
 --------------------------------------------------------------*/
 /*---
 
-  Header sectioon including:
-  - Branding
-  - User tools: My account and Search
+  Header section including:
+  # Branding
+  # User tools: My account and Search
 
 ---*/
 header.branding {
@@ -1001,16 +997,29 @@ header.branding {
         padding-right: 7px; }
 
 /*---
-
   Hero content section for homepage
-
+    # Nav main library
+    # College url
+    # Library header
+    # Time open/close
+    # Contact and Google map link
+    # Background header
 ---*/
-.external {
+.hero__content {
   display: grid;
   grid-template-columns: 100%;
   width: 96%;
-  margin: 0 auto; }
-  .external .all-libraries {
+  margin: 0 auto;
+  /*---
+    # Nav main library
+  ---*/
+  /*---
+    # College url
+  ---*/
+  /*---
+    # Library header
+  ---*/ }
+  .hero__content .all-libraries {
     background-color: #6C9BB9;
     height: 62px;
     margin-bottom: 0;
@@ -1019,271 +1028,107 @@ header.branding {
     text-align: left;
     padding: 20px 0 0 20px;
     color: #fff; }
-    .external .all-libraries span {
+    .hero__content .all-libraries span {
       font-size: 14px;
       font-weight: normal;
       padding-left: 5px; }
-      .external .all-libraries span a {
+      .hero__content .all-libraries span a {
         padding-left: 5px; }
-    .external .all-libraries a {
-      display: inline-block;
-      color: #fff; }
-  .external .college {
-    display: none;
-    text-align: right;
-    font-family: "Merriweather", sans-serif; }
-    .external .college a {
-      color: red; }
-  .external .new-sub-header {
-    height: 366px;
-    background-color: #0A394A;
-    padding-left: 20px;
-    padding-top: 20px; }
-    .external .new-sub-header h1 {
-      font-size: 32px;
-      margin: 0;
-      padding-bottom: 8px; }
-      @media only screen and (min-width: 375px) {
-        .external .new-sub-header h1 {
-          font-size: 18px; } }
-      @media only screen and (min-width: 600px) {
-        .external .new-sub-header h1 {
-          font-size: 26px; } }
-      @media only screen and (min-width: 1440px) {
-        .external .new-sub-header h1 {
-          font-size: 38px; } }
-      .external .new-sub-header h1 a {
-        color: #fff; }
-    .external .new-sub-header time {
-      font-size: 14px;
-      color: #fff; }
-      @media only screen and (min-width: 375px) {
-        .external .new-sub-header time {
-          font-size: 16px; } }
-      @media only screen and (min-width: 640px) {
-        .external .new-sub-header time {
-          font-size: 18px; } }
-      @media only screen and (min-width: 1440px) {
-        .external .new-sub-header time {
-          font-size: 30px; } }
-      .external .new-sub-header time a.full-hours {
-        margin-left: 5px;
-        color: #fff;
-        padding: 3px 10px;
-        margin-left: 0;
-        padding-left: 0;
-        font-weight: bold; }
-        .external .new-sub-header time a.full-hours:hover {
-          background-color: none;
-          text-decoration: underline; }
-      .external .new-sub-header time .icon-time {
-        color: #F8E71C;
-        font-size: 26px;
-        vertical-align: middle;
-        padding-right: 4px; }
-        @media only screen and (min-width: 1440px) {
-          .external .new-sub-header time .icon-time {
-            font-size: 30px; } }
-    .external .new-sub-header .header-contact {
-      margin-left: 0;
-      display: inline-block;
-      color: #fff;
-      padding-left: 5px; }
-      @media only screen and (min-width: 1440px) {
-        .external .new-sub-header .header-contact {
-          font-size: 30px;
-          padding-left: 18px; } }
-      .external .new-sub-header .header-contact li {
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 20px;
-        padding-right: 10px; }
-        @media only screen and (min-width: 1440px) {
-          .external .new-sub-header .header-contact li {
-            font-size: 30px; } }
-        .external .new-sub-header .header-contact li a {
-          color: #fff; }
-          .external .new-sub-header .header-contact li a span {
-            display: inline-block;
-            border-bottom: none; }
-          .external .new-sub-header .header-contact li a span:hover {
-            display: inline-block;
-            border-bottom: 3px solid #fff; }
-
-.new-header {
-  position: absolute;
-  background-color: #425F72;
-  top: 150px;
-  z-index: -9999;
-  height: 374px;
-  width: 100%;
-  margin-top: -30px; }
-
-.hero__content {
-  background-color: #fff !important;
-  border-radius: 3px;
-  height: 345px;
-  display: grid;
-  display: none;
-  margin: 0 auto;
-  width: calc(100vw - 40px);
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 50px 50px auto; }
-  @media only screen and (min-width: 600px) {
-    .hero__content {
-      width: 90%; } }
-  @media only screen and (min-width: 768px) {
-    .hero__content {
-      display: grid;
-      margin: 0 auto;
-      grid-template-columns: 30% 30% 40%;
-      grid-template-rows: auto; } }
-  @media only screen and (min-width: 1440px) {
-    .hero__content {
-      height: 425px;
-      width: 1360px; } }
-  @media only screen and (min-width: 1600px) {
-    .hero__content {
-      height: 530px;
-      width: 1529px; } }
-  .hero__content a:hover {
-    text-decoration: underline; }
-  .hero__content .all-libraries {
-    grid-column: 1/3;
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: left;
-    padding: 20px 0 0 20px;
-    height: 50px;
-    color: #fff; }
-    @media only screen and (min-width: 768px) {
-      .hero__content .all-libraries {
-        grid-column: 1/3; } }
-    @media only screen and (min-width: 1440px) {
-      .hero__content .all-libraries {
-        font-size: 24px; } }
-    @media only screen and (min-width: 1600px) {
-      .hero__content .all-libraries {
-        padding: 30px 0 0 20px; } }
-    .hero__content .all-libraries span {
-      font-size: 14px;
-      font-weight: normal; }
-      @media only screen and (min-width: 1440px) {
-        .hero__content .all-libraries span {
-          font-size: 18px; } }
     .hero__content .all-libraries a {
       display: inline-block;
       color: #fff; }
   .hero__content .college {
-    grid-column: 1/4;
-    display: block;
-    text-align: left;
-    padding: 0 0 0 20px;
     display: none;
+    text-align: right;
     font-family: "Merriweather", sans-serif; }
-    @media only screen and (min-width: 768px) {
-      .hero__content .college {
-        grid-column: 3/4;
-        padding: 20px 20px 0;
-        text-align: right;
-        display: block; } }
-    @media only screen and (min-width: 1440px) {
-      .hero__content .college {
-        font-size: 24px; } }
-    @media only screen and (min-width: 1600px) {
-      .hero__content .college {
-        padding: 30px 20px 0; } }
     .hero__content .college a {
-      font-size: 18px;
-      color: #fff;
-      letter-spacing: 0; }
-      @media only screen and (min-width: 768px) {
-        .hero__content .college a {
-          line-height: 1.3em; } }
-  @media only screen and (min-width: 768px) and (min-width: 1440px) {
-    .hero__content .college a {
-      font-size: 24px; } }
-
-  .hero__content .subheader {
-    grid-column: 1/4;
-    padding-left: 15px;
-    padding-top: 207px; }
-    @media only screen and (min-width: 768px) {
-      .hero__content .subheader {
-        align-self: end;
-        padding-top: 190px;
-        padding-left: 20px; } }
-    .hero__content .subheader h1 {
-      font-size: 19px;
+      color: red; }
+  .hero__content .home-header {
+    height: 275px;
+    background-color: rgba(10, 57, 74, 0.9);
+    padding-left: 20px;
+    padding-top: 20px;
+    /*---
+      # Time open/close
+    ---*/
+    /*---
+      # Contact and Google map link
+    ---*/ }
+    .hero__content .home-header h1 {
+      font-size: 28px;
       margin: 0;
       padding-bottom: 8px; }
-      @media only screen and (min-width: 375px) {
-        .hero__content .subheader h1 {
-          font-size: 18px; } }
-      @media only screen and (min-width: 600px) {
-        .hero__content .subheader h1 {
-          font-size: 26px; } }
-      @media only screen and (min-width: 1440px) {
-        .hero__content .subheader h1 {
-          font-size: 38px; } }
-      .hero__content .subheader h1 a {
+      .hero__content .home-header h1 a {
         color: #fff; }
-    .hero__content .subheader time {
+    .hero__content .home-header time {
       font-size: 14px;
       color: #fff; }
       @media only screen and (min-width: 375px) {
-        .hero__content .subheader time {
+        .hero__content .home-header time {
           font-size: 16px; } }
       @media only screen and (min-width: 640px) {
-        .hero__content .subheader time {
+        .hero__content .home-header time {
           font-size: 18px; } }
       @media only screen and (min-width: 1440px) {
-        .hero__content .subheader time {
+        .hero__content .home-header time {
           font-size: 30px; } }
-      .hero__content .subheader time a.full-hours {
+      .hero__content .home-header time a.full-hours {
         margin-left: 5px;
         color: #fff;
         padding: 3px 10px;
         margin-left: 0;
         padding-left: 0;
         font-weight: bold; }
-        .hero__content .subheader time a.full-hours:hover {
+        .hero__content .home-header time a.full-hours:hover {
           background-color: none;
           text-decoration: underline; }
-      .hero__content .subheader time .icon-time {
+      .hero__content .home-header time .icon-time {
         color: #F8E71C;
         font-size: 26px;
         vertical-align: middle;
         padding-right: 4px; }
         @media only screen and (min-width: 1440px) {
-          .hero__content .subheader time .icon-time {
+          .hero__content .home-header time .icon-time {
             font-size: 30px; } }
-    .hero__content .subheader .header-contact {
+    .hero__content .home-header .header-contact {
       margin-left: 0;
       display: inline-block;
       color: #fff;
-      padding-left: 5px; }
+      padding-left: 5px;
+      margin-bottom: 0; }
       @media only screen and (min-width: 1440px) {
-        .hero__content .subheader .header-contact {
+        .hero__content .home-header .header-contact {
           font-size: 30px;
           padding-left: 18px; } }
-      .hero__content .subheader .header-contact li {
+      .hero__content .home-header .header-contact li {
         display: inline-block;
         vertical-align: middle;
         font-size: 20px;
-        padding-right: 10px; }
+        padding-right: 10px;
+        margin-bottom: 0; }
         @media only screen and (min-width: 1440px) {
-          .hero__content .subheader .header-contact li {
+          .hero__content .home-header .header-contact li {
             font-size: 30px; } }
-        .hero__content .subheader .header-contact li a {
+        .hero__content .home-header .header-contact li a {
           color: #fff; }
-          .hero__content .subheader .header-contact li a span {
+          .hero__content .home-header .header-contact li a span {
             display: inline-block;
             border-bottom: none; }
-          .hero__content .subheader .header-contact li a span:hover {
+          .hero__content .home-header .header-contact li a span:hover {
             display: inline-block;
             border-bottom: 3px solid #fff; }
+
+/*---
+  # Background header
+---*/
+.bg-header {
+  position: absolute;
+  background-color: #425F72;
+  top: 130px;
+  z-index: -9999;
+  height: 295px;
+  width: 100%;
+  margin-top: -30px; }
 
 /*---
 
@@ -1592,26 +1437,29 @@ footer {
   SEARCH HOMEPAGE
 
 ---*/
-.external .new-search {
+.hero__content .home-search {
   display: grid;
-  margin: 10px auto;
-  width: calc(100vw - 40px);
-  width: 400px;
+  margin: 0 auto;
+  width: 96%;
   grid-template-columns: 62% auto;
-  padding: 20px;
-  color: #fff; }
-  .external .new-search label[for="search"] {
-    font-size: 16px;
-    padding: 20px; }
-  .external .new-search [type="search"] {
+  padding-left: 0;
+  color: #fff;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); }
+  .hero__content .home-search label[for="search"] {
+    font-size: 20px;
+    padding: 0;
+    padding-bottom: 20px; }
+  .hero__content .home-search [type="search"] {
     display: block;
     width: 100%;
     height: 30px;
     padding: 20px;
     margin-bottom: 10px; }
-  .external .new-search .site-search {
-    margin-left: 20px !important; }
-  .external .new-search button.btn-submit {
+  .hero__content .home-search .site-search {
+    margin-left: 10px !important; }
+  .hero__content .home-search button.btn-submit {
     margin-left: 20px;
     width: 100px;
     height: 43px;
@@ -1619,27 +1467,9 @@ footer {
     font-size: 16px;
     border: none;
     background-color: #fff; }
-    .external .new-search button.btn-submit:hover {
+    .hero__content .home-search button.btn-submit:hover {
       background-color: #017DB2;
       color: #fff; }
-  .external .new-search button.btn-close-search {
-    position: absolute;
-    top: 90px;
-    right: 30px;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    width: 60px;
-    height: 43px;
-    justify-self: end;
-    align-self: start;
-    margin-top: -20px;
-    margin-right: -20px; }
-    @media only screen and (min-width: 600px) {
-      .external .new-search button.btn-close-search {
-        position: relative;
-        top: 0;
-        right: 0; } }
 
 /*---
 

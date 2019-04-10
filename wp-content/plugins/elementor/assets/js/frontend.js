@@ -1,4 +1,4 @@
-/*! elementor - v2.5.9 - 18-03-2019 */
+/*! elementor - v2.5.12 - 08-04-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1540,8 +1540,6 @@ var BackgroundVideo = elementorModules.frontend.handlers.Base.extend({
 				rel: 0
 			}
 		});
-
-		elementorFrontend.elements.$window.on('resize', self.changeVideoSize);
 	},
 
 	activate: function activate() {
@@ -1560,6 +1558,8 @@ var BackgroundVideo = elementorModules.frontend.handlers.Base.extend({
 		} else {
 			self.elements.$backgroundVideoHosted.attr('src', videoLink).one('canplay', self.changeVideoSize);
 		}
+
+		elementorFrontend.elements.$window.on('resize', self.changeVideoSize);
 	},
 
 	deactivate: function deactivate() {
@@ -1568,6 +1568,8 @@ var BackgroundVideo = elementorModules.frontend.handlers.Base.extend({
 		} else {
 			this.elements.$backgroundVideoHosted.removeAttr('src');
 		}
+
+		elementorFrontend.elements.$window.off('resize', self.changeVideoSize);
 	},
 
 	run: function run() {
@@ -1696,7 +1698,7 @@ var Shapes = elementorModules.frontend.handlers.Base.extend({
 		    shapeType = self.getElementSettings(baseSettingKey),
 		    $svgContainer = this.elements['$' + side + 'Container'];
 
-		$svgContainer.empty().attr('data-shape', shapeType);
+		$svgContainer.attr('data-shape', shapeType);
 
 		if (!shapeType) {
 			return;
@@ -1711,7 +1713,7 @@ var Shapes = elementorModules.frontend.handlers.Base.extend({
 		var svgURL = self.getSvgURL(shapeType, fileName);
 
 		jQuery.get(svgURL, function (data) {
-			$svgContainer.append(data.childNodes[0]);
+			$svgContainer.empty().append(data.childNodes[0]);
 		});
 
 		this.setNegative(side);
@@ -1754,8 +1756,12 @@ var Shapes = elementorModules.frontend.handlers.Base.extend({
 
 var HandlesPosition = elementorModules.frontend.handlers.Base.extend({
 
-	isFirst: function isFirst() {
+	isFirstSection: function isFirstSection() {
 		return this.$element.is('.elementor-edit-mode .elementor-top-section:first');
+	},
+
+	isOverflowHidden: function isOverflowHidden() {
+		return 'hidden' === this.$element.css('overflow');
 	},
 
 	getOffset: function getOffset() {
@@ -1768,18 +1774,18 @@ var HandlesPosition = elementorModules.frontend.handlers.Base.extend({
 	},
 
 	setHandlesPosition: function setHandlesPosition() {
-		var self = this;
+		var isOverflowHidden = this.isOverflowHidden();
 
-		if (!self.isFirst()) {
+		if (!isOverflowHidden && !this.isFirstSection()) {
 			return;
 		}
 
-		var offset = self.getOffset(),
-		    $handlesElement = self.$element.find('> .elementor-element-overlay > .elementor-editor-section-settings'),
+		var offset = isOverflowHidden ? 0 : this.getOffset(),
+		    $handlesElement = this.$element.find('> .elementor-element-overlay > .elementor-editor-section-settings'),
 		    insideHandleClass = 'elementor-section--handles-inside';
 
 		if (offset < 25) {
-			self.$element.addClass(insideHandleClass);
+			this.$element.addClass(insideHandleClass);
 
 			if (offset < -5) {
 				$handlesElement.css('top', -offset);
@@ -1787,12 +1793,13 @@ var HandlesPosition = elementorModules.frontend.handlers.Base.extend({
 				$handlesElement.css('top', '');
 			}
 		} else {
-			self.$element.removeClass(insideHandleClass);
+			this.$element.removeClass(insideHandleClass);
 		}
 	},
 
 	onInit: function onInit() {
 		this.setHandlesPosition();
+
 		this.$element.on('mouseenter', this.setHandlesPosition);
 	}
 });

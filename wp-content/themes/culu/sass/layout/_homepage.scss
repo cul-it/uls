@@ -13,7 +13,7 @@ header.branding {
   width: calc(100vw - 40px);
   grid-template-columns: 67% 33%;
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 640px) {
 
     width: 90%;
 
@@ -88,7 +88,7 @@ header.branding {
   Hero content section for homepage
     # Nav main library
     # College url
-    # Library header
+    # Unit library header
     # Time open/close
     # Contact and Google map link
     # Background header
@@ -97,12 +97,34 @@ header.branding {
 .hero__content {
 
   display: grid;
-  //grid-template-columns: 60% 40%;
   grid-template-columns: 100%;
-  //grid-template-rows: 62px;
-  //width: 1360px;
-  width: 96%;
-  margin: 0 auto;
+  margin: 10px auto;
+  width: calc(100vw - 40px);
+
+  @media only screen and (min-width: 640px) {
+
+    width: 90%;
+
+  }
+
+  @media only screen and (min-width: 768px) {
+
+    grid-template-columns: 60% 40%;
+
+  }
+
+  @media only screen and (min-width: 1440px) {
+
+    width: 1360px;
+    padding-bottom: 10px;
+
+  }
+
+  @media only screen and (min-width: 1600px) {
+
+    width: 1529px;
+
+  }
 
   /*---
     # Nav main library
@@ -116,8 +138,9 @@ header.branding {
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    padding: 20px 0 0 20px;
+    padding: 20px 0 0 0;
     color: #fff;
+    padding-left: 20px;
 
 
     span {
@@ -153,15 +176,16 @@ header.branding {
     text-align: right;
     font-family: $font__secondary;
 
-    a {
+    @media only screen and (min-width: 768px) {
 
-      color: red;
+      display: block;
 
     }
+
   }
 
   /*---
-    # Library header
+    # Unit library header
   ---*/
 
   .home-header {
@@ -171,13 +195,26 @@ header.branding {
     padding-left: 20px;
     padding-top: 20px;
 
+    @media only screen and (min-width: 800px) {
+
+      margin-top: 40px;
+
+    }
+
+    @media only screen and (min-width: 1440px) {
+
+      margin-top: 80px;
+      height: 300px;
+
+    }
+
     h1 {
 
       font-size: 28px;
       margin: 0;
       padding-bottom: 8px;
 
-      @media only screen and (min-width: 600px) {
+      @media only screen and (min-width: 640px) {
 
         //font-size: 26px;
 
@@ -185,7 +222,7 @@ header.branding {
 
       @media only screen and (min-width: 1440px) {
 
-        //font-size: 38px;
+        font-size: 38px;
 
       }
 
@@ -335,7 +372,29 @@ header.branding {
   //width: calc(100vw - 40px);
   height: 295px;
   width: 100%;
-  margin-top: -30px;
+  margin-top: -20px;
+
+  @media only screen and (min-width: 640px) {
+
+  }
+
+  @media only screen and (min-width: 768px) {
+
+      height: 325px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+
+      top: 140px;
+      height: 390px;
+
+  }
+
+  @media only screen and (min-width: 1600px) {
+
+    //width: 1360px;
+
+  }
 
 }
 

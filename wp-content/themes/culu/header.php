@@ -109,22 +109,17 @@
 
 	.bg-header {
 
-		background:
-			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
-			url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -150px 220px,
-			url('<?php echo get_domain_path( $image_hero_small );?>') no-repeat center -50px;
+		background: url('<?php echo get_domain_path( $image_hero_small );?>') no-repeat center -50px;
+
 		}
 
 	@media only screen and (min-width: 640px) {
 
-
 		.bg-header {
 
-			background:
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -140px 210px,
-				url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat -600px -100px;
-			}
+			background: url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat -600px -100px;
+
+		}
 
 	}
 
@@ -132,10 +127,8 @@
 
 	.bg-header{
 
-			background:
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 200px,
-				url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat center center;
+			background: url('<?php echo get_domain_path( $image_hero_medium );?>') no-repeat center center;
+
 		}
 
 	}
@@ -144,10 +137,7 @@
 
 		.bg-header {
 
-			background:
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -120px,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 220px,
-				url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
+			background: url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
 		}
 
 	}
@@ -155,10 +145,9 @@
 	@media only screen and (min-width: 1600px) {
 
 		.bg-header {
-			background:
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-top.svg') no-repeat center -100px,
-				url('<?php echo THEME_IMG_PATH;?>/hero/hero-home-bottom.svg') no-repeat -120px 300px,
-				url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
+
+			background: url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
+			
 		}
 
 	}
@@ -249,7 +238,7 @@
 
 	<div class="bg-header"></div>
 
-	
+
 
 <!-- #site-navigation -->
 <nav id="site-navigation" class="main-navigation" aria-label="main navigation">

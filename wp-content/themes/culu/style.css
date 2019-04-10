@@ -962,7 +962,7 @@ header.branding {
   margin: 10px auto;
   width: calc(100vw - 40px);
   grid-template-columns: 67% 33%; }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 640px) {
     header.branding {
       width: 90%; } }
   @media only screen and (min-width: 1440px) {
@@ -1000,7 +1000,7 @@ header.branding {
   Hero content section for homepage
     # Nav main library
     # College url
-    # Library header
+    # Unit library header
     # Time open/close
     # Contact and Google map link
     # Background header
@@ -1008,8 +1008,8 @@ header.branding {
 .hero__content {
   display: grid;
   grid-template-columns: 100%;
-  width: 96%;
-  margin: 0 auto;
+  margin: 10px auto;
+  width: calc(100vw - 40px);
   /*---
     # Nav main library
   ---*/
@@ -1017,8 +1017,21 @@ header.branding {
     # College url
   ---*/
   /*---
-    # Library header
+    # Unit library header
   ---*/ }
+  @media only screen and (min-width: 640px) {
+    .hero__content {
+      width: 90%; } }
+  @media only screen and (min-width: 768px) {
+    .hero__content {
+      grid-template-columns: 60% 40%; } }
+  @media only screen and (min-width: 1440px) {
+    .hero__content {
+      width: 1360px;
+      padding-bottom: 10px; } }
+  @media only screen and (min-width: 1600px) {
+    .hero__content {
+      width: 1529px; } }
   .hero__content .all-libraries {
     background-color: #6C9BB9;
     height: 62px;
@@ -1026,8 +1039,9 @@ header.branding {
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    padding: 20px 0 0 20px;
-    color: #fff; }
+    padding: 20px 0 0 0;
+    color: #fff;
+    padding-left: 20px; }
     .hero__content .all-libraries span {
       font-size: 14px;
       font-weight: normal;
@@ -1041,8 +1055,9 @@ header.branding {
     display: none;
     text-align: right;
     font-family: "Merriweather", sans-serif; }
-    .hero__content .college a {
-      color: red; }
+    @media only screen and (min-width: 768px) {
+      .hero__content .college {
+        display: block; } }
   .hero__content .home-header {
     height: 275px;
     background-color: rgba(10, 57, 74, 0.9);
@@ -1054,10 +1069,20 @@ header.branding {
     /*---
       # Contact and Google map link
     ---*/ }
+    @media only screen and (min-width: 800px) {
+      .hero__content .home-header {
+        margin-top: 40px; } }
+    @media only screen and (min-width: 1440px) {
+      .hero__content .home-header {
+        margin-top: 80px;
+        height: 300px; } }
     .hero__content .home-header h1 {
       font-size: 28px;
       margin: 0;
       padding-bottom: 8px; }
+      @media only screen and (min-width: 1440px) {
+        .hero__content .home-header h1 {
+          font-size: 38px; } }
       .hero__content .home-header h1 a {
         color: #fff; }
     .hero__content .home-header time {
@@ -1128,7 +1153,14 @@ header.branding {
   z-index: -9999;
   height: 295px;
   width: 100%;
-  margin-top: -30px; }
+  margin-top: -20px; }
+  @media only screen and (min-width: 768px) {
+    .bg-header {
+      height: 325px; } }
+  @media only screen and (min-width: 1440px) {
+    .bg-header {
+      top: 140px;
+      height: 390px; } }
 
 /*---
 

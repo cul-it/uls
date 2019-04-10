@@ -22,7 +22,7 @@ header.branding {
   @media only screen and (min-width: 1440px) {
 
     width: 1360px;
-    padding-top: 20px;
+    //padding-top: 20px;
     padding-bottom: 10px;
 
   }
@@ -89,12 +89,256 @@ header.branding {
 
 ---*/
 
+.external {
+
+  display: grid;
+  //grid-template-columns: 60% 40%;
+  grid-template-columns: 100%;
+
+  //grid-template-rows: 62px;
+
+  //width: 1360px;
+  width: 96%;
+  margin: 0 auto;
+
+  .all-libraries {
+    background-color: #6C9BB9;
+
+    height: 62px;
+    margin-bottom: 0;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 0 0 20px;
+    color: #fff;
+
+
+    span {
+
+      font-size: 14px;
+      font-weight: normal;
+      padding-left: 5px;
+
+      a {
+        padding-left: 5px;
+      }
+
+    }
+
+    a {
+
+      display: inline-block;
+      color: #fff;
+
+    }
+
+
+
+
+
+  }
+
+  .college {
+    display: none;
+    text-align: right;
+    font-family: $font__secondary;
+
+    a {
+      color: red;
+    }
+  }
+
+  .new-sub-header {
+    height: 366px;
+    background-color: #0A394A;
+    padding-left: 20px;
+    padding-top: 20px;
+
+
+    h1 {
+
+      font-size: 32px;
+      margin: 0;
+      padding-bottom: 8px;
+
+      @media only screen and (min-width: 375px) {
+        font-size: 18px;
+      }
+
+
+      @media only screen and (min-width: 600px) {
+
+        font-size: 26px;
+
+      }
+
+      @media only screen and (min-width: 1440px) {
+
+        font-size: 38px;
+
+      }
+
+
+      a {
+
+        color: #fff;
+
+      }
+
+
+    }
+
+    time {
+
+      font-size: 14px;
+      color: #fff;
+
+      @media only screen and (min-width: 375px) {
+
+        font-size: 16px;
+
+      }
+
+      @media only screen and (min-width: 640px) {
+
+        font-size: 18px;
+
+      }
+
+      @media only screen and (min-width: 1440px) {
+
+        font-size: 30px;
+
+      }
+
+      a.full-hours {
+
+        margin-left: 5px;
+        color: #fff;
+        padding: 3px 10px;
+        margin-left: 0;
+        padding-left: 0;
+        font-weight: bold;
+
+        &:hover {
+
+          background-color: none;
+          text-decoration: underline;
+
+        }
+
+      }//
+
+      .icon-time {
+
+        color: #F8E71C;
+        font-size: 26px;
+        vertical-align: middle;
+        padding-right: 4px;
+
+        @media only screen and (min-width: 1440px) {
+
+          font-size: 30px;
+          //margin-top: -5px;
+
+        }
+
+      }
+
+    }
+
+
+    .header-contact {
+
+      margin-left: 0;
+      display: inline-block;
+      color: #fff;
+      padding-left: 5px;;
+
+
+      @media only screen and (min-width: 1440px) {
+
+        font-size: 30px;
+        padding-left: 18px;
+
+      }
+
+      li {
+
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 20px;
+        padding-right: 10px;
+
+        @media only screen and (min-width: 1440px) {
+
+          font-size: 30px;
+
+        }
+
+        a {
+
+          color: #fff;
+
+          span {
+
+            display: inline-block;
+            border-bottom: none;
+
+          }
+
+          span:hover {
+
+            display: inline-block;
+            border-bottom: 3px solid #fff;
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+  }
+
+
+
+
+
+
+
+}
+
+.new-header {
+  position: absolute;
+  background-color: #425F72;
+  top: 150px;
+  z-index: -9999;
+  //margin: 0 auto;
+  //width: calc(100vw - 40px);
+  height: 374px;
+  width: 100%;
+  margin-top: -30px;
+
+
+}
+
+
+
+
+
+
+
 .hero__content {
 
   background-color: #fff !important;
   border-radius: 3px;
   height: 345px;
   display: grid;
+  display: none;
   margin: 0 auto;
   width: calc(100vw - 40px);
   grid-template-columns: 33% 33% 33%;
@@ -418,6 +662,7 @@ header.branding {
   border-radius: 5px;
   height: 230px;
   display: grid;
+  display: none;
   margin: 0 auto;
   width: calc(100vw - 40px);
   grid-template-columns: 33% 33% 33%;

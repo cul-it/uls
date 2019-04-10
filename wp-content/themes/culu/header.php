@@ -165,6 +165,85 @@
 
 	</style>
 
+	<div class="external">
+
+		<div class="all-libraries">
+			<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> <span> | <a href="https://www.library.cornell.edu/libraries">Hours</a></span>  <span>| <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
+		</div>
+
+		<div class="college">
+			<?php
+				$college_label = get_theme_mod( 'college_label', '' );
+				$college_link = get_theme_mod( 'college_link', '' );
+			?>
+
+			<a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
+		</div>
+
+		<div class="new-sub-header">
+
+
+			<div class="subheader">
+
+				<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+
+				<time>
+
+					<span class="fa fa-clock-o icon-time" aria-hidden="true"></span>
+					<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
+					<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
+
+					- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /
+				</time>
+
+					<ul class="header-contact">
+
+						<li><a href="https://www.library.cornell.edu/ask/email" title="Contact us"><span class="fa fa-envelope" aria-hidden="true" aria-label="Contact us"></span></a></li>
+						<!--<li><a href=""><i class="fas fa-phone-square" aria-hidden title=""></i></a></li>-->
+						<li><a href="<?php echo $google_map_label ?>" title="Library location"><span class="fa fa-map-marker" aria-hidden="true" aria-label="Library Location"></span></a></li>
+
+					</ul>
+
+			</div>
+
+
+			<!-- search -->
+			<form class="new-search" role="search" method="get" action="/">
+
+				<div class="search-field">
+
+					<label for="search">Search</label>
+					<input type="search" id="search" value="" name="s">
+
+					<div class="search-filter" role="radiogroup" aria-label="search-filter">
+
+						<input type="radio" name="search-type" id="catalog" value="catalog" checked />
+						<label for="catalog">Catalog</label>
+						<input class="site-search" type="radio" name="search-type" id="site" value="site" />
+						<label for="site">This site</label>
+
+					</div>
+				</div>
+
+				<button class="btn-submit" type="submit">Search</button>
+
+			</form>
+
+
+
+		</div>
+
+
+
+	</div>
+
+
+	<section class="new-header">
+
+	</section>
+
+	<p style="padding-top: 100px;">
+
 	<section class="
 
 		<?php

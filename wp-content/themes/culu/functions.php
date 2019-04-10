@@ -522,3 +522,15 @@ Kirki::add_field( 'theme_config_id_full_hours_label', array(
 	//if( !defined(THEME_IMG_PATH)){
      define( 'THEME_IMG_PATH', get_stylesheet_directory_uri() . '/images' );
     //}
+
+	/* Add print css to theme */
+	function culu_print_styles(){
+    wp_enqueue_style(
+      'culu-print-style',
+      get_stylesheet_directory_uri() . '/sass/print/print.css',
+      array(),
+      false,
+      'print' // print styles only
+    );
+	}
+	add_action( 'wp_footer', 'culu_print_styles' );

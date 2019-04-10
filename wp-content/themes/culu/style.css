@@ -41,6 +41,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 # Layout
+# Print
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -971,7 +972,6 @@ header.branding {
   @media only screen and (min-width: 1440px) {
     header.branding {
       width: 1360px;
-      padding-top: 20px;
       padding-bottom: 10px; } }
   @media only screen and (min-width: 1600px) {
     header.branding {
@@ -1005,11 +1005,126 @@ header.branding {
   Hero content section for homepage
 
 ---*/
+.external {
+  display: grid;
+  grid-template-columns: 100%;
+  width: 96%;
+  margin: 0 auto; }
+  .external .all-libraries {
+    background-color: #6C9BB9;
+    height: 62px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 0 0 20px;
+    color: #fff; }
+    .external .all-libraries span {
+      font-size: 14px;
+      font-weight: normal;
+      padding-left: 5px; }
+      .external .all-libraries span a {
+        padding-left: 5px; }
+    .external .all-libraries a {
+      display: inline-block;
+      color: #fff; }
+  .external .college {
+    display: none;
+    text-align: right;
+    font-family: "Merriweather", sans-serif; }
+    .external .college a {
+      color: red; }
+  .external .new-sub-header {
+    height: 366px;
+    background-color: #0A394A;
+    padding-left: 20px;
+    padding-top: 20px; }
+    .external .new-sub-header h1 {
+      font-size: 32px;
+      margin: 0;
+      padding-bottom: 8px; }
+      @media only screen and (min-width: 375px) {
+        .external .new-sub-header h1 {
+          font-size: 18px; } }
+      @media only screen and (min-width: 600px) {
+        .external .new-sub-header h1 {
+          font-size: 26px; } }
+      @media only screen and (min-width: 1440px) {
+        .external .new-sub-header h1 {
+          font-size: 38px; } }
+      .external .new-sub-header h1 a {
+        color: #fff; }
+    .external .new-sub-header time {
+      font-size: 14px;
+      color: #fff; }
+      @media only screen and (min-width: 375px) {
+        .external .new-sub-header time {
+          font-size: 16px; } }
+      @media only screen and (min-width: 640px) {
+        .external .new-sub-header time {
+          font-size: 18px; } }
+      @media only screen and (min-width: 1440px) {
+        .external .new-sub-header time {
+          font-size: 30px; } }
+      .external .new-sub-header time a.full-hours {
+        margin-left: 5px;
+        color: #fff;
+        padding: 3px 10px;
+        margin-left: 0;
+        padding-left: 0;
+        font-weight: bold; }
+        .external .new-sub-header time a.full-hours:hover {
+          background-color: none;
+          text-decoration: underline; }
+      .external .new-sub-header time .icon-time {
+        color: #F8E71C;
+        font-size: 26px;
+        vertical-align: middle;
+        padding-right: 4px; }
+        @media only screen and (min-width: 1440px) {
+          .external .new-sub-header time .icon-time {
+            font-size: 30px; } }
+    .external .new-sub-header .header-contact {
+      margin-left: 0;
+      display: inline-block;
+      color: #fff;
+      padding-left: 5px; }
+      @media only screen and (min-width: 1440px) {
+        .external .new-sub-header .header-contact {
+          font-size: 30px;
+          padding-left: 18px; } }
+      .external .new-sub-header .header-contact li {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 20px;
+        padding-right: 10px; }
+        @media only screen and (min-width: 1440px) {
+          .external .new-sub-header .header-contact li {
+            font-size: 30px; } }
+        .external .new-sub-header .header-contact li a {
+          color: #fff; }
+          .external .new-sub-header .header-contact li a span {
+            display: inline-block;
+            border-bottom: none; }
+          .external .new-sub-header .header-contact li a span:hover {
+            display: inline-block;
+            border-bottom: 3px solid #fff; }
+
+.new-header {
+  position: absolute;
+  background-color: #425F72;
+  top: 150px;
+  z-index: -9999;
+  height: 374px;
+  width: 100%;
+  margin-top: -30px; }
+
 .hero__content {
   background-color: #fff !important;
   border-radius: 3px;
   height: 345px;
   display: grid;
+  display: none;
   margin: 0 auto;
   width: calc(100vw - 40px);
   grid-template-columns: 33% 33% 33%;
@@ -1180,6 +1295,7 @@ header.branding {
   border-radius: 5px;
   height: 230px;
   display: grid;
+  display: none;
   margin: 0 auto;
   width: calc(100vw - 40px);
   grid-template-columns: 33% 33% 33%;
@@ -1473,7 +1589,61 @@ footer {
 
 /*---
 
-  Search
+  SEARCH HOMEPAGE
+
+---*/
+.external .new-search {
+  display: grid;
+  margin: 10px auto;
+  width: calc(100vw - 40px);
+  width: 400px;
+  grid-template-columns: 62% auto;
+  padding: 20px;
+  color: #fff; }
+  .external .new-search label[for="search"] {
+    font-size: 16px;
+    padding: 20px; }
+  .external .new-search [type="search"] {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 20px;
+    margin-bottom: 10px; }
+  .external .new-search .site-search {
+    margin-left: 20px !important; }
+  .external .new-search button.btn-submit {
+    margin-left: 20px;
+    width: 100px;
+    height: 43px;
+    margin-top: 30px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff; }
+    .external .new-search button.btn-submit:hover {
+      background-color: #017DB2;
+      color: #fff; }
+  .external .new-search button.btn-close-search {
+    position: absolute;
+    top: 90px;
+    right: 30px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    width: 60px;
+    height: 43px;
+    justify-self: end;
+    align-self: start;
+    margin-top: -20px;
+    margin-right: -20px; }
+    @media only screen and (min-width: 600px) {
+      .external .new-search button.btn-close-search {
+        position: relative;
+        top: 0;
+        right: 0; } }
+
+/*---
+
+  SEARCH ALL PAGES
 
 ---*/
 button.icon-search {

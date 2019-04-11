@@ -1246,6 +1246,28 @@ header.branding {
 .hero__content.interior-pages .home-search {
   display: none; }
 
+body:not(.home) .bg-header {
+  height: 140px; }
+  @media only screen and (min-width: 451px) {
+    body:not(.home) .bg-header {
+      height: 120px; } }
+  @media only screen and (min-width: 480px) {
+    body:not(.home) .bg-header {
+      height: 230px; } }
+  @media only screen and (min-width: 568px) {
+    body:not(.home) .bg-header {
+      height: 190px; } }
+  @media only screen and (min-width: 768px) {
+    body:not(.home) .bg-header {
+      height: 210px; } }
+  @media only screen and (min-width: 1440px) {
+    body:not(.home) .bg-header {
+      top: 140px;
+      height: 300px; } }
+  @media only screen and (min-width: 1600px) {
+    body:not(.home) .bg-header {
+      width: 100%; } }
+
 /*---
 
   Body section for homepage

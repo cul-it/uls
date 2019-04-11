@@ -109,7 +109,13 @@ header.branding {
 
   @media only screen and (min-width: 768px) {
 
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 80% 20%;
+
+  }
+
+  @media only screen and (min-width: 1020px) {
+
+    grid-template-columns: 65% 35%;
 
   }
 
@@ -133,14 +139,28 @@ header.branding {
   .all-libraries {
 
     background-color: #6C9BB9;
-    height: 62px;
+    height: 50px;
     margin-bottom: 0;
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    padding: 20px 0 0 0;
+    padding: 13px 0 0 0;
     color: #fff;
-    padding-left: 20px;
+    padding-left: 5px;
+
+    @media only screen and (min-width: 480px) {
+
+      height: 62px;
+      padding: 20px 0 0 0;
+      padding-left: 20px;
+
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        font-size: 20px;
+
+    }
 
     @media only screen and (min-width: 1440px) {
 
@@ -148,12 +168,17 @@ header.branding {
 
     }
 
-
     span {
 
       font-size: 14px;
       font-weight: normal;
       padding-left: 5px;
+
+      @media only screen and (min-width: 768px) {
+
+          font-size: 18px;
+
+      }
 
       @media only screen and (min-width: 1440px) {
 
@@ -197,6 +222,7 @@ header.branding {
     @media only screen and (min-width: 1440px) {
 
         font-size: 20px;
+        margin-top: -10px;
 
     }
 
@@ -210,12 +236,33 @@ header.branding {
 
     height: 275px;
     background-color: rgba(10,57,74, .97);
-    padding-left: 20px;
+    padding-left: 15px;
     padding-top: 20px;
 
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 465px) {
+
+      height: 255px;
+
+    }
+
+    @media only screen and (min-width: 480px) {
+
+      padding-left: 20px;
+      margin-top: 40px;
+      height: 320px;
+
+    }
+
+    @media only screen and (min-width: 578px) {
+
+      height: 275px;
+
+    }
+
+    @media only screen and (min-width: 768px) {
 
       margin-top: 40px;
+      height: 275px;
 
     }
 
@@ -228,19 +275,25 @@ header.branding {
 
     h1 {
 
-      font-size: 28px;
+      font-size: 24px;
       margin: 0;
       padding-bottom: 8px;
 
-      @media only screen and (min-width: 640px) {
+      @media only screen and (min-width: 480px) {
 
-        //font-size: 26px;
+        font-size: 32px;
+
+      }
+
+      @media only screen and (min-width: 1200px) {
+
+        font-size: 38px;
 
       }
 
       @media only screen and (min-width: 1440px) {
 
-        font-size: 38px;
+        font-size: 45px;
 
       }
 
@@ -258,12 +311,12 @@ header.branding {
 
     time {
 
-      font-size: 14px;
+      font-size: 15px;
       color: #fff;
 
-      @media only screen and (min-width: 375px) {
+      @media only screen and (min-width: 480px) {
 
-        font-size: 16px;
+        font-size: 18px;
 
       }
 
@@ -388,9 +441,21 @@ header.branding {
   z-index: -9999;
   //margin: 0 auto;
   //width: calc(100vw - 40px);
-  height: 295px;
+  height: 260px;
   width: 100%;
   margin-top: -20px;
+
+  @media only screen and (min-width: 480px) {
+
+    height: 380px;
+
+  }
+
+  @media only screen and (min-width: 568px) {
+
+    height: 340px;
+
+  }
 
   @media only screen and (min-width: 640px) {
 

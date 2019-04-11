@@ -14,15 +14,24 @@
     grid-template-columns: 62% auto;
     padding-left: 0;
     color: #fff;
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
     border-top: 1px solid rgba(255,255,255,.2);
 
     label[for="search"] {
 
-      font-size: 20px;
+      font-size: 18px;
       padding: 0;
       padding-bottom: 20px;
+
+      @media only screen and (min-width: 480px) {
+
+        font-size: 20px;
+        margin-top: 30px;
+        padding-top: 20px;
+
+
+      }
 
     }
 
@@ -33,6 +42,7 @@
       height: 30px;
       padding: 20px;
       margin-bottom: 10px;
+      margin-top: 3px;
 
     }
 
@@ -44,13 +54,19 @@
 
     button.btn-submit {
 
-      margin-left: 20px;
+      margin-left: 10px;
       width: 100px;
       height: 43px;
       margin-top: 30px;
       font-size: 16px;
       border: none;
       background-color: #fff;
+
+      @media only screen and (min-width: 480px) {
+
+        margin-top: 33px;
+
+      }
 
       &:hover {
         background-color: #017DB2;

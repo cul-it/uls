@@ -147,7 +147,6 @@
 		.bg-header {
 
 			background: url('<?php echo get_domain_path( $image_hero_large );?>') no-repeat center center;
-
 			background-size: cover;
 
 		}
@@ -208,9 +207,9 @@
 
 					<div class="search-filter" role="radiogroup" aria-label="search-filter">
 
-						<input type="radio" name="search-type" id="catalog" value="catalog" checked />
+						<input type="radio" name="search-type-home" id="catalog" value="catalog" checked />
 						<label for="catalog">Catalog</label>
-						<input class="site-search" type="radio" name="search-type" id="site" value="site" />
+						<input class="site-search-home" type="radio" name="search-type" id="site" value="site" />
 						<label for="site">This site</label>
 
 					</div>

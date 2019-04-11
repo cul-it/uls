@@ -48,12 +48,12 @@
 
  			switch ($selectedFilterHome) {
  						case 'catalog':
- 								$('input[type=search]').attr("name",'q');
+ 								$('input[type=search-home]').attr("name",'q');
  								$(this).attr("action", 'https://newcatalog.library.cornell.edu/search?q=');
  								break;
 
  						case 'site':
- 								$('input[type=search]').attr("name",'s');
+ 								$('input[type=search-home]').attr("name",'s');
  								//$(this).attr("action", 'http://hotel.library.cornell.edu/' + '?s=');
  								$(this).attr("action", 'http:' + '?s=');
  				}

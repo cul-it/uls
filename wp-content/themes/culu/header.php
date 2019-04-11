@@ -203,13 +203,13 @@
 				<div class="search-field">
 
 					<label for="search">Search</label>
-					<input type="search" id="search" value="" name="s">
+					<input type="search-home" id="search" value="" name="s">
 
 					<div class="search-filter" role="radiogroup" aria-label="search-filter">
 
 						<input type="radio" name="search-type-home" id="catalog" value="catalog" checked />
 						<label for="catalog">Catalog</label>
-						<input class="site-search-home" type="radio" name="search-type" id="site" value="site" />
+						<input class="site-search" type="radio" name="search-type-home" id="site" value="site" />
 						<label for="site">This site</label>
 
 					</div>

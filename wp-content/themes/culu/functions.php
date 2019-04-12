@@ -191,7 +191,7 @@ Kirki::add_config( 'theme_config_id', array(
 
 Kirki::add_panel( 'panel_id', array(
     'priority'    => 10,
-    'title'       => esc_attr__( 'Upload hero images', 'textdomain' ),
+    'title'       => esc_attr__( 'Update hero content image background', 'textdomain' ),
     'description' => esc_attr__( 'Upload hero images for mobile, tablet, and desktop', 'textdomain' ),
 ) );
 
@@ -252,6 +252,71 @@ Kirki::add_field( 'theme_config_id_hero_small', array(
  'section'     => 'section_id_hero_small',
  'default'     => '',
 ) );
+
+
+/*
+ *  Customize hero top graphic color.
+ *  Add panel
+ */
+
+Kirki::add_panel( 'panel_id_top_graphic', array(
+    'priority'    => 9,
+		'title'       => esc_attr__( 'Update hero top graphic', 'textdomain' ),
+    'description' => esc_attr__( 'Change color of top graphic', 'textdomain' ),
+) );
+
+// Add section
+Kirki::add_section( 'section_id_hero_top_bg', array(
+    'title'          => esc_attr__( 'Hero top container', 'textdomain' ),
+    'description'    => esc_attr__( 'Add color to top area background on hero header', 'textdomain' ),
+    'panel'          => 'panel_id_top_graphic',
+    'priority'       => 160,
+) );
+
+// Add color control
+Kirki::add_field( 'theme_config_id_hero_top_bg', [
+	'type'        => 'color',
+	'settings'    => 'hero_top_color',
+	'label'       => __( 'Color Control (with alpha channel)', 'kirki' ),
+	'description' => esc_html__( 'This is a color control - with alpha channel.', 'kirki' ),
+	'section'     => 'section_id_hero_top_bg',
+	'default'     => '#B31B1B',
+	'choices'     => [
+		'alpha' => false,
+	],
+] );
+
+/*
+ *  Customize hero bottom and bottom graphic colors.
+ *  Add panel
+ */
+
+Kirki::add_panel( 'panel_id_bottom_graphic', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'Update hero bottom graphic', 'textdomain' ),
+    'description' => esc_attr__( 'Change color of bottom graphic', 'textdomain' ),
+) );
+
+// Add section
+Kirki::add_section( 'section_id_hero_bottom_bg', array(
+    'title'          => esc_attr__( 'Hero bottom container', 'textdomain' ),
+    'description'    => esc_attr__( 'Add color to bottom area background on hero header', 'textdomain' ),
+    'panel'          => 'panel_id_bottom_graphic',
+    'priority'       => 160,
+) );
+
+// Add color control
+Kirki::add_field( 'theme_config_id_hero_bottom_bg', [
+	'type'        => 'color',
+	'settings'    => 'hero_bottom_color',
+	'label'       => __( 'Color Control (with alpha channel)', 'kirki' ),
+	'description' => esc_html__( 'This is a color control - with alpha channel.', 'kirki' ),
+	'section'     => 'section_id_hero_bottom_bg',
+	'default'     => '#0A394A',
+	'choices'     => [
+		'alpha' => true,
+	],
+] );
 
 /*
  *  Customize College Unit

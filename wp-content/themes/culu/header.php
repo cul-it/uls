@@ -103,13 +103,33 @@
 		$image_hero_small = get_theme_mod( 'image_setting_url_hero_small', '' );
 		$full_hours_label = get_theme_mod( 'full_hours_label', '' );
 		$google_map_label = get_theme_mod( 'google_map_label', '' );
+
+		$hero_top_color = get_theme_mod( 'hero_top_color', '#FFFFFF' );
+		$hero_bottom_color = get_theme_mod( 'hero_bottom_color', '#FFFFFF' );
+
+		//.home-header
 	 ?>
 
 	<style>
 
+	.hero__content .all-libraries {
+		background-color: <?php echo $hero_top_color; ?>;
+	}
+
+	.hero__content .home-header  {
+		background-color: <?php echo $hero_bottom_color; ?>;
+	}
+
+	.hero__content.interior-pages .college {
+
+			background-color: <?php echo $hero_top_color; ?>;
+
+	}
+
 	.bg-header {
 
 		background: url('<?php echo get_domain_path( $image_hero_small );?>') no-repeat center -50px;
+
 
 		}
 

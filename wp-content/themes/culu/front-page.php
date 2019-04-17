@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="main-content" class="page-home" aria-label="main content">
+	<main id="main-content" class="page-home">
 
 	<?php
 	if ( have_posts() ) :

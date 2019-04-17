@@ -45,7 +45,7 @@
 
 <body <?php body_class(); ?>>
 
-	<a class="skip-link screen-reader-text" href="#main-content" aria-labelledby="main-content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main-content" aria-label="Skip to content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
 
 	<!-- header -->
 	<header class="branding" aria-label="Branding header">

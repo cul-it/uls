@@ -1,4 +1,4 @@
-/*! elementor - v2.5.13 - 10-04-2019 */
+/*! elementor - v2.5.14 - 16-04-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -2452,7 +2452,7 @@ module.exports = elementorModules.ViewModule.extend({
 			return;
 		}
 
-		var settings = this.model.toJSON({ removeDefault: true }),
+		var settings = this.model.toJSON({ remove: ['default'] }),
 		    data = this.getDataToSave({
 			data: settings
 		});
@@ -4234,7 +4234,7 @@ ElementModel = Backbone.Model.extend({
 	},
 
 	toJSON: function toJSON(options) {
-		options = _.extend({ copyHtmlCache: false }, options);
+		options = options || {};
 
 		// Call parent's toJSON method
 		var data = Backbone.Model.prototype.toJSON.call(this);
@@ -4249,6 +4249,12 @@ ElementModel = Backbone.Model.extend({
 			data.htmlCache = this.getHtmlCache();
 		} else {
 			delete data.htmlCache;
+		}
+
+		if (options.remove) {
+			options.remove.forEach(function (key) {
+				return delete data[key];
+			});
 		}
 
 		return data;
@@ -10119,7 +10125,7 @@ TemplateLibrarySaveTemplateView = Marionette.ItemView.extend({
 
 		var formData = this.ui.form.elementorSerializeObject(),
 		    saveType = this.getSaveType(),
-		    JSONParams = { removeDefault: true };
+		    JSONParams = { remove: ['default'] };
 
 		formData.content = this.model ? [this.model.toJSON(JSONParams)] : elementor.elements.toJSON(JSONParams);
 
@@ -15972,7 +15978,7 @@ module.exports = elementorModules.Module.extend({
 	},
 
 	tagDataToTagText: function tagDataToTagText(tagID, tagName, tagSettings) {
-		tagSettings = encodeURIComponent(JSON.stringify(tagSettings && tagSettings.toJSON({ removeDefault: true }) || {}));
+		tagSettings = encodeURIComponent(JSON.stringify(tagSettings && tagSettings.toJSON({ remove: ['default'] }) || {}));
 
 		return '[elementor-tag id="' + tagID + '" name="' + tagName + '" settings="' + tagSettings + '"]';
 	},
@@ -16356,8 +16362,8 @@ module.exports = elementorModules.Module.extend({
 		}, options);
 
 		var self = this,
-		    elements = elementor.elements.toJSON({ removeDefault: true }),
-		    settings = elementor.settings.page.model.toJSON({ removeDefault: true }),
+		    elements = elementor.elements.toJSON({ remove: ['default', 'editSettings', 'defaultEditSettings'] }),
+		    settings = elementor.settings.page.model.toJSON({ remove: ['default'] }),
 		    oldStatus = elementor.settings.page.model.get('post_status'),
 		    statusChanged = oldStatus !== options.status;
 

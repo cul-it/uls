@@ -71,7 +71,7 @@
   </header>
 
 	<!-- search -->
-		<form class="user-tool-search" role="search" method="get" action="/">
+		<form class="user-tool-search" role="search" aria-label="Search catalog and site" method="get" action="/">
 
 			<div class="search-field">
 
@@ -218,12 +218,12 @@
 
 
 			<!-- search -->
-			<form class="home-search" role="search" method="get" action="/">
+			<form class="home-search" role="search" method="get" action="/" aria-label="Home search">
 
 				<div class="search-field">
 
 					<label for="search">Search</label>
-					<input type="search-home" id="search" value="" name="s">
+					<input type="search-home" id="home-search" value="" name="s">
 
 					<div class="search-filter" role="radiogroup" aria-label="search-filter">
 

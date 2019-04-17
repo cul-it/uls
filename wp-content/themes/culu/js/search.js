@@ -38,10 +38,11 @@
 				}
 		});
 
-
+    $selectedFilterHome = $(' .home-search input[name=search-type-home] ').val();
+    
     $(' .home-search input[name=search-type-home] ').click(function(){
       $selectedFilterHome = $(this).val();
-      console.log( $selectedFilterHome + "home" );
+      //console.log( $selectedFilterHome + "home" );
     });
 
     $( '.home-search ' ).submit(function(e) {

@@ -45,7 +45,7 @@
 
 <body <?php body_class(); ?>>
 
-	<a class="skip-link screen-reader-text" href="#main-content" aria-label="Skip to content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main-content" aria-labelledby="main-content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
 
 	<!-- header -->
 	<header class="branding" aria-label="Branding header">
@@ -177,7 +177,7 @@
 
 	<section class="<?php if ( is_front_page() ) { echo 'hero__content'; } else { echo 'hero__content interior-pages'; } ?>" aria-label="Hero header">
 
-		<div class="all-libraries">
+		<div class="all-libraries" role="region" aria-label="Main library site, all library hours, and contact links">
 			<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <a href="https://www.library.cornell.edu/libraries"><span> Hours</a></span> | <a href="https://www.library.cornell.edu/ask/email"><span>Ask a Librarian</span></a>
 		</div>
 
@@ -190,7 +190,7 @@
 			<a href="<?php echo $college_link ?>"><?php echo $college_label ?></a>
 		</div>
 
-		<div class="home-header">
+		<div class="home-header" role="region" aria-label="Unit library header">
 
 
 			<div class="subheader">

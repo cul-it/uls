@@ -78,11 +78,11 @@
 				<label for="search">Search</label>
 				<input type="search" id="search" value="" name="s" aria-label="Search" />
 
-				<div class="search-filter" role="radiogroup" aria-label="search-filter">
+				<div class="search-filter" role="radiogroup" aria-label="search-filter" arial-label="Filter search">
 
 					<input type="radio" name="search-type" id="catalog" aria-label="Catalog search" value="catalog" checked />
 					<label for="catalog">Catalog</label>
-					<input class="site-search" type="radio" name="search-type" id="site" aria-label="Home search" value="site" />
+					<input class="site-search" type="radio" name="search-type" id="site" aria-label="Site search" value="site" />
 					<label for="site">This site</label>
 
 				</div>
@@ -223,13 +223,13 @@
 				<div class="search-field">
 
 					<label for="search">Search</label>
-					<input type="search-home" id="home-search" value="" name="s" aria-label="Search from home">
+					<input type="search-home" id="home-search" value="" name="s" aria-label="Filter search">
 
-					<div class="search-filter" role="radiogroup" aria-label="search-filter">
+					<div class="search-filter" role="radiogroup" aria-label="search-filter" >
 
-						<input type="radio" name="search-type-home" id="home-catalog" aria-label="Home catalog search"  value="catalog" checked />
+						<input type="radio" name="search-type-home" id="home-catalog" aria-label="Catalog search"  value="catalog" checked />
 						<label for="catalog">Catalog</label>
-						<input class="site-search" type="radio" name="search-type-home" id="home-site" aria-label="Home site search" value="site" />
+						<input class="site-search" type="radio" name="search-type-home" id="home-site" aria-label="Site search" value="site" />
 						<label for="site">This site</label>
 
 					</div>

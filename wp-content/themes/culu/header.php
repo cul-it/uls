@@ -45,7 +45,7 @@
 
 <body <?php body_class(); ?>>
 
-	<a class="skip-link screen-reader-text" href="#main-content" arial-label="skip content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main-content" aria-label="skip content"><?php esc_html_e( 'Skip to content', 'culu' ); ?></a>
 
 	<!-- header -->
 	<header class="branding" aria-label="Branding header">
@@ -197,14 +197,14 @@
 
 				<h1><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 
-				<time>
+				<div class="available-time">
 
 					<span class="fa fa-clock-o icon-time" aria-hidden="true"></span>
 					<span class="libcal-status-now"><?php echo do_shortcode('[libcal_status_now]') ?></span>
 					<span class="libcal-hours-today"> <?php echo do_shortcode('[libcal_hours_today]') ?> </span>
 
 					- <a class="full-hours" href="<?php echo $full_hours_label ?>">Full Hours</a> /
-				</time>
+				</div>
 
 					<ul class="header-contact">
 

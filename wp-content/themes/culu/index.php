@@ -16,7 +16,7 @@ get_header();
 ?>
 	<div id="primary" class="content-area">
 
-		<main id="main-content" class="site-main">
+		<main id="main-content" class="site-main" aria-label="main content">
 
 		<?php
 		if ( have_posts() ) :

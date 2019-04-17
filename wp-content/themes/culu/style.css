@@ -1131,35 +1131,36 @@ header.branding {
           font-size: 45px; } }
       .hero__content .home-header h1 a {
         color: #fff; }
-    .hero__content .home-header time {
+    .hero__content .home-header .available-time {
+      display: inline-block;
       font-size: 15px;
       color: #fff; }
       @media only screen and (min-width: 480px) {
-        .hero__content .home-header time {
+        .hero__content .home-header .available-time {
           font-size: 18px; } }
       @media only screen and (min-width: 640px) {
-        .hero__content .home-header time {
+        .hero__content .home-header .available-time {
           font-size: 18px; } }
       @media only screen and (min-width: 1440px) {
-        .hero__content .home-header time {
+        .hero__content .home-header .available-time {
           font-size: 30px; } }
-      .hero__content .home-header time a.full-hours {
+      .hero__content .home-header .available-time a.full-hours {
         margin-left: 5px;
         color: #fff;
         padding: 3px 10px;
         margin-left: 0;
         padding-left: 0;
         font-weight: bold; }
-        .hero__content .home-header time a.full-hours:hover {
+        .hero__content .home-header .available-time a.full-hours:hover {
           background-color: none;
           text-decoration: underline; }
-      .hero__content .home-header time .icon-time {
+      .hero__content .home-header .available-time .icon-time {
         color: #F8E71C;
         font-size: 26px;
         vertical-align: middle;
         padding-right: 4px; }
         @media only screen and (min-width: 1440px) {
-          .hero__content .home-header time .icon-time {
+          .hero__content .home-header .available-time .icon-time {
             font-size: 30px; } }
     .hero__content .home-header .header-contact {
       margin-left: 0;

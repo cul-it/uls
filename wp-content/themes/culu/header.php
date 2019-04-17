@@ -178,7 +178,7 @@
 	<section class="<?php if ( is_front_page() ) { echo 'hero__content'; } else { echo 'hero__content interior-pages'; } ?>" aria-label="Hero header">
 
 		<div class="all-libraries">
-			<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> <span> | <a href="https://www.library.cornell.edu/libraries">Hours</a></span>  <span>| <a href="https://www.library.cornell.edu/ask/email">Ask a Librarian</span></a>
+			<a href="https://www.library.cornell.edu/"><span class="fa fa-arrow-left" aria-hidden="true"></span> ALL LIBRARIES</a> | <a href="https://www.library.cornell.edu/libraries"><span> Hours</a></span> | <a href="https://www.library.cornell.edu/ask/email"><span>Ask a Librarian</span></a>
 		</div>
 
 		<div class="college">

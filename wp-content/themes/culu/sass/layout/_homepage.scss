@@ -575,6 +575,10 @@ header.branding {
         text-decoration: underline;
       }
 
+      &:focus {
+        outline: 1px dotted #fff;
+      }
+
     }
 
   }

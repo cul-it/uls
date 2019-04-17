@@ -1255,6 +1255,8 @@ header.branding {
     color: #fff; }
     .hero__content.interior-pages .college a:hover {
       text-decoration: underline; }
+    .hero__content.interior-pages .college a:focus {
+      outline: 1px dotted #fff; }
 .hero__content.interior-pages .home-header {
   height: auto;
   padding-bottom: 20px;

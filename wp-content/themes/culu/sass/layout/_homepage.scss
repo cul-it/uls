@@ -38,6 +38,10 @@ header.branding {
     padding-top: 20px;
     display: inline-block;
 
+    &:hover {
+      text-decoration: underline;
+    }
+
   }
 
   nav.user-tools {
@@ -192,6 +196,18 @@ header.branding {
 
         padding-left: 5px;
 
+        &:hover {
+
+          text-decoration: underline;
+
+        }
+
+        &:focus {
+
+          outline: 1px dashed #fff;
+
+        }
+
       }
 
     }
@@ -200,6 +216,18 @@ header.branding {
 
       display: inline-block;
       color: #fff;
+
+      &:hover {
+
+        text-decoration: underline;
+
+      }
+
+      &:focus {
+
+        outline: 1px dashed #fff;
+
+      }
 
     }
 
@@ -214,6 +242,10 @@ header.branding {
     display: none;
     text-align: right;
     font-family: $font__secondary;
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     @media only screen and (min-width: 768px) {
 
@@ -303,6 +335,18 @@ header.branding {
 
         color: #fff;
 
+        &:hover {
+
+          text-decoration: underline;
+
+        }
+
+        &:focus {
+
+          outline: 1px dashed #fff;
+
+        }
+
       }
 
     }
@@ -312,6 +356,7 @@ header.branding {
     ---*/
 
     .available-time {
+
       display: inline-block;
       font-size: 15px;
       color: #fff;
@@ -347,6 +392,12 @@ header.branding {
 
           background-color: none;
           text-decoration: underline;
+
+        }
+
+        &:focus {
+
+          outline: 1px dashed #fff;
 
         }
 
@@ -407,6 +458,18 @@ header.branding {
 
           color: #fff;
 
+          &:hover {
+
+            text-decoration: underline;
+
+          }
+
+          &:focus {
+
+            outline: 1px dashed #fff;
+
+          }
+
           span {
 
             display: inline-block;
@@ -417,7 +480,7 @@ header.branding {
           span:hover {
 
             display: inline-block;
-            border-bottom: 3px solid #fff;
+            border-bottom: 1px solid #fff;
 
           }
 
@@ -507,6 +570,10 @@ header.branding {
     a {
 
       color: #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
 
     }
 
@@ -651,10 +718,14 @@ body:not(.home) { // target non home headers
   }
 
   article header {
+
     display: none;
+
   }
 
   article .entry-content {
+
     margin-top: 0;
+
   }
 }

@@ -24,20 +24,11 @@ get_header();
 
 		<section class="staff-profile" aria-label="Staff profile">
 
-
 			  <img class="staff-photo" src="<?php the_field('photo');?>" alt="">
-
-
-
-				<h2><?php echo the_field('first_name'); echo the_field('last_name'); ?></h2>
+				<h2><?php echo the_field('first_name');?> <?php echo the_field('last_name');?></h2>
 				<h3><?php echo the_field('title'); ?></h3>
-
-
 				<p><a href="mailto:<?php echo the_field('email');?>"><?php echo the_field('email');?></a></p>
-
-
 				<p>Phone: <?php the_field('phone');?></p>
-
 				<p><a href="#" class="btn-graphic"><?php echo the_field('consultation'); ?>Book a Consultation</a></p>
 
 			</div>
@@ -47,7 +38,6 @@ get_header();
 		<?php
 
 		the_post_navigation();
-
 
 		edit_post_link(
 			sprintf(
@@ -65,7 +55,6 @@ get_header();
 			'<span class="edit-link">',
 			'</span>'
 		);
-
 
 	endwhile; // End of the loop.
 

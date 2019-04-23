@@ -24,13 +24,30 @@ get_header();
 
 		<section class="staff-profile" aria-label="Staff profile">
 
-			  <img class="staff-photo" src="<?php the_field('photo');?>" alt="">
-				<h2><?php echo the_field('first_name');?> <?php echo the_field('last_name');?></h2>
-				<h3><?php echo the_field('title'); ?></h3>
-				<p><a href="mailto:<?php echo the_field('email');?>"><?php echo the_field('email');?></a></p>
-				<p>Phone: <?php the_field('phone');?></p>
+			<?php
+
+			$image = get_field('photo');
+
+			if( !empty($image) ) { ?>
+
+				<img class="staff-photo" src="<?php echo $image['url'];?>" alt="<?php echo $image['alt']; ?>">
+
+			<?php } else { ?>
+
+				<img class="staff-photo" src="<?php echo get_template_directory_uri(); ?>/images/staff/no-photo-profile.png">
+
+			<?php } ?>
+
+			<h2><?php echo the_field('first_name');?> <?php echo the_field('last_name');?></h2>
+			<h3><?php echo the_field('title'); ?></h3>
+			<p><a href="mailto:<?php echo the_field('email');?>"><?php echo the_field('email');?></a></p>
+			<p class="staff-phone">Phone: <?php the_field('phone');?></p>
+
+			<?php if (the_field('consultation')) { ?>
+
 				<p><a href="#" class="btn-graphic"><?php echo the_field('consultation'); ?>Book a Consultation</a></p>
 
+			<?php } ?>
 			</div>
 
 		</section>

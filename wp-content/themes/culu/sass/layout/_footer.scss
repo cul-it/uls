@@ -215,7 +215,8 @@ footer {
   padding: 11px 56px;
   font-weight: 300;
 
-  &:visited {
+  &:visited,
+  &:focus {
     color: #fff;
   }
 }

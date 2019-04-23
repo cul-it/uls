@@ -566,14 +566,17 @@ a:-webkit-any-link {
 li.current-menu-item a {
   color: #000 !important; }
 
-.entry-footer {
+.entry-footer,
+.edit-link {
   border-top: none;
   width: 100%; }
-  .entry-footer a {
+  .entry-footer a,
+  .edit-link a {
     padding: 10px;
     color: #fff;
     background-color: green; }
-  .entry-footer:hover {
+  .entry-footer:hover,
+  .edit-link:hover {
     opacity: .8; }
 
 /*--------------------------------------------------------------
@@ -1496,7 +1499,7 @@ footer {
   text-decoration: none;
   padding: 11px 56px;
   font-weight: 300; }
-  .btn-graphic:visited {
+  .btn-graphic:visited, .btn-graphic:focus {
     color: #fff; }
 
 .four04 {
@@ -1680,5 +1683,33 @@ button.icon-search {
   @media only screen and (min-width: 1600px) {
     .user-tool-search {
       width: 1529px; } }
+
+/*---
+
+  STAFF PROFILE
+
+---*/
+.staff-profile {
+  width: 282px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .staff-profile h2 {
+    padding-left: 20px;
+    font-size: 24px; }
+  .staff-profile h3 {
+    padding-left: 20px;
+    font-size: 16px; }
+  .staff-profile p {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px; }
+  .staff-profile .btn-graphic {
+    margin-top: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    margin-right: 20px; }
+    .staff-profile .btn-graphic:hover {
+      background-color: #000; }
 
 /*# sourceMappingURL=style.css.map */

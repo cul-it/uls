@@ -43,11 +43,21 @@ get_header();
 			<p><a href="mailto:<?php echo the_field('email');?>"><?php echo the_field('email');?></a></p>
 			<p class="staff-phone">Phone: <?php the_field('phone');?></p>
 
-			<?php if (the_field('consultation')) { ?>
+			<?php if ( !empty(get_field('consultation')) ) { ?>
+				<script>
+					jQuery.getScript("https://api3.libcal.com/js/myscheduler.min.js", function() {
+					    jQuery("#<?php echo the_field('consultation'); ?>").LibCalMySched({iid: 973, lid: 0, gid: 0, uid: 18275, width: 560, height: 680, title: 'Make an Appointment', domain: 'https://api3.libcal.com'});
+					});
+				</script>
 
-				<p><a href="#" class="btn-graphic"><?php echo the_field('consultation'); ?>Book a Consultation</a></p>
+				<p>
+					<a href="#" id="<?php echo the_field('consultation'); ?>" class="btn-graphic">
+						Book a Consultation
+					</a>
+				</p>
 
 			<?php } ?>
+
 			</div>
 
 		</section>

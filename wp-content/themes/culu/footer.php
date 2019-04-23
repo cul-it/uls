@@ -59,7 +59,7 @@
         <div class="container">
 
           <div class="c-1">
-            <p><strong>CONTACT</strong></p>
+            <p>CONTACT</p>
             <p><strong><?php echo get_bloginfo( 'name' ); ?></strong><br>
               <?php echo $address_label ?><br>
               <?php echo $city_label ?>, <?php echo $state_label ?> <?php echo $zip_label ?>
@@ -67,10 +67,10 @@
           </div>
 
         <div class="c-2">
-          <p><strong>Circulation: </strong><?php echo $circulation_number_label ?></p>
-         <p><strong>Reference: </strong><?php echo $reference_number_label ?></p>
+          <p>Circulation: <?php echo $circulation_number_label ?></p>
+         <p>Reference: <?php echo $reference_number_label ?></p>
 
-         <p><strong></strong><a href="mailto:<?php echo $email_label ?>"><?php echo $email_label ?></a></p>
+         <p><a href="mailto:<?php echo $email_label ?>"><?php echo $email_label ?></a></p>
 
         </div>
 

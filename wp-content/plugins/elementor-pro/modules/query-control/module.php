@@ -91,6 +91,30 @@ class Module extends Module_Base {
 		return 'query-control';
 	}
 
+	private function search_taxonomies( $query_params, $data ) {
+		$terms = get_terms( $query_params );
+
+		global $wp_taxonomies;
+
+		$results = [];
+
+		foreach ( $terms as $term ) {
+			$term_name = $this->get_term_name_with_parents( $term );
+			if ( ! empty( $data['include_type'] ) ) {
+				$text = $wp_taxonomies[ $term->taxonomy ]->labels->name . ': ' . $term_name;
+			} else {
+				$text = $term_name;
+			}
+
+			$results[] = [
+				'id' => $term->term_taxonomy_id,
+				'text' => $text,
+			];
+		}
+
+		return $results;
+
+	}
 	/**
 	 * @param array $data
 	 *
@@ -112,23 +136,22 @@ class Module extends Module_Base {
 					'hide_empty' => false,
 				];
 
-				$terms = get_terms( $query_params );
+				$results = $this->search_taxonomies( $query_params, $data );
 
-				global $wp_taxonomies;
+				break;
 
-				foreach ( $terms as $term ) {
-					$term_name = $this->get_term_name_with_parents( $term );
-					if ( ! empty( $data['include_type'] ) ) {
-						$text = $wp_taxonomies[ $term->taxonomy ]->labels->name . ': ' . $term_name;
-					} else {
-						$text = $term_name;
-					}
+			case 'cpt_taxonomies':
+				$post_type = $this->extract_post_type( $data );
 
-					$results[] = [
-						'id' => $term->term_taxonomy_id,
-						'text' => $text,
-					];
-				}
+				$taxonomies = get_object_taxonomies( $post_type );
+
+				$query_params = [
+					'taxonomy' => $taxonomies,
+					'search' => $data['q'],
+					'hide_empty' => false,
+				];
+
+				$results = $this->search_taxonomies( $query_params, $data );
 
 				break;
 
@@ -200,6 +223,7 @@ class Module extends Module_Base {
 		$results = [];
 
 		switch ( $request['filter_type'] ) {
+			case 'cpt_taxonomies':
 			case 'taxonomy':
 				$terms = get_terms(
 					[

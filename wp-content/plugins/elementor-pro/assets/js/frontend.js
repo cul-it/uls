@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.5.5 - 08-04-2019 */
+/*! elementor-pro - v2.5.6 - 29-04-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1344,21 +1344,13 @@ var _class = function (_elementorModules$fro) {
 	}, {
 		key: 'setEntranceAnimation',
 		value: function setEntranceAnimation() {
-			var modal = this.getModal(),
-			    $widgetContent = modal.getElements('widgetContent'),
-			    deviceMode = elementorFrontend.getCurrentDeviceMode();
-
-			var settingKey = 'entrance_animation';
-
-			if ('desktop' !== deviceMode) {
-				settingKey = settingKey + '_' + deviceMode;
-			}
-
-			var newAnimation = this.getDocumentSettings(settingKey);
+			var $widgetContent = this.getModal().getElements('widgetContent');
 
 			if (this.currentAnimation) {
 				$widgetContent.removeClass(this.currentAnimation);
 			}
+
+			var newAnimation = elementorFrontend.getCurrentDeviceSetting(this.getDocumentSettings(), 'entrance_animation');
 
 			this.currentAnimation = newAnimation;
 

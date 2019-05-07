@@ -1540,7 +1540,8 @@ body.rtl.woocommerce-page div.product .elementor-widget-woocommerce-product-imag
     border: 0;
     position: absolute;
     background: transparent;
-    top: 0; }
+    top: 0;
+    padding: 0; }
 
 .woocommerce div.product.elementor .quantity .qty {
   vertical-align: top;

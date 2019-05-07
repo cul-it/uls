@@ -92,6 +92,7 @@ class Module extends Module_Base {
 	}
 
 	private function search_taxonomies( $query_params, $data ) {
+		$by_field = $this->extract_term_by_field( $data );
 		$terms = get_terms( $query_params );
 
 		global $wp_taxonomies;
@@ -107,7 +108,7 @@ class Module extends Module_Base {
 			}
 
 			$results[] = [
-				'id' => $term->term_taxonomy_id,
+				'id' => $term->{$by_field},
 				'text' => $text,
 			];
 		}
@@ -115,6 +116,20 @@ class Module extends Module_Base {
 		return $results;
 
 	}
+
+	/**
+	 * @param array $data
+	 *
+	 * @return string
+	 */
+	private function extract_term_by_field( $data ) {
+		if ( ! empty( $data['query'] ) && ! empty( $data['query']['by_field'] ) ) {
+			return $data['query']['by_field'];
+		}
+
+		return 'term_taxonomy_id';
+	}
+
 	/**
 	 * @param array $data
 	 *
@@ -225,9 +240,10 @@ class Module extends Module_Base {
 		switch ( $request['filter_type'] ) {
 			case 'cpt_taxonomies':
 			case 'taxonomy':
+				$by_field = $this->extract_term_by_field( $request );
 				$terms = get_terms(
 					[
-						'term_taxonomy_id' => $ids,
+						$by_field => $ids,
 						'hide_empty' => false,
 					]
 				);
@@ -240,7 +256,7 @@ class Module extends Module_Base {
 					} else {
 						$text = $term_name;
 					}
-					$results[ $term->term_taxonomy_id ] = $text;
+					$results[ $term->{$by_field} ] = $text;
 				}
 				break;
 

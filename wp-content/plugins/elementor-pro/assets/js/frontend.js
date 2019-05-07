@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.5.6 - 29-04-2019 */
+/*! elementor-pro - v2.5.8 - 06-05-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -983,7 +983,7 @@ var ElementorProFrontend = function (_elementorModules$Vie) {
 			};
 
 			jQuery.each(handlers, function (moduleName, ModuleClass) {
-				_this2.modules[moduleName] = new ModuleClass(jQuery);
+				_this2.modules[moduleName] = new ModuleClass();
 			});
 		}
 	}, {
@@ -1344,17 +1344,27 @@ var _class = function (_elementorModules$fro) {
 	}, {
 		key: 'setEntranceAnimation',
 		value: function setEntranceAnimation() {
-			var $widgetContent = this.getModal().getElements('widgetContent');
+			var $widgetContent = this.getModal().getElements('widgetContent'),
+			    settings = this.getDocumentSettings(),
+			    newAnimation = elementorFrontend.getCurrentDeviceSetting(settings, 'entrance_animation');
 
 			if (this.currentAnimation) {
 				$widgetContent.removeClass(this.currentAnimation);
 			}
 
-			var newAnimation = elementorFrontend.getCurrentDeviceSetting(this.getDocumentSettings(), 'entrance_animation');
-
 			this.currentAnimation = newAnimation;
 
+			if (!newAnimation) {
+				return;
+			}
+
+			var animationDuration = settings.entrance_animation_duration.size;
+
 			$widgetContent.addClass(newAnimation);
+
+			setTimeout(function () {
+				return $widgetContent.removeClass(newAnimation);
+			}, animationDuration * 1000);
 		}
 	}, {
 		key: 'initModal',
@@ -1397,6 +1407,8 @@ var _class = function (_elementorModules$fro) {
 							if (settings.timing && settings.timing.times_count) {
 								_this2.countTimes();
 							}
+
+							_this2.$element.remove();
 						}
 					});
 

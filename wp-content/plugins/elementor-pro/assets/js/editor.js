@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.5.6 - 29-04-2019 */
+/*! elementor-pro - v2.5.8 - 06-05-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -755,7 +755,8 @@ module.exports = elementor.modules.controls.Select2.extend({
 				filter_type: filterType,
 				object_type: self.model.get('object_type'),
 				include_type: self.model.get('include_type'),
-				unique_id: '' + self.cid + filterType
+				unique_id: '' + self.cid + filterType,
+				query: self.model.get('query')
 			},
 			before: function before() {
 				self.addControlSpinner();

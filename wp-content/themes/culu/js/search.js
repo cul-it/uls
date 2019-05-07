@@ -34,12 +34,12 @@
 						case 'site':
 								$('input[type=search]').attr("name",'s');
 								//$(this).attr("action", 'http://hotel.library.cornell.edu/' + '?s=');
-								$(this).attr("action", 'http:' + '?s=');
+								$(this).attr("action", window.location.href + '?s=');
 				}
 		});
 
     $selectedFilterHome = $(' .home-search input[name=search-type-home] ').val();
-    
+
     $(' .home-search input[name=search-type-home] ').click(function(){
       $selectedFilterHome = $(this).val();
       //console.log( $selectedFilterHome + "home" );
@@ -56,7 +56,7 @@
  						case 'site':
  								$('input[type=search-home]').attr("name",'s');
  								//$(this).attr("action", 'http://hotel.library.cornell.edu/' + '?s=');
- 								$(this).attr("action", 'http:' + '?s=');
+ 								$(this).attr("action", window.location.href + '?s=');
  				}
  		});
 

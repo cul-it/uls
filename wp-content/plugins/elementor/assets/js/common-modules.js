@@ -1,4 +1,4 @@
-/*! elementor - v2.5.14 - 16-04-2019 */
+/*! elementor - v2.5.15 - 07-05-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,7 +82,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 198);
+/******/ 	return __webpack_require__(__webpack_require__.s = 199);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -121,7 +121,7 @@ exports.default = window.elementorModules = {
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -131,7 +131,7 @@ var _modules = __webpack_require__(19);
 
 var _modules2 = _interopRequireDefault(_modules);
 
-var _layout = __webpack_require__(199);
+var _layout = __webpack_require__(200);
 
 var _layout2 = _interopRequireDefault(_layout);
 
@@ -147,7 +147,71 @@ _modules2.default.common = {
 
 /***/ }),
 
-/***/ 199:
+/***/ 20:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _viewModule = __webpack_require__(6);
+
+var _viewModule2 = _interopRequireDefault(_viewModule);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = _viewModule2.default.extend({
+
+	getDefaultSettings: function getDefaultSettings() {
+		return {
+			container: null,
+			items: null,
+			columnsCount: 3,
+			verticalSpaceBetween: 30
+		};
+	},
+
+	getDefaultElements: function getDefaultElements() {
+		return {
+			$container: jQuery(this.getSettings('container')),
+			$items: jQuery(this.getSettings('items'))
+		};
+	},
+
+	run: function run() {
+		var heights = [],
+		    distanceFromTop = this.elements.$container.position().top,
+		    settings = this.getSettings(),
+		    columnsCount = settings.columnsCount;
+
+		distanceFromTop += parseInt(this.elements.$container.css('margin-top'), 10);
+
+		this.elements.$items.each(function (index) {
+			var row = Math.floor(index / columnsCount),
+			    $item = jQuery(this),
+			    itemHeight = $item[0].getBoundingClientRect().height + settings.verticalSpaceBetween;
+
+			if (row) {
+				var itemPosition = $item.position(),
+				    indexAtRow = index % columnsCount,
+				    pullHeight = itemPosition.top - distanceFromTop - heights[indexAtRow];
+
+				pullHeight -= parseInt($item.css('margin-top'), 10);
+
+				pullHeight *= -1;
+
+				$item.css('margin-top', pullHeight + 'px');
+
+				heights[indexAtRow] += itemHeight;
+			} else {
+				heights.push(itemHeight);
+			}
+		});
+	}
+});
+
+/***/ }),
+
+/***/ 200:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -159,15 +223,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _header = __webpack_require__(200);
+var _header = __webpack_require__(201);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _logo = __webpack_require__(201);
+var _logo = __webpack_require__(202);
 
 var _logo2 = _interopRequireDefault(_logo);
 
-var _loading = __webpack_require__(202);
+var _loading = __webpack_require__(203);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -314,71 +378,7 @@ exports.default = _class;
 
 /***/ }),
 
-/***/ 20:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _viewModule = __webpack_require__(6);
-
-var _viewModule2 = _interopRequireDefault(_viewModule);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = _viewModule2.default.extend({
-
-	getDefaultSettings: function getDefaultSettings() {
-		return {
-			container: null,
-			items: null,
-			columnsCount: 3,
-			verticalSpaceBetween: 30
-		};
-	},
-
-	getDefaultElements: function getDefaultElements() {
-		return {
-			$container: jQuery(this.getSettings('container')),
-			$items: jQuery(this.getSettings('items'))
-		};
-	},
-
-	run: function run() {
-		var heights = [],
-		    distanceFromTop = this.elements.$container.position().top,
-		    settings = this.getSettings(),
-		    columnsCount = settings.columnsCount;
-
-		distanceFromTop += parseInt(this.elements.$container.css('margin-top'), 10);
-
-		this.elements.$items.each(function (index) {
-			var row = Math.floor(index / columnsCount),
-			    $item = jQuery(this),
-			    itemHeight = $item[0].getBoundingClientRect().height + settings.verticalSpaceBetween;
-
-			if (row) {
-				var itemPosition = $item.position(),
-				    indexAtRow = index % columnsCount,
-				    pullHeight = itemPosition.top - distanceFromTop - heights[indexAtRow];
-
-				pullHeight -= parseInt($item.css('margin-top'), 10);
-
-				pullHeight *= -1;
-
-				$item.css('margin-top', pullHeight + 'px');
-
-				heights[indexAtRow] += itemHeight;
-			} else {
-				heights.push(itemHeight);
-			}
-		});
-	}
-});
-
-/***/ }),
-
-/***/ 200:
+/***/ 201:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -459,7 +459,7 @@ exports.default = _class;
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -528,7 +528,7 @@ exports.default = _class;
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

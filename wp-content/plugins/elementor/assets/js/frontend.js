@@ -1,4 +1,4 @@
-/*! elementor - v2.5.14 - 16-04-2019 */
+/*! elementor - v2.5.15 - 07-05-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,7 +82,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 181);
+/******/ 	return __webpack_require__(__webpack_require__.s = 182);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -823,7 +823,7 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -831,7 +831,7 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _documentsManager = __webpack_require__(182);
+var _documentsManager = __webpack_require__(183);
 
 var _documentsManager2 = _interopRequireDefault(_documentsManager);
 
@@ -857,10 +857,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var EventManager = __webpack_require__(13),
-    ElementsHandler = __webpack_require__(183),
-    YouTubeModule = __webpack_require__(195),
-    AnchorsModule = __webpack_require__(196),
-    LightboxModule = __webpack_require__(197);
+    ElementsHandler = __webpack_require__(184),
+    YouTubeModule = __webpack_require__(196),
+    AnchorsModule = __webpack_require__(197),
+    LightboxModule = __webpack_require__(198);
 
 var Frontend = function (_elementorModules$Vie) {
 	_inherits(Frontend, _elementorModules$Vie);
@@ -1203,7 +1203,7 @@ if (!elementorFrontend.isEditMode()) {
 
 /***/ }),
 
-/***/ 182:
+/***/ 183:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1312,7 +1312,7 @@ exports.default = _class;
 
 /***/ }),
 
-/***/ 183:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1324,24 +1324,24 @@ module.exports = function ($) {
 	// element-type.skin-type
 	var handlers = {
 		// Elements
-		section: __webpack_require__(184),
+		section: __webpack_require__(185),
 
 		// Widgets
-		'accordion.default': __webpack_require__(185),
-		'alert.default': __webpack_require__(186),
-		'counter.default': __webpack_require__(187),
-		'progress.default': __webpack_require__(188),
-		'tabs.default': __webpack_require__(189),
-		'toggle.default': __webpack_require__(190),
-		'video.default': __webpack_require__(191),
-		'image-carousel.default': __webpack_require__(192),
-		'text-editor.default': __webpack_require__(193)
+		'accordion.default': __webpack_require__(186),
+		'alert.default': __webpack_require__(187),
+		'counter.default': __webpack_require__(188),
+		'progress.default': __webpack_require__(189),
+		'tabs.default': __webpack_require__(190),
+		'toggle.default': __webpack_require__(191),
+		'video.default': __webpack_require__(192),
+		'image-carousel.default': __webpack_require__(193),
+		'text-editor.default': __webpack_require__(194)
 	};
 
 	var handlersInstances = {};
 
 	var addGlobalHandlers = function addGlobalHandlers() {
-		elementorFrontend.hooks.addAction('frontend/element_ready/global', __webpack_require__(194));
+		elementorFrontend.hooks.addAction('frontend/element_ready/global', __webpack_require__(195));
 	};
 
 	var addElementsHandlers = function addElementsHandlers() {
@@ -1418,7 +1418,7 @@ module.exports = function ($) {
 
 /***/ }),
 
-/***/ 184:
+/***/ 185:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1820,7 +1820,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 185:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1838,7 +1838,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 186:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1852,7 +1852,7 @@ module.exports = function ($scope, $) {
 
 /***/ }),
 
-/***/ 187:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1875,7 +1875,7 @@ module.exports = function ($scope, $) {
 
 /***/ }),
 
-/***/ 188:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1891,7 +1891,7 @@ module.exports = function ($scope, $) {
 
 /***/ }),
 
-/***/ 189:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1908,7 +1908,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 190:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1928,7 +1928,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 191:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2025,7 +2025,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 192:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2098,7 +2098,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 193:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2201,7 +2201,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 194:
+/***/ 195:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2258,7 +2258,7 @@ module.exports = function ($scope) {
 
 /***/ }),
 
-/***/ 195:
+/***/ 196:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2313,7 +2313,7 @@ module.exports = elementorModules.ViewModule.extend({
 
 /***/ }),
 
-/***/ 196:
+/***/ 197:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2400,7 +2400,7 @@ module.exports = elementorModules.ViewModule.extend({
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

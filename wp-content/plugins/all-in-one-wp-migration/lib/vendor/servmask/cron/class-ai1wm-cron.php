@@ -36,14 +36,31 @@ class Ai1wm_Cron {
 	 * @param  string $hook       Event hook
 	 * @param  string $recurrence How often the event should reoccur
 	 * @param  array  $args       Arguments to pass to the hook function(s)
+	 * @param  string $time       Preferred time of day when the event shall be run, e.g. 23:59 (optional)
 	 * @return mixed
 	 */
-	public static function add( $hook, $recurrence, $args = array() ) {
-		$args      = array_slice( func_get_args(), 2 );
+	public static function add( $hook, $recurrence, $args = array(), $time = null ) {
 		$schedules = wp_get_schedules();
 
+		if ( is_null( $time ) ) {
+			// Use current time as default
+			$timestamp = time();
+		} else {
+			// Preferred time is used with current date
+			$date      = date( 'Y-m-d' );
+			$datetime  = sprintf( '%s %s', $date, $time );
+			$timestamp = strtotime( $datetime );
+		}
+
 		if ( isset( $schedules[ $recurrence ] ) && ( $current = $schedules[ $recurrence ] ) ) {
-			return wp_schedule_event( time() + $current['interval'], $recurrence, $hook, $args );
+			if ( $timestamp < time() ) {
+				// Calculating number of intervals from $timestamp to the next run
+				$intervals = ceil( ( time() - $timestamp ) / $current['interval'] );
+				$duration  = $intervals * $current['interval'];
+
+				$timestamp += $duration;
+			}
+			return wp_schedule_event( $timestamp, $recurrence, $hook, array( $args ) );
 		}
 	}
 

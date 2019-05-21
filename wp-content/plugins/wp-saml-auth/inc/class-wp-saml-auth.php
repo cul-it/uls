@@ -100,6 +100,10 @@ class WP_SAML_Auth {
 				add_action(
 					'admin_notices',
 					function() {
+						if ( ! empty( $_GET['page'] )
+							&& 'wp-saml-auth-settings' === $_GET['page'] ) {
+							return;
+						}
 						if ( current_user_can( 'manage_options' ) ) {
 							// Translators: Links to the WP SAML Auth plugin.
 							echo '<div class="message error"><p>' . wp_kses_post( sprintf( __( "WP SAML Auth wasn't able to find the <code>%1\$s</code> class. Please check the <code>simplesamlphp_autoload</code> configuration option, or <a href='%2\$s'>visit the plugin page</a> for more information.", 'wp-saml-auth' ), $this->simplesamlphp_class, 'https://wordpress.org/plugins/wp-saml-auth/' ) ) . '</p></div>';
@@ -267,9 +271,13 @@ class WP_SAML_Auth {
 				);
 			} else {
 				$redirect_to = wp_login_url();
+				// Make sure we're only dealing with the URI components and not arguments.
+				$request = explode( '?', $_SERVER['REQUEST_URI'] );
 				// Only persist redirect_to when it's not wp-login.php.
-				if ( false === stripos( $redirect_to, $_SERVER['REQUEST_URI'] ) ) {
+				if ( false === stripos( $redirect_to, reset( $request ) ) ) {
 					$redirect_to = add_query_arg( 'redirect_to', $_SERVER['REQUEST_URI'], $redirect_to );
+				} else {
+					$redirect_to = add_query_arg( array( 'action' => 'wp-saml-auth' ), $redirect_to );
 				}
 			}
 			$this->provider->requireAuth(

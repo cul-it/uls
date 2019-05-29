@@ -1,4 +1,4 @@
-/*! elementor - v2.5.15 - 07-05-2019 */
+/*! elementor - v2.5.16 - 28-05-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -780,13 +780,13 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 				if ('Enter' === event.key) {
 					event.preventDefault();
 
-					_this.changeActiveTab(event.currentTarget.dataset.tab);
+					_this.changeActiveTab(event.currentTarget.getAttribute('data-tab'));
 				}
 			},
 			click: function click(event) {
 				event.preventDefault();
 
-				_this.changeActiveTab(event.currentTarget.dataset.tab);
+				_this.changeActiveTab(event.currentTarget.getAttribute('data-tab'));
 			}
 		});
 	},

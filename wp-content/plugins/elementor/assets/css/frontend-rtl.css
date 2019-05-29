@@ -1,4 +1,4 @@
-/*! elementor - v2.5.15 - 07-05-2019 */
+/*! elementor - v2.5.16 - 28-05-2019 */
 .dialog-widget-content {
   background-color: #fff;
   position: absolute;
@@ -53,8 +53,7 @@
       padding: 13px 0;
       outline: 0; }
       .dialog-type-lightbox .dialog-buttons-wrapper > .dialog-button:first-child {
-        color: #6d7882;
-        border-left: 1px solid #e6e9ec; }
+        color: #6d7882; }
       .dialog-type-lightbox .dialog-buttons-wrapper > .dialog-button:hover {
         background-color: #f4f6f7; }
       .dialog-type-lightbox .dialog-buttons-wrapper > .dialog-button.dialog-ok {
@@ -78,6 +77,9 @@
 
 .dialog-alert-widget .dialog-buttons-wrapper > button {
   width: 100%; }
+
+.dialog-confirm-widget .dialog-button:first-child {
+  border-left: 1px solid #e6e9ec; }
 
 .dialog-prevent-scroll {
   overflow: hidden;

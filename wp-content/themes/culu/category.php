@@ -17,7 +17,7 @@ get_header();
 
 <main id="main-content" class="page-interior">
 
-	<h3><?php _e( '', 'culu' ); single_cat_title(); ?>ddd</h3>
+	<h3><?php //_e( '', 'culu' ); single_cat_title(); ?></h3>
 
 	<?php
 

@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.5.8 - 06-05-2019 */
+/*! elementor-pro - v2.5.9 - 28-05-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -96,16 +96,28 @@
 var ElementEditorModule = __webpack_require__(4);
 
 module.exports = ElementEditorModule.extend({
-	cache: {},
+
+	__construct: function __construct() {
+		this.cache = {};
+		ElementEditorModule.prototype.__construct.apply(this, arguments);
+	},
 
 	getName: function getName() {
 		return '';
+	},
+
+	getCacheKey: function getCacheKey(args) {
+		return JSON.stringify({
+			service: this.getName(),
+			data: args
+		});
 	},
 
 	fetchCache: function fetchCache(type, cacheKey, requestArgs) {
 		var _this = this;
 
 		return elementorPro.ajax.addRequest('forms_panel_action_data', {
+			unique_id: 'integrations_' + this.getName(),
 			data: requestArgs,
 			success: function success(data) {
 				_this.cache[type] = _.extend({}, _this.cache[type]);
@@ -1125,7 +1137,12 @@ module.exports = BaseIntegrationModule.extend({
 
 		self.addControlSpinner('mailerlite_group');
 
-		self.getMailerliteCache('groups', 'groups', GlobalApiKeycontrolView.getControlValue()).done(function (data) {
+		var cacheKey = this.getCacheKey({
+			type: 'groups',
+			controls: [controlView.getControlValue(), GlobalApiKeycontrolView.getControlValue()]
+		});
+
+		self.getMailerliteCache('groups', 'groups', cacheKey).done(function (data) {
 			self.updateOptions('mailerlite_group', data.groups);
 			self.fields = data.fields;
 		});
@@ -1257,8 +1274,12 @@ module.exports = BaseIntegrationModule.extend({
 		}
 
 		self.addControlSpinner('mailchimp_list');
+		var cacheKey = this.getCacheKey({
+			type: 'lists',
+			controls: [controlView.getControlValue(), GlobalApiKeycontrolView.getControlValue()]
+		});
 
-		self.getMailchimpCache('lists', 'lists', GlobalApiKeycontrolView.getControlValue()).done(function (data) {
+		self.getMailchimpCache('lists', 'lists', cacheKey).done(function (data) {
 			self.updateOptions('mailchimp_list', data.lists);
 			self.updatMailchimpList();
 		});
@@ -1279,6 +1300,10 @@ module.exports = BaseIntegrationModule.extend({
 		}
 
 		self.addControlSpinner('mailchimp_groups');
+		var cacheKey = this.getCacheKey({
+			type: 'list_details',
+			controls: [controlView.getControlValue()]
+		});
 
 		self.getMailchimpCache('list_details', 'list_details', controlView.getControlValue(), {
 			mailchimp_list: controlView.getControlValue()
@@ -1350,6 +1375,10 @@ module.exports = BaseIntegrationModule.extend({
 		}
 
 		self.addControlSpinner('drip_account');
+		var cacheKey = this.getCacheKey({
+			type: 'accounts',
+			controls: [controlView.getControlValue(), customControlView.getControlValue()]
+		});
 
 		self.getDripCache('accounts', 'accounts', controlView.getControlValue()).done(function (data) {
 			self.updateOptions('drip_account', data.accounts);
@@ -1438,7 +1467,10 @@ module.exports = BaseIntegrationModule.extend({
 
 		self.addControlSpinner('activecampaign_list');
 
-		self.getActiveCampaignCache('lists', 'activecampaign_list', apiCredControlView.getControlValue()).done(function (data) {
+		var cacheKey = this.getCacheKey({
+			controls: [apiCredControlView.getControlValue(), apiUrlControlView.getControlValue(), apikeyControlView.getControlValue()]
+		});
+		self.getActiveCampaignCache('lists', 'activecampaign_list', cacheKey).done(function (data) {
 			self.updateOptions('activecampaign_list', data.lists);
 			self.fields = data.fields;
 		});
@@ -1549,7 +1581,12 @@ module.exports = BaseIntegrationModule.extend({
 
 		self.addControlSpinner('getresponse_list');
 
-		self.getCache('lists', 'lists', controlView.getControlValue()).done(function (data) {
+		var cacheKey = this.getCacheKey({
+			type: 'lists',
+			controls: [controlView.getControlValue(), customControlView.getControlValue()]
+		});
+
+		self.getCache('lists', 'lists', cacheKey).done(function (data) {
 			self.updateOptions('getresponse_list', data.lists);
 		});
 	},
@@ -1567,8 +1604,12 @@ module.exports = BaseIntegrationModule.extend({
 		}
 
 		self.addControlSpinner('getresponse_fields_map');
+		var cacheKey = this.getCacheKey({
+			type: 'fields',
+			controls: [controlView.getControlValue()]
+		});
 
-		self.getCache('fields', 'get_fields', controlView.getControlValue(), {
+		self.getCache('fields', 'get_fields', cacheKey, {
 			getresponse_list: controlView.getControlValue()
 		}).done(function (data) {
 			self.getEditorControlView('getresponse_fields_map').updateMap(data.fields);
@@ -1638,8 +1679,12 @@ module.exports = BaseIntegrationModule.extend({
 		}
 
 		self.addControlSpinner('convertkit_form');
+		var cacheKey = this.getCacheKey({
+			type: 'data',
+			controls: [apiKeyControlView.getControlValue(), customApikeyControlView.getControlValue()]
+		});
 
-		self.getConvertKitCache('data', 'convertkit_get_forms', apiKeyControlView.getControlValue()).done(function (data) {
+		self.getConvertKitCache('data', 'convertkit_get_forms', cacheKey).done(function (data) {
 			self.updateOptions('convertkit_form', data.data.forms);
 			self.updateOptions('convertkit_tags', data.data.tags);
 		});
@@ -2748,6 +2793,7 @@ module.exports = elementorModules.Module.extend({
 
 	getCustomFont: function getCustomFont(fontType, font) {
 		elementorPro.ajax.addRequest('assets_manager_panel_action_data', {
+			unique_id: 'font_' + fontType + font,
 			data: {
 				service: 'font',
 				type: fontType,

@@ -1,5 +1,14 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.5.8 - 2019-05-28
+* Tweak: Removed `auto-confirm` control from MailPoet to support new version of MailPoet
+* Fix: Multiple Custom Fonts not rendered in the editor
+* Fix: Products `sale` query - handle exclude by manual selection.
+* Fix: Product Categories grid row & column style
+* Fix: Form integration AJAX cache override
+* Fix: Removed redundant CSS on Canvas & Header-Footer page templates
+
+
 #### 2.5.8 - 2019-05-06
 * Fix: Popup entrance animation not working in frontend
 * Fix: Popup Exit Intent trigger activated multiple times
@@ -53,6 +62,7 @@
 * New: Introducing Motion Effects including Scrolling & Mouse effects ([#72](https://github.com/elementor/elementor/issues/72))
 * New: Introducing Related Posts for Query Control ([#7306](https://github.com/elementor/elementor/issues/7306), [#7490](https://github.com/elementor/elementor/issues/7490))
 * New: Introducing Date query for Query Control
+* New: Introducing Sticky Posts support for Query Control ([#2501](https://github.com/elementor/elementor/issues/2501))
 * Tweak: Added option to open a Popup by a custom selector ([#6871](https://github.com/elementor/elementor/issues/6871), [#6876](https://github.com/elementor/elementor/issues/6876), [#7258](https://github.com/elementor/elementor/issues/7258))
 * Tweak: Option to count when Popup is closed in "Show up to X times" Advanced Rule
 * Tweak: Added full border radius control options inside Popup

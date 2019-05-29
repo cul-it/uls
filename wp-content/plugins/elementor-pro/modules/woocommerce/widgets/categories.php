@@ -191,7 +191,7 @@ class Categories extends Widget_Base {
 			[
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'wc-products',
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'elementor-products-grid elementor-',
 			]
 		);
 

@@ -76,6 +76,9 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		//Featured.
 		$this->set_featured_query_args( $query_args );
 
+		//Sale.
+		$this->set_sale_products_query_args( $query_args );
+
 		// IDs.
 		$this->set_ids_query_args( $query_args );
 
@@ -181,6 +184,13 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		}
 	}
 
+	protected function set_sale_products_query_args( &$query_args ) {
+		$prefix = self::QUERY_CONTROL_NAME . '_';
+		if ( 'sale' === $this->settings[ $prefix . 'post_type' ] ) {
+			parent::set_sale_products_query_args( $query_args );
+		}
+	}
+
 	protected function set_exclude_query_args( &$query_args ) {
 		$prefix = self::QUERY_CONTROL_NAME . '_';
 
@@ -199,6 +209,14 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		}
 
 		$query_args['post__not_in'] = empty( $query_args['post__not_in'] ) ? $post__not_in : array_merge( $query_args['post__not_in'], $post__not_in );
+
+		/**
+		 * WC populates `post__in` with the ids of the products that are on sale.
+		 * Since WP_Query ignores `post__not_in` once `post__in` exists, the ids are filtered manually, using `array_diff`.
+		 */
+		if ( 'sale' === $this->settings[ $prefix . 'post_type' ] ) {
+			$query_args['post__in'] = array_diff( $query_args['post__in'], $query_args['post__not_in'] );
+		}
 
 		if ( in_array( 'terms', $this->settings[ $prefix . 'exclude' ] ) && ! empty( $this->settings[ $prefix . 'exclude_term_ids' ] ) ) {
 			$terms = [];

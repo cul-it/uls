@@ -1,49 +1,72 @@
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<?php
 
-	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+while ( have_posts() ) :
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
-		<!-- post title -->
-		<h2>
-			<a href="<?php //the_permalink(); ?>" title="<?php the_title(); ?>"><?php //the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
+	the_post();
 
-		<!-- post details -->
-		<span class="date"><?php //the_time('F j, Y'); ?> <?php //the_time('g:i a'); ?></span>
-		<span class="author"><?php //_e( 'Published by', 'html5blank' ); ?> <?php //the_author_posts_link(); ?></span>
-		<span class="comments"><?php //if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-		<!-- /post details -->
+	?>
 
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+	<section class="staff-profile" aria-label="Staff profile">
 
-		<h4><a href="<?php the_field('database_link'); ?>"> <?php the_field('database_name');?></a></h4>
-		<p>BIBID: <?php the_field('bibid');?></p>
-		<p>Publisher: <?php the_field('database_publisher');?></p>
-		<p><?php the_field('database_description'); ?></p>
-		<?php the_tags( __( '', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+		<?php
 
+		$image = get_field('photo');
 
-		<?php edit_post_link(); ?>
+		if( !empty($image) ) { ?>
 
-	</article>
-	<!-- /article -->
+			<img class="staff-photo" src="<?php echo $image['url'];?>" alt="<?php echo $image['alt']; ?>">
 
-<?php endwhile; ?>
+		<?php } else { ?>
 
-<?php else: ?>
+			<img class="staff-photo" src="<?php echo get_template_directory_uri(); ?>/images/staff/no-photo-profile.png">
 
-	<!-- article -->
-	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-	</article>
-	<!-- /article -->
+		<?php } ?>
 
-<?php endif; ?>
+		<h2><?php echo the_field('first_name');?> <?php echo the_field('last_name');?></h2>
+		<h3><?php echo the_field('title'); ?></h3>
+		<p><a href="mailto:<?php echo the_field('email');?>"><?php echo the_field('email');?></a></p>
+		<p class="staff-phone">Phone: <?php the_field('phone');?></p>
+
+		<?php if ( !empty(get_field('consultation')) ) { ?>
+			<script>
+				jQuery.getScript("https://api3.libcal.com/js/myscheduler.min.js", function() {
+						jQuery("#<?php echo the_field('consultation'); ?>").LibCalMySched({iid: 973, lid: 0, gid: 0, uid: 18275, width: 560, height: 680, title: 'Make an Appointment', domain: 'https://api3.libcal.com'});
+				});
+			</script>
+
+			<p>
+				<a href="#" id="<?php echo the_field('consultation'); ?>" class="btn-graphic">
+					Book a Consultation
+				</a>
+			</p>
+
+		<?php } ?>
+
+	</section>
+
+	<?php
+
+	the_post_navigation();
+
+	edit_post_link(
+		sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Edit <span class="screen-reader-text">%s</span>', 'culu' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		),
+		'<span class="edit-link">',
+		'</span>'
+	);
+
+endwhile; // End of the loop.
+
+?>
+
+</main><!-- #main -->

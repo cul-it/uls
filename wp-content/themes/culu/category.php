@@ -1,6 +1,11 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -12,23 +17,26 @@ get_header();
 
 <main id="main-content" class="page-interior">
 
-  <?php
+	<h3><?php _e( '', 'culu' ); single_cat_title(); ?>ddd</h3>
 
-    $category = get_the_category();
-    $theCategory = $category[0]->cat_name;
+	<?php
+
+		$category = get_the_category();
+		$theCategory = $category[0]->cat_name;
 
 
-  if ( $theCategory == 'Astronomy Core Books') {
-    get_template_part('loop-core-books');
-    echo $theCategory;
+		if ( $theCategory == 'Staff profile') {
+			get_template_part('loop-staff');
+			//echo $theCategory;
 
-  }
+		}	else {
+			get_template_part('loop');
+		}
+	?>
 
-  ?>
+	<?php get_template_part('pagination'); ?>
 
-    <?php get_template_part('pagination'); ?>
-
-		</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 

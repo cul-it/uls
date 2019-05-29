@@ -16,7 +16,7 @@ get_header();
 
 		<figure class="four04_photo">
 
-			<img src="<?php echo get_template_directory_uri(); ?>/images/" alt="ALT TEXT">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/404/404.png" alt=" ">
 
 		</figure>
 

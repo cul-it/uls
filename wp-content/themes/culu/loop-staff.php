@@ -6,7 +6,7 @@ while ( have_posts() ) :
 
 	?>
 
-	<section class="staff-profile" aria-label="Staff profile">
+	<section class="staff-profile" aria-label="Staff profile" >
 
 		<?php
 
@@ -48,8 +48,6 @@ while ( have_posts() ) :
 
 	<?php
 
-	the_post_navigation();
-
 	edit_post_link(
 		sprintf(
 			wp_kses(
@@ -68,5 +66,7 @@ while ( have_posts() ) :
 	);
 
 endwhile; // End of the loop.
+
+the_post_navigation();
 
 ?>

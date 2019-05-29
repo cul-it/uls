@@ -64,7 +64,7 @@ get_header();
 
 		<?php
 
-		the_post_navigation();
+		//the_post_navigation();
 
 		edit_post_link(
 			sprintf(

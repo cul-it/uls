@@ -17,7 +17,7 @@ get_header();
 
 <main id="main-content" class="page-interior">
 
-	<h3><?php //_e( '', 'culu' ); single_cat_title(); ?></h3>
+	<h3><?php _e( '', 'culu' ); single_cat_title(); ?></h3>
 
 	<?php
 
@@ -25,7 +25,7 @@ get_header();
 		$theCategory = $category[0]->cat_name;
 
 
-		if ( $theCategory == 'Staff profile') {
+		if ( $theCategory == 'Staff Profile') {
 			get_template_part('loop-staff');
 			//echo $theCategory;
 
@@ -41,3 +41,5 @@ get_header();
 <?php
 
 get_footer();
+
+?>

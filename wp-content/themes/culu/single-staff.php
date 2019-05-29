@@ -2,7 +2,7 @@
 /**
  * The template for displaying single staff post
  * Template Name: Staff
- * Template Post Type: post
+ * Template Post Type: post, page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *

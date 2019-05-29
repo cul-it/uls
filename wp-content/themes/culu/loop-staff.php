@@ -30,7 +30,7 @@ while ( have_posts() ) :
 		<?php if ( !empty(get_field('consultation')) ) { ?>
 			<script>
 				jQuery.getScript("https://api3.libcal.com/js/myscheduler.min.js", function() {
-						jQuery("#<?php echo the_field('consultation'); ?>").LibCalMySched({iid: 973, lid: 0, gid: 0, uid: 18275, width: 560, height: 680, title: 'Make an Appointment', domain: 'https://api3.libcal.com'});
+				    jQuery("#<?php echo the_field('consultation'); ?>").LibCalMySched({iid: 973, lid: 0, gid: 0, uid: 18275, width: 560, height: 680, title: 'Make an Appointment', domain: 'https://api3.libcal.com'});
 				});
 			</script>
 
@@ -41,6 +41,8 @@ while ( have_posts() ) :
 			</p>
 
 		<?php } ?>
+
+		</div>
 
 	</section>
 
@@ -68,5 +70,3 @@ while ( have_posts() ) :
 endwhile; // End of the loop.
 
 ?>
-
-</main><!-- #main -->

@@ -1694,7 +1694,7 @@ button.icon-search {
   width: 282px;
   margin: 0 auto;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  border: 1px solid #E0E0E0; }
   @media only screen and (min-width: 640px) {
     .staff-profile {
       margin: 0;
@@ -1721,6 +1721,7 @@ button.icon-search {
     font-size: 14px;
     margin-right: 20px; }
     .staff-profile .btn-graphic:hover {
-      background-color: #000; }
+      background-color: #000;
+      color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

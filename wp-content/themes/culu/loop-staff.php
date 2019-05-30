@@ -22,8 +22,18 @@ while ( have_posts() ) :
 
 		<?php } ?>
 
-		<h2><?php echo the_field('first_name');?> <?php echo the_field('last_name');?></h2>
+		<h2><?php echo the_field('first_name');?>
+				<?php echo the_field('last_name');
+
+				if ( !empty(get_field('degree')) ) {
+					echo ', ';
+					echo the_field('degree');
+				}
+				?>
+		</h2>
+
 		<h3><?php echo the_field('title'); ?></h3>
+
 		<p><a href="mailto:<?php echo the_field('email');?>"><?php echo the_field('email');?></a></p>
 		<p class="staff-phone">Phone: <?php the_field('phone');?></p>
 
@@ -67,6 +77,6 @@ while ( have_posts() ) :
 
 endwhile; // End of the loop.
 
-the_post_navigation();
+//the_post_navigation();
 
 ?>

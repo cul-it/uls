@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: child, theme, child theme, child themes, custom styles, customize styles, customize theme, css, responsive, css editor, child theme editor, child theme generator, child theme creator, style, stylesheet, customizer, childtheme, childthemes
 Requires at least: 4.0
 Requires PHP: 5.6.36
-Tested up to: 5.1
-Stable tag: 2.4.4
+Tested up to: 5.2
+Stable tag: 2.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -298,21 +298,22 @@ https://www.youtube.com/watch?v=iBiiAgsK4G4
 7. Files tab
 
 == Changelog ==
-= 2.4.4 =
+= 2.5.0 =
+* Preview class now evaluates stylesheet hooks as they fire instead of calling them again to prevent function exists errors.
+* Tested for PHP version 7.1
+* Modified input parser to allow multi-stop background gradients.
+
+= 2.4.x =
 * Analyzer now saves all signals on successful child theme regardless of analysis results. 
 * This fixes a bug in some themes where the enqueue hooks were being rewitten incorrectly after adding web fonts.
-= 2.4.3 =
 * Fixed a serious regression bug created by version 2.4.2.
-= 2.4.2 =
 * Added call to customizer.php to initialize theme mods prior to analyzing child theme
 * Deferred copy_theme_mods until after child theme analysis. This allows hooks in Preview to initialize custom theme mods
 * Added mpriority (max priority) to CSS object to accommodate multiple irregular stylesheet hooks
 * Restored original (pre 2.4.1) version filter hook style_loader_src to child theme stylesheets to prevent caching
 * Strip closing php tag from functions.php to prevent premature response header
-= 2.4.1 =
 * Fixed localization issues (thanks @alexclassroom for identifying these)
 * Modified style_loader_src hook to only add timestamp under certain conditions to prevent loading delay for most requests. (thanks @anthony750)
-= 2.4.0 =
 * Automatically add action parent RTL stylesheet when child theme does not have one.
 * Handle case where parent theme changes queue action incorrectly points to non-existent child theme stylesheet.
 * Correctly copies customizer css to child theme.
@@ -573,8 +574,9 @@ https://www.youtube.com/watch?v=iBiiAgsK4G4
 
 == Upgrade Notice ==
 
-2.4.4 Analyzer now always resubmits on success to ensure all signals are saved. This fixes a bug in some themes where the enqueue hooks were being rewitten incorrectly after adding web fonts.
-2.4.3 Fixed a serious regression bug created by version 2.4.2. Please update immediately.
+* Preview class now evaluates stylesheet hooks as they fire instead of calling them again to prevent function exists errors.
+* Tested for PHP version 7.1
+* See changelog for details.
 
 == Query/Selector Tab ==
 

@@ -6,7 +6,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
     Class: ChildThemeConfiguratorCSS
     Plugin URI: http://www.childthemeconfigurator.com/
     Description: Handles all CSS input, output, parsing, normalization and storage
-    Version: 2.4.4
+    Version: 2.5.0
     Author: Lilaea Media
     Author URI: http://www.lilaeamedia.com/
     Text Domain: chld_thm_cfg
@@ -172,7 +172,7 @@ class ChildThemeConfiguratorCSS {
         $this->ignoreparnt      = 0;
         $this->qpriority        = 10;
         $this->mpriority        = 10;
-        $this->version          = '2.4.4';
+        $this->version          = '2.5.0';
         
         // do not set enqueue, not being set is used to flag old versions
 
@@ -903,7 +903,13 @@ class ChildThemeConfiguratorCSS {
                             $value = $rule_part[ 'background_url' ];
                         elseif ( 'background-image' == $rule ):
                             if ( empty( $rule_part[ 'background_url' ] ) ):
-                                if ( empty( $rule_part[ 'background_color2' ] ) ):
+                                // custom multi-stop or radial gradients can be passed verbatim in the origin field
+                                // but will not be parsed for vender-prefix support.
+                                if ( !empty( $rule_part[ 'background_origin' ] )
+                                    && preg_match( '{gradient}', $rule_part[ 'background_origin' ] ) ):
+                                    $value = $rule_part[ 'background_origin' ];
+                                    
+                                elseif ( empty( $rule_part[ 'background_color2' ] ) ):
                                     $value = '';
                                 else:
                                     if ( empty( $rule_part[ 'background_origin' ] ) )

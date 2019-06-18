@@ -14,11 +14,13 @@ class ChildThemeConfiguratorPreview {
     protected $original_stylesheet;
     protected $stylesheet;
     protected $template;
+    protected $priorities   = array();
+    protected $handles      = array();
+    protected $queued       = array();
     
     public function __construct(){
         add_action( 'setup_theme',   array( $this, 'setup_theme' ) );
         add_filter( 'wp_redirect_status', array( $this, 'wp_redirect_status' ), 1000 );
-
          // Do not spawn cron (especially the alternate cron) while running the Customizer.
         remove_action( 'init', 'wp_cron' );
 
@@ -26,6 +28,30 @@ class ChildThemeConfiguratorPreview {
         remove_action( 'admin_init', '_maybe_update_core' );
         remove_action( 'admin_init', '_maybe_update_plugins' );
         remove_action( 'admin_init', '_maybe_update_themes' );
+    }
+    
+    public function check_wp_queue(){
+        global $wp_filter;
+        if ( empty( $wp_filter[ 'wp_enqueue_scripts' ] ) )
+            return;
+        // Iterate through all the added hook priorities
+        $this->priorities = array_keys( $wp_filter[ 'wp_enqueue_scripts' ]->callbacks );
+
+        // add hook directly after each priority to get any added stylesheet handles
+        foreach ( $this->priorities as $priority )
+            add_action( 'wp_enqueue_scripts', array( $this, 'get_handles' ), $priority );
+    }
+    
+    public function get_handles(){
+        global $wp_styles;
+        // remove priority from stack
+        $priority = array_shift( $this->priorities );
+        if ( !is_object( $wp_styles ) )
+            return;
+        // get handles queued since last check
+        $this->handles[ $priority ] = array_diff( $wp_styles->queue, $this->queued );
+        // add new handles to queued array
+        $this->queued = array_merge( $this->queued, $this->handles[ $priority ] );
     }
     
     public function setup_theme() {
@@ -44,6 +70,7 @@ class ChildThemeConfiguratorPreview {
             // swap out theme mods with preview theme mods
             add_filter( 'pre_option_theme_mods_' . $this->original_stylesheet, array( $this, 'preview_mods' ) );
         endif;
+        add_action( 'wp_head', array( $this, 'check_wp_queue' ), 0 );
         // impossibly high priority to test for stylesheets loaded after wp_head()
         add_action( 'wp_print_styles', array( $this, 'test_css' ), 999999 );
         // pass the wp_styles queue back to use for stylesheet handle verification
@@ -63,8 +90,7 @@ class ChildThemeConfiguratorPreview {
     
     public function parse_stylesheet() {
         echo '<script>/*<![CDATA[' . LF;
-        global $wp_styles, $wp_filter;
-        $queue = implode( "\n", array_keys( $wp_styles->registered ) );
+        $queue = implode( "\n", $this->queued );
         echo 'BEGIN WP QUEUE' . LF . $queue . LF . 'END WP QUEUE' . LF;
         if ( is_child_theme() ):
             // check for signals that indicate specific settings
@@ -106,26 +132,14 @@ class ChildThemeConfiguratorPreview {
          */
         echo 'BEGIN CTC IRREGULAR' . LF;
         // Iterate through all the added hook priorities
-        foreach ( $wp_filter[ 'wp_enqueue_scripts' ] as $priority => $arr ):
+        foreach ( $this->handles as $priority => $arr )
             // If this is a non-standard priority hook, determine which handles are being enqueued.
             // These will then be compared to the primary handle ( style.css ) 
             // to determine the enqueue priority to use for the parent stylesheet. 
-            if ( $priority != 10 ):
-                //echo 'priority: ' . $priority . ' ' . print_r( $arr, TRUE ) . LF;
-                // iterate through each hook in this priority group
-                foreach ( $arr as $funcarr ):
-                    // clear the queue
-                    $wp_styles->queue = array();
-                    // now call the hooked function to populate the queue
-                    if ( !is_null($funcarr['function']) )
-                        call_user_func_array( $funcarr[ 'function' ], array( 0 ) );
-                endforeach;
-                // report the priority, and any handles that were added
-                if ( !empty( $wp_styles->queue ) )
-                    echo $priority . ',' . implode( ",", $wp_styles->queue ) . LF;
-            endif;
-        endforeach;
+            if ( $priority != 10 && !empty( $arr ) )
+                echo $priority . ',' . implode( ",", $arr ) . LF;
         echo 'END CTC IRREGULAR' . LF;
+;
         if ( defined( 'WP_CACHE' ) && WP_CACHE )
             echo 'HAS_WP_CACHE' . LF;
         if ( defined( 'AUTOPTIMIZE_PLUGIN_DIR' ) )

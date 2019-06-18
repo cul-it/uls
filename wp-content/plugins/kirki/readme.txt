@@ -1,10 +1,10 @@
-=== Kirki ===
-Contributors: aristath, wplemon, igmoweb, dannycooper
-Tags: customizer,options framework, theme, mods, toolkit, gutenberg
+=== Kirki Customizer Framework ===
+Contributors: aristath, dannycooper, wplemon, igmoweb
+Tags: customizer, options framework, theme, mods, toolkit, gutenberg
 Donate link: https://aristath.github.io/donate
 Requires at least: 4.9
 Tested up to: 5.2
-Stable tag: 3.0.40
+Stable tag: 3.0.43
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -19,6 +19,39 @@ Using Kirki theme developers can create rich experiences for the WordPress Custo
 
 Included are more than 30 custom control types ranging from simple sliders to complex typography controls with Google-Fonts integration, automatic CSS generation, `postMessage` scripts automatically generated, tooltips and a lot of extras that make developing themes a lot faster for developers and meaningful for users.
 
+### Control Types ###
+
+* [Background Customizer Control](https://kirki.org/docs/controls/background)
+* [Checkbox Customizer Control](https://kirki.org/docs/controls/checkbox)
+* [Code Customizer Control](https://kirki.org/docs/controls/code)
+* [Color Palette Customizer Control](https://kirki.org/docs/controls/color-palette)
+* [Color Customizer Control](https://kirki.org/docs/controls/color)
+* [Custom Customizer Control](https://kirki.org/docs/controls/custom)
+* [Dashicons Customizer Control](https://kirki.org/docs/controls/dashicons)
+* [Date Customizer Control](https://kirki.org/docs/controls/date)
+* [Dropdown Pages Customizer Control](https://kirki.org/docs/controls/dropdown-pages)
+* [Editor Customizer Control](https://kirki.org/docs/controls/editor)
+* [Generic Customizer Control](https://kirki.org/docs/controls/generic)
+* [Image Customizer Control](https://kirki.org/docs/controls/image)
+* [Link Customizer Control](https://kirki.org/docs/controls/link)
+* [Multiple Checkbox Customizer Control](https://kirki.org/docs/controls/multicheck)
+* [Multicolor Customizer Control](https://kirki.org/docs/controls/multicolor)
+* [Number Customizer Control](https://kirki.org/docs/controls/number)
+* [Radio Buttonset Customizer Control](https://kirki.org/docs/controls/radio-buttonset)
+* [Radio Image Customizer Control](https://kirki.org/docs/controls/radio-image)
+* [Radio Customizer Control](https://kirki.org/docs/controls/radio)
+* [Repeater Customizer Control](https://kirki.org/docs/controls/repeater)
+* [Select Customizer Control](https://kirki.org/docs/controls/select)
+* [Slider Customizer Control](https://kirki.org/docs/controls/slider)
+* [Sortable Customizer Control](https://kirki.org/docs/controls/sortable)
+* [Spacing Customizer Control](https://kirki.org/docs/controls/spacing)
+* [Switch Customizer Control](https://kirki.org/docs/controls/switch)
+* [Text Customizer Control](https://kirki.org/docs/controls/text)
+* [Textarea Customizer Control](https://kirki.org/docs/controls/textarea)
+* [Toggle Customizer Control](https://kirki.org/docs/controls/toggle)
+* [Typography Customizer Control](https://kirki.org/docs/controls/typography)
+* [Upload Customizer Control](https://kirki.org/docs/controls/upload)
+
 Premium controls are also available for premium themes:
 
 * [Kirki WCAG Text Colorpicker](https://wplemon.com/downloads/kirki-wcag-text-colorpicker/)
@@ -28,23 +61,23 @@ Premium controls are also available for premium themes:
 
 Theme developers should be familiar with the Customizer API before you start writing your theme using Kirki. An excellent handbook for the WordPress Customizer can be found on the [developer.wordpress.org](https://developer.wordpress.org/themes/customize-api/) website.
 
-You can find detailed documentation on how to use Kirki on [aristath.github.io/kirki/](https://aristath.github.io/kirki/)
+You can find detailed documentation on how to use Kirki on [kirki.org](https://kirki.org)
 
-[Development and issues on github](https://github.com/aristath/kirki).
+[Development and issues on Github](https://github.com/aristath/kirki).
 
 == Installation ==
 
 Simply install as a normal WordPress plugin and activate.
 
-If you want to integrate Kirki in your theme or plugin, please read the instructions on [our documentation site](https://aristath.github.io/kirki/docs/integration).
+If you want to integrate Kirki in your theme or plugin, please read the instructions on [our documentation site](https://kirki.org/docs/integration).
 
 == Changelog ==
 
-= 3.0.40 =
+= 3.0.43 =
 
-Jun.1 2019, dev time: 30m
+Jun.16 2019, dev time: 30m
 
-* Fix: Updated URL for fontawesome to avoid tracking.
-* Fix: Updated Google-fonts list.
+* Fix: Google Fonts URL references in multisites.
+* New: It is now possible to reset Kirki google-font caches by visiting {site-url}/?action=kirki-reset-cache
 
 [See the previous changelogs here](https://github.com/aristath/kirki/blob/master/CHANGELOG.md).

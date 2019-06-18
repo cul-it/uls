@@ -1,3 +1,25 @@
+## 3.0.43
+
+Jun.16 2019, dev time: 30m
+
+* Fix: Google Fonts URL references in multisites.
+* New: It is now possible to reset Kirki google-font caches by visiting {site-url}/?action=kirki-reset-cache
+
+## 3.0.42
+
+Jun.16 2019, dev time: 2h
+
+* Deprecated: `fontawesome` field was deprecated. If a theme uses this field users will be prompted to install the official Font Awesome plugin from the w.org repository.
+* Fix: Transient for Google Fonts now has a lifetime of 1 day instead of 1 week.
+* Fix: Updated Google Fonts list.
+
+## 3.0.41
+
+Jun.8 2019, dev time: 30m
+
+* Fix: http/https issue for locally-hosted googlefonts
+* Fix: Updated Google-fonts list.
+
 ## 3.0.40
 
 Jun.1 2019, dev time: 30m
@@ -50,7 +72,7 @@ In the customizer the `postMessage` module was completely rewritten.
 * New: Added `kirki_googlefonts_font_display` filter.
 * New: Added a new `link` section-type.
 * New: Completely refactored the `postMessage` module. The new implementation is JS-based instead of PHP and is a lot more performant.
-* New: Added telemetry module. See [aristath.github.io/kirki/docs/modules/telemetry](https://aristath.github.io/kirki/docs/modules/telemetry.html) for details.
+* New: Added telemetry module. See [kirki.org/docs/modules/telemetry](https://kirki.org/docs/modules/telemetry.html) for details.
 * New: Improved CSS loading method. Styles are now added inline.
 * New: Introduced a `kirki_output_inline_styles` filter - can be used by themes that want to enqueue a dynamic stylesheet with a URL `example.com/?action=kirki-styles` instead of the inline method.
 * Deprecated: Removed the "host locally" option from typography controls. This is now the default behaviour and significantly improves performance. Option is no longer necessary.

@@ -1,5 +1,6 @@
 .main-navigation {
 
+  z-index: 99999;
   margin: 10px auto;
   width: 100%;
   position: absolute;
@@ -40,7 +41,7 @@
       padding-left: 10px;
 
 			ul {
-				left: -999em;
+				left: 0;
 				top: 0;
 			}
 
@@ -48,11 +49,38 @@
 
         border-top: none;
         border-bottom: none;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        ul {
+
+          position: relative;
+          left: 0;
+          box-shadow: none !important;
+          border: none;
+
+          // 3rd level domain
+          li {
+
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            padding-left: 0 !important;
+
+            a:before {
+
+              content: "- ";
+
+            }
+
+          }
+
+        }
 
 				&:hover > ul,
 				&.focus > ul {
 
-					left: 100%;
+					left: auto;
 
 				}
 
@@ -60,7 +88,7 @@
 
 			a {
 
-				width: 100%
+				width: 100%;
 
 			}
 
@@ -141,6 +169,8 @@
     top: auto;
     left: auto;
 
+    // first level
+
     ul {
 
   		display: block;
@@ -154,7 +184,7 @@
 
         border-bottom: none;
         border-right: 1px solid #C1BEBE;
-        font-size: 20px;
+        font-size: 18px;
         padding: 0 20px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -201,23 +231,18 @@
   			left: -999em;
   			z-index: 99999;
         padding-left: 0;
+        width: 200px;
 
-  			/* ul {
-
-  				left: -999em;
-  				top: 0;
-
-  			}*/
-
-        // 2nd level domain
+        // 2nd level
   			li {
 
           padding: 0 !important;
           border: none;
           border-bottom: 1px solid #C1BEBE;
           margin: 0 !important;
-          padding-top: 20px !important;
-          padding-bottom: 20px !important;
+          padding-top: 10px !important;
+          padding-bottom: 10px !important;
+          font-size: 18px;
 
           &:last-child {
 
@@ -225,10 +250,35 @@
 
           }
 
+          ul {
+
+            position: relative;
+            left: 0;
+            box-shadow: none !important;
+            border: none;
+
+            // 3rd level domain
+            li {
+
+              border: none !important;
+              padding: 0 !important;
+              margin: 0 !important;
+              padding-left: 20px !important;
+
+              a:before {
+
+                content: "- " !important;
+
+              }
+
+            }
+
+          }
+
   				&:hover > ul,
   				&.focus > ul {
 
-  					left: 100%;
+  					left: 0;
 
   				}
 
@@ -242,7 +292,7 @@
         // 2nd level domain
   			a {
 
-  				width: 300px;
+  				width: 200px;
           border: none;
           padding-left: 20px;
 

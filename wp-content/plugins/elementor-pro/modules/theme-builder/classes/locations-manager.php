@@ -425,7 +425,7 @@ class Locations_Manager {
 	}
 
 	public function get_locations_without_core() {
-		_deprecated_function( __FUNCTION__, '2.4.0', 'Use get_locations( [ \'public\'=> true ] )' );
+		_deprecated_function( __METHOD__, '2.4.0', __CLASS__ . '::get_locations( [ \'public\'=> true ] )' );
 
 		return $this->get_locations( [
 			'public' => true,

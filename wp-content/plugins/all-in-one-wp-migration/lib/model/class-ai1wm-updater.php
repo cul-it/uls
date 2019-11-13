@@ -117,10 +117,13 @@ class Ai1wm_Updater {
 
 		// Get extension updates
 		foreach ( Ai1wm_Extensions::get() as $slug => $extension ) {
-			$response = wp_remote_get( $extension['about'], array(
-				'timeout' => 15,
-				'headers' => array( 'Accept' => 'application/json' ),
-			) );
+			$response = wp_remote_get(
+				$extension['about'],
+				array(
+					'timeout' => 15,
+					'headers' => array( 'Accept' => 'application/json' ),
+				)
+			);
 
 			// Add updates
 			if ( ! is_wp_error( $response ) ) {
@@ -171,23 +174,29 @@ class Ai1wm_Updater {
 			if ( $file === $extension['basename'] ) {
 
 				// Get updater URL
-				$updater_url = add_query_arg( array( 'ai1wm_updater' => 1 ), network_admin_url( 'plugins.php' ) );
+				$updater_url = add_query_arg( array( 'ai1wm_check_for_updates' => 1, 'ai1wm_nonce' => wp_create_nonce( 'ai1wm_check_for_updates' ) ), network_admin_url( 'plugins.php' ) );
 
 				// Check Purchase ID
 				if ( get_option( $extension['key'] ) ) {
 
 					// Add "Check for updates" link
-					$links[] = Ai1wm_Template::get_content( 'updater/check', array(
-						'url' => $updater_url,
-					) );
+					$links[] = Ai1wm_Template::get_content(
+						'updater/check',
+						array(
+							'url' => $updater_url,
+						)
+					);
 
 				} else {
 
 					// Add modal
-					$links[] = Ai1wm_Template::get_content( 'updater/modal', array(
-						'url'   => $updater_url,
-						'modal' => $modal_index,
-					) );
+					$links[] = Ai1wm_Template::get_content(
+						'updater/modal',
+						array(
+							'url'   => $updater_url,
+							'modal' => $modal_index,
+						)
+					);
 
 				}
 			}

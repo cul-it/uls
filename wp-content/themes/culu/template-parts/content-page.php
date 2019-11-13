@@ -9,15 +9,15 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-label="<?php the_title(); ?>">
 
-	<header class="entry-header" aria-label="Title content">
+	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 	</header>
 
-	<?php culu_post_thumbnail(); ?>
+	<?php //culu_post_thumbnail(); ?>
 
 	<div class="entry-content">
 
@@ -34,28 +34,13 @@
 
 	<?php if ( get_edit_post_link() ) : ?>
 
-		<footer class="entry-footer" aria-label="footer content">
 
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'culu' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
+	<footer class="entry-footer" aria-label="Footer content">
 
-		</footer><!-- .entry-footer -->
+		<?php culu_edit_post(); ?>
+
+	</footer><!-- .entry-footer -->
+
 	<?php endif; ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

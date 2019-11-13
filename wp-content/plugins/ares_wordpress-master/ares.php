@@ -153,8 +153,8 @@ function cu_ares_output_course_select($options) {
       id="courselist-form-$library-$style" class="courselist-form">
 
     <div class="form-item edit-courselist-wrapper" id="edit-courselist-wrapper-$library-$style">
-      <label for="edit-courselist">Select a course: </label>
-      <span id="course-spinner-$library-$style"><img src="$spinner_src"> Loading...</span>
+      <label for="edit-courselist-$library-$style">Select a course: </label>
+      <div id="course-spinner-$library-$style" class="lds-ring"><span class="spinner-icon"></span> <span class="spinner-text"> Loading...</span></div>
       <input type="hidden" name="library" value="$library">
       <select name="course" class="form-select edit-courselist" id="edit-courselist-$library-$style" style="display: none">
       </select>
@@ -169,20 +169,24 @@ HERE;
 function cu_ares_output_course_items($options) {
   extract($options);
   $output = <<<HERE
-    <span id="items-spinner-$library-$style" style="display: none"><img src="$spinner_src"> Loading...</span>
+    <div id="items-spinner-$library-$style" class="lds-ring" style="display: none">
+      <span class="spinner-icon"></span> 
+      <span  class="spinner-text"> Loading...</span>
+    </div>
     <div id="reserve-items-$library-$style"
          class="reserve-items"
          style="display: none">
 
         <h3></h3>
 
-        <table id="course-reserves-$library-$style" class="tablesorter standard course-reserves sticky-enabled">
+        <table id="course-reserves-$library-$style" class="tablesorter standard course-reserves sticky-enabled" border="0" cellpadding="0" cellspacing="0">
+          <caption>Delivery slots:</caption>
             <thead>
                 <tr>
-                    <th class="item">Item</th>
-                    <th class="author">Author</th>
-                    <th class="callnumber">Call Number</th>
-                    <th class="status">Due Back</th>
+                    <th scope="col" class="item">Item</th>
+                    <th scope="col" class="author">Author</th>
+                    <th scope="col" class="callnumber">Call Number</th>
+                    <th scope="col" class="status">Due Back</th>
                  </tr>
              </thead>
             <tbody>

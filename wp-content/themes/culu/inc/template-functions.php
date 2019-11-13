@@ -35,3 +35,12 @@ function culu_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'culu_pingback_header' );
+
+/**
+ * Check if user enter an email via customizer
+ */
+function checkEmail($email) {
+   $find1 = strpos($email, '@');
+   $find2 = strpos($email, '.');
+   return ($find1 !== false && $find2 !== false && $find2 > $find1);
+}

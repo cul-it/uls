@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 	if ( have_comments() ) :
 		?>
 
-		<h2 class="comments-title" aria-label="Comment title">
+		<h2 class="comments-title">
 			
 			<?php
 			$culu_comment_count = get_comments_number();

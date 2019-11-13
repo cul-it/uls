@@ -1,4 +1,7 @@
-<form method="post" class="acfbsPage">
+<?php
+  $path = sprintf('%s&_wpnonce=%s', menu_page_url('acfbs_admin_page', false), wp_create_nonce('acfbs-save'));
+?>
+<form method="post" action="<?= $path; ?>" class="acfbsPage">
   <div class="acfbsPage__inner">
     <h1 class="acfbsPage__headline"><?= __('ACF: Better Search', 'acf-better-search'); ?></h1>
     <ul class="acfbsPage__columns">

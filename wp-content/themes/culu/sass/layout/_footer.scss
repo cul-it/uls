@@ -1,20 +1,16 @@
 footer {
-
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid #e0e0e0;
   display: grid;
   margin: 0 auto;
   width: calc(100vw - 40px);
   grid-template-columns: 100%;
 
   @media only screen and (min-width: 600px) {
-
     width: 90%;
-
   }
 
   @media only screen and (min-width: 1200px) {
     grid-template-columns: 33% 33% 34%;
-
   }
 
   .footer__nav {
@@ -28,27 +24,22 @@ footer {
 
     .all-libraries a {
       font-size: 14px;
-      color: #303C42;
       letter-spacing: 0;
-      text-align: 0;
       line-height: 14.36px;
       font-size: 12px;
-      color: #303C42;
       letter-spacing: 0;
       text-decoration: none;
       padding-bottom: 20px;
       display: inline-block;
+      color: $color__link;
 
       &:hover {
-
-        color: $color__link;
-
+        color: $color__link-hover;
+        text-decoration: underline;
       }
 
       &:focus {
-
         outline: 1px dashed #000;
-
       }
     }
 
@@ -64,7 +55,6 @@ footer {
       font-size: 14px;
       margin-left: 0;
       margin-top: 20px;
-
     }
 
     li {
@@ -77,7 +67,6 @@ footer {
         //padding-left: 20px;
         padding-left: 0;
       }
-
     }
   }
 
@@ -85,11 +74,15 @@ footer {
     //grid-column: 3/4;
     grid-column: 1;
     font-size: 12.53px;
-    color: #303C42;
+    color: #000;
     letter-spacing: 0;
-    text-align: 0;
     line-height: 14.36px;
     margin: 0;
+
+    img {
+      height: 60px;
+      width: auto;
+    }
 
     @media only screen and (min-width: 1200px) {
       grid-column: 3/4;
@@ -105,51 +98,83 @@ footer {
     //padding-left: 10px;
     font-size: 14px;
     font-style: normal;
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
 
     .container {
       display: grid;
       width: 100%;
-      grid-template-columns: 45% 55%;
+      grid-template-columns: 100%;
 
-      @media only screen and (min-width: 800px) {
-        width: 70%;
-      }
-
-      @media only screen and (min-width: 1200px) {
-        width: 50%;
+      @media only screen and (min-width: 600px) {
+        grid-template-columns: 30% 70%;
+        width: 100%;
       }
 
       address {
-         font-style: normal;
+        font-style: normal;
       }
 
       a {
         //font-weight: bold;
+        text-decoration: none;
+        color: $color__link;
+
+        &:hover {
+          text-decoration: underline;
+          color: $color__link-hover;
+        }
       }
 
       .c-1 {
-        grid-column: 1/2;
+        grid-column: 1/1;
         padding-top: 20px;
+
+
+
+        @media only screen and (min-width: 600px) {
+          grid-column: 1/2;
+        }
 
         p {
           margin: 0;
           padding-top: 10px;
         }
 
+        .icon-map {
+          color: $color__link;
+
+          &:hover {
+            color: $color__link-hover;
+          }
+        }
       }
 
       .c-2 {
-        grid-column: 2/3;
-        padding-top: 45px;
-        padding-left: 20px;
+        grid-column: 1/1;
+  
+
+        @media only screen and (min-width: 600px) {
+          padding-top: 45px;
+          padding-left: 20px;
+          grid-column: 2/3;
+        }
 
         p {
           //padding-bottom: 10px;
           margin: 0;
+
           &:first-child {
             padding-top: 20px;
+
+            a {
+              color: $color__link;
+            }
           }
+        }
+      }
+      .c-2.c2 {
+        @media only screen and (min-width: 600px) {
+          padding-top: 10px;
         }
       }
     }
@@ -159,7 +184,7 @@ footer {
     //grid-column: 1/4;
     grid-column: 1;
     //padding-left: 10px;
-    font-size: 14px;
+    font-size: 12px;
     font-style: normal;
     padding: 0;
     margin: 0;
@@ -171,6 +196,13 @@ footer {
 
     a {
       //font-weight: bold;
+      text-decoration: none;
+      color: $color__link;
+
+      &:hover {
+        text-decoration: underline;
+        color: $color__link-hover;
+      }
     }
     @media only screen and (min-width: 1200px) {
       grid-column: 1/4;
@@ -191,11 +223,12 @@ footer {
 
       &:hover {
         color: #fff;
-        //text-decoration: underline;
+        text-decoration: underline;
         background-color: #000;
       }
     }
   }
+
   @media only screen and (min-width: 1440px) {
     width: 1380px;
   }
@@ -205,7 +238,7 @@ footer {
 }
 
 .btn-graphic {
-  background: #017DB2;
+  background: $color__link;
   border-radius: 1.5px;
   font-size: 13px;
   color: #fff;
@@ -218,5 +251,32 @@ footer {
   &:visited,
   &:focus {
     color: #fff;
+  }
+}
+
+//Simple Social Icons styling
+div.widget-social-media {
+  .simple-social-icons {
+    margin: 0 !important;
+  }
+
+  .simple-social-icons ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .simple-social-icons ul li a {
+    background: $color__link !important;
+    padding: 10px;
+    color: #ffffff !important;
+  }
+
+  .simple-social-icons ul li:first-child {
+    margin-left: 0 !important;
+  }
+
+  .simple-social-icons ul li a:hover {
+    background-color: #000 !important;
   }
 }

@@ -117,10 +117,10 @@ function ajax_class_selection(library, style) {
             // TITLE AND PAGES
             output += '   <td class="ares-title">';
             if (reserve.articleTitle != '' && reserve.articleTitle != '?') {
-              output +=  '<p class="article-title"><strong>' + reserve.articleTitle + '</strong></p>';
-              output +=  '<p class="title"><em>' + reserve.title + '</em></p>';
+              output +=  '<p class="article-title">' + reserve.articleTitle + '</p>';
+              output +=  '<p class="title">' + reserve.title + '</p>';
             } else {
-              output +=  '<p class="title"><strong>' + reserve.title + '</strong></p>';
+              output +=  '<p class="title">' + reserve.title + '</p>';
             }
             if (reserve.pages != '' && reserve.pages != '?') {
               output +=  '<p class="pages">pp. ' + reserve.pages + '</p>';

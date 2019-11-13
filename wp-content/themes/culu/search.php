@@ -14,15 +14,15 @@ get_header();
 
 <?php if ( have_posts() ) : ?>
 
-	<header class="page-header" aria-label="Title content">
+	<header class="page-header" aria-label="title-content">
 
-		<h1 class="page-title">
+		<h2 id="title-content" class="page-title">
 
 			<?php
 			/* translators: %s: search query. */
 			printf( esc_html__( 'Search Results for: %s', 'culu' ), '<span>' . get_search_query() . '</span>' );
 			?>
-		</h1>
+		</h2>
 
 	</header><!-- .page-header -->
 

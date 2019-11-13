@@ -138,6 +138,21 @@ class Controls_Group extends Group_Control_Base {
 			'frontend_available' => true,
 		];
 
+		$fields['range'] = [
+			'label' => __( 'Effects relative to', 'elementor-pro' ),
+			'type' => Controls_Manager::SELECT,
+			'options' => [
+				'' => __( 'Default', 'elementor-pro' ),
+				'viewport' => __( 'Viewport', 'elementor-pro' ),
+				'page' => __( 'Entire Page', 'elementor-pro' ),
+			],
+			'condition' => [
+				'motion_fx_scrolling' => 'yes',
+			],
+			'render_type' => 'none',
+			'frontend_available' => true,
+		];
+
 		$fields['motion_fx_mouse'] = [
 			'label' => __( 'Mouse Effects', 'elementor-pro' ),
 			'type' => Controls_Manager::SWITCHER,
@@ -491,7 +506,7 @@ class Controls_Group extends Group_Control_Base {
 		];
 	}
 
-	private function prepare_effects( $effects_group, array & $fields ) {
+	private function prepare_effects( $effects_group, array &$fields ) {
 		$method_name = "get_{$effects_group}_effects";
 
 		$effects = $this->$method_name();

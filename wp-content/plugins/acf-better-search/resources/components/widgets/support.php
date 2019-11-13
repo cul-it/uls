@@ -7,6 +7,15 @@
       <?= __('Do you have a technical problem? Please contact us. We will be happy to help you. Or maybe you have an idea for a new feature? Please let us know about it by filling the support form. We will try to add it!', 'acf-better-search'); ?>
     </p>
     <p>
+      <?= sprintf(
+        __('Please %scheck our FAQ%s before adding a thread with technical problem. If you do not find help there, %scheck support forum%s for similar problems.', 'acf-better-search'),
+        '<a href="https://wordpress.org/plugins/acf-better-search/#faq" target="_blank">',
+        '</a>',
+        '<a href="https://wordpress.org/support/plugin/acf-better-search/" target="_blank">',
+        '</a>'
+      ); ?>
+    </p>
+    <p>
       <a href="https://wordpress.org/support/plugin/acf-better-search/#new-post" target="_blank" class="acfbsButton acfbsButton--blue">
         <?= __('Get help', 'acf-better-search'); ?>
       </a>

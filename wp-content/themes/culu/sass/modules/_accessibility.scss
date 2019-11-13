@@ -36,3 +36,8 @@
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
+
+// Pantheon icon image with no alt tag
+img.first-icon:before {
+	content: attr(alt) "Return to Pantheon's site ";
+ }

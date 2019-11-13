@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying categories
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -17,24 +17,17 @@ get_header();
 
 <main id="main-content" class="page-interior">
 
-	<h3><?php //_e( '', 'culu' ); single_cat_title(); ?>Staff</h3>
+	<header class="entry-header">
 
-	<?php
+		<h2><?php _e( '', 'culu' ); single_cat_title(); ?></h2>
 
-		$category = get_the_category();
-		$theCategory = $category[0]->cat_name;
+	</header>
 
+	<?php get_template_part('loop'); ?>
 
-		if ( $theCategory == 'Staff Profile') {
-			get_template_part('loop-staff');
-			//echo $theCategory;
-
-		}	else {
-			get_template_part('loop');
-		}
-	?>
-
-	<?php //get_template_part('pagination'); ?>
+	<div class="pagination">
+		<?php culu_pagination(); ?>
+	</div>
 
 </main><!-- #main -->
 

@@ -22,3 +22,11 @@ endif;
 add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 
 // END ENQUEUE PARENT ACTION
+
+
+// ADD THEME CHILD CUSTOM CSS
+
+function custom_style_sheet() {
+    wp_enqueue_style( 'custom-styling', get_stylesheet_directory_uri() . '/style.css' );
+}
+add_action('wp_enqueue_scripts', 'custom_style_sheet');

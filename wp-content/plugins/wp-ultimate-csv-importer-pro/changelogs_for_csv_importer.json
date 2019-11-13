@@ -95,6 +95,41 @@
 			"9": "Added: Latest version support on MarketPress Lite 3.2",
 			"10": "Added: WPML support for the latest version 3.6.3.",
 			"11": "Fixed: Naming issue while registering third party custom fields from mapping section."
+		},
+		"6.0": {
+			"0": "Improved:User Interface and Performance",
+			"1": "Added: Image import from computer along with the Alt text & description
+",
+			"2": "Added: Schedule Import/Export based on their UTC time zone,admins will be notified on the Import or Export in emails in their local time.
+",			"3": "Added: Seperate image import option",
+			"4": "Improved:  Better handling of Images from 3rd party plugins",
+			"5": "Added: Header Manipulation fields can now hold static text content along with any CSV header content.",
+			"6": "Added media report section",
+			"7": "Modified: Import log section with progress bar and time ellapsed",
+			"8": "Added: Latest woocommerce version 3.6.2 support", 
+			"9": "Added: Latest CMB2 Plugin support ",
+			"10": "Added: WPML support for the latest version 4.2.5",
+			"11": "Added: SFTP Schedule export",
+			"12": "Added: Export download section with progress bar and time ellapsed",
+			"13": "Added: Export support for toolset repeatable field group,multiple relationships,intermediate relationship.",			
+			"14": "Modified: import log section with progress bar and time ellapsed",
+			"15": "Added: support for latest woocommerce(3.6.5) fields",
+			"16": "Added: complete import support for CMB2 2.3.0",
+			"17": "Added: Displays total number of records to be exported",
+			"18": "Schedule Export  based on their UTC time zone. And Admins will be notified on the Import or Export in emails in their local time",
+			"19": "Added: SFTP Schedule export",
+			"20": "Added export download section with progress bar and time ellapsed",
+			"21": "Added:Export support  for latest woocommerce fields",
+			"22": "ACF pro group fields export ",
+			"23": "Added: WPML export support for post,page,custom posts,woocommerce-product,categories,tags",
+			"24": "Added: Export support for toolset repeatable field group,multiple relationships,intermediate relationship.",
+			"25": "Fixed: issues in file from server",
+			"26": "Added: Progress bar for desktop upload",
+			"27": "Added: Separate widget for Nextgen gallery,WPML,Events manager,WooCommerce Orders, Refunds and Coupons",
+			"28": "fixed: Drag and Drop Section supports import of static text along with CSV headers.",
+			"29": "Added: Separate Media Upload Section for uploading bulk Images.",
+			"30": ""
+
 		}
 	},
 

@@ -9,9 +9,9 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-label="<?php the_title(); ?>">
 
-	<header class="entry-header" aria-lable="Title content">
+	<header class="entry-header">
 
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php if ( 'post' === get_post_type() ) : ?>
@@ -29,7 +29,7 @@
 
 	</header><!-- .entry-header -->
 
-	<?php culu_post_thumbnail(); ?>
+	<?php //culu_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 
@@ -37,9 +37,9 @@
 
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer" aria-lable="Footer content">
+	<footer class="entry-footer" aria-label="Edit post">
 
-		<?php culu_entry_footer(); ?>
+		<?php culu_category_links(); ?>
 
 	</footer><!-- .entry-footer -->
 

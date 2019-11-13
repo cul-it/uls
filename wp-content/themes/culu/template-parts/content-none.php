@@ -9,11 +9,11 @@
 
 ?>
 
-<section class="no-results not-found" aria-label="No results display">
+<section class="no-results not-found">
 
-	<header class="page-header" aria-label="Title content">
+	<header class="page-header" aria-labelledby="no-content">
 
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'culu' ); ?></h1>
+		<h2 id="no-content" class="page-title"><?php esc_html_e( 'Nothing Found', 'culu' ); ?></h2>
 
 	</header>
 

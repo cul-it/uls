@@ -1,11 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sujin
- * Date: 15/12/16
- * Time: 9:06 PM
- */
-
+/******************************************************************************************
+ * Copyright (C) Smackcoders. - All Rights Reserved under Smackcoders Proprietary License
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * You can contact Smackcoders at email address info@smackcoders.com.
+ *******************************************************************************************/
 function smackuci_upgrade_schema() {
 	global $wpdb;
 
@@ -21,60 +20,60 @@ function smackuci_upgrade_schema() {
 	}
 
 	$tables = array(
-		"CREATE TABLE IF NOT EXISTS  `wp_ultimate_csv_importer_log_values` (
-                        `id` int(10) NOT NULL AUTO_INCREMENT,
-                        `eventKey` varchar(50) NOT NULL,
-                        `recordId` int(10) NOT NULL,
-                        `module` varchar(50) NOT NULL,
-                        `method_of_import` varchar(50) NOT NULL,
-                        `log_message` blob NOT NULL,
-                        `imported_time` varchar(100) NOT NULL,
-                        `mode_of_import` varchar(100) NOT NULL,
-                        `sequence` varchar(100) NOT NULL,
-                        `status` varchar(100) NOT NULL,
-                        `assigned_user_id` int(10) NOT NULL,
-                        `imported_by` int(100) NOT NULL,
-                        PRIMARY KEY (`id`)
-	                ) $collate;",
-		"CREATE TABLE IF NOT EXISTS `smackuci_events` (
-						`id` bigint(20) NOT NULL AUTO_INCREMENT,
-						`revision` bigint(20) NOT NULL default 0,
-						`name` varchar(255),
-						`original_file_name` varchar(255),
-						`friendly_name` varchar(255),
-						`import_type` varchar(32),
-						`filetype` text,
-						`filepath` text,
-						`eventKey` varchar(32),
-						`registered_on` datetime NOT NULL default '0000-00-00 00:00:00',
-						`parent_node` varchar(255),
-						`processing` tinyint(1) NOT NULL default 0,
-						`executing` tinyint(1) NOT NULL default 0,
-						`triggered` tinyint(1) NOT NULL default 0,
-						`event_started_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-						`count` bigint(20) NOT NULL default 0,
-						`processed` bigint(20) NOT NULL default 0,
-						`created` bigint(20) NOT NULL default 0,
-						`updated` bigint(20) NOT NULL default 0,
-						`skipped` bigint(20) NOT NULL default 0,
-						`deleted` bigint(20) NOT NULL default 0,
-						`is_terminated` tinyint(1) NOT NULL default 0,
-						`terminated_on` datetime NOT NULL default '0000-00-00 00:00:00',
-						`last_activity` datetime NOT NULL default '0000-00-00 00:00:00',
-						`siteid` int(11) NOT NULL DEFAULT 1,
-						`month` varchar(60) DEFAULT NULL,
-                        `year` varchar(60) DEFAULT NULL,
-						PRIMARY KEY ( id )
-					) $collate;",
-		"CREATE TABLE IF NOT EXISTS `smackuci_history` (
-						`id` bigint(20) NOT NULL AUTO_INCREMENT,
-						`event_id` bigint(20) NOT NULL,
-						`time_taken` text,
-						`date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-						`summary` text,
-						PRIMARY KEY (id)
-					) $collate;",
-	);
+			"CREATE TABLE IF NOT EXISTS  `wp_ultimate_csv_importer_log_values` (
+			`id` int(10) NOT NULL AUTO_INCREMENT,
+			`eventKey` varchar(50) NOT NULL,
+			`recordId` int(10) NOT NULL,
+			`module` varchar(50) NOT NULL,
+			`method_of_import` varchar(50) NOT NULL,
+			`log_message` blob NOT NULL,
+			`imported_time` varchar(100) NOT NULL,
+			`mode_of_import` varchar(100) NOT NULL,
+			`sequence` varchar(100) NOT NULL,
+			`status` varchar(100) NOT NULL,
+			`assigned_user_id` int(10) NOT NULL,
+			`imported_by` int(100) NOT NULL,
+			PRIMARY KEY (`id`)
+		       ) $collate;",
+		       "CREATE TABLE IF NOT EXISTS `smackuci_events` (
+		       `id` bigint(20) NOT NULL AUTO_INCREMENT,
+		       `revision` bigint(20) NOT NULL default 0,
+		       `name` varchar(255),
+		       `original_file_name` varchar(255),
+		       `friendly_name` varchar(255),
+		       `import_type` varchar(32),
+		       `filetype` text,
+		       `filepath` text,
+		       `eventKey` varchar(32),
+		       `registered_on` datetime NOT NULL default '0000-00-00 00:00:00',
+		       `parent_node` varchar(255),
+		       `processing` tinyint(1) NOT NULL default 0,
+		       `executing` tinyint(1) NOT NULL default 0,
+		       `triggered` tinyint(1) NOT NULL default 0,
+		       `event_started_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		       `count` bigint(20) NOT NULL default 0,
+		       `processed` bigint(20) NOT NULL default 0,
+		       `created` bigint(20) NOT NULL default 0,
+		       `updated` bigint(20) NOT NULL default 0,
+		       `skipped` bigint(20) NOT NULL default 0,
+		       `deleted` bigint(20) NOT NULL default 0,
+		       `is_terminated` tinyint(1) NOT NULL default 0,
+		       `terminated_on` datetime NOT NULL default '0000-00-00 00:00:00',
+		       `last_activity` datetime NOT NULL default '0000-00-00 00:00:00',
+		       `siteid` int(11) NOT NULL DEFAULT 1,
+		       `month` varchar(60) DEFAULT NULL,
+		       `year` varchar(60) DEFAULT NULL,
+		       PRIMARY KEY ( id )
+			       ) $collate;",
+		       "CREATE TABLE IF NOT EXISTS `smackuci_history` (
+			       `id` bigint(20) NOT NULL AUTO_INCREMENT,
+		       `event_id` bigint(20) NOT NULL,
+		       `time_taken` text,
+		       `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+		       `summary` text,
+		       PRIMARY KEY (id)
+			       ) $collate;",
+		       );
 
 	return $tables;
 }
@@ -82,11 +81,11 @@ function smackuci_upgrade_schema() {
 // Upgrade codes starts here
 // We assign the default option data for the fresh instalization
 $settings = array('debug_mode' => 'off',
-                  'send_log_email' => 'on',
-                  'drop_table' => 'off',
-                  'author_editor_access' => 'off',
-                  'woocomattr' => 'off'
-);
+		'send_log_email' => 'on',
+		'drop_table' => 'off',
+		'author_editor_access' => 'off',
+		'woocomattr' => 'off'
+		);
 
 add_option('sm_uci_pro_settings', $settings);
 global $wpdb;
@@ -101,16 +100,18 @@ foreach(smackuci_upgrade_schema() as $table) {
 	dbDelta($table);
 }
 
-if(!is_dir(SM_UCI_IMPORT_DIR)) {
-	wp_mkdir_p( SM_UCI_IMPORT_DIR );
-	@chmod(SM_UCI_IMPORT_DIR, 0777);
+$upload_dir = wp_upload_dir();
+
+if(!is_dir($upload_dir['basedir'] . '/smack_uci_uploads/imports')) {
+	wp_mkdir_p( $upload_dir['basedir'] . '/smack_uci_uploads/imports' );
+	@chmod($upload_dir['basedir'] . '/smack_uci_uploads/imports', 0777);
 }
 
-$wpdb->query("ALTER TABLE `wp_ultimate_csv_importer_mappingtemplate` MODIFY COLUMN csvname VARCHAR (150) DEFAULT NULL;");
-$wpdb->query("ALTER TABLE `wp_ultimate_csv_importer_scheduled_import` ADD COLUMN `file_type` varchar(10) NOT NULL after module;");
-$wpdb->query("ALTER TABLE `wp_ultimate_csv_importer_scheduled_import` ADD COLUMN `event_key` varchar(100) DEFAULT NULL after version;");
-$wpdb->query("ALTER TABLE `wp_ultimate_csv_importer_scheduled_import` ADD COLUMN `duplicate_headers` blob DEFAULT NULL after import_mode");
-$wpdb->query("ALTER TABLE `wp_ultimate_csv_importer_scheduled_import` DROP COLUMN `imported_as`");
+$wpdb->query("ALTER TABLE `{$wpdb->prefix}ultimate_csv_importer_mappingtemplate` MODIFY COLUMN csvname VARCHAR (150) DEFAULT NULL;");
+$wpdb->query("ALTER TABLE `{$wpdb->prefix}ultimate_csv_importer_scheduled_import` ADD COLUMN `file_type` varchar(10) NOT NULL after module;");
+$wpdb->query("ALTER TABLE `{$wpdb->prefix}ultimate_csv_importer_scheduled_import` ADD COLUMN `event_key` varchar(100) DEFAULT NULL after version;");
+$wpdb->query("ALTER TABLE `{$wpdb->prefix}ultimate_csv_importer_scheduled_import` ADD COLUMN `duplicate_headers` blob DEFAULT NULL after import_mode");
+$wpdb->query("ALTER TABLE `{$wpdb->prefix}ultimate_csv_importer_scheduled_import` DROP COLUMN `imported_as`");
 
 // Migrating from "smack_dashboard_manager" table into "smackuci_events"
 $get_manager_records = $wpdb->get_results($wpdb->prepare("select *from smack_dashboard_manager", array()));
@@ -151,7 +152,7 @@ if(!empty($get_manager_records)) {
 		} elseif ( $data->keyword == 'Customer-Reviews' ) {
 			$imported_as = 'CustomerReviews';
 		}
-		#$imported_as = $data->imported_as;
+#$imported_as = $data->imported_as;
 		$get_affected_count = maybe_unserialize( $data->created_records );
 		$affected_count     = ! empty( $get_affected_count ) ? count( $get_affected_count[ $data->keyword ] ) : 0;
 		if ( isset( $get_affected_count[ $data->keyword ] ) ) {
@@ -167,16 +168,16 @@ if(!empty($get_manager_records)) {
 					$revision = $get_available_events[0]->revision;
 					$revision = $revision + 1;
 				}
-				if ( ! is_dir( SM_UCI_IMPORT_DIR . '/' . $eventKey ) ) {
-					wp_mkdir_p( SM_UCI_IMPORT_DIR . '/' . $eventKey );
-					chmod( SM_UCI_IMPORT_DIR . '/' . $eventKey, 0777 );
+				if ( ! is_dir( $upload_dir['basedir'] . '/smack_uci_uploads/imports' . '/' . $eventKey ) ) {
+					wp_mkdir_p( $upload_dir['basedir'] . '/smack_uci_uploads/imports' . '/' . $eventKey );
+					chmod( $upload_dir['basedir'] . '/smack_uci_uploads/imports' . '/' . $eventKey, 0777 );
 				}
 				$orig_file_path       = $upload_dir['basedir'] . '/ultimate_importer/' . $eventKey;
 				$orig_log_path        = $upload_dir['basedir'] . '/ultimate_importer_logfiles/' . $eventKey . '.log';
-				$new_file_path        = SM_UCI_IMPORT_DIR . '/' . $eventKey . '/' . $eventKey;
-				$new_log_path         = SM_UCI_IMPORT_DIR . '/' . $eventKey . '/' . $eventKey . '.log';
+				$new_file_path        = $upload_dir['basedir'] . '/smack_uci_uploads/imports' . '/' . $eventKey . '/' . $eventKey;
+				$new_log_path         = $upload_dir['basedir'] . '/smack_uci_uploads/imports' . '/' . $eventKey . '/' . $eventKey . '.log';
 				$original_file_name   = $file_name . '-' . $revision . '.' . $file_type;
-				$affected_log_entries = SM_UCI_IMPORT_DIR . '/' . $eventKey . '/' . $eventKey . '.txt';
+				$affected_log_entries = $upload_dir['basedir'] . '/smack_uci_uploads/imports' . '/' . $eventKey . '/' . $eventKey . '.txt';
 
 				$file_path = '/smack_uci_uploads/imports/' . $eventKey . '/' . $eventKey;
 
@@ -194,35 +195,35 @@ if(!empty($get_manager_records)) {
 				$year  = date( 'Y', strtotime( $last_activity ) );
 
 				$wpdb->insert( 'smackuci_events', array(
-					'revision'           => $revision,
-					'name'               => $name,
-					'original_file_name' => $original_file_name,
-					'import_type'        => $imported_as,
-					'filetype'           => $file_type,
-					'filepath'           => $file_path,
-					'eventKey'           => $eventKey,
-					'event_started_at'   => $event_started_at,
-					'count'              => $affected_count,
-					'created'            => $affected_count,
-					'last_activity'      => $last_activity,
-					'siteid'             => $site_id,
-					'month'              => $month,
-					'year'               => $year,
-				), array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%d', '%s', '%d' ) );
+							'revision'           => $revision,
+							'name'               => $name,
+							'original_file_name' => $original_file_name,
+							'import_type'        => $imported_as,
+							'filetype'           => $file_type,
+							'filepath'           => $file_path,
+							'eventKey'           => $eventKey,
+							'event_started_at'   => $event_started_at,
+							'count'              => $affected_count,
+							'created'            => $affected_count,
+							'last_activity'      => $last_activity,
+							'siteid'             => $site_id,
+							'month'              => $month,
+							'year'               => $year,
+							), array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%d', '%s', '%d' ) );
 
 				/* print 'File Type: ' . $file_type . '<br>';
-				print 'Event Started At: ' . $event_started_at . '<br>';
-				print 'Last Activity: ' . $last_activity . '<br>';
-				print 'Imported As: ' . $imported_as . '<br>';
-				print 'Affected Records: ' . $affected_count . '<br>';
-				print 'File Name: ' . $name . '<br>';
-				print "Site Id: " . $site_id . '<br>';
-				print 'Original File Name: ' . $original_file_name . '<br>';
-				print 'Revision: ' . $revision . '<br>';
-				print 'Event Key: ' . $eventKey . '<br>';
+				   print 'Event Started At: ' . $event_started_at . '<br>';
+				   print 'Last Activity: ' . $last_activity . '<br>';
+				   print 'Imported As: ' . $imported_as . '<br>';
+				   print 'Affected Records: ' . $affected_count . '<br>';
+				   print 'File Name: ' . $name . '<br>';
+				   print "Site Id: " . $site_id . '<br>';
+				   print 'Original File Name: ' . $original_file_name . '<br>';
+				   print 'Revision: ' . $revision . '<br>';
+				   print 'Event Key: ' . $eventKey . '<br>';
 
-				print 'File Path: ' . $file_path . '<br>';
-				print '<br>--------------<br><br>'; */
+				   print 'File Path: ' . $file_path . '<br>';
+				   print '<br>--------------<br><br>'; */
 			}
 		}
 	}
@@ -280,14 +281,15 @@ if(!empty($get_scheduled_events)) {
 				$import_method = 'url';
 			}
 
-			$wpdb->update( 'wp_ultimate_csv_importer_scheduled_import', array(
-				'importid'       => $importid,
-				'module'         => $module,
-				'file_type'      => $file_type,
-				'version'        => $revision,
-				'importbymethod' => $import_method,
-				//'import_mode' => 'update',
-			), array( 'id' =>  $scheduled_event_id ) );
+			$schedule_table = $wpdb->prefix . "ultimate_csv_importer_scheduled_import";
+			$wpdb->update( $schedule_table , array(
+						'importid'       => $importid,
+						'module'         => $module,
+						'file_type'      => $file_type,
+						'version'        => $revision,
+						'importbymethod' => $import_method,
+						//'import_mode' => 'update',
+						), array( 'id' =>  $scheduled_event_id ) );
 		}
 	}
 }
@@ -298,39 +300,39 @@ $wpdb->query("drop table smack_csv_manager;");
 $wpdb->query("drop table SmackUCI_manage_records;");
 $wpdb->query("drop table SmackUCI_event_informations;");
 $wpdb->query("drop table smackcsv_status_log;");
-$wpdb->query("drop table wp_ultimate_csv_importer_filemanager;");
-$wpdb->query("drop table wp_ultimate_csv_importer_multisite_details;");
-$wpdb->query("drop table wp_ultimate_csv_importer_eventkey_manager;");
-$wpdb->query("drop table wp_ultimate_csv_importer_exclusion_lists;");
+$wpdb->query("drop table {$wpdb->prefix}ultimate_csv_importer_filemanager;");
+$wpdb->query("drop table {$wpdb->prefix}ultimate_csv_importer_multisite_details;");
+$wpdb->query("drop table {$wpdb->prefix}ultimate_csv_importer_eventkey_manager;");
+$wpdb->query("drop table {$wpdb->prefix}ultimate_csv_importer_exclusion_lists;");
 
 // Move unwanted files
-$old_files_dir = SM_UCI_PRO_DIR . '/old_files';
+$old_files_dir = plugin_dir_path(__FILE__) . '/old_files';
 if(!is_dir($old_files_dir)) {
 	wp_mkdir_p( $old_files_dir );
 	@chmod($old_files_dir, 0777);
 }
-@rename(SM_UCI_PRO_DIR . '/Ultimatecsvimporter.pot', $old_files_dir . '/Ultimatecsvimporter.pot');
-@rename(SM_UCI_PRO_DIR . '/css', $old_files_dir . '/css');
-@rename(SM_UCI_PRO_DIR . '/images', $old_files_dir . '/images');
-@rename(SM_UCI_PRO_DIR . '/modules', $old_files_dir . '/modules');
-@rename(SM_UCI_PRO_DIR . '/templates', $old_files_dir . '/templates');
-@rename(SM_UCI_PRO_DIR . '/config', $old_files_dir . '/config');
-@rename(SM_UCI_PRO_DIR . '/fonts', $old_files_dir . '/fonts');
-@rename(SM_UCI_PRO_DIR . '/js', $old_files_dir . '/js');
-@rename(SM_UCI_PRO_DIR . '/lib', $old_files_dir . '/lib');
-@rename(SM_UCI_PRO_DIR . '/plugins', $old_files_dir . '/plugins');
-@rename(SM_UCI_PRO_DIR . '/upgrade', $old_files_dir . '/upgrade');
+@rename(plugin_dir_path(__FILE__) . '/Ultimatecsvimporter.pot', $old_files_dir . '/Ultimatecsvimporter.pot');
+@rename(plugin_dir_path(__FILE__) . '/css', $old_files_dir . '/css');
+@rename(plugin_dir_path(__FILE__) . '/images', $old_files_dir . '/images');
+@rename(plugin_dir_path(__FILE__) . '/modules', $old_files_dir . '/modules');
+@rename(plugin_dir_path(__FILE__) . '/templates', $old_files_dir . '/templates');
+@rename(plugin_dir_path(__FILE__) . '/config', $old_files_dir . '/config');
+@rename(plugin_dir_path(__FILE__) . '/fonts', $old_files_dir . '/fonts');
+@rename(plugin_dir_path(__FILE__) . '/js', $old_files_dir . '/js');
+@rename(plugin_dir_path(__FILE__) . '/lib', $old_files_dir . '/lib');
+@rename(plugin_dir_path(__FILE__) . '/plugins', $old_files_dir . '/plugins');
+@rename(plugin_dir_path(__FILE__) . '/upgrade', $old_files_dir . '/upgrade');
 if(!is_dir($old_files_dir . '/includes')) {
 	wp_mkdir_p( $old_files_dir . '/includes');
 	@chmod($old_files_dir . '/includes', 0777);
 }
-@rename(SM_UCI_PRO_DIR . '/includes/Array2XML.php', $old_files_dir . '/includes/Array2XML.php');
-@rename(SM_UCI_PRO_DIR . '/includes/Importer.php', $old_files_dir . '/includes/Importer.php');
-@rename(SM_UCI_PRO_DIR . '/includes/WPUltimateCSVImporter.php', $old_files_dir . '/includes/WPUltimateCSVImporter.php');
-@rename(SM_UCI_PRO_DIR . '/includes/csv_woocommerce_support.php', $old_files_dir . '/includes/csv_woocommerce_support.php');
-@rename(SM_UCI_PRO_DIR . '/includes/smackLogging.php', $old_files_dir . '/includes/smackLogging.php');
-@rename(SM_UCI_PRO_DIR . '/includes/ImportLib.php', $old_files_dir . '/includes/ImportLib.php');
-@rename(SM_UCI_PRO_DIR . '/includes/WPImporter_includes_helper.php', $old_files_dir . '/includes/WPImporter_includes_helper.php');
-@rename(SM_UCI_PRO_DIR . '/includes/XML2Array.php', $old_files_dir . '/includes/XML2Array.php');
-@rename(SM_UCI_PRO_DIR . '/includes/schedulehelper.php', $old_files_dir . '/includes/schedulehelper.php');
-@rename(SM_UCI_PRO_DIR . '/includes/smackcsv_importer_helper.php', $old_files_dir . '/includes/smackcsv_importer_helper.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/Array2XML.php', $old_files_dir . '/includes/Array2XML.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/Importer.php', $old_files_dir . '/includes/Importer.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/WPUltimateCSVImporter.php', $old_files_dir . '/includes/WPUltimateCSVImporter.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/csv_woocommerce_support.php', $old_files_dir . '/includes/csv_woocommerce_support.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/smackLogging.php', $old_files_dir . '/includes/smackLogging.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/ImportLib.php', $old_files_dir . '/includes/ImportLib.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/WPImporter_includes_helper.php', $old_files_dir . '/includes/WPImporter_includes_helper.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/XML2Array.php', $old_files_dir . '/includes/XML2Array.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/schedulehelper.php', $old_files_dir . '/includes/schedulehelper.php');
+@rename(plugin_dir_path(__FILE__) . '/includes/smackcsv_importer_helper.php', $old_files_dir . '/includes/smackcsv_importer_helper.php');

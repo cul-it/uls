@@ -146,6 +146,24 @@ class Api {
 		return $data['upgrade_notice'];
 	}
 
+	public static function get_admin_notice() {
+		$data = self::get_info_data();
+		if ( empty( $data['admin_notice'] ) ) {
+			return false;
+		}
+		return $data['admin_notice'];
+	}
+
+	public static function get_canary_deployment_info( $force = false ) {
+		$data = self::get_info_data( $force );
+
+		if ( empty( $data['canary_deployment'] ) ) {
+			return false;
+		}
+
+		return $data['canary_deployment'];
+	}
+
 	/**
 	 * Get templates data.
 	 *

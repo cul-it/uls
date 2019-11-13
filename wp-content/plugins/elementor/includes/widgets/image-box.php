@@ -131,7 +131,7 @@ class Widget_Image_Box extends Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor' ),
+				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor' ),
 				'placeholder' => __( 'Enter your description', 'elementor' ),
 				'separator' => 'none',
 				'rows' => 10,
@@ -161,15 +161,15 @@ class Widget_Image_Box extends Widget_Base {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-h-align-left',
 					],
 					'top' => [
 						'title' => __( 'Top', 'elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-v-align-top',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-h-align-right',
 					],
 				],
 				'prefix_class' => 'elementor-position-',
@@ -385,19 +385,19 @@ class Widget_Image_Box extends Widget_Base {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
 						'title' => __( 'Justified', 'elementor' ),
-						'icon' => 'fa fa-align-justify',
+						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'selectors' => [
@@ -520,7 +520,7 @@ class Widget_Image_Box extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$has_content = ! empty( $settings['title_text'] ) || ! empty( $settings['description_text'] );
+		$has_content = ! Utils::is_empty( $settings['title_text'] ) || ! Utils::is_empty( $settings['description_text'] );
 
 		$html = '<div class="elementor-image-box-wrapper">';
 
@@ -557,7 +557,7 @@ class Widget_Image_Box extends Widget_Base {
 		if ( $has_content ) {
 			$html .= '<div class="elementor-image-box-content">';
 
-			if ( ! empty( $settings['title_text'] ) ) {
+			if ( ! Utils::is_empty( $settings['title_text'] ) ) {
 				$this->add_render_attribute( 'title_text', 'class', 'elementor-image-box-title' );
 
 				$this->add_inline_editing_attributes( 'title_text', 'none' );
@@ -571,7 +571,7 @@ class Widget_Image_Box extends Widget_Base {
 				$html .= sprintf( '<%1$s %2$s>%3$s</%1$s>', $settings['title_size'], $this->get_render_attribute_string( 'title_text' ), $title_html );
 			}
 
-			if ( ! empty( $settings['description_text'] ) ) {
+			if ( ! Utils::is_empty( $settings['description_text'] ) ) {
 				$this->add_render_attribute( 'description_text', 'class', 'elementor-image-box-description' );
 
 				$this->add_inline_editing_attributes( 'description_text' );

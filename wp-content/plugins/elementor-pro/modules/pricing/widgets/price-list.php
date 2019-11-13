@@ -51,6 +51,9 @@ class Price_List extends Base_Widget {
 			[
 				'label' => __( 'Price', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -112,19 +115,19 @@ class Price_List extends Base_Widget {
 				'default' => [
 					[
 						'title' => __( 'First item on the list', 'elementor-pro' ),
-						'item_description' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'elementor-pro' ),
+						'item_description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'price' => '$20',
 						'link' => [ 'url' => '#' ],
 					],
 					[
 						'title' => __( 'Second item on the list', 'elementor-pro' ),
-						'item_description' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'elementor-pro' ),
+						'item_description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'price' => '$9',
 						'link' => [ 'url' => '#' ],
 					],
 					[
 						'title' => __( 'Third item on the list', 'elementor-pro' ),
-						'item_description' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'elementor-pro' ),
+						'item_description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'price' => '$32',
 						'link' => [ 'url' => '#' ],
 					],
@@ -387,11 +390,20 @@ class Price_List extends Base_Widget {
 			'vertical_align',
 			[
 				'label' => __( 'Vertical Align', 'elementor-pro' ),
-				'type' => Controls_Manager::SELECT,
+				'type' => Controls_Manager::CHOOSE,
 				'options' => [
-					'top' => __( 'Top', 'elementor-pro' ),
-					'bottom' => __( 'Bottom', 'elementor-pro' ),
-					'center' => __( 'Center', 'elementor-pro' ),
+					'top' => [
+						'title' => __( 'Top', 'elementor-pro' ),
+						'icon' => 'eicon-v-align-top',
+					],
+					'center' => [
+						'title' => __( 'Center', 'elementor-pro' ),
+						'icon' => 'eicon-v-align-middle',
+					],
+					'bottom' => [
+						'title' => __( 'Bottom', 'elementor-pro' ),
+						'icon' => 'eicon-v-align-bottom',
+					],
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-price-list-item' => 'align-items: {{VALUE}};',

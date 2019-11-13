@@ -211,8 +211,8 @@ class Author_Box extends Base {
 			[
 				'label' => __( 'Biography', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
-				'rows' => 4,
+				'default' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
+				'rows' => 3,
 				'condition' => [
 					'source' => 'custom',
 				],
@@ -275,15 +275,15 @@ class Author_Box extends Base {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'prefix_class' => 'elementor-author-box--align-',

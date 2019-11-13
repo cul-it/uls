@@ -9,14 +9,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  aria-label="<?php the_title(); ?>"">
 
-	<header class="entry-header" aria-label="Title content">
+	<header class="entry-header">
 
 		<?php
 
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h2 class="entry-title">', '</h2>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -35,9 +35,10 @@
 
 		<?php endif; ?>
 
+
 	</header><!-- .entry-header -->
 
-	<?php culu_post_thumbnail(); ?>
+	<?php //culu_post_thumbnail(); ?>
 
 	<div class="entry-content">
 
@@ -63,9 +64,11 @@
 
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer" aria-label="Footer content">
+	<footer class="entry-footer" aria-label="Edit post">
 
-		<?php culu_entry_footer(); ?>
+		<?php //culu_category_links(); ?>
+		<?php //culu_tag_links(); ?>
+		<?php culu_edit_post(); ?>
 
 	</footer><!-- .entry-footer -->
 

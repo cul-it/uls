@@ -24,6 +24,23 @@ if (file_exists(dirname(__FILE__) . '/wp-config-local.php') && !isset($_ENV['PAN
  */
 else:
   if (isset($_ENV['PANTHEON_ENVIRONMENT'])):
+
+    // Cornell Library SMTP setup
+    // set SMPT_PW on each site (dev,test,live) using terminus secrets
+    $secrets = $_ENV['HOME'] . '/files/private/secrets.json';
+    if (file_exists($secrets)) {
+      if (($file = file_get_contents($secrets)) !== false) {
+        $smtp = json_decode($file,true);
+        if (isset($smtp['SMTP_PW'])) {
+          // set SMPT_PW,SMTP_USER on each site (dev,test,live) using terminus secrets
+          define('WPMS_ON', true);
+          define('WPMS_SMTP_PASS', $smtp['SMTP_PW']); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true	define( 'WPMS_SMTP_PASS', $_ENV['SMPT_PW'] );
+        }
+        unset($file, $smtp);
+      }
+    }
+    unset($secrets);
+
     // ** MySQL settings - included in the Pantheon Environment ** //
     /** The name of the database for WordPress */
     define('DB_NAME', $_ENV['DB_NAME']);
@@ -51,7 +68,7 @@ else:
      * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
      *
      * Pantheon sets these values for you also. If you want to shuffle them you
-     * must contact support: https://pantheon.io/docs/getting-support 
+     * must contact support: https://pantheon.io/docs/getting-support
      *
      * @since 2.6.0
      */
@@ -67,7 +84,7 @@ else:
 
     /** A couple extra tweaks to help things run well on Pantheon. **/
     if (isset($_SERVER['HTTP_HOST'])) {
-        // HTTP is still the default scheme for now. 
+        // HTTP is still the default scheme for now.
         $scheme = 'http';
         // If we have detected that the end use is HTTPS, make sure we pass that
         // through here, so <img> tags and the like don't generate mixed-mode
@@ -149,12 +166,15 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 
 /* That's all, stop editing! Happy Pressing. */
 
-
-
-
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/** Sets up redirects from old Drupal intances to WP unit intances. */
+require_once(ABSPATH . 'redirects.php');
+
+/** Fix WordPress ‘Destination directory for file streaming does not exist or is not writable’*/
+define('WP_TEMP_DIR', ABSPATH . '/../temp/');

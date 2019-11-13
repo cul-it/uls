@@ -4,7 +4,11 @@
       <?= __('Thank you for using our plugin ACF: Better Search!', 'acf-better-search'); ?>
     </h4>
     <p>
-      <?= __('Please let us know what you think about our plugin. It is important that we can develop this tool. Thank you for all the ratings, reviews and donates. If you have a technical problem, please contact us first before adding the rating. We will try to help you!', 'acf-better-search'); ?>
+      <?= sprintf(
+        __('Please let us know what you think about our plugin. It is important that we can develop this tool. Thank you for all the ratings, reviews and donates. If you have a technical problem, please before you add a review %scheck our FAQ%s or contact us if you did not find help there. We will try to help you!', 'acf-better-search'),
+        '<a href="https://wordpress.org/plugins/acf-better-search/#faq" target="_blank">',
+        '</a>'
+      ); ?>
     </p>
     <div class="acfbsContent__buttons">
       <a href="https://wordpress.org/support/plugin/acf-better-search/#new-post" target="_blank"

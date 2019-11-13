@@ -55,7 +55,9 @@ class Elementor_Post_Query {
 			add_action( 'pre_get_posts', [ $this, 'pre_get_posts_query_filter' ] );
 		}
 
-		if ( 0 < $offset_control ) {
+		$post_type = $this->get_widget_settings( 'post_type' );
+
+		if ( 'by_id' !== $post_type && 0 < $offset_control ) {
 			add_action( 'pre_get_posts', [ $this, 'fix_query_offset' ], 1 );
 			add_filter( 'found_posts', [ $this, 'fix_query_found_posts' ], 1, 2 );
 		}
@@ -67,6 +69,8 @@ class Elementor_Post_Query {
 		remove_filter( 'found_posts', [ $this, 'fix_query_found_posts' ], 1 );
 
 		Module::add_to_avoid_list( wp_list_pluck( $query->posts, 'ID' ) );
+
+		do_action( 'elementor/query/query_results', $query, $this->widget );
 
 		return $query;
 	}
@@ -99,7 +103,7 @@ class Elementor_Post_Query {
 			 *
 			 * @param array $current_query_vars Current query variables.
 			 */
-			$current_query_vars = apply_filters_deprecated( 'elementor_pro/query_control/get_query_args/current_query', [ $current_query_vars ], '2.5.0', 'use: elementor/query/get_query_args/current_query' );
+			$current_query_vars = apply_filters_deprecated( 'elementor_pro/query_control/get_query_args/current_query', [ $current_query_vars ], '2.5.0', 'elementor/query/get_query_args/current_query' );
 			$current_query_vars = apply_filters( 'elementor/query/get_query_args/current_query', $current_query_vars );
 			$this->query_args = $current_query_vars;
 			return $current_query_vars;
@@ -365,7 +369,7 @@ class Elementor_Post_Query {
 			 * @param \WP_Query     $wp_query
 			 * @param Widget_Base   $this->current_widget
 			 */
-			do_action_deprecated( "elementor_pro/{$widget_name}/query/{$query_id}", [ $wp_query, $this->widget ], '2.5.0', 'use: elementor/query/your_query_id' );
+			do_action_deprecated( "elementor_pro/{$widget_name}/query/{$query_id}", [ $wp_query, $this->widget ], '2.5.0', "elementor/query/{$query_id}" );
 			do_action( "elementor/query/{$query_id}", $wp_query, $this->widget );
 		}
 	}

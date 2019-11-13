@@ -80,15 +80,15 @@ class Testimonial_Carousel extends Base {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'prefix_class' => 'elementor-testimonial--align-',
@@ -537,7 +537,7 @@ class Testimonial_Carousel extends Base {
 
 		return [
 			[
-				'content' => __( 'I am slide content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
+				'content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
 				'name' => __( 'John Doe', 'elementor-pro' ),
 				'title' => __( 'CEO', 'elementor-pro' ),
 				'image' => [
@@ -545,7 +545,7 @@ class Testimonial_Carousel extends Base {
 				],
 			],
 			[
-				'content' => __( 'I am slide content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
+				'content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
 				'name' => __( 'John Doe', 'elementor-pro' ),
 				'title' => __( 'CEO', 'elementor-pro' ),
 				'image' => [
@@ -553,7 +553,7 @@ class Testimonial_Carousel extends Base {
 				],
 			],
 			[
-				'content' => __( 'I am slide content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
+				'content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
 				'name' => __( 'John Doe', 'elementor-pro' ),
 				'title' => __( 'CEO', 'elementor-pro' ),
 				'image' => [

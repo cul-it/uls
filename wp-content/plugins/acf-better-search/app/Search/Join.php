@@ -25,7 +25,9 @@
 
     public function sqlJoin($join, $query)
     {
-      if (empty($query->query_vars['s'])) return $join;
+      if (!isset($query->query_vars['s']) || empty($query->query_vars['s'])
+        || !apply_filters('acfbs_search_is_available', true, $query)) return $join;
+
       $this->loadSettings();
       if (!$this->config['fields_types'] && !$this->config['lite_mode']) return $join;
 
@@ -56,7 +58,7 @@
         }
       }
 
-      $join .= ' ' . implode(' ', $parts);
+      $join .= ' ' . implode(' ', $parts) . ' ';
       return $join;
     }
 

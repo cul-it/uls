@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WP SAML Auth
- * Version: 0.6.0
+ * Version: 0.7.2
  * Description: SAML authentication for WordPress, using SimpleSAMLphp.
  * Author: Pantheon
  * Author URI: https://pantheon.io
@@ -179,8 +179,8 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 /**
  * Initialize the WP SAML Auth plugin settings page.
  */
+require_once dirname( __FILE__ ) . '/inc/class-wp-saml-auth-settings.php';
 if ( is_admin() ) {
-	require_once dirname( __FILE__ ) . '/inc/class-wp-saml-auth-settings.php';
 	WP_SAML_Auth_Settings::get_instance();
 }
 

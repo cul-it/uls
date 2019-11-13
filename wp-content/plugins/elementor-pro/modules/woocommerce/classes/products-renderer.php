@@ -10,6 +10,7 @@ class Products_Renderer extends \WC_Shortcode_Products {
 	private $settings = [];
 	private $is_added_product_filter = false;
 	const QUERY_CONTROL_NAME = 'query'; //Constraint: the class that uses the renderer, must use the same name
+	const DEFAULT_COLUMNS_AND_ROWS = 4;
 
 	public function __construct( $settings = [], $type = 'products' ) {
 		$this->settings = $settings;
@@ -58,7 +59,8 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		$query_args['meta_query'] = WC()->query->get_meta_query();
 		$query_args['tax_query'] = [];
 
-		if ( 'yes' === $settings['paginate'] && 'yes' === $settings['allow_order'] ) {
+		$front_page = is_front_page();
+		if ( 'yes' === $settings['paginate'] && 'yes' === $settings['allow_order'] && ! $front_page ) {
 			$ordering_args = WC()->query->get_catalog_ordering_args();
 		} else {
 			$ordering_args = WC()->query->get_catalog_ordering_args( $query_args['orderby'], $query_args['order'] );
@@ -100,7 +102,7 @@ class Products_Renderer extends \WC_Shortcode_Products {
 				$query_args['paged'] = $page;
 			}
 
-			if ( 'yes' !== $settings['allow_order'] ) {
+			if ( 'yes' !== $settings['allow_order'] || $front_page ) {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 			}
 
@@ -108,7 +110,10 @@ class Products_Renderer extends \WC_Shortcode_Products {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 			}
 		}
-		$query_args['posts_per_page'] = intval( $settings['columns'] * $settings['rows'] );
+		// fallback to the widget's default settings in case settings was left empty:
+		$rows = ! empty( $settings['rows'] ) ? $settings['rows'] : self::DEFAULT_COLUMNS_AND_ROWS;
+		$columns = ! empty( $settings['columns'] ) ? $settings['columns'] : self::DEFAULT_COLUMNS_AND_ROWS;
+		$query_args['posts_per_page'] = intval( $columns * $rows );
 
 		$query_args = apply_filters( 'woocommerce_shortcode_products_query', $query_args, $this->attributes, $this->type );
 

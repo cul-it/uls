@@ -33,12 +33,12 @@ get_header();
 			//get_template_part( 'template-parts/content', get_post_type() );
 
 			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-label="Homepage content">
 				<header class="entry-header">
 					<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
 
-				<?php culu_post_thumbnail(); ?>
+				<?php //culu_post_thumbnail(); ?>
 
 				<div class="entry-content">
 					<?php

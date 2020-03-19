@@ -1,6 +1,0 @@
-name: culu
-recipe: pantheon
-config:
-  framework: wordpress
-  site: culu
-  id: 16bc5bce-4b33-4646-b6a6-655b9a22af4d

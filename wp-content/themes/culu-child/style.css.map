@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA;;;;;;;;;;EAUE;AAEF;;;;;;;;;;;;;;;;;;;;;;;gEAuBgE;AAIhE;;gEAEgE;AAGhE;;gEAEgE;AAGhE;;gEAEgE;AAGhE;;gEAEgE;AAGhE;;gEAEgE;AC7DhE;;gEAEgE;AAGhE;;gEAEgE;ADyDhE;;gEAEgE;AAGhE;;gEAEgE;AAGhE;;gEAEgE;AAGhE;;gEAEgE;AAGhE;;gEAEgE;AEnFhE;;gEAEgE;AAGhE;;gEAEgE;AF+EhE;;gEAEgE;AAGhE;;gEAEgE;AGhGhE;;gEAEgE;AAGhE;;gEAEgE;AH4FhE;;gEAEgE",
-"sources": ["sass/style.scss","sass/navigation/_navigation.scss","sass/site/_site.scss","sass/media/_media.scss"],
-"names": [],
-"file": "style.css"
-}

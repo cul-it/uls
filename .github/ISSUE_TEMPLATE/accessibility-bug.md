@@ -2,7 +2,7 @@
 name: Accessibility bug
 about: Report an accessibility issue
 title: 'Accessibility:'
-labels: ''
+labels: 'accessibility'
 assignees: ''
 
 ---
